@@ -1,0 +1,35 @@
+$font-size-xs: var(--font-size-xs);
+$font-size-md: var(--font-size-md);
+$font-size-xl: var(--font-size-xl);
+$font-size-xxl: var(--font-size-xxl);
+
+$sizes: (
+    xs: $font-size-xs,
+    md: $font-size-md,
+    xl: $font-size-xl,
+    xxl: $font-size-xxl
+);
+
+@each $name, $size in $sizes {
+    .#{$name} {
+        font-size: $size;
+    }
+}
+
+$mobile-font-size-xs: var(--mobile-font-size-x);
+$mobile-font-size-md: var(--mobile-font-size-md);
+$mobile-font-size-xl: var(--mobile-font-size-xl);
+$mobile-font-size-xxl: var(--mobile-font-size-xxl);
+
+$mobile-sizes: (
+    xs: $mobile-font-size-xs,
+    md: $mobile-font-size-md,
+    xl: $mobile-font-size-xl,
+    xxl: $mobile-font-size-xxl
+);
+
+@each $name, $size in $mobile-sizes {
+    .mobile-#{$name} {
+        font-size: $size;
+    }
+}
