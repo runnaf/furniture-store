@@ -1,10 +1,32 @@
 :root {
     //color
-    --gren-color: #214A25;
-    --black-color: #242424;
+    --green-color: #214A25; 
+    --black-color: #242424; 
+    --secoundry-black-color: #484848;
+    --white-color: #FFF; 
+    --yellow-color: #FFBA35; 
+    --background-color: #F5F5F5;
+    --stroke-color: rgba(36, 36, 36, 0.10);
+
+    //fonts
+    --font-main: 'Inter', sans-serif;
+
 
     //font-size
-    --font-size-s: 16px;
+    --font-size-xxs: 16px; // navbar, regular text
+    --font-size-xs: 18px; // header, card label, product timer, accordion description
+    --font-size-s: 20px;
+    --font-size-header-s: 24px; // header logo, card header, product timer number, accordion header
+    --font-size-m: 26px; // price, rating
+    --font-size-l: 28px;
+    --font-size-xl: 32px;
+    --font-size-footer-logo: 33px; // footer logo
+    --font-size-xxl: 36px;
+    --font-size-header-m: 47px;
+    --font-size-main-timer: 48px; // main timer
+    --font-size-header-l: 58px;
+
+
 
     //border-radius
     --border-radius-s: 15px;
