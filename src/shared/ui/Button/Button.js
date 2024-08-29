@@ -7,7 +7,7 @@ export const Button = ({
     size = 'md',
     radius = 'rounded',
     color = 'primary',
-    outlined = true,
+    outlined = false,
     ...otherProps
 }) => {
 
