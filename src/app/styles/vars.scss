@@ -1,11 +1,76 @@
+@import './fonts.scss';
+
 :root {
     //color
-    --gren-color: #214A25;
-    --black-color: #242424;
+    --green-color: #214A25; 
+    --black-color: #242424; 
+    --secoundry-black-color: #484848;
+    --white-color: #FFF; 
+    --yellow-color: #FFBA35; 
+    --background-color: #F5F5F5;
+    --background-color-footer-social: rgba(255, 255, 255, 0.13);
+    --stroke-color: rgba(36, 36, 36, 0.10); 
+    --card-liner-gradient: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.00) 33.5%), rgba(0, 0, 0, 0.20);
+    --button-inStok-color: rgba(46, 187, 119, 0.10);
+    --border-inStock-color: #2EBB77;
+
+
+    //fonts
+    --font-black: 'Inter_Bold';
+    --font-secoundry-black: 'Inter_Light';
+
 
     //font-size
-    --font-size-s: 16px;
+    --font-size-xxs: 16px; // navbar, regular text
+    --font-size-xs: 18px; // header, card label, product timer, accordion description
+    --font-size-s: 20px;
+    --font-size-header-s: 24px; // header logo, card header, product timer number, accordion header
+    --font-size-m: 26px; // price, rating
+    --font-size-l: 28px;
+    --font-size-xl: 32px;
+    --font-size-footer-logo: 33px; // footer logo
+    --font-size-xxl: 36px;
+    --font-size-header-m: 47px;
+    --font-size-main-timer: 48px; // main timer
+    --font-size-header-l: 58px;
+
 
     //border-radius
-    --border-radius-s: 15px;
-}
+    --border-radius-card-s: 12px;
+    --border-radius-card-m: 16px;
+    --border-radius-card-l: 24px;
+    --border-radius: 50px; //button, input
+    --border-radius-button-card-allow: 16px;
+    --border-radius-date: 16px 16px 0px 0px; //news&blog
+
+    //border
+    --border-input: 1px solid var(--stroke-color);
+    --border-inStock: 1px var(--border-inStock-color);
+    --border-date: 3.5px solid var(--white-color); 
+
+    //gap
+    --gap-header-menu: 36px;
+    --gap-header-social: 8px; 
+    --gap-footer-text: 26px;
+    --gap-footer-title-item: 30px;
+    --gap-footer-menu-item: 22px;
+    --gap-footer-social: 10px; 
+    --gap-section: 125px;
+    --gap-section-mobile: 75px; 
+    --gap-s: 12px;
+    --gap-m: 16px;
+    --gap-l: 32px;
+    --gap-xl: 48px;
+    --gap-xxl: 64px;
+
+    //opacity 
+    --opacity-s: 0.1;
+    --opacity-m: 0.2;
+    --opacity-l: 0.5;
+    --opacity-background-modal: 0.4;
+
+    //filter 
+    --blur: 7px;
+    --blur-background-modal: 11px;
+    --blur-l: 28px;
+} 
