@@ -25,19 +25,19 @@ $text-white-color: var(--white-color);
 $text-black-color: var(--black-color);
 
 .primary {
-    background-color: $color-primary;
-    color: $text-color-primary;
+    background-color: $green-color;
+    color: $text-white-color;
 }
 
 .secondary {
-    background-color: $color-secondary;
-    color: $text-color-primary;
+    background-color: $yelllow-color;
+    color: $text-black-color;
 }
 
 .outlined {
     background-color: transparent;
-    border: 1.5px solid $color-outlined;
-    color: $text-color-secondary;
+    border: 1.5px solid $stroke-color;
+    color: $text-black-color;
 }
 
 //border-radius
