@@ -3,3 +3,98 @@
     margin: auto;
     width: 1440px;
 }
+
+@mixin section-style-mobile {
+    padding: 20px;
+    margin: auto;
+    width: 375px;
+} 
+
+@mixin icon-logo-header {
+    width: 40px;
+    height: 40px;
+} 
+
+@mixin icon-logo-header-mobile {
+    width: 32px;
+    height: 32px;
+} 
+
+@mixin icon-logo-footer {
+    width: 56px;
+    height: 56px;
+} 
+
+
+@mixin icon-header-social {
+    width: 22px;
+    height: 22px;
+} 
+
+@mixin icon-star-rating  {
+    width: 24px;
+    height: 24px;
+} 
+
+@mixin icon-footer-social { // footer,  product details 
+    width: 24px;
+    height: 24px;
+}  
+
+@mixin icon-footer-container {  
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+    background-color: var(--background-color-footer-social);
+    border-radius: var(--border-radius);
+    box-shadow: 0px 15px 26px 0px rgba(0, 0, 0, 0.10);
+} 
+
+@mixin icon-rating-size {
+    width: 54px;
+    height: 54px; 
+}   
+
+@mixin icon-opportunities {
+    width: 60px;
+    height: 60px;
+}  
+
+@mixin icon-button-arrow  {
+    width: 60px;
+    height: 60px;
+}  
+
+@mixin icon-opportunities-mobile {
+    width: 54px;
+    height: 54px;
+}
+
+@mixin icon-quotation-marks {  
+    width: 80px;
+    height: 80px;
+} 
+
+@mixin icon-portrait-rewiew {
+    width: 175px;
+    height: 175px;
+}  
+
+@mixin icon-portrait-rewiew-mobile {
+    width: 120px;
+    height: 120px;
+}  
+
+@mixin icon-drag-foto {
+    width: 38px;
+    height: 38px;
+} 
+
+@mixin icon-letter  {
+    width: 32px;
+    height: 32px;
+} 
+
+@mixin icon-points  {
+    width: 178px;
+} 
