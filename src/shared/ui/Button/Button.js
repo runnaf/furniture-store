@@ -4,12 +4,16 @@ import styles from './Button.module.scss';
 export const Button = ({
     className,
     children,
-    size = 'md',
-    radius = 'rounded',
-    color = 'primary',
-    outlined = false,
+    size = 'xs',
+    radius = 'rounded', // rounded | circle
+    color = 'green-color',
+    outlined,
     ...otherProps
 }) => {
+
+    const mode = {
+        [styles.outlined]: outlined,
+    };
 
    
     const additional = [
@@ -17,12 +21,11 @@ export const Button = ({
         styles[size],
         styles[radius],
         styles[color],
-        outlined ? styles.outlined : null,
     ]
 
     return (
         <button 
-        className={getStyles(styles.button, {}, additional)}
+        className={getStyles(styles.button, mode, additional)}
         {...otherProps}
         >
             {children}

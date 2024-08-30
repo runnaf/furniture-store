@@ -1,13 +1,13 @@
 //font-size
 
-$font-size-xs: var(--font-size-xxs);
-$font-size-s: var(--font-size-xs);
-$font-size-md: var(--font-size-header-s);
+$font-size-xxs: var(--font-size-xxs);
+$font-size-xs: var(--font-size-xs);
+$font-size-header-s: var(--font-size-header-s);
 
 $sizes: (
+    xxs: $font-size-xxs,
     xs: $font-size-xs,
-    s: $font-size-s,
-    md: $font-size-md
+    s: $font-size-header-s
 );
 
 @each $name, $size in $sizes {
@@ -17,12 +17,12 @@ $sizes: (
 }
 // color
 
-$color-primary: var(--green-color);
-$color-secondary: var(--yellow-color);
-$color-outlined: var(--stroke-color);
+$green-color: var(--green-color);
+$yelllow-color: var(--yellow-color);
+$stroke-color: var(--stroke-color);
 
-$text-color-primary: var(--white-color);
-$text-color-secondary: var(--black-color);
+$text-white-color: var(--white-color);
+$text-black-color: var(--black-color);
 
 .primary {
     background-color: $color-primary;
@@ -42,8 +42,8 @@ $text-color-secondary: var(--black-color);
 
 //border-radius
 
-$border-radius-rounded: var(--border-radius-l);
-$border-radius-circle: var(--border-radius-m);
+$border-radius-rounded: var(--border-radius-rounded);
+$border-radius-circle: var(--border-radius-circle);
 
 .rounded {
     border-radius: $border-radius-rounded;
