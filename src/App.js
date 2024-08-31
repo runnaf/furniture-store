@@ -1,7 +1,9 @@
+import Header from "./entities/Header/ui/Header";
+
 function App() {
   return (
     <div className="App">
-      <button>click</button>
+      <Header />
     </div>
   );
 }

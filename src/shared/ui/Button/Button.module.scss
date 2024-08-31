@@ -1,0 +1,54 @@
+//font-size
+
+$font-size-xxs: var(--font-size-xxs);
+$font-size-xs: var(--font-size-xs);
+$font-size-header-s: var(--font-size-header-s);
+
+$sizes: (
+    xxs: $font-size-xxs,
+    xs: $font-size-xs,
+    s: $font-size-header-s
+);
+
+@each $name, $size in $sizes {
+    .#{$name} {
+        font-size: $size;
+    }
+}
+// color
+
+$green-color: var(--green-color);
+$yelllow-color: var(--yellow-color);
+$stroke-color: var(--stroke-color);
+
+$text-white-color: var(--white-color);
+$text-black-color: var(--black-color);
+
+.primary {
+    background-color: $green-color;
+    color: $text-white-color;
+}
+
+.secondary {
+    background-color: $yelllow-color;
+    color: $text-black-color;
+}
+
+.outlined {
+    background-color: transparent;
+    border: 1.5px solid $stroke-color;
+    color: $text-black-color;
+}
+
+//border-radius
+
+$border-radius-rounded: var(--border-radius-rounded);
+$border-radius-circle: var(--border-radius-circle);
+
+.rounded {
+    border-radius: $border-radius-rounded;
+}
+
+.circle {
+    border-radius: $border-radius-circle;
+}
