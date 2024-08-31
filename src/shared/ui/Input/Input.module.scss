@@ -1,160 +1,88 @@
-@import '../../../app/styles/vars.scss';
 @import '../../../app/styles/media-queries.scss';
 
-.input {
-    border: var(--border-input);
-    border-radius: var(--border-radius);
-    font-family: var(--font-secoundry-black);
-    color: var(--black-color);
-    background-color: var(--white-color);
-    padding: var(--gap-s);
-    box-sizing: border-box;
+// Font sizes
+$font-size-xxs: var(--font-size-xxs);
+$font-size-xs: var(--font-size-xs);
+$font-size-s: var(--font-size-s);
+$font-size-m: var(--font-size-m);
 
-    // Размеры шрифтов для десктопных версий
-    &.size-md {
-        font-size: var(--font-size-s);
-    }
+$sizes: (
+    xs: $font-size-xs,
+    s: $font-size-s,
+    m: $font-size-m
+);
 
-    &.size-sm {
-        font-size: var(--font-size-xs);
-    }
-
-    &.size-lg {
-        font-size: var(--font-size-m);
-    }
-
-    // Размеры шрифтов для мобильных версий
-    @include mobile-l {
-        &.size-md {
-            font-size: var(--font-size-xs);
-        }
-
-        &.size-sm {
-            font-size: var(--font-size-xxs);
-        }
-
-        &.size-lg {
-            font-size: var(--font-size-s);
-        }
-    }
-
-    &.form,
-    &.calculate {
-        display: flex;
-        align-items: center;
-        gap: var(--gap-s);
-        flex-shrink: 0;
-        // @include input-font;  // Закомментировано до определения миксина
-        outline: none;
-        // Временно добавлены стили, заменяющие миксин responsive-font-size
-        font-size: var(--font-size-xs); // Пример временного стиля
-        // @include responsive-font-size(var(--font-size-xs), var(--font-size-s), var(--font-size-m), var(--font-size-m)); // Закомментировано до определения миксина
-    }
-
-    &.form {
-        color: var(--black-color);
-        width: 270px;
-        height: 35px;
-        padding: var(--gap-s) var(--gap-m);
-        border: var(--border-input);
-        background: var(--white-color);
-        box-shadow: var(--block-shadow);
-
-        &::placeholder {
-            color: var(--stroke-color);
-        }
-    }
-
-    &.calculate {
-        color: var(--secoundry-black-color);
-        height: 25px;
-        min-width: 100px;
-        width: 120px;
-        min-height: 25px;
-        padding: 2px var(--gap-m);
-        border: var(--border-input);
-        background: var(--background-color);
-
-        @include tablet-m {
-            height: 30px;
-        }
-        @include tablet-l {
-            width: 150px;
-        }
-        @include desktop-xl {
-            width: 200px;
-            height: 35px;
-        }
-
-        &::placeholder {
-            flex: 1 0 0;
-            color: var(--secoundry-black-color);
-        }
-
-        &:focus {
-            color: var(--black-color);
-            border: 1px solid var(--secoundry-black-color);
-            background: var(--white-color);
-        }
-    }
-
-    &.range {
-        position: relative;
-        height: 5px;
-        width: 300px;
-        background-color: var(--background-color);
-        -webkit-appearance: none;
-        appearance: none;
-
-        @include tablet-m {
-            width: 340px;
-        }
-        @include tablet-l {
-            width: 440px;
-        }
-        @include desktop-l {
-            width: clamp(440px, 30vw, 540px);
-        }
-        @include desktop-xl {
-            width: 580px;
-        }
-
-        &::-webkit-slider-runnable-track,
-        &::-moz-range-track {
-            z-index: 0;
-        }
-
-        &::-webkit-slider-thumb {
-            width: 16px;
-            height: 16px;
-            background: var(--white-color);
-            border: 1px solid var(--secoundry-black-color);
-            -webkit-appearance: none;
-            appearance: none;
-            cursor: pointer;
-            border-radius: 50%;
-            position: relative;
-            z-index: 1;
-        }
-
-        &::-moz-range-thumb {
-            width: 15px;
-            height: 15px;
-            background: var(--white-color);
-            border: 1px solid var(--secoundry-black-color);
-            cursor: pointer;
-            border-radius: 50%;
-            position: relative;
-            z-index: 1;
-        }
+@each $name, $size in $sizes {
+    .#{$name} {
+        font-size: $size;
     }
 }
 
-.error {
-    font-family: var(--font-secoundry-black);
-    margin-top: var(--gap-s);
-    font-size: var(--font-size-xs);
-    color: var(--secoundry-black-color);
-    margin-left: 3px;
-    align-self: flex-start;
+// Colors
+$black-color: var(--black-color);
+$secondary-black-color: var(--secoundry-black-color);
+$white-color: var(--white-color);
+$background-color: var(--background-color);
+$stroke-color: var(--stroke-color);
+
+.default {
+    color: $black-color;
+    background-color: $white-color;
+}
+
+.secondary {
+    color: $secondary-black-color;
+    background-color: $background-color;
+}
+
+.outlined {
+    background-color: transparent;
+    border: 1px solid $stroke-color;
+    color: $black-color;
+}
+
+// Border
+$border-radius: var(--border-radius);
+$border-input: var(--border-input);
+
+// Full width
+.fullWidth {
+    width: 100%;
+}
+
+// Disabled state
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+//fonts
+$font-secoundry-black: var(--font-secoundry-black);
+
+// Base input style
+.input {
+    border: $border-input;
+    padding: 0.5em 1em;
+    border-radius: $border-radius;
+    transition: border-color 0.3s ease;
+    color: inherit;
+    background-color: inherit;
+    font-family: $font-secoundry-black;
+}
+
+// Media queries
+@include mobile-l {
+    .xs {
+        font-size: $font-size-xxs;
+    }
+}
+
+@include tablet-m {
+    .s {
+        font-size: $font-size-s;
+    }
+
+    .m {
+        font-size: $font-size-m;
+    }
 }

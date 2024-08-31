@@ -1,58 +1,39 @@
-import React, { useEffect } from 'react';
-import { getStyles } from '../../libs/getStyles';
+import { getStyles } from "../../libs/getStyles";
 import styles from './Input.module.scss';
 
-const Input = ({
-    type = 'text',
-    placeholder,
+export const Input = ({
     value,
     onChange,
-    className = '',
-    size = 'md',
-    register,
-    name,
-    options,
-    setValue,
-    valueInput,
-    error,
-    variant = 'form',
+    placeholder = '',
+    className,
+    disabled = false,
+    size = 'm',
+    fullWidth = false,
+    variant = 'default', // Added variant prop
     ...otherProps
 }) => {
-    const isMobile = window.innerWidth <= 768;
 
-    // Формирование классов
-    const inputClasses = getStyles(
-        styles.input,
-        {
-            [styles[`size-${size}`]]: true,
-            [styles[`mobile-size-${size}`]]: isMobile,
-            [styles[variant]]: true,
-        },
-        [className]
-    );
+    const mode = {
+        [styles.disabled]: disabled,
+        [styles.fullWidth]: fullWidth,
+    };
 
-   // Форматирует значение инпута в режиме 'calculate', добавляя разделители тысяч.
-    useEffect(() => {
-        if (variant === 'calculate') {
-            const formattedValue = valueInput.replace(/[^0-9]/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-            setValue(name, formattedValue);
-        }
-    }, [valueInput, name, setValue, variant]);
+    const additional = [
+        className,
+        styles[size],
+        styles[variant], // Apply variant styles
+    ];
+
+    const inputClasses = getStyles(styles.input, mode, additional);
 
     return (
-        <>
-            <input
-                type={type}
-                placeholder={placeholder}
-                value={value}
-                onChange={onChange}
-                className={inputClasses}
-                {...(register ? register(name, options) : {})} // Регистрация поля с помощью react-hook-form
-                {...otherProps}
-            />
-            {error && <div className={styles.error}>{error.message}</div>}
-        </>
+        <input
+            value={value}
+            onChange={onChange}
+            placeholder={placeholder}
+            className={inputClasses}
+            disabled={disabled}
+            {...otherProps}
+        />
     );
 };
-
-export default Input;
