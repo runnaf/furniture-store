@@ -33,7 +33,7 @@ export const Stack = ({
         gap && styles[mapGap[gap]]
     ]
 
-    const stackClasses = getStyles(styles.stack, mode, additional);
+    const stackClasses = getStyles(styles.flex, mode, additional);
 
     return (
         <div className={stackClasses} {...otherProps}>

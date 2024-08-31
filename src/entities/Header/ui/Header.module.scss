@@ -1,0 +1,48 @@
+@import '../../../app/styles/media-queries.scss';
+
+.header {
+    background-color: var(--green-color);
+    color: var(--white-color);
+    padding: 17px 0;
+    width: 100%;
+
+    p {
+        font-family: var(--font-black);
+        font-size: var(--font-size-xs);
+
+        a {
+            color: var(--yellow-color);
+            text-decoration-line: underline;
+            text-underline-offset: 4px;
+            margin-left: 5px;
+        }
+
+        @include tablet-m {
+            line-height: 26px;
+            padding: 16px 24px;
+        }
+    }
+
+    button {
+        background-color: transparent;
+    }
+
+    .phone,
+    .socials {
+        @include tablet-m {
+            display: none;
+        }
+    }
+}
+
+.cross {
+    display: none;
+
+    @include tablet-m {
+        display: block;
+        padding: 30px 24px;
+    }
+
+}
+
+
