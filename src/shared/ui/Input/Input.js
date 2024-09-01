@@ -1,4 +1,4 @@
-import { getStyles } from "../../libs/getStyles";
+import { getStyles } from '../../libs/getStyles';
 import styles from './Input.module.scss';
 
 export const Input = ({
@@ -6,34 +6,37 @@ export const Input = ({
     onChange,
     placeholder = '',
     className,
-    disabled = false,
-    size = 'm',
-    fullWidth = false,
-    variant = 'default', // Added variant prop
+    variant = 'default',
+    label,
+    error = false,
+    errorMessage = '',
+    id,
     ...otherProps
 }) => {
 
     const mode = {
-        [styles.disabled]: disabled,
-        [styles.fullWidth]: fullWidth,
+        [styles.error]: error,
     };
 
     const additional = [
         className,
-        styles[size],
-        styles[variant], // Apply variant styles
+        styles[variant],
     ];
 
     const inputClasses = getStyles(styles.input, mode, additional);
 
     return (
-        <input
-            value={value}
-            onChange={onChange}
-            placeholder={placeholder}
-            className={inputClasses}
-            disabled={disabled}
-            {...otherProps}
-        />
+        <div className={styles.inputWrapper}>
+            {label && <label className={styles.label} htmlFor={id}>{label}</label>}
+            <input
+                id={id}
+                value={value}
+                onChange={onChange}
+                placeholder={placeholder}
+                className={inputClasses}
+                {...otherProps}
+            />
+            {error && errorMessage && <span className={styles.errorMessage}>{errorMessage}</span>}
+        </div>
     );
 };

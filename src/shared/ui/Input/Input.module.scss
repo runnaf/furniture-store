@@ -6,57 +6,15 @@ $font-size-xs: var(--font-size-xs);
 $font-size-s: var(--font-size-s);
 $font-size-m: var(--font-size-m);
 
-$sizes: (
-    xs: $font-size-xs,
-    s: $font-size-s,
-    m: $font-size-m
-);
-
-@each $name, $size in $sizes {
-    .#{$name} {
-        font-size: $size;
-    }
-}
-
 // Colors
 $black-color: var(--black-color);
-$secondary-black-color: var(--secoundry-black-color);
 $white-color: var(--white-color);
-$background-color: var(--background-color);
-$stroke-color: var(--stroke-color);
-
-.default {
-    color: $black-color;
-    background-color: $white-color;
-}
-
-.secondary {
-    color: $secondary-black-color;
-    background-color: $background-color;
-}
-
-.outlined {
-    background-color: transparent;
-    border: 1px solid $stroke-color;
-    color: $black-color;
-}
 
 // Border
 $border-radius: var(--border-radius);
 $border-input: var(--border-input);
 
-// Full width
-.fullWidth {
-    width: 100%;
-}
-
-// Disabled state
-.disabled {
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-//fonts
+// Fonts
 $font-secoundry-black: var(--font-secoundry-black);
 
 // Base input style
@@ -65,9 +23,26 @@ $font-secoundry-black: var(--font-secoundry-black);
     padding: 0.5em 1em;
     border-radius: $border-radius;
     transition: border-color 0.3s ease;
-    color: inherit;
-    background-color: inherit;
+    color: $black-color;
+    background-color: $white-color;
     font-family: $font-secoundry-black;
+    width: 100%;
+
+    &::placeholder {
+        font-size: $font-size-xs;
+    }
+}
+
+// Input wrapper
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+// Label
+.label {
+    font-size: $font-size-s;
 }
 
 // Media queries
