@@ -4,7 +4,7 @@ import { Stack } from '../../../shared/ui/Stack/Stack';
 import { crossIcon } from '../../../shared/assets/svg/crossIcon';
 import { useState } from 'react';
 
-const Header = () => {
+export const Header = () => {
     const [isVisible, setIsVisible] = useState(true);
 
     const handleClose = () => {
@@ -45,5 +45,3 @@ const Header = () => {
         </header>
     );
 };
-
-export default Header;

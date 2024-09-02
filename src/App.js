@@ -1,4 +1,4 @@
-import Header from "./entities/Header/ui/Header";
+import { Header } from "./entities/Header/ui/Header";
 
 function App() {
   return (

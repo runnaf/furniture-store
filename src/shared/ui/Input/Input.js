@@ -1,12 +1,11 @@
+import { useState } from 'react';
 import { getStyles } from '../../libs/getStyles';
 import styles from './Input.module.scss';
 
 export const Input = ({
     value,
     onChange,
-    placeholder = '',
     className,
-    variant = 'default',
     label,
     error = false,
     errorMessage = '',
@@ -14,25 +13,30 @@ export const Input = ({
     ...otherProps
 }) => {
 
+    const [defaultValue, setDefaultValue] = useState(value)
+
+    const handleChange = (e) => {
+        onChange(e.target.value);
+        setDefaultValue(e.target.value)
+    }
+
     const mode = {
         [styles.error]: error,
     };
 
     const additional = [
         className,
-        styles[variant],
     ];
 
     const inputClasses = getStyles(styles.input, mode, additional);
 
     return (
         <div className={styles.inputWrapper}>
-            {label && <label className={styles.label} htmlFor={id}>{label}</label>}
+            {label && <label className={styles.label}>{label}</label>}
             <input
                 id={id}
-                value={value}
-                onChange={onChange}
-                placeholder={placeholder}
+                value={defaultValue}
+                onChange={handleChange}
                 className={inputClasses}
                 {...otherProps}
             />
