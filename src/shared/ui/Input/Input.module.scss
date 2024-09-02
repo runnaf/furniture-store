@@ -1,63 +1,24 @@
-@import '../../../app/styles/media-queries.scss';
-
-// Font sizes
-$font-size-xxs: var(--font-size-xxs);
-$font-size-xs: var(--font-size-xs);
-$font-size-s: var(--font-size-s);
-$font-size-m: var(--font-size-m);
-
-// Colors
-$black-color: var(--black-color);
-$white-color: var(--white-color);
-
-// Border
-$border-radius: var(--border-radius);
-$border-input: var(--border-input);
-
-// Fonts
-$font-secoundry-black: var(--font-secoundry-black);
-
-// Base input style
 .input {
-    border: $border-input;
+    border: var(--border-input);
     padding: 0.5em 1em;
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
     transition: border-color 0.3s ease;
-    color: $black-color;
-    background-color: $white-color;
-    font-family: $font-secoundry-black;
+    color: var(--black-color);
+    background-color: var(--white-color);
+    font-family: var(--font-secoundry-black);
     width: 100%;
 
     &::placeholder {
-        font-size: $font-size-xs;
+        font-size: var(--font-size-xs);
     }
 }
 
-// Input wrapper
 .inputWrapper {
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-// Label
 .label {
-    font-size: $font-size-s;
-}
-
-// Media queries
-@include mobile-l {
-    .xs {
-        font-size: $font-size-xxs;
-    }
-}
-
-@include tablet-m {
-    .s {
-        font-size: $font-size-s;
-    }
-
-    .m {
-        font-size: $font-size-m;
-    }
+    font-size: var(--font-size-s);
 }
