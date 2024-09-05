@@ -1,0 +1,108 @@
+.timeContainer {
+    width: 100%;
+
+    &.timerMainContainer {
+        gap: 24px;
+        width: 522px;
+
+        > div {
+            width: 84.5px;
+            gap: 8px;
+    
+            > p:nth-child(1) {
+                color: var(--black-color);
+                font-family: var(--font-family);
+                font-size: var(--font-size-main-timer);
+                font-weight: 600;
+            }
+    
+            > p:nth-child(2) {
+                color: var(--secoundry-black-color);
+                font-family: var(--font-family);
+                font-size: var(--font-size-header-s);
+            }
+        }
+
+        > span {
+            color: var(--black-color);
+            font-family: var(--font-family);
+            font-size: var(--font-size-main-timer);
+            font-weight: 600;
+        }
+    }
+
+    &.timerCardContainer {
+        gap: 15px;
+        width: 355px;
+        padding: 12px 13px;
+        background: var(--yellow-color);
+        border-radius: var(--border-radius-card-s);
+
+        > div {
+            width: 61px;
+
+            &:nth-child(1) {
+                padding: 5px;
+            }
+
+            &:nth-child(3) {
+                padding: 0 2px;
+            }
+
+            &:nth-child(5) {
+                padding: 5px 7px;
+            }
+
+            &:nth-child(7) {
+                padding: 5px 11px;
+            }
+
+            > p:nth-child(1) {
+                color: var(--black-color);
+                font-family: var(--font-family-reg);
+                font-size: var(--font-size-header-s);
+            }
+    
+            > p:nth-child(2) {
+                color: var(--secoundry-black-color);
+                font-family: var(--font-family);
+                font-size: var(--font-size-xs);
+            }
+        }
+
+        > span {
+            color: var(--black-color);
+            font-family: var(--font-family-reg);
+            font-size: var(--font-size-header-s);
+        }
+    }
+
+    &.timerComingSoonContainer {
+        gap: 37px;
+        width: 584px;
+
+        > div {
+            width: 89px;
+            gap: 12px;
+    
+            > p:nth-child(1) {
+                color: var(--black-color);
+                font-family: var(--font-family);
+                font-size: var(--font-size-header-xl);
+                font-weight: 600;
+            }
+    
+            > p:nth-child(2) {
+                color: var(--secoundry-black-color);
+                font-family: var(--font-family);
+                font-size: var(--font-size-header-s);
+            }
+        }
+
+        > hr {
+            width: 1.5px;
+            height: 117px;
+            color: var(--stroke-color);
+        }
+    }
+}
