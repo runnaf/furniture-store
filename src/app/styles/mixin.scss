@@ -1,100 +1,92 @@
+@import './z-index.scss';
+
+$background-color-footer-social: var(--background-color-footer-social);
+$background-color: var(--background-color);
+$border-radius: var(--border-radius);
+$box-shadow-footer: 0px 15px 26px 0px rgba(0, 0, 0, 0.10);
+$secoundry-black-color: var(--secoundry-black-color);
+$font-size-price-s: var(--font-size-price-s);
+$font-family: var(--font-family);
+$opacity-xl: var(--opacity-xl);
+$font-size-xs: var(--font-size-xs);
+$gap-footer-social: var(--gap-footer-social);
+$yellow-color: var(--yellow-color);
+$white-color: var(--white-color);
+$border-radius-date: 16px 16px 0px 0px;
+$border-width-date: 3.5px;
+
+
 @mixin section-style {
     padding: 20px;
     margin: auto;
     width: 1440px;
+    background: $background-color;
 }
-
-@mixin section-style-mobile {
-    padding: 20px;
-    margin: auto;
-    width: 375px;
-} 
-
-@mixin icon-logo-header {
-    width: 40px;
-    height: 40px;
-} 
-
-@mixin icon-logo-header-mobile {
-    width: 32px;
-    height: 32px;
-} 
-
-@mixin icon-logo-footer {
-    width: 56px;
-    height: 56px;
-} 
-
-
-@mixin icon-header-social {
-    width: 22px;
-    height: 22px;
-} 
-
-@mixin icon-star-rating  {
-    width: 24px;
-    height: 24px;
-} 
-
-@mixin icon-footer-social { // footer,  product details 
-    width: 24px;
-    height: 24px;
-}  
 
 @mixin icon-footer-container {  
     width: 24px;
     height: 24px;
     padding: 10px;
-    background-color: var(--background-color-footer-social);
-    border-radius: var(--border-radius);
-    box-shadow: 0px 15px 26px 0px rgba(0, 0, 0, 0.10);
+    background-color: $background-color-footer-social;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow-footer;
 } 
 
-@mixin icon-rating-size {
-    width: 54px;
-    height: 54px; 
-}   
-
-@mixin icon-opportunities {
-    width: 60px;
-    height: 60px;
-}  
-
-@mixin icon-button-arrow  {
-    width: 60px;
-    height: 60px;
-}  
-
-@mixin icon-opportunities-mobile {
-    width: 54px;
-    height: 54px;
+@mixin price-crossed {
+    color: $secoundry-black-color;
+    font-size: $font-size-price-s;
+    font-family: $font-family;
+    text-decoration-line: strikethrough;
+    opacity: $opacity-xl;
 }
 
-@mixin icon-quotation-marks {  
-    width: 80px;
-    height: 80px;
-} 
+@mixin main-text {
+    color: $secoundry-black-color;
+    font-family: $font-family;
+    font-size: $font-size-xs;
+    line-height: 28px;
+}
 
-@mixin icon-portrait-rewiew {
-    width: 175px;
-    height: 175px;
-}  
+@mixin date-blog {
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: $gap-footer-social;
+    border-radius: $border-radius-date;
+    border: $border-width-date solid $white-color;
+    background: $yellow-color;
+}
 
-@mixin icon-portrait-rewiew-mobile {
-    width: 120px;
-    height: 120px;
-}  
+@mixin account-category {
+    align-items: center;
+    width: 379px;
+    padding: 21px 24px;
+    gap: $gap-footer-social;
+    transition: background-color 0.3s ease;
 
-@mixin icon-drag-foto {
-    width: 38px;
-    height: 38px;
-} 
+    &:active {
+        background-color: $yellow-color;
+        transition: background-color 0.3s ease;
+    }
+}
 
-@mixin icon-letter  {
-    width: 32px;
-    height: 32px;
-} 
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
 
-@mixin icon-points  {
-    width: 178px;
-} 
+@mixin pseudo-element($display: block, $pos: absolute, $content: '', $z-index: auto){
+    content: $content;
+    display: $display;
+    position: $pos;
+    z-index: $z-index;
+}
+
+@mixin line-subTitle {
+    width: 24px;
+    height: 2px;
+    background: $yellow-color;
+}
