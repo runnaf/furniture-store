@@ -59,8 +59,9 @@
 
             > p:nth-child(1) {
                 color: var(--black-color);
-                font-family: var(--font-family-reg);
+                font-family: var(--font-family);
                 font-size: var(--font-size-header-s);
+                font-weight: 500;
             }
     
             > p:nth-child(2) {
@@ -72,8 +73,9 @@
 
         > span {
             color: var(--black-color);
-            font-family: var(--font-family-reg);
+            font-family: var(--font-family);
             font-size: var(--font-size-header-s);
+            font-weight: 500;
         }
     }
 
