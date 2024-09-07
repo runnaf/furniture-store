@@ -1,19 +1,35 @@
 @import './z-index.scss';
 
+//background
 $background-color-footer-social: var(--background-color-footer-social);
 $background-color: var(--background-color);
-$border-radius: var(--border-radius);
-$box-shadow-footer: 0px 15px 26px 0px rgba(0, 0, 0, 0.10);
-$secoundry-black-color: var(--secoundry-black-color);
-$font-size-price-s: var(--font-size-price-s);
-$font-family: var(--font-family);
-$opacity-xl: var(--opacity-xl);
-$font-size-xs: var(--font-size-xs);
-$gap-footer-social: var(--gap-footer-social);
+
+//color
 $yellow-color: var(--yellow-color);
 $white-color: var(--white-color);
+$secoundry-black-color: var(--secoundry-black-color);
+
+//border-radius
 $border-radius-date: 16px 16px 0px 0px;
 $border-width-date: 3.5px;
+$border-radius: var(--border-radius);
+
+//font-size
+$font-size-price-s: var(--font-size-price-s);
+$font-size-xs: var(--font-size-xs);
+
+//gap
+$gap-footer-social: var(--gap-footer-social);
+
+//shadow
+$box-shadow-footer: 0px 15px 26px 0px rgba(0, 0, 0, 0.10);
+
+//opacity
+$opacity-xl: var(--opacity-xl);
+
+
+//font-family
+$font-family: var(--font-family);
 
 
 @mixin section-style {
