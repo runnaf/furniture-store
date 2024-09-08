@@ -1,3 +1,14 @@
+//opacity 
+$opacity: 0.8;
+
+//font-weight
+$font-weight-s: 300;
+$font-weight-l: 600;
+
+//line-height
+$line-height: 28px;
+
+
 .timeContainer {
     width: 100%;
 
@@ -13,13 +24,16 @@
                 color: var(--black-color);
                 font-family: var(--font-family);
                 font-size: var(--font-size-main-timer);
-                font-weight: 600;
+                font-weight: $font-weight-l;
             }
     
             > p:nth-child(2) {
                 color: var(--secoundry-black-color);
                 font-family: var(--font-family);
                 font-size: var(--font-size-header-s);
+                line-height: $line-height;
+                font-weight: $font-weight-s;
+                opacity: $opacity;
             }
         }
 
@@ -27,7 +41,7 @@
             color: var(--black-color);
             font-family: var(--font-family);
             font-size: var(--font-size-main-timer);
-            font-weight: 600;
+            font-weight: $font-weight-l;
         }
     }
 
@@ -68,6 +82,8 @@
                 color: var(--secoundry-black-color);
                 font-family: var(--font-family);
                 font-size: var(--font-size-xs);
+                font-weight: $font-weight-s;
+                opacity: $opacity;
             }
         }
 
@@ -91,13 +107,16 @@
                 color: var(--black-color);
                 font-family: var(--font-family);
                 font-size: var(--font-size-header-xl);
-                font-weight: 600;
+                font-weight: $font-weight-l;
             }
     
             > p:nth-child(2) {
                 color: var(--secoundry-black-color);
                 font-family: var(--font-family);
                 font-size: var(--font-size-header-s);
+                line-height: $line-height;
+                font-weight: $font-weight-s;
+                opacity: $opacity;
             }
         }
 
