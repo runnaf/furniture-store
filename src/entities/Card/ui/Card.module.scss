@@ -16,13 +16,25 @@
         height: 188px;
     }
 }
-.imgIcons {
+.container:hover .icons {
+    visibility: visible;
+    opacity: 1;
+}
+.icons {
+    position: absolute; 
+    top: 8px;
+    right: 16px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.iconsContainer {
     position: absolute;
     top: 12px;
     left: 0;
     width: 100%;
     padding: 0 12px;
-
+    
     @include tablet-m {
         top: 8px;
     }
@@ -63,7 +75,7 @@
     .promotionText {
 
         @include tablet-m {
-        font-size: 12px;
+        font-size: var(--font-size-xxxxs);
         }
     }
 }
@@ -79,7 +91,7 @@
     color: var(--secoundry-black-color);
 
     @include tablet-m {
-        font-size: 14px;
+        font-size: var(--font-size-xxxs);
         }
 }
 .star {

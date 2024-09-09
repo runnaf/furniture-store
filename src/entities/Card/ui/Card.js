@@ -12,11 +12,13 @@ export function Card ({id,image,promotion,category,name,price,newPrice,rating}) 
         <Stack direction='column'>
         <Stack key={id} className={styles.container}>
             <img src={image} alt='item'></img>
-            <Stack justify='justifyBetween' className={styles.imgIcons}>
+            <Stack justify='justifyBetween' className={styles.iconsContainer}>
+            {promotion > 0 && (
                 <Stack className={styles.promotion}>        
                     <Text className={styles.promotionText}>{promotion}% off</Text>
                 </Stack>
-                <Stack direction='column' gap='8'>
+                )}
+                <Stack direction='column' gap='8' className={styles.icons}>
                     <Button radius='circle'><img src={heart} alt='heart'/></Button>
                     <Button radius='circle'><img src={zoom} alt='zoom'/></Button>
                     <Button radius='circle'><img src={cart} alt='cart'/></Button>
