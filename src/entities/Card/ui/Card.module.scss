@@ -1,0 +1,142 @@
+@import '../../../app/styles/media-queries.scss';
+
+.container {
+    width: 276px;
+    height: 331px;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius-card-l);
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+
+    @include tablet-m {
+        width: 158px;
+        height: 188px;
+    }
+}
+.container:hover .icons {
+    visibility: visible;
+    opacity: 1;
+}
+.icons {
+    position: absolute; 
+    top: 8px;
+    right: 16px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.iconsContainer {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 100%;
+    padding: 0 12px;
+    
+    @include tablet-m {
+        top: 8px;
+    }
+
+    button {
+        background-color: var(--white-color);
+        width: 48px;
+        height: 48px;
+
+        @include tablet-m {
+            width: 34px;
+            height: 34px;
+        }
+    }
+
+    img {
+        width: 24px;
+
+        @include tablet-m {
+            width: 17px;
+        }
+    }
+}
+.promotion {
+    padding: 8px 16px;
+    border-radius: var(--border-radius-rounded);
+    background-color: var(--green-color);
+    width: 99px;
+    height: 38px;
+    color: var(--white-color);
+
+    @include tablet-m {
+        padding: 6px 12px;
+        width: 69px;
+        height: 27px;
+    }
+
+    .promotionText {
+
+        @include tablet-m {
+        font-size: var(--font-size-xxxxs);
+        }
+    }
+}
+.categoryContainer {
+    width: 276px;
+    margin-top: 16px;
+
+    @include tablet-m {
+        width: 158px;
+    }
+}
+.category {
+    color: var(--secoundry-black-color);
+
+    @include tablet-m {
+        font-size: var(--font-size-xxxs);
+        }
+}
+.star {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+
+    @include tablet-m {
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
+        }
+}
+
+.rating {
+    @include tablet-m {
+        font-size: 14px;
+    }
+}
+.cardName {
+    font-size: var(--font-size-s);
+    margin-top: 4px;
+    font-weight: 600;
+
+    @include tablet-m {
+        font-size: var(--font-size-xxs);
+        margin-top: 8px;
+    }
+}
+.newPrice {
+    font-size: var(--font-size-header-s);
+    margin-top: 12px;
+    font-weight: 500;
+
+    @include tablet-m {
+        font-size: var(--font-size-xs);
+    }
+}
+.price {
+    color: var(--secoundry-black-color);
+    padding-left: 12px;
+    text-decoration: line-through;
+    font-weight: 400;
+
+    @include tablet-m {
+        padding-left: 4px;
+    }
+}
