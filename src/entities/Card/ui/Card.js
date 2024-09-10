@@ -7,10 +7,10 @@ import heart from '../../../shared/assets/svg/heart.svg';
 import zoom from '../../../shared/assets/svg/zoom.svg';
 import star from '../../../shared/assets/svg/star.svg';
 
-export function Card ({id,image,promotion,category,name,price,newPrice,rating}) {
+export function Card ({image,promotion,category,name,price,newPrice,rating}) {
     return (
         <Stack direction='column'>
-        <Stack key={id} className={styles.container}>
+        <Stack className={styles.container}>
             <img src={image} alt='item'></img>
             <Stack justify='justifyBetween' className={styles.iconsContainer}>
             {promotion > 0 && (
