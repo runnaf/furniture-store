@@ -1,0 +1,22 @@
+.navbar {
+    width: 100%;
+    background-color: var(--white-color);
+    color: var(--black-color);
+    padding: 29px 0;
+
+    .navLinks {
+        gap: var(--gap-header-menu);
+        
+        a {
+            font-size: var(--font-size-xxs);
+            color: var(--black-color);
+            font-family: var(--font-black);
+        }
+    }
+
+    button {
+        background-color: transparent;
+    }
+}
+
+
