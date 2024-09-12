@@ -4,7 +4,7 @@ import { Stack } from '../../../shared/ui/Stack/Stack';
 
 const Navbar = () => {
     return (
-        <Stack justify="justifyAround" align="alignCenter" className={styles.navbar}>
+        <nav className={styles.navbar}>
             <Stack>
                 {logoIcon()}
             </Stack>
@@ -30,7 +30,7 @@ const Navbar = () => {
                     {loginIcon()}
                 </button>
             </Stack>
-        </Stack>
+        </nav>
     );
 };
 
