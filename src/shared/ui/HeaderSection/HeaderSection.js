@@ -5,50 +5,25 @@ import { getStyles } from '../../libs/getStyles';
 const HeaderSection = ({
   subTitle,
   title,
-  variant = 'default',
-  buttons = [],
-  content = null
+  className,
+  ...otherProps
 }) => {
+  const mode = {};
+  const additional = [className];
 
-  const sectionClass = getStyles(
-    styles.headerSection, 
-    { [`headerSection--${variant}`]: variant }, 
-    []
-  );
+  const headerSectionClasses = getStyles(styles.headerSection, mode, additional);
 
   return (
-    <div className={sectionClass}>
-      <div className={styles.headerSection__left}>
+    <div className={headerSectionClasses} {...otherProps}>
+      <div className={styles.left}>
         {subTitle && (
-          <div className={styles.headerSection__subTitleWrapper}>
-            <div className={styles.headerSection__subTitleLine}></div>
-            <span className={styles.headerSection__subTitle}>{subTitle}</span>
+          <div className={styles.wrapper}>
+            <div className={styles.line}></div>
+            <p className={styles.subTitle}>{subTitle}</p>
           </div>
         )}
-        {title && <h1 className={styles.headerSection__title}>{title}</h1>}
+        {title && <h2 className={styles.title}>{title}</h2>}
       </div>
-      {content && content.trim() && (
-        <div className={styles.headerSection__right}>
-           <p className={styles.headerSection__rightContent}>{content}</p>
-        </div>
-      )}
-      {buttons.length > 0 && (
-        <div className={styles.headerSection__buttons}>
-          {buttons.map((button, index) => (
-            <button
-              key={index}
-              className={getStyles(
-                styles.headerSection__button, 
-                { [`headerSection__button--${button.variant}`]: button.variant }, 
-                []
-              )}
-              onClick={button.onClick}
-            >
-              {button.label}
-            </button>
-          ))}
-        </div>
-      )}
     </div>
   );
 };
