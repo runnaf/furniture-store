@@ -5,13 +5,8 @@
 $background-color-footer-social: var(--background-color-footer-social);
 $background-color: var(--background-color);
 
-//color
-$yellow-color: var(--yellow-color);
-$white-color: var(--white-color);
 
 //border-radius
-$border-radius-date: 16px 16px 0px 0px;
-$border-width-date: 3.5px;
 $border-radius: var(--border-radius);
 
 //gap
@@ -38,20 +33,6 @@ $box-shadow-footer: 0px 15px 26px 0px rgba(0, 0, 0, 0.10);
     box-shadow: $box-shadow-footer;
 } 
 
-@mixin account-faqs-category { // категории вопросов и разделы аккаунта
-    padding: 21px 24px;
-    gap: $gap-footer-social;
-    transition: background-color 0.3s ease;
-
-    &:active {
-        background-color: $yellow-color;
-        transition: background-color 0.3s ease;
-    }
-
-    @include table-m {
-        padding: 8px 16px;
-    }
-}
 
 @mixin pseudo-element($display: block, $pos: absolute, $content: '', $visibility: visible, $z-index: auto){
     content: $content;
