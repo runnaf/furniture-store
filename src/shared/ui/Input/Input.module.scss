@@ -7,7 +7,11 @@
     background-color: var(--white-color);
     width: 100%;
 
-    &::placeholder {
+    &::placeholder,
+    &:-moz-placeholder,
+    &::-moz-placeholder,
+    &:-ms-input-placeholder,
+    &::-webkit-input-placeholder  {
         font-size: var(--font-size-xs);
     }
 }

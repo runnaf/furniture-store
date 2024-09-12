@@ -1,4 +1,5 @@
 @import './z-index.scss';
+@import './media-queries';
 
 //background
 $background-color-footer-social: var(--background-color-footer-social);
@@ -7,16 +8,11 @@ $background-color: var(--background-color);
 //color
 $yellow-color: var(--yellow-color);
 $white-color: var(--white-color);
-$secoundry-black-color: var(--secoundry-black-color);
 
 //border-radius
 $border-radius-date: 16px 16px 0px 0px;
 $border-width-date: 3.5px;
 $border-radius: var(--border-radius);
-
-//font-size
-$font-size-price-s: var(--font-size-price-s);
-$font-size-xs: var(--font-size-xs);
 
 //gap
 $gap-footer-social: var(--gap-footer-social);
@@ -24,12 +20,6 @@ $gap-footer-social: var(--gap-footer-social);
 //shadow
 $box-shadow-footer: 0px 15px 26px 0px rgba(0, 0, 0, 0.10);
 
-//opacity
-$opacity-xl: var(--opacity-xl);
-
-
-//font-family
-$font-family: var(--font-family);
 
 
 @mixin section-style {
@@ -39,7 +29,7 @@ $font-family: var(--font-family);
     background: $background-color;
 }
 
-@mixin icon-footer-container {  
+@mixin icon-footer-container {  //контейнер для иконок в футере
     width: 24px;
     height: 24px;
     padding: 10px;
@@ -48,34 +38,7 @@ $font-family: var(--font-family);
     box-shadow: $box-shadow-footer;
 } 
 
-@mixin price-crossed {
-    color: $secoundry-black-color;
-    font-size: $font-size-price-s;
-    font-family: $font-family;
-    text-decoration-line: strikethrough;
-    opacity: $opacity-xl;
-}
-
-@mixin main-text {
-    color: $secoundry-black-color;
-    font-family: $font-family;
-    font-size: $font-size-xs;
-    line-height: 28px;
-}
-
-@mixin date-blog {
-    padding: 10px 20px;
-    justify-content: center;
-    align-items: center;
-    gap: $gap-footer-social;
-    border-radius: $border-radius-date;
-    border: $border-width-date solid $white-color;
-    background: $yellow-color;
-}
-
-@mixin account-category {
-    align-items: center;
-    width: 379px;
+@mixin account-faqs-category { // категории вопросов и разделы аккаунта
     padding: 21px 24px;
     gap: $gap-footer-social;
     transition: background-color 0.3s ease;
@@ -84,25 +47,17 @@ $font-family: var(--font-family);
         background-color: $yellow-color;
         transition: background-color 0.3s ease;
     }
+
+    @include table-m {
+        padding: 8px 16px;
+    }
 }
 
-@mixin input-placeholder {
-    &.placeholder { @content; }
-    &:-moz-placeholder { @content; }
-    &::-moz-placeholder { @content; }
-    &:-ms-input-placeholder { @content; }
-    &::-webkit-input-placeholder { @content; }
-}
-
-@mixin pseudo-element($display: block, $pos: absolute, $content: '', $z-index: auto){
+@mixin pseudo-element($display: block, $pos: absolute, $content: '', $visibility: visible, $z-index: auto){
     content: $content;
     display: $display;
     position: $pos;
+    visibility: $visibility;
     z-index: $z-index;
 }
 
-@mixin line-subTitle {
-    width: 24px;
-    height: 2px;
-    background: $yellow-color;
-}

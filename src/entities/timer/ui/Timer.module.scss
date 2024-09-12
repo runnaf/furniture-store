@@ -3,6 +3,7 @@ $opacity: 0.8;
 
 //font-weight
 $font-weight-s: 400;
+$font-weight-m: 500;
 $font-weight-l: 600;
 
 //line-height
@@ -75,7 +76,7 @@ $line-height: 28px;
                 color: var(--black-color);
                 font-family: var(--font-family);
                 font-size: var(--font-size-header-s);
-                font-weight: 500;
+                font-weight: $font-weight-m;
             }
     
             > p:nth-child(2) {
@@ -91,7 +92,7 @@ $line-height: 28px;
             color: var(--black-color);
             font-family: var(--font-family);
             font-size: var(--font-size-header-s);
-            font-weight: 500;
+            font-weight: $font-weight-m;
         }
     }
 
