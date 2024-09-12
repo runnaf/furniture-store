@@ -18,7 +18,9 @@ export const Stack = ({
         24: 'gap24',
         32: 'gap32',
         40: 'gap40',
-        48: 'gap48'
+        48: 'gap48',
+        50: 'gap50',
+        75: 'gap75'
     };
 
     const mode = {
