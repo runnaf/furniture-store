@@ -1,20 +1,24 @@
 import styles from './Navbar.module.scss';
 import { logoIcon, searchIcon, likeIcon, cartIcon, loginIcon } from '../../../shared/assets/svg/navbarIcons';
 import { Stack } from '../../../shared/ui/Stack/Stack';
+import { Link } from 'react-router-dom';
+import { data } from '../lib/data';
 
-const Navbar = () => {
+export const Navbar = () => {
     return (
         <nav className={styles.navbar}>
-            <Stack>
-                {logoIcon()}
-            </Stack>
+            {logoIcon()}
             <Stack className={styles.navLinks}>
-                <a href="/">Home</a>
-                <a href="/shop">Shop</a>
-                <a href="/categories">Categories</a>
-                <a href="/about">About Us</a>
-                <a href="/contact">Contact Us</a>
-                <a href="/blog">Blog</a>
+                {data.map(item => {
+                    const { title, link } = item;
+                    return (
+                        <ul key={title}>
+                            <li>
+                                <Link to={link}>{title}</Link>
+                            </li>
+                        </ul>
+                    )
+                })}
             </Stack>
             <Stack gap="24">
                 <button>
@@ -33,5 +37,3 @@ const Navbar = () => {
         </nav>
     );
 };
-
-export default Navbar;

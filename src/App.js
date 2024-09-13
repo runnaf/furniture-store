@@ -1,7 +1,7 @@
 import { Card } from "./entities/Card/ui/Card";
 import { Header } from "./entities/Header/ui/Header";
 import Timer from "./entities/timer/ui/Timer";
-import Navbar from "./widgets/Navbar/ui/Navbar";
+import { Navbar } from "./widgets/Navbar/ui/Navbar";
 
 function App() {
   return (
