@@ -1,7 +1,10 @@
-export const data = [
+import MainPage from "../../../pages/MainPage/ui/MainPage";
+
+export const routes = [
     {
         title: "Home",
-        link: "/"
+        link: "/",
+        page: MainPage
     },
     {
         title: "Shop",
