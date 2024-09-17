@@ -1,0 +1,79 @@
+@import '../../../app/styles/media-queries';
+
+//background-color
+$background-color-green: var(--green-color); 
+
+//border
+$border-radius: var(--border-radius-card-m);
+$border: var(--border-input);
+
+//color
+$white-color: var(--white-color);
+
+.accordionContainer {
+    width: 100%;
+    padding: 24px;
+    border-radius: $border-radius;
+    border: $border;
+
+    @include tablet-m {
+        padding: 12px;
+    }
+
+    &.openAnswer {
+        background-color: $background-color-green;
+        color: $white-color;
+        transition: all .3s ease;
+    }
+    
+    &.closedAnswer {
+        transition: all 0.3s ease;
+    }
+
+    > div {
+        > p {
+            font-weight: 600;
+            line-height: 25px;
+        }
+
+        &:nth-child(2) {
+            width: 1005px;
+            transition: max-height 0.3s ease, opacity 0.3s ease-in-out, margin-top 0.3s ease-in-out;
+            max-height: 0px; 
+            opacity: 0;
+            overflow: hidden;
+
+            > p {
+                opacity: 0.8;
+                font-weight: 400;
+                line-height: 28px;
+            }
+        } 
+
+        &.visible {
+            max-height: 1000px;
+            opacity: 1;
+            margin-top: 16px;
+        }
+
+        &.hidden {
+            max-height: 0px;
+            opacity: 0;
+            margin-top: 0px;
+        }
+    }
+
+
+    &.pageFAQ {
+        width: 687px; 
+
+        > div {
+            &:nth-child(2)  {
+                width: 591px;
+            }
+        }
+    }
+}
+
+
+
