@@ -1,29 +1,30 @@
 import MainPage from "../../../pages/MainPage/ui/MainPage";
+import { getRouteAbout, getRouteBlog, getRouteCategories, getRouteContact, getRouteMain, getRouteShop } from "./helper";
 
 export const routes = [
     {
-        title: "Home",
-        link: "/",
-        page: MainPage
+        title: "Главная",
+        link: getRouteMain(),
+        page: <MainPage />
     },
     {
-        title: "Shop",
-        link: "/shop"
+        title: "Магазин",
+        link: getRouteShop(),
     },
     {
-        title: "Categories",
-        link: "/categories"
+        title: "Категории",
+        link: getRouteCategories(),
     },
     {
-        title: "About Us",
-        link: "about"
+        title: "О нас",
+        link: getRouteAbout(),
     },
     {
-        title: "Contact Us",
-        link: "/contact"
+        title: "Контакты",
+        link: getRouteContact(),
     },
     {
-        title: "Blog",
-        link: "/blog"
+        title: "Новости",
+        link: getRouteBlog(),
     },
 ]
