@@ -8,18 +8,13 @@ export const Navbar = () => {
     return (
         <nav className={styles.navbar}>
             {logoIcon()}
-            <Stack className={styles.navLinks}>
-                {routes.map(item => {
-                    const { title, link } = item;
-                    return (
-                        <ul key={title}>
-                            <li>
-                                <Link to={link}>{title}</Link>
-                            </li>
-                        </ul>
-                    )
-                })}
-            </Stack>
+            <ul className={styles.navLinks}>
+                {routes.map(({ title, link }) => 
+                    <li key={title}>
+                        <Link to={link}>{title}</Link>
+                    </li>
+                )}
+            </ul>
             <Stack gap="24">
                 <button>
                     {searchIcon()}

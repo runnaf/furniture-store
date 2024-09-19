@@ -9,6 +9,7 @@
 
     .navLinks {
         gap: var(--gap-header-menu);
+        display: flex;
         
         a {
             font-size: var(--font-size-xxs);
