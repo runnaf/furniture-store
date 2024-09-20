@@ -1,29 +1,18 @@
 import React from 'react';
 import styles from './HeaderSection.module.scss';
-import { getStyles } from '../../libs/getStyles';
 
 const HeaderSection = ({
-  subTitle,
+  subTitle, //передавать как children, потому что subTitle имеет только акцентные слова зеленым, а не весь текст
   title,
-  className,
-  ...otherProps
 }) => {
-  const mode = {};
-  const additional = [className];
-
-  const headerSectionClasses = getStyles(styles.headerSection, mode, additional);
 
   return (
-    <div className={headerSectionClasses} {...otherProps}>
-      <div className={styles.left}>
-        {subTitle && (
+    <div className={styles.headerSection}>
           <div className={styles.wrapper}>
             <div className={styles.line}></div>
             <p className={styles.subTitle}>{subTitle}</p>
           </div>
-        )}
-        {title && <h2 className={styles.title}>{title}</h2>}
-      </div>
+        <h2 className={styles.title}>{title}</h2>
     </div>
   );
 };

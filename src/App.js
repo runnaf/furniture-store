@@ -1,4 +1,5 @@
 import { Header } from "./entities/Header/ui/Header";
+import HeaderSection from "./shared/ui/HeaderSection/HeaderSection";
 import { Navbar } from "./widgets/Navbar/ui/Navbar";
 
 function App() {
@@ -6,6 +7,10 @@ function App() {
     <>
       <Header />
       <Navbar/>
+      <HeaderSection 
+        title='Our Products Collections' 
+        subTitle='Our Products'
+      />
     </>
   );
 }
