@@ -1,9 +1,9 @@
 import { Card } from "./entities/Card/ui/Card";
 import { Header } from "./entities/Header/ui/Header";
-import Timer from "./entities/timer/ui/Timer";
+import Timer from "./entities/Timer/ui/Timer";
 import { Stack } from "./shared/ui/Stack/Stack";
-import FAQs from "./widgets/faq/ui/FAQs";
-import QuestionMainPage from "./widgets/questionMainPage/ui/QuestionMainPage";
+import FAQs from "./widgets/FAQ/ui/FAQs";
+import QuestionMainPage from "./widgets/QuestionMainPage/ui/QuestionMainPage";
 
 function App() {
   return (

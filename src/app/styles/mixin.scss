@@ -16,13 +16,6 @@ $box-shadow-footer: 0px 15px 26px 0px rgba(0, 0, 0, 0.10);
 
 
 
-@mixin section-style {
-    margin: auto;
-    width: 1440px;
-    height: 215px;
-    background: $background-color;
-}
-
 @mixin icon-footer-container {  //контейнер для иконок в футере
     width: 24px;
     height: 24px;
