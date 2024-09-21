@@ -6,7 +6,7 @@ export const Button = ({
     children,
     size = 'xs',
     radius = 'rounded', // rounded | circle
-    color = 'primary',
+    color = 'primary', //какие еще цвета - нужно указать
     outlined,
     ...otherProps
 }) => {
@@ -15,18 +15,17 @@ export const Button = ({
         [styles.outlined]: outlined,
     };
 
-   
     const additional = [
         className,
         styles[size],
         styles[radius],
         styles[color],
-    ]
+    ];
 
     return (
         <button 
-        className={getStyles(styles.button, mode, additional)}
-        {...otherProps}
+            className={getStyles(styles.button, mode, additional)}
+            {...otherProps}
         >
             {children}
         </button>
