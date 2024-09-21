@@ -2,7 +2,9 @@ import { useState } from "react";
 import { Stack } from "../../../shared/ui/Stack/Stack";
 import { Text } from "../../../shared/ui/Text/Text";
 import { getStyles } from "../../../shared/libs/getStyles";
-import styles from './Accordion.module.scss'
+import styles from './Accordion.module.scss';
+import less from '../../../shared/assets/svg/less.svg'
+import more from '../../../shared/assets/svg/more.svg'
 
 
 const Accordion = ({ question, answer, isSecond, styleMode }) => {
@@ -39,7 +41,7 @@ const Accordion = ({ question, answer, isSecond, styleMode }) => {
                 <Text type="p" size="s">
                     {question}
                 </Text>
-                <img src={`/images/${isOpen ? 'less.svg' : 'more.svg'}`} alt="more or less button"/>
+                <img src={isOpen ? less : more} alt="more or less button"/>
             </Stack>
             <Stack className={isOpen ? styles.visible : styles.hidden}>
                 <Text type="p" size="xs">

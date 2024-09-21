@@ -3,7 +3,8 @@ import { Button } from "../../../shared/ui/Button/Button";
 import { Stack } from "../../../shared/ui/Stack/Stack";
 import styles from './FAQs.module.scss';
 import faqData from '../lib/data'
-import Accordion from "../../../entities/accordion/ui/Accordion";
+import Accordion from "../../../entities/Accordion/ui/Accordion";
+import { SectionTitle } from "../../../entities/SectionTitle/ui/SectionTitle";
 
 const FAQs = () => {
     const [activeTab, setActiveTab] = useState('General Information')
@@ -20,13 +21,10 @@ const FAQs = () => {
         align='alignCenter'
         className={styles.faqsContainer}
         gap='75'>
-            <Stack direction="column"
-            justify='justifyCenter'
-            align='alignCenter'
-            gap='16'>
+            <SectionTitle>
                 <h1>FAQs</h1>
                 <h3>Home / FAQs</h3>
-            </Stack>
+            </SectionTitle>
             <Stack justify='justifyBetween'>
                 <Stack direction="column" gap='16'>
                     {faqData.map((tab, index) => (

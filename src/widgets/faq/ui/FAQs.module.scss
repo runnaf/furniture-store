@@ -7,10 +7,6 @@ $yellow-color: var(--yellow-color);
     width: 100%;
 
     > div {
-        &:nth-child(1) {
-            @include section-style;
-        }
-
         &:nth-child(2) {
             width: 1200px;
         }
