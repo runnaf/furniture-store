@@ -28,6 +28,11 @@
     opacity: 0;
     transition: opacity 0.3s;
 }
+.timer {
+    position: absolute;
+    bottom: 5px;
+    left: 1px;
+}
 .iconsContainer {
     position: absolute;
     top: 12px;
