@@ -1,6 +1,6 @@
 @import '../../../app/styles/media-queries.scss';
 
-.container {
+.generalCard {
     width: 276px;
     height: 331px;
     background-color: var(--background-color);
@@ -16,7 +16,7 @@
         height: 188px;
     }
 }
-.container:hover .icons {
+.generalCard:hover .icons {
     visibility: visible;
     opacity: 1;
 }
@@ -30,8 +30,8 @@
 }
 .cardTimer {
     position: absolute;
-    bottom: 5px;
-    left: 1px;
+    bottom: 10px;
+    left: 5px;
 }
 .iconsContainer {
     position: absolute;
@@ -80,7 +80,7 @@
     .promotionText {
 
         @include tablet-m {
-        font-size: var(--font-size-xxxxs);
+        font-size: var(--font-size-12);
         }
     }
 }
@@ -96,7 +96,7 @@
     color: var(--secoundry-black-color);
 
     @include tablet-m {
-        font-size: var(--font-size-xxxs);
+        font-size: var(--font-size-14);
         }
 }
 .star {

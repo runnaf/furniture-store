@@ -17,17 +17,16 @@ export function Card ({
     price,
     newPrice,
     rating,
-    size,// large | small | extended
+    view,// general | extended
 }) {
 
-    const cardSize = 
-    size === 'large' ? styles.largeCard : 
-    size === 'small' ? styles.smallCard :
-    styles.extendedCard;
+    const cardView = 
+    view === 'extended' ? styles.extendedCard : 
+    styles.generalCard;
 
     return (
         <Stack direction='column'>
-        <Stack className={`${styles.container} ${cardSize}`}>
+        <Stack className={cardView}>
             <img src={image} alt='item'></img>
             <Stack justify='justifyBetween' className={styles.iconsContainer}>
               {promotion > 0 && (
