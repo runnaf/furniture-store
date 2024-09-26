@@ -7,7 +7,7 @@ import less from '../../../shared/assets/svg/less.svg'
 import more from '../../../shared/assets/svg/more.svg'
 
 
-const Accordion = ({ question, answer, isSecond, styleMode }) => {
+export const Accordion = ({ question, answer, isSecond, styleMode }) => {
 
     const [isOpen, setIsOpen] = useState(isSecond || false);
 
@@ -52,4 +52,4 @@ const Accordion = ({ question, answer, isSecond, styleMode }) => {
     )
 }
 
-export default Accordion;
+ 

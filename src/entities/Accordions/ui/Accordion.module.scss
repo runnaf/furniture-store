@@ -4,11 +4,12 @@
 $background-color-green: var(--green-color); 
 
 //border
-$border-radius: var(--border-radius-card-m);
+$border-radius: var(--border-radius-16);
 $border: var(--border-input);
 
 //color
 $white-color: var(--white-color);
+$opacity: var(--opacity-08);
 
 .accordionContainer {
     width: 100%;
@@ -44,7 +45,7 @@ $white-color: var(--white-color);
             overflow: hidden;
 
             > p {
-                opacity: 0.8;
+                opacity: $opacity;
                 font-weight: 400;
                 line-height: 28px;
             }

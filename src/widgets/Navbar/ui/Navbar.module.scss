@@ -8,11 +8,11 @@
     padding: 29px 0;
 
     .navLinks {
-        gap: var(--gap-header-menu);
+        gap: var(--gap-36);
         display: flex;
         
         a {
-            font-size: var(--font-size-xxs);
+            font-size: var(--font-size-16);
             color: var(--black-color);
             font-family: var(--font-black);
         }

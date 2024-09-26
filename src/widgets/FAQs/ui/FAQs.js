@@ -3,10 +3,10 @@ import { Button } from "../../../shared/ui/Button/Button";
 import { Stack } from "../../../shared/ui/Stack/Stack";
 import styles from './FAQs.module.scss';
 import faqData from '../lib/data'
-import Accordion from "../../../entities/Accordion/ui/Accordion";
+import { Accordion } from "../../../entities/Accordions/ui/Accordion";
 import { SectionTitle } from "../../../entities/SectionTitle/ui/SectionTitle";
 
-const FAQs = () => {
+export const FAQs = () => {
     const [activeTab, setActiveTab] = useState('General Information')
 
     const handleChangeData = (tab) => {
@@ -48,5 +48,4 @@ const FAQs = () => {
         </Stack>
     )
 }
-
-export default FAQs;
+ 
