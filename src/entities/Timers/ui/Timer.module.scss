@@ -1,3 +1,6 @@
+@import '../../../app/styles/media-queries';
+
+
 //opacity 
 $opacity: var(--opacity-08);
 
@@ -17,15 +20,28 @@ $line-height: 28px;
         gap: 24px;
         width: 522px;
 
+        @include tablet-m {
+            gap: 12px;
+            width: 326px;
+        }
+
         > div {
             width: 84.5px;
             gap: 8px;
+
+            @include tablet-m {
+                gap: 4px;
+            }
     
             > p:nth-child(1) {
                 color: var(--black-color);
                 font-family: var(--font-family);
                 font-size: var(--font-size-48);
                 font-weight: $font-weight-l;
+
+                @include tablet-m {
+                    font-size: var(--font-size-32);
+                }
             }
     
             > p:nth-child(2) {
@@ -35,6 +51,10 @@ $line-height: 28px;
                 line-height: $line-height;
                 font-weight: $font-weight-s;
                 opacity: $opacity;
+
+                @include tablet-m {
+                    font-size: var(--font-size-24);
+                }
             }
         }
 
@@ -43,6 +63,11 @@ $line-height: 28px;
             font-family: var(--font-family);
             font-size: var(--font-size-48);
             font-weight: $font-weight-l;
+
+
+            @include tablet-m {
+                font-size: var(--font-size-32);
+            }
         }
     }
 
