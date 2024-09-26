@@ -1,9 +1,9 @@
-import Accordion from "../../../entities/Accordion/ui/Accordion"
+import { Accordion } from "../../../entities/Accordions/ui/Accordion"
 import { Stack } from "../../../shared/ui/Stack/Stack";
 import styles from './QuestionMainPage.module.scss';
 import questionData from '../lib/data'
 
-const QuestionMainPage = () => {
+export const QuestionMainPage = () => {
 
     return(
         <Stack className={styles.questionMainPageContainer}
@@ -26,5 +26,3 @@ const QuestionMainPage = () => {
         </Stack>
     )
 }
-
-export default QuestionMainPage; 

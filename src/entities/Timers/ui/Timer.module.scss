@@ -1,5 +1,5 @@
 //opacity 
-$opacity: 0.8;
+$opacity: var(--opacity-08);
 
 //font-weight
 $font-weight-s: 400;
@@ -24,14 +24,14 @@ $line-height: 28px;
             > p:nth-child(1) {
                 color: var(--black-color);
                 font-family: var(--font-family);
-                font-size: var(--font-size-main-timer);
+                font-size: var(--font-size-48);
                 font-weight: $font-weight-l;
             }
     
             > p:nth-child(2) {
                 color: var(--secoundry-black-color);
                 font-family: var(--font-family);
-                font-size: var(--font-size-header-s);
+                font-size: var(--font-size-24);
                 line-height: $line-height;
                 font-weight: $font-weight-s;
                 opacity: $opacity;
@@ -41,7 +41,7 @@ $line-height: 28px;
         > span {
             color: var(--black-color);
             font-family: var(--font-family);
-            font-size: var(--font-size-main-timer);
+            font-size: var(--font-size-48);
             font-weight: $font-weight-l;
         }
     }
@@ -51,7 +51,7 @@ $line-height: 28px;
         width: 265px;
         padding: 5px 6px;
         background: var(--yellow-color);
-        border-radius: var(--border-radius-card-s);
+        border-radius: var(--border-radius-12);
 
         > div {
             width: 61px;
@@ -75,14 +75,14 @@ $line-height: 28px;
             > p:nth-child(1) {
                 color: var(--black-color);
                 font-family: var(--font-family);
-                font-size: var(--font-size-header-s);
+                font-size: var(--font-size-24);
                 font-weight: $font-weight-m;
             }
     
             > p:nth-child(2) {
                 color: var(--secoundry-black-color);
                 font-family: var(--font-family);
-                font-size: var(--font-size-xs);
+                font-size: var(--font-size-18);
                 font-weight: $font-weight-s;
                 opacity: $opacity;
             }
@@ -91,7 +91,7 @@ $line-height: 28px;
         > span {
             color: var(--black-color);
             font-family: var(--font-family);
-            font-size: var(--font-size-header-s);
+            font-size: var(--font-size-24);
             font-weight: $font-weight-m;
         }
     }
@@ -107,14 +107,14 @@ $line-height: 28px;
             > p:nth-child(1) {
                 color: var(--black-color);
                 font-family: var(--font-family);
-                font-size: var(--font-size-header-xl);
+                font-size: var(--font-size-64);
                 font-weight: $font-weight-l;
             }
     
             > p:nth-child(2) {
                 color: var(--secoundry-black-color);
                 font-family: var(--font-family);
-                font-size: var(--font-size-header-s);
+                font-size: var(--font-size-24);
                 line-height: $line-height;
                 font-weight: $font-weight-s;
                 opacity: $opacity;

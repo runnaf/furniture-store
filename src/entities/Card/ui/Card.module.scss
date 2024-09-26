@@ -4,7 +4,7 @@
     width: 276px;
     height: 331px;
     background-color: var(--background-color);
-    border-radius: var(--border-radius-card-l);
+    border-radius: var(--border-radius-24);
     position: relative;
 
     img {
@@ -65,7 +65,7 @@
 }
 .promotion {
     padding: 8px 16px;
-    border-radius: var(--border-radius-rounded);
+    border-radius: var(--border-radius-170);
     background-color: var(--green-color);
     width: 99px;
     height: 38px;
@@ -117,22 +117,22 @@
     }
 }
 .cardName {
-    font-size: var(--font-size-s);
+    font-size: var(--font-size-20);
     margin-top: 4px;
     font-weight: 600;
 
     @include tablet-m {
-        font-size: var(--font-size-xxs);
+        font-size: var(--font-size-16);
         margin-top: 8px;
     }
 }
 .newPrice {
-    font-size: var(--font-size-header-s);
+    font-size: var(--font-size-24);
     margin-top: 12px;
     font-weight: 500;
 
     @include tablet-m {
-        font-size: var(--font-size-xs);
+        font-size: var(--font-size-18);
     }
 }
 .price {
