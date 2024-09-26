@@ -6,6 +6,7 @@
     color: var(--black-color);
     background-color: var(--white-color);
     width: 100%;
+    padding: 17px;
 
     &::placeholder,
     &:-moz-placeholder,
@@ -24,4 +25,8 @@
 
 .label {
     font-size: var(--font-size-20);
+    font-size: var(--font-size-s);
+    font-family: var(--font-family);
+    color: var(--black-color);
+    font-weight: 500;
 }
