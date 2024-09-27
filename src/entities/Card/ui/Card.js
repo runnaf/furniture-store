@@ -6,7 +6,7 @@ import cart from '../../../shared/assets/svg/cart.svg';
 import heart from '../../../shared/assets/svg/heart.svg';
 import zoom from '../../../shared/assets/svg/zoom.svg';
 import star from '../../../shared/assets/svg/star.svg';
-import Timer from '../../timer/ui/Timer';
+import { Timer } from '../../Timers/ui/Timer';
 
 export function Card ({
     image,
