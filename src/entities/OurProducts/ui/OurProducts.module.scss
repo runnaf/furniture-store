@@ -1,4 +1,6 @@
-
+.container {
+    margin: 125px 0;
+}
 .hyphen {
     color: var(--yellow-color);
 }
@@ -7,6 +9,7 @@
     color: var(--green-color);
 }
 .buttonsContainer {
+    margin: 16px 0 34px 0;
     button {
         padding: 18px 36px;
     }

@@ -7,8 +7,8 @@ import styles from './OurProducts.module.scss';
 
 export function OurProducts () {
     return (
-        <Stack direction='column' align='alignCenter' gap='16'>
-            <Text size='s'><span className={styles.hyphen}>&mdash; </span>Наша продукция</Text>
+        <Stack direction='column' align='alignCenter' gap='16' className={styles.container}>
+            <Text size='s'><span className={styles.hyphen}>&mdash; </span> Наша продукция</Text>
             <Text type='h3' className={styles.title}>Каталог товаров</Text>
             <Stack gap='16' className={styles.buttonsContainer}>
                 <Button size='s' color='outlined'>Все товары</Button>
