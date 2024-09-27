@@ -1,7 +1,7 @@
 .input {
     border: var(--border-input);
     padding: 0.5em 1em;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-50);
     transition: border-color 0.3s ease;
     color: var(--black-color);
     background-color: var(--white-color);
@@ -12,7 +12,7 @@
     &::-moz-placeholder,
     &:-ms-input-placeholder,
     &::-webkit-input-placeholder  {
-        font-size: var(--font-size-xs);
+        font-size: var(--font-size-18);
     }
 }
 
@@ -23,5 +23,5 @@
 }
 
 .label {
-    font-size: var(--font-size-s);
+    font-size: var(--font-size-20);
 }

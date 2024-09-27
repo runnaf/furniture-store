@@ -6,14 +6,30 @@ import cart from '../../../shared/assets/svg/cart.svg';
 import heart from '../../../shared/assets/svg/heart.svg';
 import zoom from '../../../shared/assets/svg/zoom.svg';
 import star from '../../../shared/assets/svg/star.svg';
+import Timer from '../../timer/ui/Timer';
 
-export function Card ({image,promotion,category,name,price,newPrice,rating}) {
+export function Card ({
+    image,
+    promotion,
+    timer,
+    category,
+    name,
+    price,
+    newPrice,
+    rating,
+    view,// general | extended
+}) {
+
+    const cardView = 
+    view === 'extended' ? styles.extendedCard : 
+    styles.generalCard;
+
     return (
         <Stack direction='column'>
-        <Stack className={styles.container}>
+        <Stack className={cardView}>
             <img src={image} alt='item'></img>
             <Stack justify='justifyBetween' className={styles.iconsContainer}>
-            {promotion > 0 && (
+              {promotion > 0 && (
                 <Stack className={styles.promotion}>        
                     <Text className={styles.promotionText}>{promotion}% off</Text>
                 </Stack>
@@ -23,7 +39,12 @@ export function Card ({image,promotion,category,name,price,newPrice,rating}) {
                     <Button radius='circle'><img src={zoom} alt='zoom'/></Button>
                     <Button radius='circle'><img src={cart} alt='cart'/></Button>
                 </Stack>
-            </Stack> 
+            </Stack>
+            <Stack className={styles.cardTimer}>            
+            {timer && (
+                    <Timer styleMode="timerCardContainer" endTime={timer}/>
+              )} 
+              </Stack>
         </Stack>
         <Stack direction='column'>
             <Stack justify='justifyBetween' className={styles.categoryContainer}>

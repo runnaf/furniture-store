@@ -5,8 +5,11 @@ import React from "react";
 import { getStyles } from '../../../shared/libs/getStyles.js';
 
 
-const Timer = ({ styleMode, endTime }) => {
+export const Timer = ({ styleMode, endTime }) => {
 
+    //styleMode: 'timerMainContainer', 'timerCardContainer', 'timerComingSoonContainer'
+    //endTime='2024-12-31T20:59:59.000Z'
+    
     const { timeItems } = useCountdownTimer(endTime)
 
     const mode = { [styleMode]: true }
@@ -40,4 +43,3 @@ const Timer = ({ styleMode, endTime }) => {
     )
 }
 
-export default Timer;

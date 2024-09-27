@@ -1,8 +1,8 @@
 //font-size
 
-$font-size-xxs: var(--font-size-xxs);
-$font-size-xs: var(--font-size-xs);
-$font-size-header-s: var(--font-size-header-s);
+$font-size-xxs: var(--font-size-16);
+$font-size-xs: var(--font-size-18);
+$font-size-header-s: var(--font-size-24);
 
 $sizes: (
     xxs: $font-size-xxs,
@@ -41,9 +41,9 @@ $text-black-color: var(--black-color);
 
 //border-radius
 
-$border-radius-rounded: var(--border-radius-rounded);
+$border-radius-rounded: var(--border-radius-170);
 $border-radius-circle: var(--border-radius-circle);
-$border-radius-m: var(--border-radius-card-m);
+$border-radius-m: var(--border-radius-16);
 
 .rounded {
     border-radius: $border-radius-rounded;

@@ -1,30 +1,6 @@
 @import './z-index.scss';
 @import './media-queries';
 
-//background
-$background-color-footer-social: var(--background-color-footer-social);
-$background-color: var(--background-color);
-
-//border-radius
-$border-radius: var(--border-radius);
-
-//gap
-$gap-footer-social: var(--gap-footer-social);
-
-//shadow
-$box-shadow-footer: 0px 15px 26px 0px rgba(0, 0, 0, 0.10);
-
-
-
-@mixin icon-footer-container {  //контейнер для иконок в футере
-    width: 24px;
-    height: 24px;
-    padding: 10px;
-    background-color: $background-color-footer-social;
-    border-radius: $border-radius;
-    box-shadow: $box-shadow-footer;
-} 
-
 
 @mixin pseudo-element($display: block, $pos: absolute, $content: '', $visibility: visible, $z-index: auto){
     content: $content;

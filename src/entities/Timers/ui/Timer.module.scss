@@ -1,5 +1,8 @@
+@import '../../../app/styles/media-queries';
+
+
 //opacity 
-$opacity: 0.8;
+$opacity: var(--opacity-08);
 
 //font-weight
 $font-weight-s: 400;
@@ -17,41 +20,63 @@ $line-height: 28px;
         gap: 24px;
         width: 522px;
 
+        @include tablet-m {
+            gap: 12px;
+            width: 326px;
+        }
+
         > div {
             width: 84.5px;
             gap: 8px;
+
+            @include tablet-m {
+                gap: 4px;
+            }
     
             > p:nth-child(1) {
                 color: var(--black-color);
                 font-family: var(--font-family);
-                font-size: var(--font-size-main-timer);
+                font-size: var(--font-size-48);
                 font-weight: $font-weight-l;
+
+                @include tablet-m {
+                    font-size: var(--font-size-32);
+                }
             }
     
             > p:nth-child(2) {
                 color: var(--secoundry-black-color);
                 font-family: var(--font-family);
-                font-size: var(--font-size-header-s);
+                font-size: var(--font-size-24);
                 line-height: $line-height;
                 font-weight: $font-weight-s;
                 opacity: $opacity;
+
+                @include tablet-m {
+                    font-size: var(--font-size-24);
+                }
             }
         }
 
         > span {
             color: var(--black-color);
             font-family: var(--font-family);
-            font-size: var(--font-size-main-timer);
+            font-size: var(--font-size-48);
             font-weight: $font-weight-l;
+
+
+            @include tablet-m {
+                font-size: var(--font-size-32);
+            }
         }
     }
 
     &.timerCardContainer {
-        gap: 15px;
-        width: 355px;
-        padding: 12px 13px;
+        gap: 7px;
+        width: 265px;
+        padding: 5px 6px;
         background: var(--yellow-color);
-        border-radius: var(--border-radius-card-s);
+        border-radius: var(--border-radius-12);
 
         > div {
             width: 61px;
@@ -75,14 +100,14 @@ $line-height: 28px;
             > p:nth-child(1) {
                 color: var(--black-color);
                 font-family: var(--font-family);
-                font-size: var(--font-size-header-s);
+                font-size: var(--font-size-24);
                 font-weight: $font-weight-m;
             }
     
             > p:nth-child(2) {
                 color: var(--secoundry-black-color);
                 font-family: var(--font-family);
-                font-size: var(--font-size-xs);
+                font-size: var(--font-size-18);
                 font-weight: $font-weight-s;
                 opacity: $opacity;
             }
@@ -91,7 +116,7 @@ $line-height: 28px;
         > span {
             color: var(--black-color);
             font-family: var(--font-family);
-            font-size: var(--font-size-header-s);
+            font-size: var(--font-size-24);
             font-weight: $font-weight-m;
         }
     }
@@ -107,14 +132,14 @@ $line-height: 28px;
             > p:nth-child(1) {
                 color: var(--black-color);
                 font-family: var(--font-family);
-                font-size: var(--font-size-header-xl);
+                font-size: var(--font-size-64);
                 font-weight: $font-weight-l;
             }
     
             > p:nth-child(2) {
                 color: var(--secoundry-black-color);
                 font-family: var(--font-family);
-                font-size: var(--font-size-header-s);
+                font-size: var(--font-size-24);
                 line-height: $line-height;
                 font-weight: $font-weight-s;
                 opacity: $opacity;
