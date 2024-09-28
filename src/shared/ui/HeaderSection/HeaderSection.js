@@ -3,27 +3,8 @@ import styles from './HeaderSection.module.scss';
 
 const HeaderSection = ({
   subTitle,
-  title,
-  accentWords = [], // Массив акцентных слов
+  children,
 }) => {
-
-  const renderTitle = () => {
-    // Разбиваем заголовок на слова
-    const words = title.split(' ');
-    
-    return words.map((word, index) => {
-      // Проверяем, является ли слово акцентным
-      const isAccent = accentWords.includes(word);
-      return (
-        <span
-          key={index}
-          className={isAccent ? styles.accentWord : styles.normalWord}
-        >
-          {word}{' '}
-        </span>
-      );
-    });
-  };
 
   return (
     <div className={styles.headerSection}>
@@ -31,7 +12,7 @@ const HeaderSection = ({
             <div className={styles.line}></div>
             <p className={styles.subTitle}>{subTitle}</p>
           </div>
-        <h2 className={styles.title}>{renderTitle()}</h2>
+        <h2 className={styles.title}>{children}</h2>
     </div>
   );
 };

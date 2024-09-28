@@ -23,13 +23,10 @@
   .title {
     font-size: var(--font-size-47);
     font-weight: 600;
-  }
-
-  .accentWord {
-    color: var(--black-color);
-  }
-
-  .normalWord {
     color: var(--green-color);
+  }
+
+  .accent {
+    color: var(--black-color);
   }
 }
