@@ -12,7 +12,7 @@ const HeaderSection = ({
             <div className={styles.line}></div>
             <p className={styles.subTitle}>{subTitle}</p>
           </div>
-        <h2 className={styles.title}>{children}</h2>
+        <h2 className={styles.title}><span>{children}</span></h2>
     </div>
   );
 };
