@@ -15,8 +15,8 @@ const data = [
         promotion: '15',
         category: 'Кровати',
         name: 'Кровать белая',
-        price: '27600.00',
-        newPrice: '23500.00',
+        price: '27600',
+        newPrice: '23500',
         rating: '4.9'
     },
     {

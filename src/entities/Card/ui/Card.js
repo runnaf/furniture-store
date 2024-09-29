@@ -55,7 +55,7 @@ export function Card ({
                 </Stack>
             </Stack>
             <p className={styles.cardName}>{name}</p>
-            <p className={styles.newPrice}>{newPrice}руб.<span className={styles.price}>{price}руб.</span></p>
+            <p className={styles.newPrice}>{newPrice}р.<span className={styles.price}>{price}р.</span></p>
         </Stack>
         </Stack>
     )

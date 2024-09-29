@@ -16,7 +16,7 @@ export function OurProducts () {
                 <Button size='s' color='outlined'>Популярное</Button>
                 <Button size='s' color='outlined'>Рекомендуемые</Button>
             </Stack>
-            <Stack gap='32'>
+            <Stack gap='32' className={styles.cardContainer}>
             {productsData.map(element => Card(element))}
             </Stack>
         </Stack>

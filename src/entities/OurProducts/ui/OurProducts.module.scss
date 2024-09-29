@@ -1,5 +1,13 @@
+@import '../../../app/styles/media-queries.scss';
+
 .container {
-    margin: 125px 0;
+    margin: 125px 0;    
+    width: 90%;
+
+    @include tablet-m {
+        margin: 75px 0;
+        width: 350px;
+    }
 }
 .hyphen {
     color: var(--yellow-color);
@@ -7,10 +15,33 @@
 .title {
     font-size: var(--font-size-47);
     color: var(--green-color);
+
+    @include tablet-m {
+        font-size: var(--font-size-36);
+    }
 }
 .buttonsContainer {
     margin: 16px 0 34px 0;
+
+    @include tablet-m {
+        margin: 10px 0;
+        gap: var(--gap-12);
+        flex-wrap: wrap;
+    }
+
     button {
         padding: 18px 36px;
+
+        @include tablet-m {
+            padding: 10px 20px;
+            font-size: var(--font-size-18);
+        }
     }
 }
+    .cardContainer {
+        flex-wrap: wrap;
+
+        @include tablet-m {        
+        gap: var(--gap-12);
+    }
+    }

@@ -1,13 +1,13 @@
 //font-size
 
-$font-size-xxs: var(--font-size-16);
-$font-size-xs: var(--font-size-18);
-$font-size-header-s: var(--font-size-24);
+$font-size-16: var(--font-size-16);
+$font-size-18: var(--font-size-18);
+$font-size-24: var(--font-size-24);
 
 $sizes: (
-    xxs: $font-size-xxs,
-    xs: $font-size-xs,
-    s: $font-size-header-s
+    xxs: $font-size-16,
+    xs: $font-size-18,
+    s: $font-size-24
 );
 
 @each $name, $size in $sizes {
