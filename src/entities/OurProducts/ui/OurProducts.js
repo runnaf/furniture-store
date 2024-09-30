@@ -2,7 +2,7 @@ import { Stack } from '../../../shared/ui/Stack/Stack';
 import { Text } from '../../../shared/ui/Text/Text';
 import { Button } from '../../../shared/ui/Button/Button';
 import { Card } from '../../Card/ui/Card';
-import productsData from '../lib/data';
+import cardData from '../../../shared/libs/cardData';
 import styles from './OurProducts.module.scss';
 
 export function OurProducts () {
@@ -17,7 +17,7 @@ export function OurProducts () {
                 <Button size='s' color='outlined'>Рекомендуемые</Button>
             </Stack>
             <Stack gap='32' className={styles.cardContainer}>
-            {productsData.map(element => Card(element))}
+            {cardData.map(element => Card(element))}
             </Stack>
         </Stack>
     )
