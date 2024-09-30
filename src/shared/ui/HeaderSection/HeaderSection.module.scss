@@ -23,6 +23,10 @@
   .title {
     font-size: var(--font-size-47);
     font-weight: 600;
-    color: var(--green-color);
+    color: var(--black-color);
+
+    span {
+      color: var(--green-color);
+    }
   }
 }

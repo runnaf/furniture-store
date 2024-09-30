@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './HeaderSection.module.scss';
 
 const HeaderSection = ({
-  subTitle, //передавать как children, потому что subTitle имеет только акцентные слова зеленым, а не весь текст
-  title,
+  subTitle,
+  children,
 }) => {
 
   return (
@@ -12,7 +12,7 @@ const HeaderSection = ({
             <div className={styles.line}></div>
             <p className={styles.subTitle}>{subTitle}</p>
           </div>
-        <h2 className={styles.title}>{title}</h2>
+        <h2 className={styles.title}><span>{children}</span></h2>
     </div>
   );
 };
