@@ -32,6 +32,11 @@
     position: absolute;
     bottom: 10px;
     left: 5px;
+    
+    @include tablet-m {
+        left:1px;
+        bottom: 5px;
+    }
 }
 .iconsContainer {
     position: absolute;

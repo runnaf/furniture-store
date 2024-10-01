@@ -1,12 +1,12 @@
 .headerSection {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-m);
+  gap: var(--gap-16);
 
   .wrapper {
     display: flex;
     align-items: center;
-    gap: var(--gap-m);
+    gap: var(--gap-16);
   }
 
   .line {
@@ -23,6 +23,10 @@
   .title {
     font-size: var(--font-size-47);
     font-weight: 600;
-    color: var(--green-color);
+    color: var(--black-color);
+
+    span {
+      color: var(--green-color);
+    }
   }
 }

@@ -1,0 +1,150 @@
+@import '../../../app/styles/media-queries.scss';
+
+
+//background
+$background-color-grey: var(--grey-background-color);
+$background-color: var(--background-color);
+
+//border
+$border: var(--border-flashSale);
+$border-radius-12: var(--border-radius-12);
+$border-radius-16: var(--border-radius-16);
+$border-radius-24: var(--border-radius-24);
+
+//gap
+$gap-8: var(--gap-8);
+
+
+
+.flashSaleContainer {
+    width: 1200px;
+
+    @include tablet-m {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    > div {
+        &:nth-child(1) {
+            position: relative;
+            overflow: hidden;
+            border-radius: $border-radius-24;
+            background-color: $background-color;
+            width: 686px;
+            height: 578px;
+
+            @include tablet-m {
+                width: 100%;
+                height: 491px;
+                border-radius: 0;
+            }
+
+            > img {
+                position: absolute;
+        
+                &:nth-child(1) {
+                    top: 433px;
+                    left: 24px;
+                }
+        
+                &:nth-child(2) {
+                    bottom: 433px;
+                    right: 24px;
+                    rotate: 180deg;
+                }
+            }
+
+            > div {
+                width: 522px;
+
+                @include tablet-m {
+                    width: 326px;
+                }
+
+                > div:nth-child(1) {
+                    flex-direction: column-reverse;
+                    align-items: center;
+    
+                    > div {
+                        > div:nth-child(1) {
+                            display: none;
+                        }
+                        > p {
+                            @include tablet-m {
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+    
+                > a > button {
+                    display: flex;
+                    gap: $gap-8;
+                    padding: 16px 32px;
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            @include tablet-m {
+                flex-direction: column;
+            }
+
+        > div {
+            width: 229px;
+            height: 578px;
+            background-color: $background-color-grey;
+            border-radius: $border-radius-24;
+
+            @include tablet-m {
+                width: 100%;
+                height: 100px;
+                border-radius: 0;
+                rotate: 0deg;
+            }
+            
+            &:nth-child(1) > div {
+                justify-content: flex-start; 
+
+                > img:nth-of-type(1) {
+                    @include tablet-m {
+                        width: 351px;
+                        margin-top: 30px;
+                    }
+                }
+                @include tablet-m {
+                    justify-content: center;
+                }
+            }
+            &:nth-child(2) > div {
+                justify-content: flex-end;
+
+                > img:nth-of-type(1) {
+                    @include tablet-m {
+                        width: 351px;
+                        margin-bottom: 200px;
+                    }
+                }
+                @include tablet-m {
+                    justify-content: center;
+                } 
+            }
+            
+            > div {
+                width: 205px;
+                height: 554px;
+                border: $border;
+                border-radius: $border-radius-16;
+                overflow: hidden;
+                
+
+                @include tablet-m {
+                    width: 351px;
+                    height: 76px;
+                    border-radius: $border-radius-12;
+                }
+            }
+        }
+    }
+    }
+}
