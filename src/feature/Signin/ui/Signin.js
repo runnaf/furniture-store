@@ -9,7 +9,7 @@ import checkmarkIcon from '../../../shared/assets/svg/checkmarkIcon.svg';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export const SignIn = () => {
+export const Signin = () => {
     const [showPassword, setShowPassword] = useState(false);
     const PasswordToggleIcon = showPassword ? hidePasswordIcon : showPasswordIcon;
 
@@ -19,7 +19,9 @@ export const SignIn = () => {
 
     return (
         <form className={styles.form} onSubmit={handleSubmit}>
-            {logoIcon()}
+            <div className={styles.logo}>
+                {logoIcon()}
+            </div>
             <Stack direction="column">
                 <Text type="h2" size="xl" className={styles.heading}>Войти</Text>
                 <Text type="p" size="xs" className={styles.par}>Пожалуйста, заполните данные для доступа к вашему аккаунту.</Text>

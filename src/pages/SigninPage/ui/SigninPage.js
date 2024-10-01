@@ -1,15 +1,14 @@
-import { SignIn } from "../../../feature/Signin/ui/Signin";
+import { Slider } from "../../../entities/Slider/ui/Slider";
+import { SigninForm } from "../../../feature/Signin/ui/SigninForm";
 import { Stack } from "../../../shared/ui/Stack/Stack";
-import styles from "./SigninPage.module.scss";
-import imageSigninPage from "../../../shared/assets/svg/imageSigninPage.svg"
 
 
 
 const SigninPage = () => {
     return (
         <Stack justify='justifyAround' align='alignCenter'>
-            <SignIn />
-            <img src={imageSigninPage} className={styles.image} alt="signin" />
+            <SigninForm />
+            <Slider />
         </Stack>
     )
 }
