@@ -1,7 +1,7 @@
 import { Stack } from '../../../shared/ui/Stack/Stack';
 import { Text } from '../../../shared/ui/Text/Text';
 import { Button } from '../../../shared/ui/Button/Button';
-import { Card } from '../../Card/ui/Card';
+import { Card } from '../../../entities/Card/ui/Card';
 import cardData from '../../../shared/libs/cardData';
 import styles from './OurProducts.module.scss';
 

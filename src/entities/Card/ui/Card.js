@@ -7,6 +7,7 @@ import heart from '../../../shared/assets/svg/heart.svg';
 import zoom from '../../../shared/assets/svg/zoom.svg';
 import star from '../../../shared/assets/svg/star.svg';
 import { Timer } from '../../Timers/ui/Timer';
+import arrow from '../../../shared/assets/svg/arrowblack.svg';
 
 export function Card ({
     image,
@@ -18,6 +19,7 @@ export function Card ({
     newPrice,
     rating,
     view,// general | extended
+    cardText,
 }) {
 
     const cardView = 
@@ -56,7 +58,13 @@ export function Card ({
             </Stack>
             <p className={styles.cardName}>{name}</p>
             <p className={styles.newPrice}>{newPrice}р.<span className={styles.price}>{price}р.</span></p>
-        </Stack>
+            {(view === 'extended') && (
+                <>
+                <Text>{cardText}</Text>
+                <Button color='outlined' className={styles.shopButton}>Магазин <img src={arrow} alt="arrow"/></Button>
+                </>
+            )}
+        </Stack>        
         </Stack>
     )
 }

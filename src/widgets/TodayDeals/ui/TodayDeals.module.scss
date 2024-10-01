@@ -1,3 +1,8 @@
 .hyphen {
     color: var(--yellow-color);
 }
+.cardContainer {
+    width: 585px;
+    border-radius: var(--border-radius-24);
+    border: var(--border-todayDeals);
+}

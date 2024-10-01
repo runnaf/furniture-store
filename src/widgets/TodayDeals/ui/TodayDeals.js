@@ -10,7 +10,10 @@ export function TodayDeals () {
             <Text><span className={styles.hyphen}>&mdash; </span> Выгодные предложения</Text>
             <Text>Выгодные предложения дня</Text>
             <Stack>
-                {cardData.map(element=>Card({...element, view: 'extended'}))}
+                {cardData.map(element=>(
+                    <Stack key={element.id} className={styles.cardContainer}>
+                        {Card({...element, view: 'extended'})}
+                    </Stack>))}
             </Stack>
         </Stack>
     )

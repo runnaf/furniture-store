@@ -152,4 +152,10 @@
 }
 .extendedCard {
     flex-direction:row;
+    .shopButton {
+        display: flex;
+        align-items: center;
+        gap: var(----gap-8);
+        width: 120px;
+    }
 }
