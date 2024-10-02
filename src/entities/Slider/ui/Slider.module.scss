@@ -1,0 +1,10 @@
+@import '../../../app/styles/media-queries.scss';
+
+.image {
+    width: 664px;
+    height: 976px;
+
+    @include tablet-m {
+        display: none;
+    }
+}
