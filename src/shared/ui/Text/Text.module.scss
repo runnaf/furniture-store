@@ -34,17 +34,12 @@ $mobile-sizes: (
     xxl: $mobile-font-size-xxl
 );
 
-@each $name, $size in $sizes {
-    .mobile-#{$name} {
-        font-size: $size;
-    }
-}
 
 
 @include tablet-m {
     @each $name, $size in $sizes {
         .#{$name} {
-            font-size: calc(#{$size} * .9); // Используем calc() для уменьшения размера на мобильных устройствах
+            font-size: calc(#{$size} * .9); 
         }
     }
 }

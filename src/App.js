@@ -7,13 +7,15 @@ import { Navbar } from "./widgets/Navbar/ui/Navbar";
 
 function App() {
   return (
-    <Stack direction="column"
-    align='alignCenter'>
-      <Header />
-      <Navbar/>
-      <OurProducts/>
-      <FlashSale/>
-    </Stack>
+    <>
+      <Stack direction="column"
+        align='alignCenter'>
+        <Header />
+        <Navbar />
+        <OurProducts />
+        <FlashSale />
+      </Stack>
+    </>
   );
 }
 
