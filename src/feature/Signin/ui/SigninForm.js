@@ -52,7 +52,7 @@ export const SigninForm = () => {
                     <label className={styles.checkbox}>
                         <input
                             type="checkbox"
-                            className={styles.hiddenCheckbox} // Добавляем скрытый чекбокс
+                            className={styles.hiddenCheckbox} 
                         />
                         <span className={styles.customCheckbox}>
                             <img src={checkmarkIcon} alt="checkmark" />
