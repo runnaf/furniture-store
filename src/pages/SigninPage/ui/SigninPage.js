@@ -1,5 +1,5 @@
 import { Slider } from "../../../entities/Slider/ui/Slider";
-import { Signin } from "../../../feature/Signin/ui/Signin";
+import { Signin } from "../../../feature/Signin/ui/Signin/Signin";
 import { Stack } from "../../../shared/ui/Stack/Stack";
 
 

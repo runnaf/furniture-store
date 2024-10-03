@@ -1,9 +1,9 @@
 import styles from "./ForgotPasswordForm.module.scss";
-import { Stack } from "../../../shared/ui/Stack/Stack";
-import { Text } from '../../../shared/ui/Text/Text';
-import { Input } from '../../../shared/ui/Input/Input';
-import { Button } from '../../../shared/ui/Button/Button';
-import { logoIcon } from '../../../shared/assets/svg/navbarIcons';
+import { Stack } from "../../../../shared/ui/Stack/Stack";
+import { Text } from '../../../../shared/ui/Text/Text';
+import { Input } from '../../../../shared/ui/Input/Input';
+import { Button } from '../../../../shared/ui/Button/Button';
+import { logoIcon } from '../../../../shared/assets/svg/navbarIcons';
 import { Link } from 'react-router-dom';
 
 export const ForgotPasswordForm = () => {
