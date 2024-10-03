@@ -31,7 +31,7 @@ export function Card ({
     styles.generalCategory;
 
     return (
-        <Stack direction={view === 'extended' ? 'raw' : 'column'}>
+        <Stack direction={view === 'extended' ? 'raw' : 'column'} gap='16'>
         <Stack className={cardView}>
             <img src={image} alt='item'></img>
             <Stack justify='justifyBetween' className={styles.iconsContainer}>
@@ -55,7 +55,7 @@ export function Card ({
         <Stack direction='column' className={categoryView}>
             <Stack justify='justifyBetween' className={styles.categoryContainer}>
                 <Text className={styles.category}>{category}</Text>
-                <Stack>
+                <Stack className={styles.ratingContainer}>
                     <img src={star} alt='star' className={styles.star}></img>
                     <Text className={styles.rating}>{rating}</Text>
                 </Stack>
@@ -64,7 +64,7 @@ export function Card ({
             <p className={styles.newPrice}>{newPrice}р.<span className={styles.price}>{price}р.</span></p>
             {(view === 'extended') && (
                 <>
-                <Text>{cardText}</Text>
+                <Text className={styles.cardText}>{cardText}</Text>
                 <Button color='outlined' className={styles.shopButton}>Магазин <img src={arrow} alt="arrow"/></Button>
                 </>
             )}

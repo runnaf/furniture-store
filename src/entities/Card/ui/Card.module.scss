@@ -96,7 +96,6 @@
 .generalCategory {
 .categoryContainer {
     width: 276px;
-    margin-top: 16px;
 
     @include tablet-m {
         width: 158px;
@@ -159,15 +158,43 @@
 .extendedCard {
     @extend .cardBase;  
     width: 290px;
-    height: 416px;
+    height: 416px;    
+}
+.extendedCategory {
+    width: 251px;
+    margin-top: 62px;
+    position: relative;
 
+    .cardName {
+        font-size: var(--font-size-24);
+        font-weight: 600;
+    }
+    .newPrice {
+        font-size: var(--font-size-26);
+        font-weight: 500;
+        margin-top: 13px;
+    }
+    .price {
+        color: var(--secoundry-black-color);
+        padding-left: 12px;
+        text-decoration: line-through;
+        font-weight: 400;
+    }
+    .ratingContainer {
+        position: absolute;
+        top: 126px;
+        left: 0;
+    }
+    .cardText {
+        margin-top: 69px;
+    }
     .shopButton {
         display: flex;
         align-items: center;
         gap: var(----gap-8);
         width: 120px;
+        color: var(--green-color);
+        margin-top: 25px;
+        border: none;
     }
-}
-.extendedCategory {
-    width: 251px;
 }

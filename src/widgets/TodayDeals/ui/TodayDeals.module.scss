@@ -1,11 +1,14 @@
 .title {
-    margin-top: 125px;
+    margin: 125px 0 0 30px;
 }
 .hyphen {
     color: var(--yellow-color);
 }
 .subtitle {
     font-size: var(--font-size-47);
+    span {
+        color: var(--green-color);
+    }
 }
 .cardContainer {
     width: 585px;
