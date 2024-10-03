@@ -39,24 +39,24 @@
     }
 }
 
-.email {
+.email, .name {
     margin-bottom: 32px;
 }
 
-.forgotPassword {
-    color: var(--green-color);
-    text-decoration: none;
-    font-size: var(--font-size-xs);
-    font-weight: 500;
-
-    &:hover {
-        text-decoration: underline;
-        text-underline-offset: 4px;
-        text-decoration-color: var(--green-color);
+.name {
+    @include tablet-m {
+        flex-direction: column;
     }
 }
 
-.signInBtn {
+.firstname {
+    @include tablet-m {
+        margin-bottom: 24px;
+    }
+}
+
+
+.signUpBtn {
     padding: 16px;
     margin: 32px 0;
 }
@@ -67,7 +67,7 @@
     text-align: center;
 }
 
-.signUpLink {
+.signInLink {
     color: var(--green-color);
     text-decoration: none;
 
@@ -91,8 +91,6 @@
 }
 
 .checkbox {
-    display: flex;
-    align-items: center;
     color: var(--black-color);
     font-size: var(--font-size-xs);
     font-weight: 500;
@@ -131,6 +129,17 @@
 
     .hiddenCheckbox:checked + .customCheckbox img {
         display: block;
+    }
+
+    .linkAgree {
+        color: var(--black-color);
+        text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-color: var(--black-color);
+    }
     }
 }
 

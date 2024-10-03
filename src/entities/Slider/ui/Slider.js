@@ -1,6 +1,6 @@
-import imageSigninPage from "../../../shared/assets/svg/imageSigninPage.svg"
+import testSlider from "../../../shared/assets/svg/testSlider.svg"
 import styles from "./Slider.module.scss";
 
 export const Slider = () => {
-    return <img src={imageSigninPage} className={styles.image} alt="signin" />
+    return <img src={testSlider} className={styles.image} alt="signin" />
 }
