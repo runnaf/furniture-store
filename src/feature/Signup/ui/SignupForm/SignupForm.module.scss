@@ -1,4 +1,4 @@
-@import '../../../app/styles/media-queries.scss';
+@import '../../../../app/styles/media-queries.scss';
 
 .form {
     width: 512px;
@@ -9,11 +9,6 @@
         max-width: 90%;
         padding: 70px 24px;
     }
-}
-
-.formWrapper {
-    display: flex;
-    flex-direction: column;
 }
 
 .logo {

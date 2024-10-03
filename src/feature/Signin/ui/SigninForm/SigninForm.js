@@ -1,11 +1,11 @@
 import styles from './SigninForm.module.scss';
-import { Stack } from '../../../shared/ui/Stack/Stack';
-import { Text } from '../../../shared/ui/Text/Text';
-import { Input } from '../../../shared/ui/Input/Input';
-import { Button } from '../../../shared/ui/Button/Button';
-import { hidePasswordIcon, showPasswordIcon } from '../../../shared/assets/svg/passwordIcons';
-import { logoIcon } from '../../../shared/assets/svg/navbarIcons';
-import checkmarkIcon from '../../../shared/assets/svg/checkmarkIcon.svg';
+import { Stack } from '../../../../shared/ui/Stack/Stack';
+import { Text } from '../../../../shared/ui/Text/Text';
+import { Input } from '../../../../shared/ui/Input/Input';
+import { Button } from '../../../../shared/ui/Button/Button';
+import { hidePasswordIcon, showPasswordIcon } from '../../../../shared/assets/svg/passwordIcons';
+import { logoIcon } from '../../../../shared/assets/svg/navbarIcons';
+import checkmarkIcon from '../../../../shared/assets/svg/checkmarkIcon.svg';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
