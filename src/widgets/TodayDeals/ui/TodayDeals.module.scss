@@ -1,8 +1,16 @@
+.title {
+    margin-top: 125px;
+}
 .hyphen {
     color: var(--yellow-color);
+}
+.subtitle {
+    font-size: var(--font-size-47);
 }
 .cardContainer {
     width: 585px;
     border-radius: var(--border-radius-24);
     border: var(--border-todayDeals);
+    padding: 12px;
+    margin: 0 16px;
 }

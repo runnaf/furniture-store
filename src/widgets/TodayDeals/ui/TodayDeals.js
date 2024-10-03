@@ -6,11 +6,11 @@ import styles from './TodayDeals.module.scss';
 
 export function TodayDeals () {
     return (
-        <Stack direction="column">
-            <Text><span className={styles.hyphen}>&mdash; </span> Выгодные предложения</Text>
-            <Text>Выгодные предложения дня</Text>
+        <Stack direction="column" gap='16'>
+            <Text className={styles.title} size='s'><span className={styles.hyphen}>&mdash; </span> Выгодные предложения</Text>
+            <Text className={styles.subtitle}>Выгодные предложения дня</Text>
             <Stack>
-                {cardData.map(element=>(
+                {cardData.slice(0, 2).map(element=>(
                     <Stack key={element.id} className={styles.cardContainer}>
                         {Card({...element, view: 'extended'})}
                     </Stack>))}

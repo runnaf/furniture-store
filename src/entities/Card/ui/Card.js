@@ -26,8 +26,12 @@ export function Card ({
     view === 'extended' ? styles.extendedCard : 
     styles.generalCard;
 
+    const categoryView = 
+    view === 'extended' ? styles.extendedCategory :
+    styles.generalCategory;
+
     return (
-        <Stack direction='column'>
+        <Stack direction={view === 'extended' ? 'raw' : 'column'}>
         <Stack className={cardView}>
             <img src={image} alt='item'></img>
             <Stack justify='justifyBetween' className={styles.iconsContainer}>
@@ -48,7 +52,7 @@ export function Card ({
               )} 
               </Stack>
         </Stack>
-        <Stack direction='column'>
+        <Stack direction='column' className={categoryView}>
             <Stack justify='justifyBetween' className={styles.categoryContainer}>
                 <Text className={styles.category}>{category}</Text>
                 <Stack>
