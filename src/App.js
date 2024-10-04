@@ -5,15 +5,16 @@ import { FlashSale } from "./widgets/FlashSale/ui/FlashSale";
 import { Navbar } from "./widgets/Navbar/ui/Navbar";
 import { TodayDeals } from "./widgets/TodayDeals/ui/TodayDeals";
 
+
 function App() {
   return (
     <Stack direction="column"
-    align='alignCenter'>
+      align='alignCenter'>
       <Header />
-      <Navbar/>
-      <OurProducts/>
-      <FlashSale/>
-      <TodayDeals/>
+      <Navbar />
+      <OurProducts />
+      <FlashSale />
+      <TodayDeals />
     </Stack>
   );
 }
