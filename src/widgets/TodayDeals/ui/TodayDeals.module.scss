@@ -1,0 +1,39 @@
+@import '../../../app/styles/media-queries.scss';
+
+.mainContainer {
+    @include tablet-m {
+        width: 400px;
+    }
+}
+.title {
+    margin: 125px 0 0 30px;
+}
+.hyphen {
+    color: var(--yellow-color);
+}
+.subtitle {
+    font-size: var(--font-size-47);
+    span {
+        color: var(--green-color);
+    }
+
+    @include tablet-m {
+        font-size: var(--font-size-36);
+    }
+}
+.container {
+    @include tablet-m {
+        flex-wrap: wrap;
+    }
+}
+.cardContainer {
+    width: 585px;
+    border-radius: var(--border-radius-24);
+    border: var(--border-todayDeals);
+    padding: 12px;
+    margin: 0 16px;
+
+    @include tablet-m {
+        width: 327px;
+    }
+}

@@ -1,97 +1,107 @@
 @import '../../../app/styles/media-queries.scss';
 
-.generalCard {
-    width: 276px;
-    height: 331px;
+.mainContainer {
+    @include tablet-m {
+        flex-direction: column;
+    }
+}
+
+.cardBase {
     background-color: var(--background-color);
     border-radius: var(--border-radius-24);
     position: relative;
 
     img {
         width: 100%;
+    }    
+    .icons {
+        position: absolute; 
+        top: 8px;
+        right: 16px;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    .iconsContainer {
+        position: absolute;
+        top: 12px;
+        left: 0;
+        width: 100%;
+        padding: 0 12px;
+        
+        @include tablet-m {
+            top: 8px;
+        }
+    
+        button {
+            background-color: var(--white-color);
+            width: 48px;
+            height: 48px;
+    
+            @include tablet-m {
+                width: 34px;
+                height: 34px;
+            }
+        }
+    
+        img {
+            width: 24px;
+    
+            @include tablet-m {
+                width: 17px;
+            }
+        }
+    }
+    .promotion {
+        padding: 8px 16px;
+        border-radius: var(--border-radius-170);
+        background-color: var(--green-color);
+        width: 99px;
+        height: 38px;
+        color: var(--white-color);
+    
+        @include tablet-m {
+            padding: 6px 12px;
+            width: 69px;
+            height: 27px;
+        }
+    
+        .promotionText {
+    
+            @include tablet-m {
+            font-size: var(--font-size-12);
+            }
+        }
     }
 
-    @include tablet-m {
-        width: 158px;
-        height: 188px;
-    }
 }
-.generalCard:hover .icons {
+.cardBase:hover .icons {
     visibility: visible;
     opacity: 1;
 }
-.icons {
-    position: absolute; 
-    top: 8px;
-    right: 16px;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-.cardTimer {
-    position: absolute;
-    bottom: 10px;
-    left: 5px;
+.generalCard {
+    @extend .cardBase;
+    width: 276px;
+    height: 331px;
     
     @include tablet-m {
-        left:1px;
-        bottom: 5px;
-    }
-}
-.iconsContainer {
-    position: absolute;
-    top: 12px;
-    left: 0;
-    width: 100%;
-    padding: 0 12px;
-    
-    @include tablet-m {
-        top: 8px;
-    }
-
-    button {
-        background-color: var(--white-color);
-        width: 48px;
-        height: 48px;
-
+        width: 158px;
+        height: 188px;
+    } 
+    .cardTimer {
+        position: absolute;
+        bottom: 10px;
+        left: 5px;
+        
         @include tablet-m {
-            width: 34px;
-            height: 34px;
-        }
-    }
-
-    img {
-        width: 24px;
-
-        @include tablet-m {
-            width: 17px;
+            left:1px;
+            bottom: 5px;
         }
     }
 }
-.promotion {
-    padding: 8px 16px;
-    border-radius: var(--border-radius-170);
-    background-color: var(--green-color);
-    width: 99px;
-    height: 38px;
-    color: var(--white-color);
-
-    @include tablet-m {
-        padding: 6px 12px;
-        width: 69px;
-        height: 27px;
-    }
-
-    .promotionText {
-
-        @include tablet-m {
-        font-size: var(--font-size-12);
-        }
-    }
-}
+.generalCategory {
 .categoryContainer {
     width: 276px;
-    margin-top: 16px;
 
     @include tablet-m {
         width: 158px;
@@ -115,7 +125,6 @@
         margin-right: 4px;
         }
 }
-
 .rating {
     @include tablet-m {
         font-size: 14px;
@@ -148,5 +157,93 @@
 
     @include tablet-m {
         padding-left: 4px;
+    }
+}
+}
+
+.extendedCard {
+    @extend .cardBase;  
+    width: 290px;
+    height: 416px;
+    
+    .cardTimer {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        
+        @include tablet-m {
+            left:60px;
+            bottom: 5px;
+        }
+    }
+}
+.extendedCategory {
+    width: 251px;
+    margin-top: 62px;
+    position: relative;
+
+    @include tablet-m {
+        margin: 0;
+    }
+
+    .category {
+        color: var(--secoundry-black-color);
+    
+        @include tablet-m {
+            font-size: var(--font-size-16);
+            }
+    }
+
+    .cardName {
+        font-size: var(--font-size-24);
+        font-weight: 600;
+
+        @include tablet-m {
+            font-size: var(--font-size-18);
+            margin-top: 4px;
+            }
+    }
+    .newPrice {
+        font-size: var(--font-size-26);
+        font-weight: 500;
+        margin-top: 13px;
+
+        @include tablet-m {
+            font-size: var(--font-size-20);
+            margin-top: 8px;
+            }
+    }
+    .price {
+        color: var(--secoundry-black-color);
+        padding-left: 12px;
+        text-decoration: line-through;
+        font-weight: 400;
+    }
+    .ratingContainer {
+        position: absolute;
+        top: 126px;
+        left: 0;
+
+        @include tablet-m {
+            top: 108px;
+        }
+
+        .rating {
+            @include tablet-m {
+                font-size: var(--font-size-16);
+            }
+        }
+    }
+    .cardText {
+        margin-top: 69px;
+    }
+    .shopButton {
+        display: flex;
+        align-items: center;
+        gap: var(----gap-8);
+        width: 120px;
+        color: var(--green-color);
+        margin-top: 25px;
+        border: none;
     }
 }
