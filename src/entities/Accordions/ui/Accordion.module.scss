@@ -1,5 +1,9 @@
 @import '../../../app/styles/media-queries';
 
+//font-size
+$font-size-16: var(--font-size-16);
+$font-size-18: var(--font-size-18);
+
 //background-color
 $background-color-green: var(--green-color); 
 
@@ -35,6 +39,11 @@ $opacity: var(--opacity-08);
         > p {
             font-weight: 600;
             line-height: 25px;
+
+            @include tablet-m {
+                font-size: $font-size-18;
+            } 
+            
         }
 
         &:nth-child(2) {
@@ -44,10 +53,18 @@ $opacity: var(--opacity-08);
             opacity: 0;
             overflow: hidden;
 
+            @include tablet-m {
+                width: 303px;
+            } 
+
             > p {
                 opacity: $opacity;
                 font-weight: 400;
                 line-height: 28px;
+
+                @include tablet-m {
+                    font-size: $font-size-16;
+                } 
             }
         } 
 
@@ -68,9 +85,17 @@ $opacity: var(--opacity-08);
     &.pageFAQ {
         width: 687px; 
 
+        @include tablet-m {
+            width: 327px;
+        } 
+
         > div {
             &:nth-child(2)  {
                 width: 591px;
+
+                @include tablet-m {
+                    width: 303px;
+                } 
             }
         }
     }

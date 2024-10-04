@@ -1,3 +1,5 @@
+@import '../../../app/styles/media-queries.scss';
+
 .questionMainPageContainer {
     width: 100%;
     margin-top: 125px;
@@ -5,5 +7,16 @@
 
     > div {
         width: 1200px;
+
+        @include tablet-m {
+            width: 327px;
+        } 
+
+        &:nth-child(1) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
     }
 }

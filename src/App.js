@@ -3,6 +3,7 @@ import { OurProducts } from "./entities/OurProducts/ui/OurProducts";
 import { Stack } from "./shared/ui/Stack/Stack";
 import { FlashSale } from "./widgets/FlashSale/ui/FlashSale";
 import { Navbar } from "./widgets/Navbar/ui/Navbar";
+import { QuestionMainPage } from "./widgets/QuestionsMainPage/ui/QuestionMainPage";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Navbar />
       <OurProducts />
       <FlashSale />
+      <QuestionMainPage/>
     </Stack>
   );
 }

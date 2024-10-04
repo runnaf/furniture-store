@@ -1,7 +1,8 @@
+import { forwardRef } from "react";
 import { getStyles } from "../../libs/getStyles";
 import styles from './Stack.module.scss';
 
-export const Stack = ({
+export const Stack = forwardRef(({
     children, 
     className, 
     justify, 
@@ -10,7 +11,7 @@ export const Stack = ({
     max,
     gap,
     ...otherProps
-}) => {
+}, ref) => {
 
     const mapGap = {
         8: 'gap8',
@@ -38,8 +39,8 @@ export const Stack = ({
     const stackClasses = getStyles(styles.flex, mode, additional);
 
     return (
-        <div className={stackClasses} {...otherProps}>
+        <div className={stackClasses} ref={ref} {...otherProps}>
             {children}
         </div>
     )
-}
+})

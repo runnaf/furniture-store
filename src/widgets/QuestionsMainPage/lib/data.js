@@ -1,27 +1,27 @@
 const data = [
     {
-        question: "What types of furniture do you offer?",
-        answer: "We offer a wide range of furniture including sofas, chairs, tables, beds, wardrobes, and more. Our collection includes various styles such as modern, classic, and contemporary to suit different tastes and needs."
+        question: "Какие виды мебели мы предлагаем?",
+        answer: "Мы предлагаем широкий ассортимент мебели, включая диваны, стулья, столы, кровати, шкафы и многое другое. Наша коллекция включает различные стили, такие как модерн, классика и современный, чтобы удовлетворить различные вкусы и потребности."
     },
     {
-        question: "What payment methods do you accept?",
-        answer: "We accept various payment methods including credit and debit cards, PayPal, and bank transfers. For more details on payment options, please visit our checkout page."
+        question: "Какие методы оплаты мы принимаем?",
+        answer: "Мы принимаем различные методы оплаты, включая кредитные и дебетовые карты, PayPal и банковские переводы. Для получения дополнительной информации о вариантах оплаты, пожалуйста, посетите нашу страницу оформления заказа."
     },
     {
-        question: "Can I track my furniture delivery?",
-        answer: "Yes, you can track your furniture delivery using the tracking number provided in your confirmation email. You can also check the status of your delivery through your account on our website."
+        question: "Можете ли вы отслеживать доставку мебели?",
+        answer: "Да, вы можете отслеживать доставку мебели, используя номер для отслеживания, который будет предоставлен в подтверждающем письме. Вы также можете проверить статус доставки через ваш аккаунт на нашем сайте."
     },
     {
-        question: "What is your return policy?",
-        answer: "We offer a 30-day return policy on most items. If you are not satisfied with your purchase, you can return it within 30 days for a full refund or exchange. Please ensure the item is in its original condition and packaging."
+        question: "Какова наша политика возврата?",
+        answer: "Мы предлагаем политику возврата в течение 30 дней на большинство товаров. Если вы не удовлетворены покупкой, вы можете вернуть товар в течение 30 дней для полного возврата средств или обмена. Пожалуйста, убедитесь, что товар в оригинальном состоянии и упаковке."
     },
     {
-        question: "What materials are used in your furniture?",
-        answer: "Our furniture is made from a variety of high-quality materials including solid wood, engineered wood, metal, glass, and upholstered fabrics. Each product description provides detailed information about the materials used."
+        question: "Из каких материалов изготовлена наша мебель?",
+        answer: "Наша мебель изготовлена из различных высококачественных материалов, включая массив дерева, древесные материалы, металл, стекло и обивочные ткани. В описании каждого товара предоставлена подробная информация о используемых материалах."
     },
     {
-        question: "Are there any discounts or promotions available?",
-        answer: "We regularly offer discounts and promotions on selected items. Please check our website's promotions page or subscribe to our newsletter to stay updated on the latest offers and deals."
+        question: "Есть ли какие-либо скидки или акции?",
+        answer: "Мы регулярно предлагаем скидки и акции на выбранные товары. Пожалуйста, посетите страницу акций на нашем сайте или подпишитесь на нашу рассылку, чтобы быть в курсе последних предложений и акций."
     }
 ]
 
