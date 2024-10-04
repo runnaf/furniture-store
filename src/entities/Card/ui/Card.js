@@ -31,7 +31,7 @@ export function Card ({
     styles.generalCategory;
 
     return (
-        <Stack direction={view === 'extended' ? 'raw' : 'column'} gap='16'>
+        <Stack direction={view === 'extended' ? 'raw' : 'column'} gap='16' className={styles.mainContainer}>
         <Stack className={cardView}>
             <img src={image} alt='item'></img>
             <Stack justify='justifyBetween' className={styles.iconsContainer}>

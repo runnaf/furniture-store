@@ -1,7 +1,12 @@
+import bed from '../assets/jpg/bed.jpg';
+import chair from '../assets/jpg/chair.jpg';
+import sofa from '../assets/jpg/sofa.jpg';
+import chair2 from '../assets/jpg/sofa-chair.jpg';
 
 const data = [
     {
         id: '1',
+        image: chair,
         promotion: '30',
         timer: '2024-12-31T23:59:59',
         category: 'Кресла',
@@ -13,6 +18,7 @@ const data = [
     },
     {
         id: '2',
+        image: bed,
         promotion: '15',
         category: 'Кровати',
         name: 'Кровать белая',
@@ -23,6 +29,7 @@ const data = [
     },
     {
         id: '3',
+        image: chair2,
         category: 'Кресла',
         name: 'Кресло-кровать желтое',
         price: '12000',
@@ -32,6 +39,7 @@ const data = [
     },
     {
         id: '4',
+        image: sofa,
         promotion: '50',
         category: 'Диваны',
         name: 'Диван серый',
