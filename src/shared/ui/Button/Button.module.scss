@@ -1,8 +1,17 @@
+@import '../../../app/styles/media-queries';
+
 //font-size
 
 $font-size-16: var(--font-size-16);
 $font-size-18: var(--font-size-18);
 $font-size-24: var(--font-size-24);
+
+//border-radius
+
+$border-radius-rounded: var(--border-radius-170);
+$border-radius-circle: var(--border-radius-circle);
+$border-radius-16: var(--border-radius-16);
+$border-radius-8: var(--border-radius-8);
 
 $sizes: (
     xxs: $font-size-16,
@@ -39,12 +48,6 @@ $text-black-color: var(--black-color);
     color: $text-black-color;
 }
 
-//border-radius
-
-$border-radius-rounded: var(--border-radius-170);
-$border-radius-circle: var(--border-radius-circle);
-$border-radius-m: var(--border-radius-16);
-
 .rounded {
     border-radius: $border-radius-rounded;
 }
@@ -54,5 +57,9 @@ $border-radius-m: var(--border-radius-16);
 }
 
 .radius-m {
-    border-radius: $border-radius-m;
+    border-radius: $border-radius-16;
+
+    @include tablet-m {
+        border-radius: $border-radius-8;
+    }
 }

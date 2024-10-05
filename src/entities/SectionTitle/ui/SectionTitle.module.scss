@@ -1,3 +1,5 @@
+@import '../../../app/styles/media-queries';
+
 $background-color: var(--background-color);
 
 .sectionTitleContainer {
@@ -8,18 +10,34 @@ $background-color: var(--background-color);
     height: 215px;
     background: $background-color;
 
+    @include tablet-m {
+        width: 375px;
+        height: 186px;
+    }
+
+
     > img {
         position: absolute;
 
         &:nth-child(1) {
             top: 150px;
             left: 241px;
+
+            @include tablet-m {
+                top: 140px;
+                left: 45px;
+            }
         }
 
         &:nth-child(2) {
             bottom: 157px;
             right: 218px;
             rotate: 180deg;
+
+            @include tablet-m {
+                bottom: 140px;
+                right: 26px;
+            }
         }
     }
 }
