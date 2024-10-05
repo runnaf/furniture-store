@@ -7,6 +7,7 @@ import heart from '../../../shared/assets/svg/heart.svg';
 import zoom from '../../../shared/assets/svg/zoom.svg';
 import star from '../../../shared/assets/svg/star.svg';
 import { Timer } from '../../Timers/ui/Timer';
+import arrow from '../../../shared/assets/svg/arrowblack.svg';
 
 export function Card ({
     image,
@@ -18,14 +19,19 @@ export function Card ({
     newPrice,
     rating,
     view,// general | extended
+    cardText,
 }) {
 
     const cardView = 
     view === 'extended' ? styles.extendedCard : 
     styles.generalCard;
 
+    const categoryView = 
+    view === 'extended' ? styles.extendedCategory :
+    styles.generalCategory;
+
     return (
-        <Stack direction='column'>
+        <Stack direction={view === 'extended' ? 'raw' : 'column'} gap='16' className={styles.mainContainer}>
         <Stack className={cardView}>
             <img src={image} alt='item'></img>
             <Stack justify='justifyBetween' className={styles.iconsContainer}>
@@ -46,17 +52,23 @@ export function Card ({
               )} 
               </Stack>
         </Stack>
-        <Stack direction='column'>
+        <Stack direction='column' className={categoryView}>
             <Stack justify='justifyBetween' className={styles.categoryContainer}>
                 <Text className={styles.category}>{category}</Text>
-                <Stack>
+                <Stack className={styles.ratingContainer}>
                     <img src={star} alt='star' className={styles.star}></img>
                     <Text className={styles.rating}>{rating}</Text>
                 </Stack>
             </Stack>
             <p className={styles.cardName}>{name}</p>
             <p className={styles.newPrice}>{newPrice}р.<span className={styles.price}>{price}р.</span></p>
-        </Stack>
+            {(view === 'extended') && (
+                <>
+                <Text className={styles.cardText}>{cardText}</Text>
+                <Button color='outlined' className={styles.shopButton}>Магазин <img src={arrow} alt="arrow"/></Button>
+                </>
+            )}
+        </Stack>        
         </Stack>
     )
 }
