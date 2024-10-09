@@ -1,0 +1,27 @@
+//font-size
+$font-size-18: var(--font-size-18);
+
+
+.newsBlogsContainer {
+    width: 100%;
+
+    > div {
+        width: 1200px;
+
+        &:nth-child(1) {
+            > div:nth-child(1) {
+                width: 400px;
+            }
+
+            > a {
+                align-self: end;
+
+                > button {
+                    padding: 17px 34px;
+                    font-weight: 600;
+                    font-size: $font-size-18;
+                }
+            }
+        }
+    }
+}

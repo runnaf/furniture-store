@@ -12,7 +12,7 @@ export const QuestionMainPage = () => {
         justify='justifyCenter'
         align='alignCenter'
         gap='50'>
-            <HeaderSection children={'Есть вопрос? Найдите ответ здесь.'} subTitle={'Популярные вопросы'}/>
+            <HeaderSection title={'Есть вопрос?'} children={' Найдите ответ здесь.'} subTitle={'Популярные вопросы'}/>
             <Stack direction="column" gap='16'>
                 {questionData.map((item, index) => (
                     <Accordion key={index} question={item.question} answer={item.answer} isSecond={index === 1}/>
