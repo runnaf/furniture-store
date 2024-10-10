@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from './Navbar.module.scss';
 import { logoIcon, likeIcon, cartIcon, loginIcon } from '../../../../shared/assets/svg/navbarIcons';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { routes } from '../../../../app/routes/lib/data';
 import { dropdownMenus } from '../../libs/data';
 import { DropdownMenu } from '../DropdownMenu/DropdownMenu';
@@ -11,7 +11,7 @@ export const Navbar = () => {
     const [activeDropdown, setActiveDropdown] = useState(null);
 
     const handleMouseEnter = (title) => {
-        if (title === 'Магазин' || title === 'Категории') {
+        if (activeDropdown !== title) {
             setActiveDropdown(title);
         }
     };
@@ -41,7 +41,9 @@ export const Navbar = () => {
                     <li key={title}
                         onMouseEnter={() => handleMouseEnter(title)}
                     >
-                        <Link to={link}>{title}</Link>
+                        <NavLink to={link} className={({ isActive }) =>
+                            `${styles.link} ${isActive ? styles.active : ''}`
+                        }>{title}</NavLink>
                         {activeDropdown === title && getDropdownMenu(title)}
                     </li>
                 ))}
