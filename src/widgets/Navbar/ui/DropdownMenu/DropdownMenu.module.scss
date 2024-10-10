@@ -1,0 +1,113 @@
+@import '../../../../app/styles/media-queries.scss';
+
+.dropdown {
+    position: absolute;
+    top: 100%; 
+    left: 110px; 
+    padding: 20px;
+    z-index: 1000;
+    display: flex;
+    gap: 30px;
+    font-family: var(--font-family);
+    border-radius: 0px 0px 24px 24px;
+    border-right: 1px solid var(--stroke-color);
+    border-bottom: 1px solid var(--stroke-color);
+    border-left: 1px solid var(--stroke-color);
+    background: var(--white-color);
+    box-shadow: 0px 4px 54px 0px rgba(0, 0, 0, 0.03);
+
+    @include tablet-m {
+      position: relative;
+      top: 0;
+      left: 0;
+      flex-direction: column;
+      padding-left: 28px;
+      gap: 24px;
+      box-shadow: none;
+      border: none;
+  }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0; 
+      width: 90%;
+      height: 8px;
+      background-color: var(--yellow-color); 
+      border-radius: 16px 16px 0px 0px;
+
+      @include tablet-m {
+        display: none;
+    }
+  }
+
+  
+    .column {
+      margin-top: 32px;
+
+      @include tablet-m {
+        margin-top: 0;
+    }
+  
+      ul {
+        list-style: none;
+        padding: 0;
+
+  
+        li {
+          margin-bottom: 24px;
+          font-size: var(--font-size-16);
+
+          @include tablet-m {
+            margin-bottom: 21px;
+        }
+  
+          a {
+            text-decoration: none;
+            color: var(--secoundry-black-color);
+            transition: color 0.3s;
+  
+            &:hover {
+              color: var(--black-color);
+            }
+          }
+        }
+      }
+    }
+  
+    .offer {
+      background-color: var(--yellow-color);
+      padding: 20px;
+      border-radius: 16px;
+      width: 220px;
+      height: 346px;
+      text-align: center;
+      margin-top: 32px;
+
+      @include tablet-m {
+        display: none;
+    }
+  
+      p {
+        font-size: var(--font-size-16);
+        font-weight: bold;
+        margin: 0;
+        color: var(--black-color);
+        font-weight: 500;
+      }
+  
+      h3 {
+        font-size: var(--font-size-18);
+        margin: 10px 0;
+        color: var(--black-color);
+        font-weight: 600;
+      }
+  
+      .btn {
+        background-color: var(--green-color);
+        padding: 6px 12px;
+        border: none;
+        margin-top: 16px;
+      }
+    }
+  }

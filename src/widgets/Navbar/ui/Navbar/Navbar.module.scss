@@ -1,4 +1,7 @@
+@import '../../../../app/styles/media-queries.scss';
+
 .navbar {
+    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -7,6 +10,10 @@
     color: var(--black-color);
     padding: 29px 0;
 
+    @include tablet-m {
+        display: none;
+    }
+
     .navLinks {
         gap: var(--gap-36);
         display: flex;
@@ -14,7 +21,7 @@
         a {
             font-size: var(--font-size-16);
             color: var(--black-color);
-            font-family: var(--font-black);
+            font-family: var(--font-family);
         }
     }
 
@@ -22,5 +29,3 @@
         background-color: transparent;
     }
 }
-
-
