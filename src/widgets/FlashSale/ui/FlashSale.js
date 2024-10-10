@@ -22,7 +22,7 @@ export const FlashSale = () => {
                     direction="column"
                     justify='justifyCenter'
                     align='alignCenter'>
-                    <HeaderSection children='Флэш Скидки!' subTitle='Скидка 25% - предложение ограничено!'/>
+                    <HeaderSection title='Флэш' children=' Скидки!' subTitle='Скидка 25% - предложение ограничено!'/>
                     <Timer styleMode='timerMainContainer' endTime='2024-12-31T20:59:59.000Z'/>
                     <Link to={getRouteShop()}>
                         <Button>
