@@ -1,0 +1,33 @@
+//font-size
+$font-size-47: var(--font-size-47);
+
+//color
+$color-black: var(--black-color);
+
+//opacity
+$opacity-08: var(--opacity-08);
+
+
+.breadCrumbsContainer {
+    > h1 {
+        font-size: $font-size-47;
+        font-weight: 600;
+    }
+    > nav {
+        display: flex;
+        gap: 12px;
+
+        > li {
+            display: flex;
+            opacity: $opacity-08;
+            color: $color-black;
+            font-weight: 500;
+            gap: 12px;
+
+            > a, p {
+                color: $color-black;
+                opacity: $opacity-08;
+            }
+        }
+    }
+}

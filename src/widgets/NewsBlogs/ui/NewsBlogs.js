@@ -6,6 +6,7 @@ import { Stack } from "../../../shared/ui/Stack/Stack";
 import styles from './NewsBlogs.module.scss';
 import { data } from '../lib/data';
 import { getFormatDate } from "../../../shared/libs/getFormatDate";
+import { getRouteBlog } from "../../../app/routes/lib/helper";
 
 
 export const NewsBlogs = () => {
@@ -30,7 +31,7 @@ export const NewsBlogs = () => {
             <Stack justify='justifyBetween'>
                 <HeaderSection subTitle='Новости & Блог' 
                 title='Наши последние' children=' Новости & Блог'/>
-                <Link>
+                <Link to={getRouteBlog()}>
                     <Button>{'Oткрыть блог'}</Button>
                 </Link>
             </Stack>

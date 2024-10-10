@@ -6,7 +6,6 @@ import chairSale from '../../../shared/assets/svg/chairSale.svg';
 import points from '../../../shared/assets/svg/points.svg';
 import arrowRight from '../../../shared/assets/svg/arrowright.svg'
 import styles from './FlashSale.module.scss'
-import { getRouteShop } from "../../../app/routes/lib/helper";
 import { Link } from "react-router-dom";
 
 export const FlashSale = () => {
@@ -24,7 +23,7 @@ export const FlashSale = () => {
                     align='alignCenter'>
                     <HeaderSection title='Флэш' children=' Скидки!' subTitle='Скидка 25% - предложение ограничено!'/>
                     <Timer styleMode='timerMainContainer' endTime='2024-12-31T20:59:59.000Z'/>
-                    <Link to={getRouteShop()}>
+                    <Link>
                         <Button>
                             {'Магазин'}
                             <img src={arrowRight} alt="arrow"/>

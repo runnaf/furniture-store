@@ -5,8 +5,9 @@ import styles from './FAQs.module.scss';
 import faqData from '../lib/data'
 import { Accordion } from "../../../entities/Accordions/ui/Accordion";
 import { SectionTitle } from "../../../entities/SectionTitle/ui/SectionTitle";
-import HeaderSection from "../../../shared/ui/HeaderSection/HeaderSection";
 import { useSwipeable } from "react-swipeable";
+import { Breadcrumbs } from "../../../entities/BreadCrumbs/ui/BreadCrumbs";
+import { routes } from "../../../app/routes/lib/data";
 
 export const FAQs = () => {
     const [activeTab, setActiveTab] = useState('Общая информация')
@@ -65,8 +66,7 @@ export const FAQs = () => {
         gap='75'
         {...handlers}>
             <SectionTitle>
-                <HeaderSection children={'Популярные вопросы'}
-                subTitle={'Главная / Популярные вопросы'}/>
+                <Breadcrumbs routes={routes}/>
             </SectionTitle>
             <Stack justify='justifyBetween'>
                 <Stack direction="column" gap='16'
