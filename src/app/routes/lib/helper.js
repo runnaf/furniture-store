@@ -4,4 +4,6 @@ export const getRouteCategories = (param) => `/categories${param ? `/${param}` :
 export const getRouteAbout = () => '/about';
 export const getRouteContact = () => '/contact';
 export const getRouteBlog = () => '/blog';
+export const getRouteSignin = () => '/signin';
+export const getRouteSignup = () => '/signup';
 

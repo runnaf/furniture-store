@@ -25,23 +25,25 @@ export const MobileNavbar = () => {
     };
 
     return (
-        <nav className={styles.mobileNavbar}>
+        <nav className={`${styles.mobileNavbar} ${isOpen ? styles.open : ''}`}>
             <Stack justify='justifyBetween' align='alignCenter' className={styles.header}>
-                <button onClick={toggleMenu}>
+                <button className={styles.toggleMenu} onClick={toggleMenu}>
                     {isOpen ? closeIcon() : menuIcon()}
                 </button>
                 {logoIcon()}
-                <Stack gap="24">
-                    <button>
-                        {likeIcon()}
-                    </button>
-                    <button>
-                        {cartIcon()}
-                    </button>
-                    <button>
-                        {loginIcon()}
-                    </button>
-                </Stack>
+                {!isOpen ? (
+                    <Stack gap="16">
+                        <button>
+                            {likeIcon()}
+                        </button>
+                        <button>
+                            {cartIcon()}
+                        </button>
+                        <button>
+                            {loginIcon()}
+                        </button>
+                    </Stack>
+                ) : null}
             </Stack>
 
             {isOpen && (

@@ -1,5 +1,6 @@
 @import '../../../../app/styles/media-queries.scss';
 
+
 .mobileNavbar {
     width: 100%;
     background-color: var(--white-color);
@@ -14,41 +15,51 @@
     }
 
     .navLinks {
-    padding-top: 27px;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--white-color);
+        padding-top: 27px;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--white-color);
 
-    li {
-        font-size: var(--font-size-18);
-
-        button {
-            background: none;
-            color: var(--black-color);
-            text-align: left;
+        li {
             font-size: var(--font-size-18);
-            font-weight: 500;
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            padding: 10px 0;
 
+            button {
+                background: none;
+                color: var(--black-color);
+                text-align: left;
+                font-size: var(--font-size-18);
+                font-weight: 500;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                padding: 10px 0;
 
-        span {
-            display: flex;
-            align-items: center;
+                span {
+                    display: flex;
+                    align-items: center;
+                }
+            }
         }
-        }
-    }
-
     }
 
     button {
         background: none;
     }
 
-}
+    .toggleMenu {
+        margin-right: 10px;
+    }
 
+    &.open {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 2000;
+        overflow-y: auto;
+    }
+}
 
 .titles {
     padding-left: 28px;

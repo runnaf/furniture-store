@@ -1,5 +1,6 @@
 @import '../../../../app/styles/media-queries.scss';
 
+
 .navbar {
     position: relative;
     display: flex;
@@ -17,11 +18,31 @@
     .navLinks {
         gap: var(--gap-36);
         display: flex;
-        
+
         a {
+            position: relative;
             font-size: var(--font-size-16);
             color: var(--black-color);
             font-family: var(--font-family);
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+            &:after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                left: 0;
+                bottom: -5px;
+                background-color: var(--green-color);
+                transition: width 0.3s ease;
+            }
+
+            &:hover:after,
+            &.active:after {
+                width: 100%;
+            }
+
         }
     }
 
