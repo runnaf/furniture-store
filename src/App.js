@@ -6,7 +6,6 @@ import { Navbar } from "./widgets/Navbar/ui/Navbar";
 import { QuestionMainPage } from "./widgets/QuestionsMainPage/ui/QuestionMainPage";
 import { TodayDeals } from "./widgets/TodayDeals/ui/TodayDeals";
 import { NewsBlogs } from "./widgets/NewsBlogs/ui/NewsBlogs";
-import { OurBlog } from "./pages/OurBlog/ui/OurBlog";
 
 function App() {
   return (
@@ -20,7 +19,6 @@ function App() {
       <TodayDeals />
       <NewsBlogs/>
       <QuestionMainPage/>
-      <OurBlog/>
     </Stack>
   );
 }
