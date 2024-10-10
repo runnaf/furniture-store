@@ -1,4 +1,5 @@
 import { Header } from "../../../entities/Header/ui/Header";
+import { NewsLetter } from "../../../feature/NewsLetters/ui/NewsLetter";
 import { Stack } from "../../../shared/ui/Stack/Stack";
 import { FlashSale } from "../../../widgets/FlashSale/ui/FlashSale";
 import { Navbar } from "../../../widgets/Navbar/ui/Navbar";
@@ -19,6 +20,7 @@ const MainPage = () => {
             <TodayDeals/>
             <NewsBlogs/>
             <QuestionMainPage/>
+            <NewsLetter/>
         </Stack>
     )
 }
