@@ -6,9 +6,13 @@ import { data } from '../../../widgets/NewsBlogs/lib/data';
 import { useEffect, useMemo, useState } from "react";
 import arrow from '../../../shared/assets/svg/arrow-down.svg'
 import { Button } from "../../../shared/ui/Button/Button";
+import { getFormatDate } from "../../../shared/libs/getFormatDate";
+import { Breadcrumbs } from "../../../entities/BreadCrumbs/ui/BreadCrumbs";
+import { routes } from "../../../app/routes/lib/data";
 import { useSortedNews } from "../../../shared/hooks/useSortedNews";
 
 const ARTICLES_PER_PAGE = 9
+
 
 export const OurBlog = () => {
 
@@ -63,8 +67,7 @@ export const OurBlog = () => {
             align='alignCenter'
             gap='75'>
             <SectionTitle>
-                <h1>Our Blog</h1>
-                <p>Home / Blog</p>
+                <Breadcrumbs routes={routes}/>
             </SectionTitle>
             <Stack direction='column' justify='justifyCenter' align='alignCenter' gap='75'>
                 <Stack justify='justifyCenter' align='alignCenter' gap='32'>
