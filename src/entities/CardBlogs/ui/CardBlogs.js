@@ -13,15 +13,10 @@ export const CardBlogs = ({ title, poster, description, date }) => {
             <Stack direction='column'
             justify='justifyCenter'
             align='alignCenter'>
-                <Stack justify='justifyCenter'
-                align='alignCenter'>
-                    <img src={poster} alt="poster on the topic of news"/>
-                </Stack>
-                <Stack>
-                    <Text>
-                        {date}
-                    </Text>
-                </Stack>
+                <img src={poster} alt="poster on the topic of news"/>
+                <Text>
+                    {date}
+                </Text>
             </Stack>
             <Stack direction='column'
             gap='16'>

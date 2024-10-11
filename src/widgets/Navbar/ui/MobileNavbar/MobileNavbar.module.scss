@@ -1,0 +1,78 @@
+@import '../../../../app/styles/media-queries.scss';
+
+
+.mobileNavbar {
+    width: 100%;
+    background-color: var(--white-color);
+    color: var(--black-color);
+    padding: 24px;
+    display: none;
+    flex-direction: column;
+    font-family: var(--font-family);
+
+    @include tablet-m {
+        display: flex;
+    }
+
+    .navLinks {
+        padding-top: 27px;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--white-color);
+
+        li {
+            font-size: var(--font-size-18);
+
+            button {
+                background: none;
+                color: var(--black-color);
+                text-align: left;
+                font-size: var(--font-size-18);
+                font-weight: 500;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                padding: 10px 0;
+
+                span {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+    button {
+        background: none;
+    }
+
+    .toggleMenu {
+        margin-right: 10px;
+    }
+
+    &.open {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 2000;
+        overflow-y: auto;
+    }
+}
+
+.titles {
+    padding-left: 28px;
+}
+
+.subCategory {
+    display: flex;
+    flex-direction: column;
+    padding-left: 28px;
+    padding-bottom: 24px;
+    gap: 24px;
+
+    a {
+        color: var(--secoundry-black-color);
+    }
+}

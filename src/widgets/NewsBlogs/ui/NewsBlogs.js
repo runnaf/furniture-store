@@ -6,22 +6,16 @@ import { Stack } from "../../../shared/ui/Stack/Stack";
 import styles from './NewsBlogs.module.scss';
 import { data } from '../lib/data';
 import { getFormatDate } from "../../../shared/libs/getFormatDate";
+import { useSortedNews } from "../../../shared/hooks/useSortedNews";
+import { useMemo } from "react";
 import { getRouteBlog } from "../../../app/routes/lib/helper";
 
 
 export const NewsBlogs = () => {
-    
-    function getNews(news) {
-        const sortedNews = news.sort((a, b) => new Date(b.date) - new Date(a.date))
-        const formattedNews = sortedNews.map(item => ({
-            ...item,
-            date: getFormatDate(item.date)
-        }));
-        
-        return formattedNews.slice(0, 3)
-    }
 
-    const currentNews = getNews(data)
+    const sortedNews = useSortedNews(data)
+
+    const currentNews = useMemo(() => sortedNews.slice(0, 3), [sortedNews])
 
     return(
         <Stack className={styles.newsBlogsContainer}
@@ -36,8 +30,8 @@ export const NewsBlogs = () => {
                 </Link>
             </Stack>
             <Stack gap='32'>
-                {currentNews.map((news, index) => (
-                    <CardBlogs key={index} title={news.title}
+                {currentNews.map(news => (
+                    <CardBlogs key={news.id} title={news.title}
                     poster={news.poster}
                     description={news.description}
                     date={news.date}/>
