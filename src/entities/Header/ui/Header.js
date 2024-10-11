@@ -1,5 +1,6 @@
 import styles from './Header.module.scss';
 import { Stack } from '../../../shared/ui/Stack/Stack';
+import { Text } from '../../../shared/ui/Text/Text';
 import { crossIcon } from '../../../shared/assets/svg/crossIcon';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -15,11 +16,11 @@ export const Header = () => {
     return (
         <header className={styles.header}>
             <Stack justify="justifyAround" align="alignCenter" className={`${styles.container} ${isVisible ? styles.visible : styles.hide}`}>
-                    <p className={styles.phone}>Позвоните нам: +123-456-789</p>
-                    <p className={styles.discount}>Зарегистрируйтесь и ПОЛУЧИТЕ скидку 25% на первый заказ. <Link to="/signup">Зарегистрируйтесь сейчас</Link></p>
-                    <button className={styles.cross} onClick={handleClose}>
-                        {crossIcon()}
-                    </button>
+                <Text type="p" size="xs" className={styles.phone}>Позвоните нам: +123-456-789</Text>
+                <Text type="p" size="xs" className={styles.discount}>Зарегистрируйтесь и ПОЛУЧИТЕ скидку 25% на первый заказ. <Link to="/signup">Зарегистрируйтесь сейчас</Link></Text>
+                <button className={styles.cross} onClick={handleClose}>
+                    {crossIcon()}
+                </button>
             </Stack>
             <Stack gap="16" className={styles.links}>
                 <Link to={getRouteSignin()}>Вход</Link>
