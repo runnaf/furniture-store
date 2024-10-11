@@ -1,6 +1,5 @@
 export const getRouteMain = () => '/';
 export const getRouteShop = () => '/shop';
-export const getRouteCategories = () => '/categories';
 export const getRouteFAQ = () => '/faqs';
 export const getRouteCategories = (param) => `/categories${param ? `/${param}` : ''}`;
 export const getRouteAbout = () => '/about';
