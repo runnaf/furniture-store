@@ -52,15 +52,15 @@ export const MobileNavbar = () => {
                         const isDropdownCategory = title === 'Магазин' || title === 'Категории';
 
                         return (
-                            <li key={title}>
-                                <Link to={link}>
+                            <li key={title} className={styles.title}>
+                                {isDropdownCategory ? (
                                     <button onClick={() => toggleDropdown(title)}>
                                         {title}
-                                        {isDropdownCategory && (
-                                            activeDropdown === title ? <span>{arrowupIcon()}</span> : <span>{arrowdownIcon()}</span>
-                                        )}
+                                        {activeDropdown === title ? <span>{arrowupIcon()}</span> : <span>{arrowdownIcon()}</span>}
                                     </button>
-                                </Link>
+                                ) : (
+                                    <Link to={link} className={styles.links}>{title}</Link>
+                                )}
 
                                 {activeDropdown === title && isDropdownCategory && (
                                     <ul className={styles.titles}>
