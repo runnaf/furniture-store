@@ -4,30 +4,28 @@ import { Stack } from '../../../shared/ui/Stack/Stack';
 import styles from './BreadCrumbs.module.scss'
 
 export const Breadcrumbs = ({ routes, separator = ' / ' }) => {
-  const location = useLocation();
+  const location = useLocation()
 
-  const pathnames = location.pathname.split('/').filter((x) => x);
+  const breadcrumbs = location.pathname
+  .split('/')
+  .reduce((acc, segment, index, arr) => {
+    if (!segment) return acc
 
-  const breadcrumbs = [
-    { title: 'Главная', link: '/' }, 
-    ...pathnames.map((segment, index) => {
-      const route = routes.find((r) => r.link.includes(segment))
+    const prevLink = acc.length > 0 ? acc[acc.length - 1].link : '';
+    const link = `${prevLink}${segment}`
+    const route = routes.find((r) => r.link === link)
+    const isLast = index === arr.length - 1;
 
-      if (route) {
-        const isLast = index === pathnames.length - 1;
+    acc.push({
+      title: route ? route.title : segment, 
+      link: link, 
+      isLast: isLast,
+    });
 
-        return {
-          title: route.title,
-          link: route.link,
-          isLast: isLast, 
-        }
-      }
-      return { title: segment, link: `/${segment}`, isLast: index === pathnames.length - 1 };
-    }),
-  ];
-
-  const currentRoute = breadcrumbs[breadcrumbs.length - 1]; 
-  const title = currentRoute.isLast ? currentRoute.title : '';
+    return acc;
+  }, [{ title: 'Главная', link: '/' }]);
+  const currentRoute = breadcrumbs[breadcrumbs.length - 1]
+  const title = currentRoute.isLast ? currentRoute.title : ''
 
 
   return (

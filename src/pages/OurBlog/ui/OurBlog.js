@@ -6,7 +6,6 @@ import { data } from '../../../widgets/NewsBlogs/lib/data';
 import { useEffect, useMemo, useState } from "react";
 import arrow from '../../../shared/assets/svg/arrow-down.svg'
 import { Button } from "../../../shared/ui/Button/Button";
-import { getFormatDate } from "../../../shared/libs/getFormatDate";
 import { Breadcrumbs } from "../../../entities/BreadCrumbs/ui/BreadCrumbs";
 import { routes } from "../../../app/routes/lib/data";
 import { useSortedNews } from "../../../shared/hooks/useSortedNews";

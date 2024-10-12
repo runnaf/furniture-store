@@ -5,7 +5,6 @@ import HeaderSection from "../../../shared/ui/HeaderSection/HeaderSection"
 import { Stack } from "../../../shared/ui/Stack/Stack";
 import styles from './NewsBlogs.module.scss';
 import { data } from '../lib/data';
-import { getFormatDate } from "../../../shared/libs/getFormatDate";
 import { useSortedNews } from "../../../shared/hooks/useSortedNews";
 import { useMemo } from "react";
 import { getRouteBlog } from "../../../app/routes/lib/helper";
