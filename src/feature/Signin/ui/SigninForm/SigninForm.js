@@ -22,17 +22,15 @@ export const SigninForm = () => {
             <div className={styles.logo}>
                 {logoIcon()}
             </div>
-            <Stack direction="column">
+            <Stack direction="column" gap='32'>
                 <Text type="h2" size="xl" className={styles.heading}>Войти</Text>
-                <Text type="p" size="xs" className={styles.par}>Пожалуйста, заполните данные для доступа к вашему аккаунту.</Text>
+                <Text type="p" size="xs" className={styles.par}>Заполните данные для доступа к вашему аккаунту.</Text>
 
                 <Input
                     label="Электронная почта"
                     type="email"
                     placeholder="Введите адрес электронной почты"
                     id="email"
-                    className={styles.email}
-
                 />
 
                 <Stack direction='column' className={styles.password}>

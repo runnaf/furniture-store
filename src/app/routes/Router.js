@@ -4,9 +4,9 @@ import { routes } from './lib/data'
 const Router = () => {
     return (
             <Routes>
-                {routes.map(({title, link, page}) => 
+                {routes.map(({link, page}) => 
                     <Route
-                        key={title}
+                        key={link}
                         path={link}
                         element={page}
                     />

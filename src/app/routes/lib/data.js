@@ -1,7 +1,8 @@
 import { FAQs } from "../../../pages/FAQs/ui/FAQs";
 import MainPage from "../../../pages/MainPage/ui/MainPage";
 import { OurBlog } from "../../../pages/OurBlog/ui/OurBlog";
-import { getRouteAbout, getRouteBlog, getRouteCategories, getRouteContact, getRouteFAQ, getRouteMain, getRouteShop } from "./helper";
+import SigninPage from "../../../pages/SigninPage/ui/SigninPage";
+import { getRouteAbout, getRouteBlog, getRouteCategories, getRouteContact, getRouteFAQ, getRouteMain, getRouteShop, getRouteSignin } from "./helper";
 
 export const routes = [
     {
@@ -39,4 +40,8 @@ export const routes = [
         link: getRouteBlog(),
         page: <OurBlog/>
     },
+    {
+        link: getRouteSignin(),
+        page: <SigninPage />
+    }
 ]
