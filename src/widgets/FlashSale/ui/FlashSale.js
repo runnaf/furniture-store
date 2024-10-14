@@ -27,10 +27,9 @@ export const FlashSale = () => {
                     justify='justifyCenter'
                     align='alignCenter'
                 >
-                    <HeaderSection title='Скидки!'>
-                        <span> Скидка 25% </span> - предложение ограничено!
+                    <HeaderSection subTitle='Скидка 25% - предложение ограничено!'>
+                        <span> Супер </span> Скидки!
                     </HeaderSection>
-                
                     <Timer styleMode='timerMainContainer' endTime='2024-12-31T20:59:59.000Z'/>
                     <Link>
                         <Button>

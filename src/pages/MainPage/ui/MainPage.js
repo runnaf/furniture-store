@@ -18,7 +18,7 @@ const MainPage = () => {
             <OurProducts />
             <FlashSale />
             <TodayDeals />
-            {/* <NewsBlogs /> */}
+            <NewsBlogs/>
             <QuestionMainPage />
             <NewsLetter />
         </main>

@@ -22,8 +22,10 @@ export const NewsLetter = () => {
                 align='alignCenter'
                 justify='justifyCenter'
                 gap='24'>
-                    <HeaderSection title={`Subscribe to Our Newsletter to Get`} children={` Updates to Our Latest Collection`} subTitle={`Our Newsletter`}/>
-                    <Text type="p">{`Get 20% off on your first order just by subscribing to our newsletter`}</Text>
+                    <HeaderSection subTitle={`Рассылка новостей`}>
+                        <span> Оформите подписку</span> на наши новости
+                    </HeaderSection>
+                    <Text type="p">{`Получите скидку 20% на свой первый заказ, просто подписавшись на наши новости`}</Text>
                 </Stack>
                 <Stack
                 align='alignCenter'
@@ -32,10 +34,10 @@ export const NewsLetter = () => {
                     <Stack justify='justifyCenter'
                     align='alignCenter'>
                         <img src={sms} alt='envelope'/>
-                        <Input placeholder="Enter Email Address"/>
+                        <Input placeholder="Введите свою почту"/>
                     </Stack>
                     <Button color="secondary">
-                        {'Subscribe'}
+                        {'Оформить'}
                     </Button>
                 </Stack>
             </Stack>
