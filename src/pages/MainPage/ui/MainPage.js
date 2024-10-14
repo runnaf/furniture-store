@@ -1,7 +1,5 @@
-import { Header } from "../../../entities/Header/ui/Header";
 import { NewsLetter } from "../../../feature/NewsLetters/ui/NewsLetter";
 import { FlashSale } from "../../../widgets/FlashSale/ui/FlashSale";
-import { Navbar } from "../../../widgets/Navbar/ui/Navbar/Navbar";
 import { MobileNavbar } from "../../../widgets/Navbar/ui/MobileNavbar/MobileNavbar";
 import { NewsBlogs } from "../../../widgets/NewsBlogs/ui/NewsBlogs";
 import { OurProducts } from "../../../widgets/OurProducts/ui/OurProducts";
@@ -12,8 +10,6 @@ import styles from './MainPage.module.scss';
 const MainPage = () => {
     return (
         <main className={styles.main_page}>
-            <Header />
-            <Navbar />
             <MobileNavbar />
             <OurProducts />
             <FlashSale />
