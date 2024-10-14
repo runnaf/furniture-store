@@ -4,20 +4,33 @@ import { Button } from '../../../shared/ui/Button/Button';
 import { Card } from '../../../entities/Card/ui/Card';
 import cardData from '../../../shared/libs/cardData';
 import styles from './OurProducts.module.scss';
+import { HeaderSection } from '../../../shared/ui/HeaderSection/HeaderSection';
 
 export function OurProducts () {
     return (
-        <Stack direction='column' align='alignCenter' gap='16' className={styles.container}>
-            <Text size='s'><span className={styles.hyphen}>&mdash; </span> Наша продукция</Text>
-            <Text type='h3' className={styles.title}>Каталог товаров</Text>
+        <Stack 
+            direction='column' 
+            align='alignCenter' 
+            gap='16' 
+            className={styles.container}
+        >
+            <HeaderSection subTitle='Наша продукция'>
+                <span>Каталог товаров</span>
+            </HeaderSection>
+
             <Stack gap='16' className={styles.buttonsContainer}>
                 <Button size='s' color='outlined'>Все товары</Button>
                 <Button size='s'>Новинки</Button>
                 <Button size='s' color='outlined'>Популярное</Button>
                 <Button size='s' color='outlined'>Рекомендуемые</Button>
             </Stack>
-            <Stack gap='32' className={styles.cardContainer}>
-            {cardData.map(element => Card(element))}
+            <Stack 
+                justify='justifyBetween' max
+                className={styles.cardContainer}
+            >
+                {cardData.map((element) => (
+                    <Card key={element.id} {...element} />
+                ))}
             </Stack>
         </Stack>
     )
