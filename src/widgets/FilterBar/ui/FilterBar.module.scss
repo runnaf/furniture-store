@@ -49,6 +49,34 @@ input[type="checkbox"] {
 }
 
 .trackMax {
-    
     background-color: var(--green-color);
+}
+
+input[type="radio"] {
+    width: 24px;
+    height: 24px;
+}
+input[type="radio"]:nth-child(1) {
+    accent-color: #844E2D;
+}
+input[type="radio"]:only-of-type(2) {
+    accent-color: var(--stroke-color);
+}
+input[type="radio"]:only-of-type(3) {
+    accent-color: var(--black-color);
+}
+input[type="radio"]:only-of-type(4) {
+    accent-color: red;
+}
+input[type="radio"]:nth-of-type(5) {
+    accent-color: red;
+}
+input[type="radio"]:nth-of-type(6) {
+    accent-color: red;
+}
+input[type="radio"]:nth-of-type(7) {
+    accent-color: red;
+}
+input[type="radio"]:last-of-type(8) {
+    accent-color: red;
 }
