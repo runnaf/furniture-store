@@ -3,15 +3,16 @@ import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { Text } from '../../../../shared/ui/Text/Text';
 import { Input } from '../../../../shared/ui/Input/Input';
 import { Button } from '../../../../shared/ui/Button/Button';
-import { hidePasswordIcon, showPasswordIcon } from '../../../../shared/assets/svg/passwordIcons';
+import { HidePasswordIcon, ShowPasswordIcon } from '../../../../shared/assets/svg/passwordIcons';
 import { logoIcon } from '../../../../shared/assets/svg/navbarIcons';
-import checkmarkIcon from '../../../../shared/assets/svg/checkmarkIcon.svg';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getRouteSignup } from '../../../../app/routes/lib/helper';
+import { CheckmarkIcon } from '../../../../shared/assets/svg/checkmarkIcon';
 
 export const SigninForm = () => {
     const [showPassword, setShowPassword] = useState(false);
-    const PasswordToggleIcon = showPassword ? hidePasswordIcon : showPasswordIcon;
+    const PasswordToggleIcon = showPassword ? <HidePasswordIcon /> : <ShowPasswordIcon />;
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -42,7 +43,7 @@ export const SigninForm = () => {
                     />
                     <button className={styles.password_btn}
                         onClick={() => setShowPassword(!showPassword)}>
-                        <PasswordToggleIcon />
+                        {PasswordToggleIcon}
                     </button>
                 </Stack>
 
@@ -50,10 +51,10 @@ export const SigninForm = () => {
                     <label className={styles.checkbox}>
                         <input
                             type="checkbox"
-                            className={styles.hiddenCheckbox} 
+                            className={styles.hiddenCheckbox}
                         />
                         <span className={styles.customCheckbox}>
-                            <img src={checkmarkIcon} alt="checkmark" />
+                            <CheckmarkIcon />
                         </span> запомнить меня
                     </label>
                     <Link to="/" className={styles.forgotPassword}>Забыли пароль?</Link>
@@ -62,7 +63,7 @@ export const SigninForm = () => {
                 <Button size="xs" color="primary" type="submit" className={styles.signInBtn}>Войти</Button>
 
                 <Text type="p" size="xs" className={styles.account}>
-                    Нет аккаунта? <Link to="/" className={styles.signUpLink}>Зарегистрироваться</Link>
+                    Нет аккаунта? <Link to={getRouteSignup()} className={styles.signUpLink}>Зарегистрироваться</Link>
                 </Text>
             </Stack>
         </form>
