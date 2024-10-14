@@ -23,7 +23,7 @@ export const CardBlogs = ({ title, poster, description, date }) => {
                 <Text type="p" size="md">{title}</Text>
                 <Text type='p'>{description}</Text>
                 <Link>
-                    <Button color='outlined'>{`Read More`}</Button>
+                    <Button color='outlined'>Read More</Button>
                 </Link>
             </Stack>
         </Stack>
