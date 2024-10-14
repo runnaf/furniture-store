@@ -22,7 +22,7 @@ export const NewsLetter = () => {
                 align='alignCenter'
                 justify='justifyCenter'
                 gap='24'>
-                    <HeaderSection subTitle={`Рассылка новостей`}>
+                    <HeaderSection subTitle='Рассылка новостей'>
                         <span> Оформите подписку</span> на наши новости
                     </HeaderSection>
                     <Text type="p">{`Получите скидку 20% на свой первый заказ, просто подписавшись на наши новости`}</Text>
