@@ -1,5 +1,5 @@
 import { Button } from "../../../shared/ui/Button/Button"
-import HeaderSection from "../../../shared/ui/HeaderSection/HeaderSection"
+import { HeaderSection } from "../../../shared/ui/HeaderSection/HeaderSection"
 import { Input } from "../../../shared/ui/Input/Input"
 import { Stack } from "../../../shared/ui/Stack/Stack"
 import { Text } from "../../../shared/ui/Text/Text"

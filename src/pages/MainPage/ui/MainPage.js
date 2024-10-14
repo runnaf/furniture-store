@@ -1,6 +1,5 @@
 import { Header } from "../../../entities/Header/ui/Header";
 import { NewsLetter } from "../../../feature/NewsLetters/ui/NewsLetter";
-import { Stack } from "../../../shared/ui/Stack/Stack";
 import { FlashSale } from "../../../widgets/FlashSale/ui/FlashSale";
 import { Navbar } from "../../../widgets/Navbar/ui/Navbar/Navbar";
 import { MobileNavbar } from "../../../widgets/Navbar/ui/MobileNavbar/MobileNavbar";
@@ -8,23 +7,22 @@ import { NewsBlogs } from "../../../widgets/NewsBlogs/ui/NewsBlogs";
 import { OurProducts } from "../../../widgets/OurProducts/ui/OurProducts";
 import { QuestionMainPage } from "../../../widgets/QuestionsMainPage/ui/QuestionMainPage";
 import { TodayDeals } from "../../../widgets/TodayDeals/ui/TodayDeals";
+import styles from './MainPage.module.scss';
 
 const MainPage = () => {
     return (
-        <Stack direction="column"
-            align='alignCenter'
-            gap='125'>
+        <main className={styles.main_page}>
             <Header />
             <Navbar />
             <MobileNavbar />
             <OurProducts />
             <FlashSale />
             <TodayDeals />
-            <NewsBlogs />
+            {/* <NewsBlogs /> */}
             <QuestionMainPage />
             <NewsLetter />
-        </Stack>
-    )
-}
+        </main>
+    );
+};
 
 export default MainPage;

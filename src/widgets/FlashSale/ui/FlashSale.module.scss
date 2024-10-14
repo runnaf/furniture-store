@@ -15,9 +15,8 @@ $border-radius-24: var(--border-radius-24);
 $gap-8: var(--gap-8);
 
 
-
 .flashSaleContainer {
-    width: 1200px;
+    padding: 0 100px; //FIX LATER
 
     @include tablet-m {
         flex-direction: column;
