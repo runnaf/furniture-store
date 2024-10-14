@@ -25,7 +25,7 @@ export const NewsLetter = () => {
                     <HeaderSection subTitle='Рассылка новостей'>
                         <span> Оформите подписку</span> на наши новости
                     </HeaderSection>
-                    <Text type="p">{`Получите скидку 20% на свой первый заказ, просто подписавшись на наши новости`}</Text>
+                    <Text type="p">Получите скидку 20% на свой первый заказ, просто подписавшись на наши новости</Text>
                 </Stack>
                 <Stack
                 align='alignCenter'
@@ -37,7 +37,7 @@ export const NewsLetter = () => {
                         <Input placeholder="Введите свою почту"/>
                     </Stack>
                     <Button color="secondary">
-                        {'Оформить'}
+                        Оформить
                     </Button>
                 </Stack>
             </Stack>
