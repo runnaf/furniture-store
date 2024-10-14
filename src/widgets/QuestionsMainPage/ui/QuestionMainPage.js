@@ -15,7 +15,7 @@ export const QuestionMainPage = () => {
             gap='32'
         >
             <HeaderSection subTitle='Есть вопрос?'>
-                <span>Найдите ответ здесь</span>
+                <span>Найдите </span> ответ здесь
             </HeaderSection>
 
             <Stack direction="column" gap='16'>
