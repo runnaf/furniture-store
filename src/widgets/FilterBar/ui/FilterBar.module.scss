@@ -26,7 +26,6 @@ input[type="checkbox"] {
     border-radius: 3px;
     margin-top: 29px;
 }
-
 .thumb {
     height: 24px;
     width: 24px;
@@ -36,47 +35,42 @@ input[type="checkbox"] {
     border:var(--border-flashSale);
     margin-top: -7px; 
 }
-
 .track {
     position: absolute;
     height: 6px;
-    border-radius: 3px;
-    
+    border-radius: 3px;    
 }
-
 .trackMin {
     background-color: #ddd;
 }
-
 .trackMax {
     background-color: var(--green-color);
 }
-
 input[type="radio"] {
     width: 24px;
     height: 24px;
 }
-input[type="radio"]:nth-child(1) {
+.radioBrown {
     accent-color: #844E2D;
 }
-input[type="radio"]:only-of-type(2) {
+.radioGrey {
     accent-color: var(--stroke-color);
 }
-input[type="radio"]:only-of-type(3) {
+.radioBlack {
     accent-color: var(--black-color);
 }
-input[type="radio"]:only-of-type(4) {
-    accent-color: red;
+.radioGreen {
+    accent-color: #008263;
 }
-input[type="radio"]:nth-of-type(5) {
-    accent-color: red;
+.radioRed {
+    accent-color: #9E0000;
 }
-input[type="radio"]:nth-of-type(6) {
-    accent-color: red;
+.radioOrange {
+    accent-color: #D58000;
 }
-input[type="radio"]:nth-of-type(7) {
-    accent-color: red;
+.radioBlue {
+    accent-color: #0055D5;
 }
-input[type="radio"]:last-of-type(8) {
-    accent-color: red;
+.radioWhite {
+    accent-color: var(--white-color);
 }
