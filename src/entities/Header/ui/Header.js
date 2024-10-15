@@ -1,8 +1,10 @@
 import styles from './Header.module.scss';
-import { facebookIcon, instagramIcon, pinterestIcon, twitterIcon, youtubeIcon } from '../../../shared/assets/svg/headerIcons';
 import { Stack } from '../../../shared/ui/Stack/Stack';
+import { Text } from '../../../shared/ui/Text/Text';
 import { crossIcon } from '../../../shared/assets/svg/crossIcon';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { getRouteSignin, getRouteSignup } from '../../../app/routes/lib/helper';
 
 export const Header = () => {
     const [isVisible, setIsVisible] = useState(true);
@@ -11,36 +13,18 @@ export const Header = () => {
         setIsVisible(false);
     };
 
-    if (!isVisible) return null;
     return (
         <header className={styles.header}>
-            <Stack justify="justifyAround" align="alignCenter">
-                <Stack>
-                    <p className={styles.phone}>Call Us: +123-456-789</p>
-                </Stack>
-                <Stack>
-                    <p>Sign up and GET 25% OFF for your first order. <a href="/signup">Sign up now</a></p>
-                </Stack>
-                <Stack gap="8" className={styles.socials}>
-                    <button>
-                        {facebookIcon()}
-                    </button>
-                    <button>
-                        {twitterIcon()}
-                    </button>
-                    <button>
-                        {pinterestIcon()}
-                    </button>
-                    <button>
-                        {instagramIcon()}
-                    </button>
-                    <button>
-                        {youtubeIcon()}
-                    </button>
-                </Stack>
+            <Stack justify="justifyAround" align="alignCenter" className={isVisible ? styles.visible : styles.hide}>
+                <Text type="p" size="xs" className={styles.phone}>Позвоните нам: +123-456-789</Text>
+                <Text type="p" size="xs" className={styles.discount}>Зарегистрируйтесь и ПОЛУЧИТЕ скидку 25% на первый заказ. <Link to={getRouteSignup()}>Зарегистрируйтесь сейчас</Link></Text>
                 <button className={styles.cross} onClick={handleClose}>
                     {crossIcon()}
                 </button>
+            </Stack>
+            <Stack gap="16" className={styles.links}>
+                <Link to={getRouteSignin()}>Вход</Link>
+                <Link to={getRouteSignup()}>Регистрация</Link>
             </Stack>
         </header>
     );

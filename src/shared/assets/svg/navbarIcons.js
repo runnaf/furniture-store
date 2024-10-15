@@ -54,3 +54,39 @@ export const loginIcon = () => {
         </svg>
     )
 }
+
+export const closeIcon = () => {
+    return (
+        <svg width="25" height="30" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.6057 13.1013L26.3943 26.8899M12.6057 26.8899L26.3943 13.1013" stroke="#242424" strokeWidth="2.4375" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    )
+}
+
+export const menuIcon = () => {
+    return (
+        <svg width="25" height="30" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1H19M1 6H19M1 11H19" stroke="#242424" strokeWidth="2" strokeLinecap="round" />
+        </svg>
+
+    )
+}
+
+export const arrowupIcon = () => {
+    return (
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.07992 15.5498L10.5999 9.0298C11.3699 8.2598 12.6299 8.2598 13.3999 9.0298L19.9199 15.5498" stroke="#242424" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+
+    )
+}
+
+export const arrowdownIcon = () => {
+    return (
+        <svg width="24" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.9201 8.9502L13.4001 15.4702C12.6301 16.2402 11.3701 16.2402 10.6001 15.4702L4.08008 8.9502" stroke="#242424" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+
+
+    )
+}

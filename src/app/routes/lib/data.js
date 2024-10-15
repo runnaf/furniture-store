@@ -1,5 +1,8 @@
+import { FAQs } from "../../../pages/FAQs/ui/FAQs";
 import MainPage from "../../../pages/MainPage/ui/MainPage";
-import { getRouteAbout, getRouteBlog, getRouteCategories, getRouteContact, getRouteMain, getRouteShop } from "./helper";
+import { OurBlog } from "../../../pages/OurBlog/ui/OurBlog";
+import SigninPage from "../../../pages/SigninPage/ui/SigninPage";
+import { getRouteAbout, getRouteBlog, getRouteCategories, getRouteContact, getRouteFAQ, getRouteMain, getRouteShop, getRouteSignin } from "./helper";
 
 export const routes = [
     {
@@ -10,21 +13,35 @@ export const routes = [
     {
         title: "Магазин",
         link: getRouteShop(),
+        
     },
     {
         title: "Категории",
         link: getRouteCategories(),
+        
+    },
+    {
+        title: "Вопросы",
+        link: getRouteFAQ(),
+        page: <FAQs/>
     },
     {
         title: "О нас",
         link: getRouteAbout(),
+        
     },
     {
         title: "Контакты",
         link: getRouteContact(),
+        
     },
     {
         title: "Новости",
         link: getRouteBlog(),
+        page: <OurBlog/>
     },
+    {
+        link: getRouteSignin(),
+        page: <SigninPage />
+    }
 ]

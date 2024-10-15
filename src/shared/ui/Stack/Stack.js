@@ -5,9 +5,9 @@ import styles from './Stack.module.scss';
 export const Stack = forwardRef(({
     children, 
     className, 
-    justify, 
+    justify, //justifyBetween | justifyCenter | justifyAround | justifyEnd
     direction = 'row',
-    align,
+    align, //alignCenter | alignEnd
     max,
     gap,
     ...otherProps

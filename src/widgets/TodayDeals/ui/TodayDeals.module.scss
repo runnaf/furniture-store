@@ -1,16 +1,17 @@
 @import '../../../app/styles/media-queries.scss';
 
 .mainContainer {
+    padding: 0 100px; //FIX LATER
+    
     @include tablet-m {
         width: 400px;
     }
 }
-.title {
-    margin: 125px 0 0 30px;
-}
+
 .hyphen {
     color: var(--yellow-color);
 }
+
 .subtitle {
     font-size: var(--font-size-47);
     span {
@@ -21,11 +22,13 @@
         font-size: var(--font-size-36);
     }
 }
+
 .container {
     @include tablet-m {
         flex-wrap: wrap;
     }
 }
+
 .cardContainer {
     width: 585px;
     border-radius: var(--border-radius-24);

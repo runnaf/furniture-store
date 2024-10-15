@@ -1,9 +1,7 @@
 @import '../../../app/styles/media-queries.scss';
 
 .questionMainPageContainer {
-    width: 100%;
-    margin-top: 125px;
-    margin-bottom: 125px;
+    padding: 0 100px; //FIX LATER
 
     > div {
         width: 1200px;

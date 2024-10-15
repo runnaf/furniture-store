@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './HeaderSection.module.scss';
 
-const HeaderSection = ({
+export const HeaderSection = ({
   subTitle,
   children,
 }) => {
@@ -12,9 +12,7 @@ const HeaderSection = ({
             <div className={styles.line}></div>
             <p className={styles.subTitle}>{subTitle}</p>
           </div>
-        <h2 className={styles.title}><span>{children}</span></h2>
+        <h2 className={styles.title}>{children}</h2>
     </div>
   );
 };
-
-export default HeaderSection;
