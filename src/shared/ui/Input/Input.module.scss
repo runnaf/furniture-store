@@ -1,5 +1,18 @@
+//color
+$color-error: var(--red-delete-cancel-color);
+$color-placeholder: var(--secoundry-black-color);
+
+//font-size
+$font-size-18: var(--font-size-18);
+
+//opacity
+$opacity-08: var(--opacity-08);
+
+
+
 .input {
     border: var(--border-input);
+    font-size: $font-size-18;
     padding: 0.5em 1em;
     border-radius: var(--border-radius-50);
     transition: border-color 0.3s ease;
@@ -12,8 +25,10 @@
     &:-moz-placeholder,
     &::-moz-placeholder,
     &:-ms-input-placeholder,
-    &::-webkit-input-placeholder  {
-        font-size: var(--font-size-18);
+    &::-webkit-input-placeholder {
+        font-size: $font-size-18;
+        color: $color-error;
+        opacity: $opacity-08;
     }
 }
 
@@ -21,6 +36,11 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+
+    .error {
+        font-size: $font-size-18;
+        color: $color-error;
+    }
 }
 
 .label {
