@@ -4,11 +4,11 @@ import { Text } from '../../../../shared/ui/Text/Text';
 import { Input } from '../../../../shared/ui/Input/Input';
 import { Button } from '../../../../shared/ui/Button/Button';
 import { HidePasswordIcon, ShowPasswordIcon } from '../../../../shared/assets/svg/passwordIcons';
-import { logoIcon } from '../../../../shared/assets/svg/navbarIcons';
+import { LogoIcon, logoIcon } from '../../../../shared/assets/svg/navbarIcons';
 import { CheckmarkIcon } from '../../../../shared/assets/svg/checkmarkIcon';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getRouteSignin } from '../../../../app/routes/lib/helper';
+import { getRouteMain, getRouteSignin } from '../../../../app/routes/lib/helper';
 
 export const SignupForm = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -19,15 +19,18 @@ export const SignupForm = () => {
     };
 
     return (
-        <form className={styles.form} onSubmit={handleSubmit}>
-            <div className={styles.logo}>
-                {logoIcon()}
-            </div>
-            <Stack direction="column" gap="16">
-                <Text type="h2" size="xl" className={styles.heading}>Регистрация</Text>
-                <Text type="p" size="xs" className={styles.par}>Заполните информацию ниже.</Text>
+        <form 
+            className={styles.form} 
+            onSubmit={handleSubmit}
+        >
+            <Link to={getRouteMain()}>
+                <LogoIcon />
+            </Link>
 
-                <Stack justify="justifyBetween" className={styles.name}>
+            <Stack direction="column" gap="32">
+                <Text type="h2" size="xl" >Регистрация</Text>
+
+                <Stack gap='16' className={styles.name}>
                     <Input
                         label="Имя"
                         type="text"
@@ -40,7 +43,6 @@ export const SignupForm = () => {
                         type="text"
                         placeholder="Введите фамилию"
                         id="lastname"
-
                     />
                 </Stack>
 
@@ -50,7 +52,6 @@ export const SignupForm = () => {
                     placeholder="Введите адрес электронной почты"
                     id="email"
                     className={styles.email}
-
                 />
 
                 <Stack direction='column' className={styles.password}>
@@ -75,13 +76,21 @@ export const SignupForm = () => {
                         <span className={styles.customCheckbox}>
                             <CheckmarkIcon />
                         </span> Согласен с
-                        <Link href='/' className={styles.linkAgree}> Условиями </Link> и <Link href='/' className={styles.linkAgree}> Политикой Конфиденциальности </Link>
+                        
+                        {/* TODO */}
+                        <Link href='/' className={styles.linkAgree}> Условиями </Link> и 
+                        <Link href='/' className={styles.linkAgree}> Политикой Конфиденциальности </Link>
                     </label>
                 </Stack>
 
-                <Button size="xs" color="primary" type="submit" className={styles.signUpBtn}>Зарегистрироваться</Button>
+                <Button 
+                    type="submit" 
+                    className={styles.signUpBtn}
+                >
+                    Зарегистрироваться
+                </Button>
 
-                <Text type="p" size="xs" className={styles.account}>
+                <Text className={styles.account}>
                     Уже есть аккаунт? <Link to={getRouteSignin()} className={styles.signInLink}>Войти</Link>
                 </Text>
             </Stack>
