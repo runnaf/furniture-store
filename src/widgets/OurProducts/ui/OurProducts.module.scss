@@ -2,10 +2,11 @@
 
 .container {
     padding: 0 100px; //FIX LATER
+    width: 100%;    
 
     @include tablet-m {
         margin: 75px 0;
-        width: 350px;
+        width: 80%;
     }
 }
 
@@ -27,10 +28,23 @@
         }
     }
 }
-    .cardContainer {
-        // flex-wrap: wrap;
+.cardContainer {
+    overflow: hidden;
+    overflow-x: scroll;;
+    white-space:nowrap;
+    width: 100%; 
+    padding: 30px 0;;
+    overflow: hidden;
 
-        @include tablet-m {        
-            gap: var(--gap-12);
-        }
+    @include tablet-m {        
+        gap: var(--gap-12);
     }
+}
+
+.cardContainer:hover {
+    overflow:overlay;    
+}
+        
+.cardWrapper {
+    display: inline-block;
+}

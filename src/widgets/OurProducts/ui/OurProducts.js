@@ -1,5 +1,4 @@
 import { Stack } from '../../../shared/ui/Stack/Stack';
-import { Text } from '../../../shared/ui/Text/Text';
 import { Button } from '../../../shared/ui/Button/Button';
 import { Card } from '../../../entities/Card/ui/Card';
 import cardData from '../../../shared/libs/cardData';
@@ -8,6 +7,7 @@ import { HeaderSection } from '../../../shared/ui/HeaderSection/HeaderSection';
 
 export function OurProducts () {
     return (
+        <Stack className={styles.parenContainer}>
         <Stack 
             direction='column' 
             align='alignCenter' 
@@ -25,13 +25,15 @@ export function OurProducts () {
                 <Button size='s' color='outlined'>Рекомендуемые</Button>
             </Stack>
             <Stack 
-                justify='justifyBetween' max
+                justify='justifyBetween'
                 className={styles.cardContainer}
+                gap='32'
             >
                 {cardData.map((element) => (
-                    <Card key={element.id} {...element} />
+                    <div className={styles.cardWrapper}><Card key={element.id} {...element} /></div>
                 ))}
             </Stack>
+        </Stack>
         </Stack>
     )
 }
