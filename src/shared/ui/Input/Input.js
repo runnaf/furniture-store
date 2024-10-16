@@ -2,7 +2,7 @@ import { getStyles } from '../../libs/getStyles';
 import styles from './Input.module.scss';
 
 export const Input = ({
-    register,
+    // register,
 	name,
 	options,
 	setValue,
@@ -30,7 +30,7 @@ export const Input = ({
             {label && <label className={styles.label}>{label}</label>}
             <input
                 id={id}
-                {...register(name, options)}
+                // {...register(name, options)}
                 className={inputClasses}
                 {...otherProps}
             />

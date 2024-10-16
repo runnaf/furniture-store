@@ -1,14 +1,14 @@
-import styles from './SigninForm.module.scss';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { Text } from '../../../../shared/ui/Text/Text';
 import { Input } from '../../../../shared/ui/Input/Input';
 import { Button } from '../../../../shared/ui/Button/Button';
 import { HidePasswordIcon, ShowPasswordIcon } from '../../../../shared/assets/svg/passwordIcons';
-import { logoIcon } from '../../../../shared/assets/svg/navbarIcons';
+import { LogoIcon, logoIcon } from '../../../../shared/assets/svg/navbarIcons';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getRouteSignup } from '../../../../app/routes/lib/helper';
+import { getRouteMain, getRouteSignup } from '../../../../app/routes/lib/helper';
 import { CheckmarkIcon } from '../../../../shared/assets/svg/checkmarkIcon';
+import styles from './SigninForm.module.scss';
 
 export const SigninForm = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -20,12 +20,17 @@ export const SigninForm = () => {
 
     return (
         <form className={styles.form} onSubmit={handleSubmit}>
-            <div className={styles.logo}>
-                {logoIcon()}
-            </div>
+            <Link to={getRouteMain()}>
+                <LogoIcon />
+            </Link>
+
             <Stack direction="column" gap='32'>
-                <Text type="h2" size="xl" className={styles.heading}>Войти</Text>
-                <Text type="p" size="xs" className={styles.par}>Заполните данные для доступа к вашему аккаунту.</Text>
+                <Text type="h2" size="xl">
+                    Войти
+                </Text>
+                <Text className={styles.par}>
+                    Заполните данные для доступа к вашему аккаунту.
+                </Text>
 
                 <Input
                     label="Электронная почта"
@@ -57,16 +62,20 @@ export const SigninForm = () => {
                             <CheckmarkIcon />
                         </span> запомнить меня
                     </label>
+                    
+                    {/* TODO */}
                     <Link to="/" className={styles.forgotPassword}>Забыли пароль?</Link>
                 </Stack>
 
-                <Button size="xs" color="primary" type="submit" className={styles.signInBtn}>Войти</Button>
+                <Button type="submit" className={styles.signInBtn}>
+                    Войти
+                </Button>
 
-                <Text type="p" size="xs" className={styles.account}>
-                    Нет аккаунта? <Link to={getRouteSignup()} className={styles.signUpLink}>Зарегистрироваться</Link>
+                <Text className={styles.account}>
+                    Нет аккаунта? 
+                    <Link to={getRouteSignup()} className={styles.signUpLink}>Зарегистрироваться</Link>
                 </Text>
             </Stack>
         </form>
     );
 };
-
