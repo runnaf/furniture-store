@@ -3,7 +3,7 @@ import { Text } from '../../../../shared/ui/Text/Text';
 import { Input } from '../../../../shared/ui/Input/Input';
 import { Button } from '../../../../shared/ui/Button/Button';
 import { HidePasswordIcon, ShowPasswordIcon } from '../../../../shared/assets/svg/passwordIcons';
-import { LogoIcon, logoIcon } from '../../../../shared/assets/svg/navbarIcons';
+import { LogoIcon } from '../../../../shared/assets/svg/navbarIcons';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getRouteMain, getRouteSignup } from '../../../../app/routes/lib/helper';
