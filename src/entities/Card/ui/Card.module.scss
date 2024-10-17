@@ -236,6 +236,8 @@
     }
     .cardText {
         margin-top: 69px;
+        max-width: 251px;
+        text-wrap: wrap;
     }
     .shopButton {
         display: flex;
