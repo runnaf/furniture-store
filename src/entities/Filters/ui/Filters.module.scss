@@ -1,0 +1,18 @@
+
+.subtitle {
+    font-size: var(--font-size-20);
+    font-weight: 500;
+    margin-bottom: 16px;    
+}
+input[type="checkbox"] {
+    accent-color: var(--green-color);
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+input[type="radio"] {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    accent-color: var(--green-color);
+}

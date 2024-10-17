@@ -6,17 +6,6 @@ hr {
     height: 1px;
     background-color: var(--stroke-color);
     }
-input[type="checkbox"] {
-    accent-color: var(--green-color);
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-}
-.subtitle {
-    font-size: var(--font-size-20);
-    font-weight: 500;
-    margin-bottom: 16px;    
-}
 .price {
     color: var(--secoundry-black-color);
     font-size: var(--font-size-18);
@@ -47,32 +36,4 @@ input[type="checkbox"] {
 }
 .trackMax {
     background-color: var(--green-color);
-}
-input[type="radio"] {
-    width: 24px;
-    height: 24px;
-}
-.radioBrown {
-    accent-color: #844E2D;
-}
-.radioGrey {
-    accent-color: var(--stroke-color);
-}
-.radioBlack {
-    accent-color: var(--black-color);
-}
-.radioGreen {
-    accent-color: #008263;
-}
-.radioRed {
-    accent-color: #9E0000;
-}
-.radioOrange {
-    accent-color: #D58000;
-}
-.radioBlue {
-    accent-color: #0055D5;
-}
-.radioWhite {
-    accent-color: var(--white-color);
 }

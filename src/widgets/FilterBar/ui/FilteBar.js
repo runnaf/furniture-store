@@ -6,8 +6,7 @@ import ReactSlider from 'react-slider';
 
 export function FilterBar () {
     
-    const line = <hr width='100%' size='1' className={styles.line}/>
-
+  
     const [selectedFilters, setSelectedFilters] = useState({
         category: {},
         price: [0, 100000],
@@ -31,7 +30,7 @@ export function FilterBar () {
     return (
         <Stack direction='column' gap='24' className={styles.container}>
             <Text type='h2' size='s'>Настройки фильтра</Text>
-            {line}
+            <hr/>
             <Stack direction='column' gap='12'>
                 <Text className={styles.subtitle}>Категория</Text>
                 <Text><input type='checkbox' value='bedroom' name='bedroom' onChange={() => handleChange('category', 'bedroom')}/> Спальня</Text>
@@ -42,7 +41,7 @@ export function FilterBar () {
                 <Text><input type='checkbox' value='outdoor' name='outdoor' onChange={() => handleChange('category', 'outdoor')} /> Для улицы</Text>
                 <Text><input type='checkbox' value='decor' name='decor' onChange={() => handleChange('category', 'decor')} /> Декор</Text>
             </Stack>
-            {line}
+            <hr/>
             <Stack direction='column'>
                 <Text className={styles.subtitle}>Цена</Text>
                 <Stack>
@@ -60,7 +59,7 @@ export function FilterBar () {
                     className={styles.slider}
                 /> 
             </Stack>           
-            {line}
+            <hr/>
             <Stack direction='column' gap='12'>
                 <Text className={styles.subtitle}>Цвет</Text>
                 <Text><input className={styles.radioBrown} type='radio' value='brown' onChange={() => handleChange('color', 'brown')} /> Коричневый</Text>
@@ -72,7 +71,7 @@ export function FilterBar () {
                 <Text><input className={styles.radioBlue} type='radio' value='blue' onChange={() => handleChange('color', 'blue')} /> Синий</Text>
                 <Text><input className={styles.radioWhite} type='radio' value='white' onChange={() => handleChange('color', 'white')} /> Белый</Text>
             </Stack>
-            {line}
+            <hr/>
             <Stack direction='column' gap='12'>
                 <Text className={styles.subtitle}>Материал</Text>
                 <Text><input type='checkbox' value='metal' name='metal' onChange={() => handleChange('material', 'metal')} /> Металл</Text>
@@ -81,7 +80,7 @@ export function FilterBar () {
                 <Text><input type='checkbox' value='glass' name='glass' onChange={() => handleChange('material', 'glass')} /> Стекло</Text>
                 <Text><input type='checkbox' value='plastic' name='plastic' onChange={() => handleChange('material', 'plastic')} /> Пластик</Text>
             </Stack>
-            {line}
+            <hr/>
             <Stack direction='column' gap='12'>
                 <Text className={styles.subtitle}>Доступность</Text>
                 <Text><input type='checkbox' value='inStock' name='inStock' onChange={() => handleChange('availability', 'inStock')} /> В наличии</Text>
