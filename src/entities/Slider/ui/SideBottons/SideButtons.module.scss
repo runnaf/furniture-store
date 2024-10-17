@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    gap: var(--gap-16);
+}
+
+.container button {
+    width: 60px;
+    height: 60px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover,
+    &:focus {
+        opacity: 0.75;
+    }
+
+    &:default {
+        opacity: 0.3;
+    }
+
+    & svg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    & path {
+        fill: var(--white-color);
+    }
+}
+
+.container .rightButton {
+    transform: rotate(180deg);
+
+    & path {
+        fill: var(--black-color);
+    }
+}

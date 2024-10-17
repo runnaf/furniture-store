@@ -8,6 +8,8 @@ import { OurProducts } from "../../../widgets/OurProducts/ui/OurProducts";
 import { QuestionMainPage } from "../../../widgets/QuestionsMainPage/ui/QuestionMainPage";
 import { TodayDeals } from "../../../widgets/TodayDeals/ui/TodayDeals";
 import styles from './MainPage.module.scss';
+import { Testimonial } from "../../../widgets/Testimonial/ui/Testimonial/Testimonial";
+import { Preview } from "../../../widgets/Preview/ui/Preview/Preview";
 
 const MainPage = () => {
     return (
@@ -15,9 +17,11 @@ const MainPage = () => {
             <Header />
             <Navbar />
             <MobileNavbar />
+            <Preview />
             <OurProducts />
             <FlashSale />
             <TodayDeals />
+            <Testimonial />
             {/* <NewsBlogs /> */}
             <QuestionMainPage />
             <NewsLetter />

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { getStyles } from "../../libs/getStyles";
 import styles from './Button.module.scss';
 
@@ -8,6 +9,8 @@ export const Button = ({
     radius = 'rounded', // rounded | circle
     color = 'primary', // primary | secondary | outlined
     outlined,
+    isButton = true,
+    linkHref,
     ...otherProps
 }) => {
 
@@ -23,11 +26,16 @@ export const Button = ({
     ];
 
     return (
-        <button 
+        isButton ? 
+            <button 
             className={getStyles(styles.button, mode, additional)}
             {...otherProps}
         >
             {children}
-        </button>
+        </button> : 
+        <Link to={linkHref} className={getStyles(styles.button, mode, additional)}
+        {...otherProps}>{children}</Link>
+    
+        
     );
 };

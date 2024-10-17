@@ -1,0 +1,11 @@
+.testimonialContainer {
+    background-color: var(--background-color);
+    padding: 125px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-36);
+}
+
+.testimonialContainer > div {
+    align-items: center;
+}

@@ -1,4 +1,5 @@
-import { Slider } from "../../../entities/Slider/ui/Slider";
+
+import { Slider } from "../../../entities/Slider/ui/Slider/Slider";
 import { Signin } from "../../../feature/Signin/ui/Signin/Signin";
 import { Stack } from "../../../shared/ui/Stack/Stack";
 import styles from './SigninPage.module.scss';

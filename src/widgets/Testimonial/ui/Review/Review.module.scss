@@ -1,0 +1,73 @@
+.reviewItem {
+    background-color: var(--white-color);
+    border-radius: 24px;
+    max-width: 584px;
+    background-image: url('../../../../shared/assets/svg/quotes.svg');
+    background-repeat: no-repeat;
+    background-position: top 47px right 32px;
+    height: 347px;
+    box-sizing: border-box;
+    display: grid;
+    gap: var(--gap-16);
+}
+
+.reviewUserContainer {
+    padding-right: 170px;
+}
+
+.reviewImageContainer {
+    background-color: var(--green-color);
+    min-width: 175px;
+    height: 175px;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-left-radius: 24px;
+}
+
+.reviewImageContainer img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 135px;
+    height: 135px;
+    border: 4px solid var(--white-color);
+    border-radius: 50%;
+    outline: none;
+    background-color: var(--grey-background-color);
+    object-fit: cover;
+}
+
+.reviewUserName {
+    font-size: var(--font-size-24);
+    font-weight: 500;
+    line-height: 1.08;
+}
+
+.reviewUserSpeciality {
+    font-size: var(--font-size-20);
+}
+
+.starsList {
+    display: flex;
+    gap: var(--gap-8);
+}
+
+.ratingCurrent path {
+    fill: var(--yellow-color);
+}
+
+.starDisable path {
+    fill: var(--background-color);
+}
+
+.ratingTitle {
+    font-size: var(--font-size-24);
+    line-height: 1.21;
+}
+
+.review {
+    padding: 0 32px 32px;
+    font-size: var(--font-size-24);
+    line-height: 1.5;
+    opacity: 0.8;
+}
