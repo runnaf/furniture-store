@@ -26,4 +26,4 @@ export const card = [
     },
 ];
 
-export const QUONTUTY_CARD_ON_PAGE = 1;
+export const QUONTITY_CARD_ON_PAGE = 1;

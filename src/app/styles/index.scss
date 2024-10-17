@@ -2,8 +2,3 @@
 @import './vars.scss';
 @import './mixin.scss';
 @import './media-queries.scss';
-
-.visually-hidden {
-    position: fixed;
-    transform: scale(0);
- }
