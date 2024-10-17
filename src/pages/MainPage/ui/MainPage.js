@@ -9,16 +9,17 @@ import { TodayDeals } from "../../../widgets/TodayDeals/ui/TodayDeals";
 import styles from './MainPage.module.scss';
 import { Header } from "../../../entities/Header/ui/Header";
 
+
 const MainPage = () => {
     return (
         <main className={styles.main_page}>
-            <Header/>
-            <Navbar/>
+            <Header />
+            <Navbar />
             <MobileNavbar />
             <OurProducts />
             <FlashSale />
             <TodayDeals />
-            <NewsBlogs/>
+            <NewsBlogs />
             <QuestionMainPage />
             <NewsLetter />
         </main>

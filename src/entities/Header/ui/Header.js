@@ -17,7 +17,7 @@ export const Header = () => {
         <header className={styles.header}>
             <Stack justify="justifyAround" align="alignCenter" className={isVisible ? styles.visible : styles.hide}>
                 <Text type="p" size="xs" className={styles.phone}>Позвоните нам: +123-456-789</Text>
-                <Text type="p" size="xs" className={styles.discount}>Зарегистрируйтесь и ПОЛУЧИТЕ скидку 25% на первый заказ. <Link to={getRouteSignup()}>Зарегистрируйтесь сейчас</Link></Text>
+                <Text type="p" size="xs" className={styles.discount}>Зарегистрируйтесь и ПОЛУЧИТЕ скидку 25% на первый заказ.</Text>
                 <button className={styles.cross} onClick={handleClose}>
                     {crossIcon()}
                 </button>
