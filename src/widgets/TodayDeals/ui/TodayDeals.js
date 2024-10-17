@@ -16,8 +16,8 @@ export function TodayDeals () {
                 className={styles.container}
             >
                 {cardData.map(element=>(
-                    <div className={styles.cardWrapper}>
-                    <Stack key={element.id} className={styles.cardContainer}>
+                    <div className={styles.cardWrapper} key={element.id}>
+                    <Stack className={styles.cardContainer}>
                         <Card {...element} view="extended" />
                     </Stack></div>))}
             </Stack>

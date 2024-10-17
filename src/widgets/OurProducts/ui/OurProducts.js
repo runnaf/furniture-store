@@ -30,7 +30,7 @@ export function OurProducts () {
                 gap='32'
             >
                 {cardData.map((element) => (
-                    <div className={styles.cardWrapper}><Card key={element.id} {...element} /></div>
+                    <div className={styles.cardWrapper} key={element.id}><Card {...element} /></div>
                 ))}
             </Stack>
         </Stack>
