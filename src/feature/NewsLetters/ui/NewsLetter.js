@@ -12,7 +12,7 @@ import { emailRegex } from "../../../shared/libs/validation/getValidate"
 
 export const NewsLetter = () => {
 
-    const methods = useForm({mode: "onChange"})
+    const methods = useForm({mode: "onSubmit" })
     const { register, handleSubmit, setValue, reset, formState: { errors } } = methods;
 
     const onSubmit = () => {
@@ -57,6 +57,7 @@ export const NewsLetter = () => {
                         <Button color="secondary">
                             Оформить
                         </Button>
+                        
                     </form>
                 </FormProvider>
             </Stack>
