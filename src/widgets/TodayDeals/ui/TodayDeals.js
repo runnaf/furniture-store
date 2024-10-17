@@ -15,10 +15,11 @@ export function TodayDeals () {
                 justify='justifyBetween' 
                 className={styles.container}
             >
-                {cardData.slice(0, 2).map(element=>(
-                    <Stack key={element.id} className={styles.cardContainer}>
+                {cardData.map(element=>(
+                    <div className={styles.cardWrapper} key={element.id}>
+                    <Stack className={styles.cardContainer}>
                         <Card {...element} view="extended" />
-                    </Stack>))}
+                    </Stack></div>))}
             </Stack>
         </Stack>
     );

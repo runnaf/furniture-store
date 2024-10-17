@@ -7,6 +7,7 @@ import { HeaderSection } from '../../../shared/ui/HeaderSection/HeaderSection';
 
 export function OurProducts () {
     return (
+        <Stack className={styles.parenContainer}>
         <Stack 
             direction='column' 
             align='alignCenter' 
@@ -24,13 +25,15 @@ export function OurProducts () {
                 <Button size='s' color='outlined'>Рекомендуемые</Button>
             </Stack>
             <Stack 
-                justify='justifyBetween' max
+                justify='justifyBetween'
                 className={styles.cardContainer}
+                gap='32'
             >
                 {cardData.map((element) => (
-                    <Card key={element.id} {...element} />
+                    <div className={styles.cardWrapper} key={element.id}><Card {...element} /></div>
                 ))}
             </Stack>
+        </Stack>
         </Stack>
     )
 }

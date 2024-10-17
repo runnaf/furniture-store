@@ -2,10 +2,6 @@
 
 .mainContainer {
     padding: 0 100px; //FIX LATER
-    
-    @include tablet-m {
-        width: 400px;
-    }
 }
 
 .hyphen {
@@ -24,9 +20,18 @@
 }
 
 .container {
+    overflow: hidden;
+    overflow-x: scroll;;
+    white-space:nowrap;
+    width: 98%;
+    overflow: hidden;
+
     @include tablet-m {
-        flex-wrap: wrap;
+        width: 80%;
     }
+}
+.container:hover {
+    overflow:overlay;    
 }
 
 .cardContainer {

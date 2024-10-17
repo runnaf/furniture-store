@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './Navbar.module.scss';
-import { logoIcon, likeIcon, cartIcon, loginIcon } from '../../../../shared/assets/svg/navbarIcons';
+import { LogoIcon, likeIcon, cartIcon, loginIcon } from '../../../../shared/assets/svg/navbarIcons';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { NavLink } from 'react-router-dom';
 import { routes } from '../../../../app/routes/lib/data';
@@ -34,7 +34,7 @@ export const Navbar = () => {
     return (
         <nav className={styles.navbar} onMouseLeave={handleMouseLeave}>
             <div className={styles.logo}>
-                {logoIcon()}
+                <LogoIcon />
             </div>
             <ul className={styles.navLinks}>
                 {routes.map(({ title, link }) => (
