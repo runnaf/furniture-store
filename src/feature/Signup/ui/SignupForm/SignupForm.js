@@ -9,27 +9,20 @@ import { CheckmarkIcon } from '../../../../shared/assets/svg/checkmarkIcon';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getRouteMain, getRouteSignin } from '../../../../app/routes/lib/helper';
-import { FormProvider, useForm } from 'react-hook-form';
+import { useFormContext } from 'react-hook-form';
 import { emailRegex, textRegex, validatePassword } from '../../../../shared/libs/validation/getValidate';
 import { data } from '../../../../shared/libs/validation/errors/data';
 
-export const SignupForm = () => {
+export const SignupForm = ({ onSubmit }) => {
     const [showPassword, setShowPassword] = useState(false);
     const PasswordToggleIcon = showPassword ? <HidePasswordIcon /> : <ShowPasswordIcon />;
 
-    const methods = useForm({mode: "onSubmit"})
-    const { register, handleSubmit, setValue, reset, formState: { errors } } = methods;
-
-    const onSubmit = () => {
-        reset()
-    }
-
+    const { register, setValue, formState: { errors } } = useFormContext();
 
     return (
-        <FormProvider {...methods}>
             <form 
                 className={styles.form} 
-                onSubmit={handleSubmit(onSubmit)}
+                onSubmit={onSubmit}
             >
                 <Link to={getRouteMain()}>
                     <LogoIcon />
@@ -140,7 +133,6 @@ export const SignupForm = () => {
                     </Text>
                 </Stack>
             </form>
-        </FormProvider>
     );
 };
 
