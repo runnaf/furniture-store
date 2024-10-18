@@ -8,13 +8,14 @@ import { data } from '../lib/data';
 import { useSortedNews } from "../../../shared/hooks/useSortedNews";
 import { useMemo } from "react";
 import { getRouteBlog } from "../../../app/routes/lib/helper";
+import { useCustomScroll } from "../../../shared/hooks/useCustomScroll";
 
 
 export const NewsBlogs = () => {
 
     const sortedNews = useSortedNews(data)
-
     const currentNews = useMemo(() => sortedNews.slice(0, 3), [sortedNews])
+    const containerRef = useCustomScroll();
 
     return(
         <Stack className={styles.newsBlogsContainer}
@@ -23,13 +24,13 @@ export const NewsBlogs = () => {
         gap='50'>
             <Stack justify='justifyBetween'>
                 <HeaderSection subTitle='Новости & Блог'>
-                    <span>Наши последние </span> Новости & Блог
+                    Наши последние <span>Новости & Блог</span> 
                 </HeaderSection>
                 <Link to={getRouteBlog()}>
                     <Button>{'Oткрыть блог'}</Button>
                 </Link>
             </Stack>
-            <Stack gap='32'>
+            <Stack gap='32' ref={containerRef}>
                 {currentNews.map(news => (
                     <CardBlogs key={news.id} title={news.title}
                     poster={news.poster}

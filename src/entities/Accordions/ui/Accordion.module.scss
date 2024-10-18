@@ -53,9 +53,25 @@ $opacity: var(--opacity-08);
             opacity: 0;
             overflow: hidden;
 
+            @include desktop-m {
+                width: 950px;
+            }
+    
+            @include tablet-l {
+                width: 750px;
+            }
+    
             @include tablet-m {
-                width: 303px;
+                width: 700px;
             } 
+    
+            @include mobile-xl {
+                width: 520px;
+            }
+    
+            @include mobile-l {
+                width: 300px;
+            }
 
             > p {
                 opacity: $opacity;
