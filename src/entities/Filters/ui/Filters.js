@@ -6,7 +6,7 @@ export const Filters = ({ title, options, type, onChange }) => (
     <Stack direction='column' gap='12'>
         <Text className={styles.subtitle}>{title}</Text>
         {options.map(option => (
-            <Text key={option.value}>
+            <label key={option.value}>
                 {type === 'checkbox' ? (
                     <input 
                         type='checkbox' 
@@ -22,7 +22,7 @@ export const Filters = ({ title, options, type, onChange }) => (
                     />
                 )}
                 {option.label}
-            </Text>
+            </label>
         ))}
     </Stack>
 );
