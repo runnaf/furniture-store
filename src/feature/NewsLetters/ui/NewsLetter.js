@@ -34,7 +34,7 @@ export const NewsLetter = () => {
                 justify='justifyCenter'
                 gap='24'>
                     <HeaderSection subTitle='Рассылка новостей'>
-                        <span> Оформите подписку</span> на наши новости
+                    Оформите подписку <span> на наши новости</span>
                     </HeaderSection>
                     <Text type="p">Получите скидку 20% на свой первый заказ, просто подписавшись на наши новости</Text>
                 </Stack>

@@ -11,49 +11,51 @@ import { Link } from "react-router-dom";
 export const FlashSale = () => {
 
     return(
-        <Stack 
-            gap='32'
-            justify='justifyBetween'
-            className={styles.flashSaleContainer}
-        >
+        <Stack justify='justifyCenter'
+        align='alignCenter'>
             <Stack 
-                justify='justifyCenter'
-                align='alignCenter'
+                gap='32'
+                className={styles.flashSaleContainer}
             >
-                <img src={points} alt="a cluster of dots"/>
-                <img src={points} alt="a cluster of dots"/>
-                <Stack gap='48'
-                    direction="column"
-                    justify='justifyCenter'
-                    align='alignCenter'
-                >
-                    <HeaderSection subTitle='Скидка 25% - предложение ограничено!'>
-                        <span> Супер </span> Скидки!
-                    </HeaderSection>
-                    <Timer styleMode='timerMainContainer' endTime='2024-12-31T20:59:59.000Z'/>
-                    <Link>
-                        <Button>
-                            {'Магазин'}
-                            <img src={arrowRight} alt="arrow"/>
-                        </Button>
-                    </Link>
-                </Stack>
-            </Stack>
-            <Stack gap='24'>
                 <Stack 
                     justify='justifyCenter'
                     align='alignCenter'
                 >
-                    <Stack align='alignCenter'>
-                        <img src={chairSale} alt="yellow chair"/>
+                    <img src={points} alt="a cluster of dots"/>
+                    <img src={points} alt="a cluster of dots"/>
+                    <Stack gap='48'
+                        direction="column"
+                        justify='justifyCenter'
+                        align='alignCenter'
+                    >
+                        <HeaderSection subTitle='Скидка 25% - предложение ограничено!'>
+                        Супер <span> Скидки!</span> 
+                        </HeaderSection>
+                        <Timer styleMode='timerMainContainer' endTime='2024-12-31T20:59:59.000Z'/>
+                        <Link>
+                            <Button>
+                                {'Магазин'}
+                                <img src={arrowRight} alt="arrow"/>
+                            </Button>
+                        </Link>
                     </Stack>
                 </Stack>
-                <Stack
-                    justify='justifyCenter'
-                    align='alignCenter'
-                >
-                    <Stack align='alignCenter'>
-                        <img src={chairSale} alt="yellow chair"/>
+                <Stack gap='24'>
+                    <Stack 
+                        justify='justifyCenter'
+                        align='alignCenter'
+                    >
+                        <Stack align='alignCenter'>
+                            <img src={chairSale} alt="yellow chair"/>
+                        </Stack>
+                    </Stack>
+                    <Stack
+                        justify='justifyCenter'
+                        align='alignCenter'
+                    >
+                        <Stack align='alignCenter'>
+                            <img src={chairSale} alt="yellow chair"/>
+                        </Stack>
                     </Stack>
                 </Stack>
             </Stack>

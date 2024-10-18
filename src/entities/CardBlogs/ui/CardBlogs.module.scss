@@ -1,3 +1,5 @@
+@import '../../../app/styles/media-queries';
+
 //border-radius
 $border-radius-24: var(--border-radius-24);
 $border-radius-date: var(--border-radius-date);
@@ -20,8 +22,16 @@ $opacity-08: var(--opacity-08);
 .cardBlogsContainer {
     height: 514px;
 
+    @include mobile-l {
+        height: 490px;
+    }
+
     > div {
         width: 379px;
+
+        @include mobile-l {
+            width: 327px;
+        }
     }
 
     > div:nth-child(1) {
@@ -48,6 +58,11 @@ $opacity-08: var(--opacity-08);
 
     > div:nth-child(2) {
         height: 214px;
+
+        @include mobile-l {
+            height: 190px;
+        }
+
         p:nth-of-type(1) {
             font-weight: 600;
         }
@@ -59,6 +74,10 @@ $opacity-08: var(--opacity-08);
 
         > a {
             margin-top: auto;
+
+            @include mobile-l {
+                margin-top: 0;
+            }
 
             > button {
                 border: none;
