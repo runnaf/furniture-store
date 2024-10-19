@@ -38,9 +38,13 @@ $opacity-08: var(--opacity-08);
 }
 
 .error {
+    border-color: $color-error;
+}
+
+.error_text {
     font-size: $font-size-14;
     color: $color-error;
-    border-color: $color-error;
+    height: 18px;
 }
 
 .label {

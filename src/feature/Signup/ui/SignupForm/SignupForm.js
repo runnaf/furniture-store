@@ -12,12 +12,20 @@ import { getRouteMain, getRouteSignin } from '../../../../app/routes/lib/helper'
 import { useFormContext } from 'react-hook-form';
 import { emailRegex, textRegex, validatePassword } from '../../../../shared/libs/validation/getValidate';
 import { data } from '../../../../shared/libs/validation/errors/data';
+import { Checkbox } from '../../../../shared/ui/Checkbox/Checkbox';
 
 export const SignupForm = ({ onSubmit }) => {
     const [showPassword, setShowPassword] = useState(false);
-    const PasswordToggleIcon = showPassword ? <HidePasswordIcon /> : <ShowPasswordIcon />;
+    const [agreeWithTerms, setAgreeWithTerms] = useState(false); //TODO
 
     const { register, setValue, formState: { errors } } = useFormContext();
+
+    const PasswordToggleIcon = showPassword ? <HidePasswordIcon /> : <ShowPasswordIcon />;
+
+    const handleCheckboxChange = (name, checked) => {
+        console.log(name);
+        setAgreeWithTerms(checked);
+    }; //TODO
 
     return (
             <form 
@@ -31,96 +39,94 @@ export const SignupForm = ({ onSubmit }) => {
                 <Stack direction="column" gap="32">
                     <Text type="h2" size="xl" >Регистрация</Text>
 
-                    <Stack gap='16' className={styles.name}>
-                        <Input
-                            label="Имя"
-                            placeholder="Введите имя"
-                            id="firstname"
-                            className={styles.firstname}
-                            name="name"
-                            register={register}
-                            setValue={setValue}
-                            options={{
-                                required: data.required,
-                                pattern: {
-                                    value: textRegex,
-                                    message: data.errors.validName
-                                }
-                            }}
-                            error={errors.name}
-                        />
-                        <Input
-                            label="Фамилия"
-                            placeholder="Введите фамилию"
-                            name="suname"
-                            register={register}
-                            setValue={setValue}
-                            options={{
-                                required: data.required,
-                                pattern: {
-                                    value: textRegex,
-                                    message: data.errors.validName
-                                }
-                            }}
-                            error={errors.suname}
-                        />
-                    </Stack>
-
-                    <Input
-                        label="Электронная почта"
-                        placeholder="Введите адрес электронной почты"
-                        id="email"
-                        className={styles.email}
-                        name="email"
-                        register={register}
-                        setValue={setValue}
-                        options={{
-                            required: data.required,
-                            pattern: {
-                                value: emailRegex,
-                                message: data.errors.validEmail
-                            }
-                        }}
-                        error={errors.email}
-                    />
-
-                    <Stack direction='column' className={styles.password}>
-                        <Input
-                            label="Пароль"
-                            type={!showPassword ? 'password' : 'text'}
-                            placeholder=" введите пароль"
-                            id="password"
-                            name="password"
-                            register={register}
-                            setValue={setValue}
-                            options={{
-                                required: data.required,
-                                validate: validatePassword,
-                            }}
-                            error={errors.password}
-                        />
-                        <button className={styles.password_btn}
-                            onClick={() => setShowPassword(!showPassword)}>
-                            {PasswordToggleIcon}
-                        </button>
-                    </Stack>
-
-                    <Stack justify="justifyBetween" align="center">
-                        <label className={styles.checkbox}>
-                            <input
-                                type="checkbox"
-                                className={styles.hiddenCheckbox}
+                    <Stack direction="column" gap="8">
+                        <Stack gap='16' className={styles.name}>
+                            <Input
+                                label="Имя"
+                                placeholder="Введите имя"
+                                id="firstname"
+                                className={styles.firstname}
+                                name="name"
+                                register={register}
+                                setValue={setValue}
+                                options={{
+                                    required: data.required,
+                                    pattern: {
+                                        value: textRegex,
+                                        message: data.errors.validName
+                                    }
+                                }}
+                                error={errors.name}
                             />
-                            <span className={styles.customCheckbox}>
-                                <CheckmarkIcon />
-                            </span> Согласен с
-                            
-                            {/* TODO */}
-                            <Link href='/' className={styles.linkAgree}> Условиями </Link> и 
-                            <Link href='/' className={styles.linkAgree}> Политикой Конфиденциальности </Link>
-                        </label>
-                    </Stack>
+                            <Input
+                                label="Фамилия"
+                                placeholder="Введите фамилию"
+                                name="suname"
+                                register={register}
+                                setValue={setValue}
+                                options={{
+                                    required: data.required,
+                                    pattern: {
+                                        value: textRegex,
+                                        message: data.errors.validName
+                                    }
+                                }}
+                                error={errors.suname}
+                            />
+                        </Stack>
+                        <Input
+                            label="Электронная почта"
+                            placeholder="Введите адрес электронной почты"
+                            id="email"
+                            className={styles.email}
+                            name="email"
+                            register={register}
+                            setValue={setValue}
+                            options={{
+                                required: data.required,
+                                pattern: {
+                                    value: emailRegex,
+                                    message: data.errors.validEmail
+                                }
+                            }}
+                            error={errors.email}
+                        />
 
+                        <Stack direction='column' className={styles.password}>
+                            <Input
+                                label="Пароль"
+                                type={!showPassword ? 'password' : 'text'}
+                                placeholder=" введите пароль"
+                                id="password"
+                                name="password"
+                                register={register}
+                                setValue={setValue}
+                                options={{
+                                    required: data.required,
+                                    validate: validatePassword,
+                                }}
+                                error={errors.password}
+                            />
+                            <button className={styles.password_btn}
+                                onClick={() => setShowPassword(!showPassword)}>
+                                {PasswordToggleIcon}
+                            </button>
+                        </Stack>
+
+                        <Stack justify="justifyBetween" align="center">
+                            <Checkbox 
+                                checked={agreeWithTerms} 
+                                name='agree' 
+                                onChange={handleCheckboxChange} 
+                            >
+                                Согласен с 
+                                {/* TODO */}
+                                <Link href='/' className={styles.linkAgree}> Условиями </Link> и 
+                                <Link href='/' className={styles.linkAgree}> Политикой Конфиденциальности </Link>
+                            </Checkbox>
+                        </Stack>
+                    </Stack>
+                    
                     <Button 
                         type="submit" 
                         className={styles.signUpBtn}
