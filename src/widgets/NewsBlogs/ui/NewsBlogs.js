@@ -18,10 +18,12 @@ export const NewsBlogs = () => {
     const containerRef = useCustomScroll();
 
     return(
-        <Stack className={styles.newsBlogsContainer}
-        direction='column'
-        align='alignCenter'
-        gap='50'>
+        <Stack 
+            className={styles.newsBlogsContainer}
+            direction='column'
+            align='alignCenter'
+            gap='50'
+        >
             <Stack justify='justifyBetween'>
                 <HeaderSection subTitle='Новости & Блог'>
                     Наши последние <span>Новости & Блог</span> 
