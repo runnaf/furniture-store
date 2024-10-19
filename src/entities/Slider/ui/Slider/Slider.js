@@ -1,10 +1,10 @@
 import { Stack } from "../../../../shared/ui/Stack/Stack";
 import { BottomButtons } from "../BottomButtons/BottomButtons";
-import { SideButtons } from "../SideBottons/SideButtons";
+import { SideButtons } from "../SideButtons/SideButtons";
 
 export const Slider = ({ isSideButtons, 
                         isBottomButtons, 
-                        quontityCardsOnPage,
+                        quantityCardsOnPage,
                         gap,
                         children, 
                         className,
@@ -18,8 +18,8 @@ export const Slider = ({ isSideButtons,
         <Stack className={className} direction = {'column'} gap={gap}>
             {children}
             <Stack>
-                {isSideButtons? <SideButtons nextCard = {nextCard}  prevCard = {prevCard} /> : ''}
-                {isBottomButtons ? <BottomButtons quontitySliders={data} quontityCardsOnPage = {quontityCardsOnPage} currentSlide = {currentSlide} handleClickSlide = {handleClickSlide} /> : ''}
+                {isSideButtons && <SideButtons nextCard = {nextCard}  prevCard = {prevCard} />}
+                {isBottomButtons && <BottomButtons quantitySliders={data} quantityCardsOnPage = {quantityCardsOnPage} currentSlide = {currentSlide} handleClickSlide = {handleClickSlide} />}
             </Stack>
             
         </Stack>

@@ -12,7 +12,7 @@
 }
 
 .reviewUserContainer {
-    padding-right: 170px;
+    padding-right: 130px;
 }
 
 .reviewImageContainer {
@@ -37,17 +37,17 @@
     object-fit: cover;
 }
 
-.reviewUserName {
+.wrapper h3 {
     font-size: var(--font-size-24);
     font-weight: 500;
     line-height: 1.08;
 }
 
-.reviewUserSpeciality {
+.wrapper p {
     font-size: var(--font-size-20);
 }
 
-.starsList {
+.wrapper ul {
     display: flex;
     gap: var(--gap-8);
 }
@@ -69,5 +69,6 @@
     padding: 0 32px 32px;
     font-size: var(--font-size-24);
     line-height: 1.5;
-    opacity: 0.8;
+    opacity: var(--opacity-08);
+    height: inherit;
 }

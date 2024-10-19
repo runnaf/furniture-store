@@ -1,22 +1,24 @@
 import { arrowIcon } from "../../../../shared/assets/svg/arrowIcon";
 import { Button } from "../../../../shared/ui/Button/Button";
+import { Text } from "../../../../shared/ui/Text/Text";
+import { VisuallyHidden } from "../../../../shared/ui/VisuallyHidden/VisuallyHidden";
 import styles from './SideButtons.module.scss'
 
 export const SideButtons = ({nextCard, prevCard}) => {
     return (
         <ul className={styles.container}>
-            <li>
+            <Text type="li">
                 <Button radius = 'circle' onClick = { prevCard }>
-                    <span className="visually-hidden">Кнопка пролистывания слайдера назад</span>
+                    <VisuallyHidden>Кнопка пролистывания слайдера назад</VisuallyHidden>
                     {arrowIcon()}
                 </Button>   
-                </li>
-            <li>
+            </Text>
+            <Text type="li">
                 <Button className = {styles.rightButton} color = 'secondary' onClick = { nextCard }>
-                    <span className="visually-hidden">Кнопка пролистывания слайдера вперед</span>
+                    <VisuallyHidden>Кнопка пролистывания слайдера вперед</VisuallyHidden>
                     {arrowIcon()}
                 </Button>   
-            </li>
+            </Text>
         </ul>
     )
 }

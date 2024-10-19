@@ -36,4 +36,4 @@ export const testimonial = [
     // }
 ]
     
-export const QUONTITY_CARD_ON_PAGE = 2;
+export const QUANTITY_CARD_ON_PAGE = 2;

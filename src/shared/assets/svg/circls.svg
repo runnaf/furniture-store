@@ -3,7 +3,4 @@
 <circle cx="67" cy="30" r="28.4137" fill="#D9D9D9" stroke="white" stroke-width="2.82747"/>
 <circle cx="104" cy="30" r="28.4137" fill="#D9D9D9" stroke="white" stroke-width="2.82747"/>
 <circle cx="141" cy="30" r="28.4137" fill="#D9D9D9" stroke="white" stroke-width="2.82747"/>
-<circle cx="178" cy="30" r="28.5" fill="#FFBA35" stroke="white" stroke-width="3"/>
-<path d="M170 30H186" stroke="#242424" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M178 38V22" stroke="#242424" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

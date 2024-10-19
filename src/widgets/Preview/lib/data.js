@@ -6,24 +6,28 @@ import kitchen from '../../../shared/assets/blogPoster/online_shop.jpg'
 export const card = [
     {
         name: 'Гостинная',
-        quontity: 2500,
+        category: 'livingRoom',
+        quantity: 2500,
         image: livingRoom,
     },
     {
         name: 'Спальня',
-        quontity: 2000,
+        category: 'bedroom',
+        quantity: 2000,
         image: bedroom,
     },
     {
         name: 'Ванная',
-        quontity: 2500,
+        category: 'bathroom',
+        quantity: 2500,
         image: bathroom,
     },
     {
         name: 'Кухня',
-        quontity: 3500,
+        category: 'kitchen',
+        quantity: 3500,
         image: kitchen,
     },
 ];
 
-export const QUONTITY_CARD_ON_PAGE = 1;
+export const QUANTITY_CARD_ON_PAGE = 1;

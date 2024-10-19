@@ -1,8 +1,9 @@
 .previewContainer {
     display: flex;
-    gap: var(--gap-30);
+    justify-content: center;
+    gap: var(--gap-125);
     background-color: var(--background-color);
-    padding: 131px 120px;
+    padding: 131px 0;
     background-image: url("../../../../shared/assets/svg/points.svg"), url("../../../../shared/assets/svg/points.svg");
     background-repeat: no-repeat, no-repeat;
     background-position: top -14px right 38%, bottom -5px left 30%;
@@ -11,53 +12,8 @@
         max-width: 750px;
         line-height: 1.26;
     }
-}
 
-.header {
-    display: flex;
-}
-
-.text {
-    line-height: 1.56;
-    width: 500px;
-}
-
-.linkShop {
-    padding: 17px 64px 17px 32px;
-    position: relative;
-    background-image: url('../../../../shared/assets/svg/arrowright.svg');
-    background-repeat: no-repeat;
-    background-position: top 50% right 22px;
-}
-
-.linkCategory {
-    position: relative;
-    color: var(--black-color);
-    padding: 17px 22px;
-    font-size: var(--font-size-18);
-    line-height: 1.21;
-
-    &::after{
-        content: '';
-        position: absolute;
-        width: calc(100% - 44px);
-        height: 2px;
-        background-color: var(--black-color);
-        left: 22px;
-        bottom: 15px;
+    & a:hover {
+        opacity: var(--opacity-08);
     }
-
-    &:hover {
-        opacity: 0.7;
-    }
-
-    &:hover::after{
-        opacity: 0.7;
-    }
-}
-
-.description {
-    background-image: url("../../../../shared/assets/svg/circls.svg");
-    background-repeat: no-repeat;
-    padding-left: 250px;
 }

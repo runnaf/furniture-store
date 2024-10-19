@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const useSlider = (quontityCards, initialIndex = 0) => {
+export const useSlider = (quantityCards, initialIndex = 0) => {
     const [currentSlide, setCurrentSlide] = useState(initialIndex);
 
     const handleClickSlide = (selectedSlider) => {
@@ -8,14 +8,14 @@ export const useSlider = (quontityCards, initialIndex = 0) => {
     }
     
     const nextCard = () => {
-        if (currentSlide === quontityCards-1) {
+        if (currentSlide === quantityCards-1) {
             setCurrentSlide(0)
         } else setCurrentSlide(currentSlide + 1)
     }
 
     const prevCard = () => {
         if (currentSlide === 0) {
-            setCurrentSlide(quontityCards - 1)
+            setCurrentSlide(quantityCards - 1)
         } else setCurrentSlide(currentSlide - 1)
     }
 
