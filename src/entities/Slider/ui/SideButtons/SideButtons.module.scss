@@ -13,11 +13,11 @@
 
     &:hover,
     &:focus {
-        opacity: 0.75;
+        opacity:var(--opacity-08);
     }
 
     &:default {
-        opacity: 0.3;
+        opacity: var(--opacity-02);
     }
 
     & svg {
