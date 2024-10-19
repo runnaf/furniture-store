@@ -33,7 +33,7 @@ export const Input = ({
                     className={inputClasses}
                     {...otherProps}
                 />
-                <span className={styles.error}>{error ? error.message : ''}</span>
+                <p className={styles.error_text}>{error ? error.message : ''}</p>
             </div>
         </div>
     );

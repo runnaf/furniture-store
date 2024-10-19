@@ -6,7 +6,7 @@ export const Signin = () => {
     const { handleSubmit, reset } = methods;
 
     const onSubmit = () => {
-        reset()
+        reset();
     };
 
     return (
