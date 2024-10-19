@@ -12,12 +12,20 @@ import { getRouteMain, getRouteSignin } from '../../../../app/routes/lib/helper'
 import { useFormContext } from 'react-hook-form';
 import { emailRegex, textRegex, validatePassword } from '../../../../shared/libs/validation/getValidate';
 import { data } from '../../../../shared/libs/validation/errors/data';
+import { Checkbox } from '../../../../shared/ui/Checkbox/Checkbox';
 
 export const SignupForm = ({ onSubmit }) => {
     const [showPassword, setShowPassword] = useState(false);
-    const PasswordToggleIcon = showPassword ? <HidePasswordIcon /> : <ShowPasswordIcon />;
+    const [agreeWithTerms, setAgreeWithTerms] = useState(false); //TODO
 
     const { register, setValue, formState: { errors } } = useFormContext();
+
+    const PasswordToggleIcon = showPassword ? <HidePasswordIcon /> : <ShowPasswordIcon />;
+
+    const handleCheckboxChange = (name, checked) => {
+        console.log(name);
+        setAgreeWithTerms(checked);
+    }; //TODO
 
     return (
             <form 
@@ -106,19 +114,16 @@ export const SignupForm = ({ onSubmit }) => {
                         </Stack>
 
                         <Stack justify="justifyBetween" align="center">
-                            <label className={styles.checkbox}>
-                                <input
-                                    type="checkbox"
-                                    className={styles.hiddenCheckbox}
-                                />
-                                <span className={styles.customCheckbox}>
-                                    <CheckmarkIcon />
-                                </span> Согласен с
-                                
+                            <Checkbox 
+                                checked={agreeWithTerms} 
+                                name='agree' 
+                                onChange={handleCheckboxChange} 
+                            >
+                                Согласен с 
                                 {/* TODO */}
                                 <Link href='/' className={styles.linkAgree}> Условиями </Link> и 
                                 <Link href='/' className={styles.linkAgree}> Политикой Конфиденциальности </Link>
-                            </label>
+                            </Checkbox>
                         </Stack>
                     </Stack>
                     
