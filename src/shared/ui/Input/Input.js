@@ -9,7 +9,6 @@ export const Input = ({
 	error,
     className,
     label,
-    id,
     ...otherProps
 }) => {
 
@@ -25,10 +24,10 @@ export const Input = ({
 
     return (
         <div className={styles.inputWrapper}>
-            {label && <label className={styles.label} htmlFor={id}>{label}</label>}
+            {label && <label className={styles.label} htmlFor={name}>{label}</label>}
             <div>
                 <input
-                    id={id}
+                    id={name}
                     {...register(name, options)}
                     className={inputClasses}
                     {...otherProps}
