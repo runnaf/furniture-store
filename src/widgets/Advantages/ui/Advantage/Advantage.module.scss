@@ -1,4 +1,9 @@
 .container {
     display: flex;
-    gap: var(--gap-22);
+    gap: var(--gap-16);
+}
+
+.image {
+    width: 60px;
+    height: 60px;
 }

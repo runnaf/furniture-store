@@ -1,16 +1,16 @@
 import { advantages } from '../../lib/data';
 import { Advantage } from '../Advantage/Advantage';
-import styles from './Advantages.module.scss'
+import styles from './Advantages.module.scss';
 
 export const Advantages = () => {
-    console.log(advantages)
     return (
         <ul className={styles.container}>
-            {
-                advantages.map(advantage => 
-                    <Advantage key={advantage.title} advantage = {advantage} />
-                )
-            }
+            {advantages.map(advantage => 
+                <Advantage 
+                    key={advantage.title} 
+                    advantage={advantage} 
+                />
+            )}
         </ul>
-    )
-}
+    );
+};
