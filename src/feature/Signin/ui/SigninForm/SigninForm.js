@@ -36,7 +36,7 @@ export const SigninForm = ({ onSubmit }) => {
                     Заполните данные для доступа к вашему аккаунту.
                 </Text>
 
-                <Stack direction="column" gap='16'>
+                <Stack direction="column" gap='8'>
                     <Input
                         label="Электронная почта"
                         placeholder="Введите адрес электронной почты"

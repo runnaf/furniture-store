@@ -6,10 +6,12 @@ export const Signup = () => {
     const { handleSubmit, reset } = methods;
 
     const onSubmit = () => {
-        reset()
+        reset();
     };
+
     return (
-    <FormProvider {...methods}>
-        <SignupForm onSubmit={handleSubmit(onSubmit)}/>
-    </FormProvider>)
+        <FormProvider {...methods}>
+            <SignupForm onSubmit={handleSubmit(onSubmit)}/>
+        </FormProvider>
+    );
 };
