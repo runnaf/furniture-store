@@ -48,7 +48,6 @@ export const SigninForm = ({ onSubmit }) => {
                     <Input
                         label="Электронная почта"
                         placeholder="Введите адрес электронной почты"
-                        id="email"
                         name="email"
                         register={register}
                         setValue={setValue}
@@ -70,7 +69,6 @@ export const SigninForm = ({ onSubmit }) => {
                             label="Пароль"
                             type={!showPassword ? 'password' : 'text'}
                             placeholder=" введите пароль"
-                            id="password"
                             name='password'
                             register={register}
                             setValue={setValue}

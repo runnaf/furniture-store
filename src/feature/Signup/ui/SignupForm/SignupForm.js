@@ -5,7 +5,6 @@ import { Input } from '../../../../shared/ui/Input/Input';
 import { Button } from '../../../../shared/ui/Button/Button';
 import { HidePasswordIcon, ShowPasswordIcon } from '../../../../shared/assets/svg/passwordIcons';
 import { LogoIcon } from '../../../../shared/assets/svg/navbarIcons';
-import { CheckmarkIcon } from '../../../../shared/assets/svg/checkmarkIcon';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getRouteMain, getRouteSignin } from '../../../../app/routes/lib/helper';
@@ -44,7 +43,6 @@ export const SignupForm = ({ onSubmit }) => {
                             <Input
                                 label="Имя"
                                 placeholder="Введите имя"
-                                id="firstname"
                                 className={styles.firstname}
                                 name="name"
                                 register={register}
@@ -77,7 +75,6 @@ export const SignupForm = ({ onSubmit }) => {
                         <Input
                             label="Электронная почта"
                             placeholder="Введите адрес электронной почты"
-                            id="email"
                             className={styles.email}
                             name="email"
                             register={register}
@@ -97,7 +94,6 @@ export const SignupForm = ({ onSubmit }) => {
                                 label="Пароль"
                                 type={!showPassword ? 'password' : 'text'}
                                 placeholder=" введите пароль"
-                                id="password"
                                 name="password"
                                 register={register}
                                 setValue={setValue}
