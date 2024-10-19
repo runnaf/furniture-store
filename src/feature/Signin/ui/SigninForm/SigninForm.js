@@ -17,7 +17,7 @@ export const SigninForm = ({ onSubmit }) => {
 
     const [showPassword, setShowPassword] = useState(false);
     const PasswordToggleIcon = showPassword ? <HidePasswordIcon /> : <ShowPasswordIcon />;
-    const { register, formState: { errors } } = useFormContext(); 
+    const { register, setValue, formState: { errors } } = useFormContext(); 
 
     return (
         <form 
@@ -42,7 +42,7 @@ export const SigninForm = ({ onSubmit }) => {
                     id="email"
                     name="email"
                     register={register}
-                    // setValue={setValue}
+                    setValue={setValue}
                     options={{
                         required: data.required,
                         pattern: {
@@ -61,7 +61,7 @@ export const SigninForm = ({ onSubmit }) => {
                         id="password"
                         name='password'
                         register={register}
-                        // setValue={setValue}
+                        setValue={setValue}
                         options={{
                             required: data.required,
                         }}
