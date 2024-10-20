@@ -117,8 +117,8 @@ export const SignupForm = ({ onSubmit }) => {
                             >
                                 Согласен с 
                                 {/* TODO */}
-                                <Link href='/' className={styles.linkAgree}> Условиями </Link> и 
-                                <Link href='/' className={styles.linkAgree}> Политикой Конфиденциальности </Link>
+                                <Link to='/' className={styles.linkAgree}> Условиями </Link> и 
+                                <Link to='/' className={styles.linkAgree}> Политикой Конфиденциальности </Link>
                             </Checkbox>
                         </Stack>
                     </Stack>
