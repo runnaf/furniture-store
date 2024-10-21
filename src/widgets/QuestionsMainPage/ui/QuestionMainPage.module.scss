@@ -1,28 +1,9 @@
 @import '../../../app/styles/media-queries.scss';
+@import '../../../app/styles/mixin.scss';
 
 .questionMainPageContainer {
     > div {
-        width: 1200px;
-
-        @include desktop-m {
-            width: 1000px;
-        }
-
-        @include tablet-l {
-            width: 800px;
-        }
-
-        @include tablet-m {
-            width: 750px;
-        } 
-
-        @include mobile-xl {
-            width: 570px;
-        }
-
-        @include mobile-l {
-            width: 327px;
-        }
+        @include section-style;
 
         &:nth-child(1) {
             display: flex;

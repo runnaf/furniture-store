@@ -10,3 +10,9 @@
     z-index: $z-index;
 }
 
+@mixin section-style {
+    padding: 0 100px;
+    width: 1440px;
+    margin: auto;
+}
+

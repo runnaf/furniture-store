@@ -32,7 +32,7 @@ export const NewsBlogs = () => {
                     <Button>{'Oткрыть блог'}</Button>
                 </Link>
             </Stack>
-            <Stack gap='32' ref={containerRef}>
+            <Stack justify='justifyBetween' ref={containerRef}>
                 {currentNews.map(news => (
                     <CardBlogs key={news.id} title={news.title}
                     poster={news.poster}

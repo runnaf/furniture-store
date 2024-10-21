@@ -15,10 +15,10 @@ export const QuestionMainPage = () => {
             gap='32'
         >
             <HeaderSection subTitle='Есть вопрос?'>
-            Найдите <span> ответ здесь</span>
+                Найдите <span> ответ здесь</span>
             </HeaderSection>
 
-            <Stack direction="column" gap='16'>
+            <Stack direction="column" gap='16' max>
                 {questionData.map((item, index) => (
                     <Accordion 
                         key={index} 
