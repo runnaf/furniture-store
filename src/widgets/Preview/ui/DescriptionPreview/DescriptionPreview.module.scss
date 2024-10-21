@@ -1,7 +1,10 @@
+.wrapper {
+    width: 571px;
+}
+
 .headerContainer h1 {
     font-size: var(--font-size-58);
     line-height: 1.26;
-    width: 728px;
 
     & span {
         color: var(--green-color)
@@ -10,7 +13,6 @@
 
 .headerContainer p {
     line-height: 1.56;
-    width: 500px;
 }
 
 .linkShop {

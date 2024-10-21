@@ -8,7 +8,7 @@ import styles from "./DescriptionPreview.module.scss";
 
 export const DescriptionPreview = ({authorized}) => {
     return (
-        <Stack direction = "column" gap="48">
+        <Stack className={styles.wrapper} direction = "column" gap="48">
             <Stack className={styles.headerContainer} direction="column" gap="24">
                 <TitleSecondary />
                 <h1 >Изучите Нашу <span>Коллекцию Cовременной Мебели</span></h1>
