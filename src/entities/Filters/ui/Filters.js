@@ -1,28 +1,27 @@
 import { Stack } from '../../../shared/ui/Stack/Stack';
 import { Text } from '../../../shared/ui/Text/Text';
-import styles from '../../Filters/ui/Filters.module.scss';
+import { Checkbox } from '../../../shared/ui/Checkbox/Checkbox';
+import styles from './Filters.module.scss';
 
-export const Filters = ({ title, options, type, onChange }) => (
-    <Stack direction='column' gap='12'>
-        <Text className={styles.subtitle}>{title}</Text>
-        {options.map(option => (
-            <label key={option.value}>
-                {type === 'checkbox' ? (
-                    <input 
-                        type='checkbox' 
-                        value={option.value} 
-                        onChange={() => onChange(type, option.value)} 
-                    /> 
-                ) : (
-                    <input 
-                        type='radio' 
-                        name={title} 
-                        value={option.value} 
-                        onChange={() => onChange(type, option.value)} 
-                    />
-                )}
-                {option.label}
-            </label>
-        ))}
-    </Stack>
-);
+export function Filters({ title, filters, selectedFilters, onChange}) {
+    return (
+        <Stack direction='column' gap='16'>
+            <Text className={styles.subtitle}>{title}</Text>
+            <Stack direction='column' gap='12'>           
+            {filters.map(item => (
+                <Checkbox
+                    key={item.value}
+                    name={item.value}
+                    checked={selectedFilters[item.value]}
+                    onChange={(name, checked) => {                        
+                            onChange(title.toLowerCase(), { ...selectedFilters, [name]: checked });                        
+                    }}
+                    image={item.image}
+                >
+                    {item.label}
+                </Checkbox>
+            ))}
+            </Stack> 
+        </Stack>
+    );
+}

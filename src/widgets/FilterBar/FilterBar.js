@@ -1,18 +1,16 @@
 import { Text } from '../../shared/ui/Text/Text';
 import { Stack } from '../../shared/ui/Stack/Stack';
-import styles from './FilterBar2.module.scss';
+import styles from './FilterBar.module.scss';
 import React, { useState } from 'react';
 import ReactSlider from 'react-slider';
 import { Filters } from '../../entities/Filters/ui/Filters';
 import filtersData from '../../shared/libs/filtersData';
 
-export function FilterBar2 () {
-    
-  
+export function FilterBar() {
     const [selectedFilters, setSelectedFilters] = useState({
         category: {},
         price: [0, 100000],
-        color: '',
+        color: {},
         material: {},
         availability: {}
     });
@@ -24,7 +22,6 @@ export function FilterBar2 () {
         }));
     };
 
-  
     const handleSliderChange = (values) => {
         handleChange('price', values);
     };
@@ -33,16 +30,8 @@ export function FilterBar2 () {
         <Stack direction='column' gap='24' className={styles.container}>
             <Text type='h2' size='s'>Настройки фильтра</Text>
             <hr />
-    
-            <Filters 
-                title="Категория" 
-                options={filtersData.category} 
-                type="checkbox" 
-                onChange={handleChange} 
-            />
-    
+            <Filters title='Категория' filters={filtersData.category} selectedFilters={selectedFilters.category} onChange={handleChange} />
             <hr />
-    
             <Stack direction='column'>
                 <Text className={styles.subtitle}>Цена</Text>
                 <Stack>
@@ -60,38 +49,14 @@ export function FilterBar2 () {
                         <div {...props} className={`${styles.track} ${state.index === 0 ? styles.trackMin : styles.trackMax}`} />
                     )}
                     className={styles.slider}
-                />
+                /> 
             </Stack>
-    
             <hr />
-    
-            <Filters 
-                title="Цвет" 
-                options={filtersData.color} 
-                type="radio" 
-                onChange={handleChange} 
-            />
-            
+            <Filters title='Цвет' filters={filtersData.color} selectedFilters={selectedFilters.color} onChange={handleChange}  />
             <hr />
-    
-            <Filters 
-                title="Материал" 
-                options={filtersData.material} 
-                type="checkbox" 
-                onChange={handleChange} 
-            />
-    
+            <Filters title='Материал' filters={filtersData.material} selectedFilters={selectedFilters.material} onChange={handleChange} />
             <hr />
-    
-            <Filters 
-                title="Доступность" 
-                options={filtersData.availability} 
-                type="checkbox" 
-                onChange={handleChange} 
-            />
-    
-            <Text>Выбранные фильтры: {JSON.stringify(selectedFilters)}</Text>
+            <Filters title='Доступность' filters={filtersData.availability} selectedFilters={selectedFilters.availability} onChange={handleChange} />
         </Stack>
     );
-    
 }

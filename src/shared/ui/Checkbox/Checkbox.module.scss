@@ -45,4 +45,14 @@
         font-size: 14px;
         color: var(--text-color);
     }
+    .imgbox {
+        display: flex;
+        gap: 10px;
+
+        .imgColor {
+            width: 18px;
+            height: 18px;
+        }
+    }
+    
 }
