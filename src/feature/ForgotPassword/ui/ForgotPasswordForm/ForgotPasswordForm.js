@@ -3,36 +3,53 @@ import { Stack } from "../../../../shared/ui/Stack/Stack";
 import { Text } from '../../../../shared/ui/Text/Text';
 import { Input } from '../../../../shared/ui/Input/Input';
 import { Button } from '../../../../shared/ui/Button/Button';
-import { logoIcon } from '../../../../shared/assets/svg/navbarIcons';
+import { LogoIcon } from '../../../../shared/assets/svg/navbarIcons';
 import { Link } from 'react-router-dom';
+import { data } from "../../../../shared/libs/validation/errors/data";
+import { emailRegex } from "../../../../shared/libs/validation/getValidate";
+import { useFormContext } from "react-hook-form";
+import { getRouteMain } from "../../../../app/routes/lib/helper";
 
-export const ForgotPasswordForm = () => {
+export const ForgotPasswordForm = ({ onSubmit, setIsForgotten }) => {
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    };
+    const { register, setValue, formState: { errors } } = useFormContext(); 
 
     return (
-        <form className={styles.form} onSubmit={handleSubmit}>
-            <div className={styles.logo}>
-                {logoIcon()}
-            </div>
-            <Stack direction="column">
-                <Text type="h2" size="xl" className={styles.heading}>Восстановить пароль?</Text>
-                <Text type="p" size="xs" className={styles.par}>Не беспокойтесь, мы отправим вам инструкции по сбросу пароля.</Text>
+        <form className={styles.form} onSubmit={onSubmit}>
+            <Link to={getRouteMain()}>
+                <LogoIcon />
+            </Link>
+            <Stack direction="column" gap='32'>
+                <Text type="h2" size="xl">Восстановить пароль?</Text>
+                <Text className={styles.par}>
+                    Мы отправим вам инструкции по сбросу пароля.
+                </Text>
 
                 <Input
                     label="Электронная почта"
                     type="email"
                     placeholder="Введите адрес электронной почты"
-                    id="email"
-                    className={styles.email}
-
+                    name="email"
+                    register={register}
+                    setValue={setValue}
+                    options={{
+                        required: data.required,
+                        pattern: {
+                            value: emailRegex,
+                            message: data.errors.validEmail
+                        }
+                    }}
+                    error={errors.email}
                 />
-                <Button size="xs" color="primary" type="submit" className={styles.submitBtn}>Отправить</Button>
+                <Button type="submit" className={styles.submitBtn}>Отправить</Button>
 
-                <Text type="p" size="xs" className={styles.account}>
-                    Помните пароль? <Link to="/" className={styles.signInLink}>Войти</Link>
+                <Text className={styles.account}>
+                    Помните пароль? <button 
+                        className={styles.signInLink}
+                        onClick={() => setIsForgotten(false)}
+                    >
+                        Войти
+                    </button>
                 </Text>
             </Stack>
         </form>
