@@ -6,6 +6,7 @@ import { dropdownMenus } from '../../libs/data';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { Link } from 'react-router-dom';
 import { getRouteCategories } from '../../../../app/routes/lib/helper';
+import { getStyles } from '../../../../shared/libs/getStyles';
 
 export const MobileNavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,8 +25,12 @@ export const MobileNavbar = () => {
         setActiveSubmenu(activeSubmenu === index ? null : index);
     };
 
+    const mode = {
+        [styles.open]: isOpen,
+    };
+
     return (
-        <nav className={`${styles.mobileNavbar} ${isOpen ? styles.open : ''}`}>
+        <nav className={getStyles(styles.mobileNavbar, mode, [])}>
             <Stack justify='justifyBetween' align='alignCenter' className={styles.header}>
                 <button className={styles.toggleMenu} onClick={toggleMenu}>
                     {isOpen ? closeIcon() : menuIcon()}
