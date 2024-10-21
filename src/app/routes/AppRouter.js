@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { routes } from './lib/data'
 
-const Router = () => {
+export const AppRouter = () => {
     return (
             <Routes>
                 {routes.map(({link, page}) => 
@@ -14,5 +14,3 @@ const Router = () => {
             </Routes>
     );
 };
-
-export default Router;
