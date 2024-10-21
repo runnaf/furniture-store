@@ -1,12 +1,9 @@
 @import '../../../../app/styles/media-queries.scss';
 
 .form {
-    width: 512px;
-    height: 100%;
     font-family: var(--font-family);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 32px;
 
     @include tablet-m {
@@ -26,39 +23,8 @@
     color: var(--secoundry-black-color);
 }
 
-
-.forgotPassword {
-    color: var(--green-color);
-    text-decoration: none;
-    font-size: var(--font-size-xs);
-    font-weight: 500;
-
-    &:hover {
-        text-decoration: underline;
-        text-underline-offset: 4px;
-        text-decoration-color: var(--green-color);
-    }
-}
-
 .signInBtn {
     padding: 16px;
-}
-
-.account {
-    font-weight: 500;
-    color: var(--black-color);
-    text-align: center;
-}
-
-.signUpLink {
-    color: var(--green-color);
-    text-decoration: none;
-
-    &:hover {
-        text-decoration: underline;
-        text-underline-offset: 4px;
-        text-decoration-color: var(--green-color);
-    }
 }
 
 .password {
