@@ -1,5 +1,5 @@
 @import '../../../app/styles/media-queries.scss';
-
+@import '../../../app/styles/mixin.scss';
 
 //background
 $background-color-grey: var(--grey-background-color);
@@ -14,13 +14,8 @@ $border-radius-24: var(--border-radius-24);
 //gap
 $gap-8: var(--gap-8);
 
-
 .flashSaleContainer {
-    width: 1200px;
-
-    @include desktop-m {
-        width: 1000px;
-    }
+    @include section-style;
 
     @include tablet-l {
         flex-direction: column;

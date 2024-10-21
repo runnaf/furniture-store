@@ -6,10 +6,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     background-color: var(--white-color);
     color: var(--black-color);
-    padding: 0 100px;
+    width: 1440px; //FIX LATER
+    margin: auto; //FIX LATER
+    padding: 0 100px; //FIX LATER
 
     @include tablet-m {
         display: none;
