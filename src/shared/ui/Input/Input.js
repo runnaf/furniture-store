@@ -6,17 +6,14 @@ export const Input = ({
 	name,
 	options,
 	setValue,
-	valueInput,
 	error,
-    onChange,
     className,
     label,
-    id,
     ...otherProps
 }) => {
 
     const mode = {
-        [styles]: true,
+        [styles.error]: !!error,
     };
 
     const additional = [
@@ -27,14 +24,16 @@ export const Input = ({
 
     return (
         <div className={styles.inputWrapper}>
-            {label && <label className={styles.label}>{label}</label>}
-            <input
-                id={id}
-                {...register(name, options)}
-                className={inputClasses}
-                {...otherProps}
-            />
-            {error && <span className={styles.error}>{error.message}</span>}
+            {label && <label className={styles.label} htmlFor={name}>{label}</label>}
+            <div>
+                <input
+                    id={name}
+                    {...register(name, options)}
+                    className={inputClasses}
+                    {...otherProps}
+                />
+                <p className={styles.error_text}>{error ? error.message : ''}</p>
+            </div>
         </div>
     );
 };

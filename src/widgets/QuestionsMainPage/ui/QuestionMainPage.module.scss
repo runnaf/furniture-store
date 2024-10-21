@@ -1,14 +1,28 @@
 @import '../../../app/styles/media-queries.scss';
 
 .questionMainPageContainer {
-    padding: 0 100px; //FIX LATER
-
     > div {
         width: 1200px;
 
+        @include desktop-m {
+            width: 1000px;
+        }
+
+        @include tablet-l {
+            width: 800px;
+        }
+
         @include tablet-m {
-            width: 327px;
+            width: 750px;
         } 
+
+        @include mobile-xl {
+            width: 570px;
+        }
+
+        @include mobile-l {
+            width: 327px;
+        }
 
         &:nth-child(1) {
             display: flex;

@@ -12,43 +12,12 @@
         flex-direction: column;
     }
 
-    .discount {
-        margin-left: 30px;
-
-        @include tablet-m {
-            margin-left: 0;
-        }
-    }
-
-    p {
-        font-size: var(--font-size-18);
-
-        @include tablet-m {
-            line-height: 26px;
-            padding: 16px 24px;
-        }
-    }
-
 
     .phone {
         @include tablet-m {
             display: none;
         }
     }
-
-    button {
-        background-color: transparent;
-    }
-}
-
-.cross {
-    display: none;
-
-    @include tablet-m {
-        display: block;
-        padding: 30px 24px;
-    }
-
 }
 
 .links a {

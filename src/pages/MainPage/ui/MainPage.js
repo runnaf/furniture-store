@@ -8,7 +8,7 @@ import { QuestionMainPage } from "../../../widgets/QuestionsMainPage/ui/Question
 import { TodayDeals } from "../../../widgets/TodayDeals/ui/TodayDeals";
 import styles from './MainPage.module.scss';
 import { Header } from "../../../entities/Header/ui/Header";
-
+import { Advantages } from "../../../entities/Advantages/ui/Advantages/Advantades";
 
 const MainPage = () => {
     return (
@@ -16,6 +16,7 @@ const MainPage = () => {
             <Header />
             <Navbar />
             <MobileNavbar />
+            <Advantages />
             <OurProducts />
             <FlashSale />
             <TodayDeals />
