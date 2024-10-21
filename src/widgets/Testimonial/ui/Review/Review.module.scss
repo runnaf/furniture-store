@@ -2,17 +2,12 @@
     background-color: var(--white-color);
     border-radius: 24px;
     max-width: 584px;
-    background-image: url('../../../../shared/assets/svg/quotes.svg');
-    background-repeat: no-repeat;
-    background-position: top 47px right 32px;
     height: 347px;
     box-sizing: border-box;
-    display: grid;
-    gap: var(--gap-16);
 }
 
-.reviewUserContainer {
-    padding-right: 130px;
+.wrapper {
+    width: 552px;
 }
 
 .reviewImageContainer {
@@ -24,32 +19,8 @@
     border-top-left-radius: 24px;
 }
 
-.reviewImageContainer img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 135px;
-    height: 135px;
-    border: 4px solid var(--white-color);
-    border-radius: 50%;
-    outline: none;
-    background-color: var(--grey-background-color);
-    object-fit: cover;
-}
-
-.wrapper h3 {
-    font-size: var(--font-size-24);
-    font-weight: 500;
-    line-height: 1.08;
-}
-
-.wrapper p {
-    font-size: var(--font-size-20);
-}
-
-.wrapper ul {
-    display: flex;
-    gap: var(--gap-8);
+.quotesIcon {
+    flex-grow: 2;
 }
 
 .ratingCurrent path {
@@ -67,7 +38,6 @@
 
 .review {
     padding: 0 32px 32px;
-    font-size: var(--font-size-24);
     line-height: 1.5;
     opacity: var(--opacity-08);
     height: inherit;

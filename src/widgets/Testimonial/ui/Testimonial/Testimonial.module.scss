@@ -1,9 +1,10 @@
 .testimonialContainer {
     background-color: var(--background-color);
-    padding: 125px 120px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: var(--gap-36);
+    height: 797px;
 }
 
 .testimonialContainer > div {

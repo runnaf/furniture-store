@@ -9,24 +9,28 @@ export const card = [
         category: 'livingRoom',
         quantity: 2500,
         image: livingRoom,
+        id: 0,
     },
     {
         name: 'Спальня',
         category: 'bedroom',
         quantity: 2000,
         image: bedroom,
+        id: 1,
     },
     {
         name: 'Ванная',
         category: 'bathroom',
         quantity: 2500,
         image: bathroom,
+        id: 2,
     },
     {
         name: 'Кухня',
         category: 'kitchen',
         quantity: 3500,
         image: kitchen,
+        id: 3,
     },
 ];
 

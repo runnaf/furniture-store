@@ -1,4 +1,5 @@
 import { getRouteCategories } from "../../../../app/routes/lib/helper";
+import { clipIcon } from "../../../../shared/assets/svg/clipIcon";
 import { LinkCustom } from "../../../../shared/ui/LinkCustom/LinkCustom";
 import { Stack } from "../../../../shared/ui/Stack/Stack";
 import { Text } from "../../../../shared/ui/Text/Text";
@@ -7,7 +8,7 @@ import styles from "./SlideRoom.module.scss";
 
 export const SlideRoom = ({room}) => {
     return (
-        <Text type="li" className={styles.container}>
+        <Stack className={styles.container} direction="column" gap="32">
             <img src={room.image} alt={room.name} width="410" height="344"/>
             <Stack className={styles.description} justify="justifyBetween" gap="16">
                 <Stack direction ="column" gap="16">
@@ -15,9 +16,10 @@ export const SlideRoom = ({room}) => {
                     <Text>{`Более ${room.quantity} наименований`}</Text>
                 </Stack>
                 <LinkCustom path={getRouteCategories(room.category)} radius="circle">
+                    {clipIcon()}
                     <VisuallyHidden>{`ссылка для перехода на товары категории ${room.name}`}</VisuallyHidden>
                 </LinkCustom>
             </Stack>
-        </Text>
+        </Stack>
     )
 }
