@@ -1,7 +1,6 @@
 @import '../../../app/styles/media-queries.scss';
 
 .container {
-    padding: 0 100px; //FIX LATER
     width: 100%;    
 
     @include tablet-m {
@@ -20,7 +19,7 @@
     }
 
     button {
-        padding: 12px 36px;
+        padding: 8px 36px;
 
         @include tablet-m {
             padding: 10px 20px;
@@ -28,23 +27,25 @@
         }
     }
 }
+
+.cardContainerWrapper {
+    position: relative;
+    width: calc(100% - 100px);
+    margin-left: 150px;
+    overflow-x: auto;
+}
+
 .cardContainer {
-    overflow: hidden;
-    overflow-x: scroll;;
-    white-space:nowrap;
-    width: 100%; 
-    padding: 30px 0;;
-    overflow: hidden;
+    display: inline-flex;
+    gap: 32px;
+    width: max-content;
+    padding: 0 0 30px 0;
 
     @include tablet-m {        
         gap: var(--gap-12);
     }
 }
 
-.cardContainer:hover {
-    overflow:overlay;    
-}
-        
 .cardWrapper {
     display: inline-block;
 }

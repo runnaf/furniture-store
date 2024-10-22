@@ -1,4 +1,5 @@
 @import '../../../../app/styles/media-queries.scss';
+@import '../../../../app/styles/mixin.scss';
 
 
 .navbar {
@@ -6,10 +7,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     background-color: var(--white-color);
     color: var(--black-color);
-    padding: 0 100px;
+
+    @include section-style;
 
     @include tablet-m {
         display: none;

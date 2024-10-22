@@ -11,10 +11,12 @@ import { Link } from "react-router-dom";
 export const FlashSale = () => {
 
     return(
-        <Stack justify='justifyCenter'
-        align='alignCenter'>
+        <Stack 
+            justify='justifyCenter'
+            align='alignCenter'
+        >
             <Stack 
-                gap='32'
+                justify='justifyBetween'
                 className={styles.flashSaleContainer}
             >
                 <Stack 
@@ -29,7 +31,7 @@ export const FlashSale = () => {
                         align='alignCenter'
                     >
                         <HeaderSection subTitle='Скидка 25% - предложение ограничено!'>
-                        Супер <span> Скидки!</span> 
+                            Супер <span> Скидки!</span> 
                         </HeaderSection>
                         <Timer styleMode='timerMainContainer' endTime='2024-12-31T20:59:59.000Z'/>
                         <Link>

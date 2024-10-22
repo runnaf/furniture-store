@@ -1,0 +1,19 @@
+.previewContainer {
+    display: flex;
+    justify-content: center;
+    gap: var(--gap-125);
+    background-color: var(--background-color);
+    padding: 131px 0;
+    background-image: url("../../../../shared/assets/svg/points.svg"), url("../../../../shared/assets/svg/points.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top -14px right 38%, bottom -5px left 30%;
+    
+    & div h2 {
+        max-width: 750px;
+        line-height: 1.26;
+    }
+
+    & a:hover {
+        opacity: var(--opacity-08);
+    }
+}

@@ -1,12 +1,9 @@
 @import '../../../app/styles/media-queries.scss';
+@import '../../../app/styles/mixin.scss';
 
 .header {
     background-color: var(--green-color);
     color: var(--white-color);
-    padding: 17px 100px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
 
     @include tablet-m {
         flex-direction: column;
@@ -18,6 +15,14 @@
             display: none;
         }
     }
+}
+
+.header_container {
+    @include section-style;
+}
+
+.header_content {
+    padding: 16px 0;
 }
 
 .links a {

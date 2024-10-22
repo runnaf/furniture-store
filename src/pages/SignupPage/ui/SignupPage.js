@@ -1,4 +1,4 @@
-import { Slider } from "../../../entities/Slider/ui/Slider";
+// import { Slider } from "../../../entities/Slider/ui/Slider";
 import { Signup } from "../../../feature/Signup/ui/Signup/Signup";
 import { Stack } from "../../../shared/ui/Stack/Stack";
 import styles from './SignupPage.module.scss';
@@ -11,7 +11,7 @@ const SignupPage = () => {
             align='alignCenter'
         >
             <Signup />
-            <Slider />
+            {/* <Slider /> */}
         </Stack>
     );
 };

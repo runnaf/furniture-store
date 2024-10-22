@@ -7,11 +7,22 @@ import { getRouteSignin, getRouteSignup } from '../../../app/routes/lib/helper';
 export const Header = () => {
     return (
         <header className={styles.header}>
-            <Text className={styles.phone}>Позвоните нам: +123-456-789</Text>
-            <Text>Зарегистрируйтесь и ПОЛУЧИТЕ скидку 25% на первый заказ.</Text>
-            <Stack gap="16" className={styles.links}>
-                <Link to={getRouteSignin()}>Вход</Link>
-                <Link to={getRouteSignup()}>Регистрация</Link>
+            <Stack className={styles.header_container} >
+                <Stack 
+                    className={styles.header_content} 
+                    justify='justifyBetween' max
+                >
+                    <Text className={styles.phone}>
+                        Позвоните нам: +123-456-789
+                    </Text>
+                    <Text>
+                        Зарегистрируйтесь и ПОЛУЧИТЕ скидку 25% на первый заказ.
+                    </Text>
+                    <Stack gap="16" className={styles.links}>
+                        <Link to={getRouteSignin()}>Вход</Link>
+                        <Link to={getRouteSignup()}>Регистрация</Link>
+                    </Stack>
+                </Stack>
             </Stack>
         </header>
     );
