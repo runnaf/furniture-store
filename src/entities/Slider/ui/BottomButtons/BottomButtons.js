@@ -7,10 +7,13 @@ export const BottomButtons = ({quantitySliders, quantityCardsOnPage, currentSlid
     
     return (
         <ul className = {styles.container}>
-            {array.map((page) => 
-                <li key={page} onClick = {()=> handleClickSlide(page)}>
+            {array.map((page) => {
+                return (
+                    <li key={page} onClick = {()=> handleClickSlide(page)}>
                     <Button id={page} className = {currentSlide === page ? '' : styles.notPressed} />
                 </li>)}
+                )
+            }
         </ul>
     )
 }

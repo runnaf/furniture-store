@@ -1,3 +1,5 @@
+@import '../../../../app/styles/media-queries.scss';
+
 .testimonialContainer {
     background-color: var(--background-color);
     display: flex;
@@ -5,9 +7,27 @@
     justify-content: center;
     gap: var(--gap-36);
     height: 797px;
-    
+
+    @include mobile-xl {
+        width: 100%;
+        align-items: center;
+    }
+}
+
+.testimonialContainer > div {
+    @include mobile-xl {
+        width: calc(100% - 48px);
+    }
 }
 
 .testimonialContainer > div {
     align-items: center;
+}
+
+.testimonialContainer > div h2 {
+    align-items: center;
+
+    @include mobile-xl {
+        text-align: center;
+    }
 }

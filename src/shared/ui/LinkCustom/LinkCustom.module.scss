@@ -13,6 +13,11 @@ $border-radius-circle: var(--border-radius-circle);
 $border-radius-16: var(--border-radius-16);
 $border-radius-8: var(--border-radius-8);
 
+$box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+-4px -4px 6px 0 rgba(116, 125, 136, .5), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+
 $sizes: (
     xxs: $font-size-16,
     xs: $font-size-18,
@@ -26,6 +31,7 @@ $sizes: (
 }
 
 $green-color: var(--green-color);
+$green-color-hover: var(--green-color-hover);
 $yellow-color: var(--yellow-color);
 $text-white-color: var(--white-color);
 $text-black-color: var(--black-color);
@@ -33,6 +39,11 @@ $text-black-color: var(--black-color);
 .primary {
     background-color: $green-color;
     color: $text-white-color;
+
+    &:hover {
+        box-shadow: $box-shadow;
+        background-color: $green-color-hover;
+    }
 }
 
 .secondary {
@@ -45,6 +56,10 @@ $text-black-color: var(--black-color);
 .yellow {
     background-color: $yellow-color;
     color: $text-black-color;
+
+    &:hover {
+        box-shadow: $box-shadow;
+    }
 }
 
 .rounded {

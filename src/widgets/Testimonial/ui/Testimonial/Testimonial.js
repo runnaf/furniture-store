@@ -1,22 +1,31 @@
 import { Slider } from "../../../../entities/Slider/ui/Slider/Slider";
 import { HeaderSection } from "../../../../shared/ui/HeaderSection/HeaderSection";
-import { QUANTITY_CARD_ON_PAGE, testimonial } from "../../lib/data"
+import { QUANTITY_CARD_ON_PAGE, testimonial, WIDTH_MOBILE_XL } from "../../lib/data"
 import styles from "./Testimonial.module.scss";
 import { useSlider } from "../../../../entities/Slider/hooks/useSlider";
 import { slicerOfArray } from "../../../../entities/Slider/lib/helper";
 import { Reviews } from "../Reviews/Reviews";
+import { useResize } from "../../../../shared/hooks/useResize";
 
 
 export const Testimonial = () => {
     const { currentSlide, nextCard,  prevCard, handleClickSlide } = useSlider(testimonial.length);
-    const reviews = slicerOfArray(testimonial, currentSlide, QUANTITY_CARD_ON_PAGE)
+    const width = useResize();
+
+    const quantityCardsOnPage = () => {        
+        if (width <= WIDTH_MOBILE_XL) {
+            return 1
+        } else return QUANTITY_CARD_ON_PAGE
+    }
+
+    const reviews = slicerOfArray(testimonial, currentSlide, quantityCardsOnPage());
 
     return (
         <section className={ styles.testimonialContainer }>
-            <HeaderSection className = {styles.testimonialTitle} subTitle= "Отзывы">Что <span>Говорят наши клиенты</span></HeaderSection>
+            <HeaderSection subTitle= "Отзывы">Что <span>Говорят наши клиенты</span></HeaderSection>
             <Slider isSideButtons = {false} 
                     isBottomButtons = {true} 
-                    quantityCardsOnPage = { QUANTITY_CARD_ON_PAGE } 
+                    quantityCardsOnPage = { quantityCardsOnPage() } 
                     className = {styles.slider} 
                     data = {testimonial} 
                     currentSlide = {currentSlide} 

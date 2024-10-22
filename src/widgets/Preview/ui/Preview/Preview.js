@@ -6,6 +6,7 @@ import { slicerOfArray } from "../../../../entities/Slider/lib/helper";
 import { SlideRooms } from "../SlideRooms/SlideRooms";
 import styles from "./Preview.module.scss";
 import { DescriptionPreview } from "../DescriptionPreview/DescriptionPreview";
+import { Stack } from "../../../../shared/ui/Stack/Stack";
 
 export const Preview = () => {
     const { currentSlide, nextCard,  prevCard } = useSlider(card.length);
@@ -14,20 +15,22 @@ export const Preview = () => {
     
     return (
         <section className={styles.previewContainer}>
-            <DescriptionPreview authorized = {authorized} />
-            <Slider 
-                isSideButtons={true} 
-                isBottomButtons={false} 
-                quantityCardsOnPage={ QUANTITY_CARD_ON_PAGE } 
-                className={styles.slider} 
-                data={card} 
-                currentSlide={currentSlide} 
-                nextCard={ nextCard } 
-                prevCard={ prevCard }
-                gap="24"
-            >
-                <SlideRooms rooms={rooms} />
-            </Slider>
+            <Stack>
+                <DescriptionPreview authorized = {authorized} />
+                <Slider 
+                    isSideButtons={true} 
+                    isBottomButtons={false} 
+                    quantityCardsOnPage={ QUANTITY_CARD_ON_PAGE } 
+                    className={styles.slider} 
+                    data={card} 
+                    currentSlide={currentSlide} 
+                    nextCard={ nextCard } 
+                    prevCard={ prevCard }
+                    gap="24"
+                >
+                    <SlideRooms rooms={rooms} />
+                </Slider>
+            </Stack>
         </section>
     )
 }
