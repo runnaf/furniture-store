@@ -17,10 +17,12 @@
     }
 }
 
-.header_content {
+.header_container {
     @include section-style;
-    padding-top: 16px;
-    padding-bottom: 16px;
+}
+
+.header_content {
+    padding: 16px 0;
 }
 
 .links a {
