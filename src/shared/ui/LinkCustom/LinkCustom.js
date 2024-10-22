@@ -10,8 +10,6 @@ export const LinkCustom = ({
     radius = 'rounded', // rounded | circle
     color = 'primary', // primary | secondary
     outlined,
-    isButton = true,
-    linkHref,
     ...otherProps
 }) => {
 

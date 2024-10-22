@@ -13,16 +13,17 @@ export const Preview = () => {
     const authorized = false;
     
     return (
-        <section className={ styles.previewContainer }>
+        <section className={styles.previewContainer}>
             <DescriptionPreview authorized = {authorized} />
-            <Slider isSideButtons = {true} 
-                isBottomButtons = {false} 
-                quantityCardsOnPage = { QUANTITY_CARD_ON_PAGE } 
-                className = {styles.slider} 
-                data = {card} 
-                currentSlide = {currentSlide} 
-                nextCard = { nextCard } 
-                prevCard = { prevCard }
+            <Slider 
+                isSideButtons={true} 
+                isBottomButtons={false} 
+                quantityCardsOnPage={ QUANTITY_CARD_ON_PAGE } 
+                className={styles.slider} 
+                data={card} 
+                currentSlide={currentSlide} 
+                nextCard={ nextCard } 
+                prevCard={ prevCard }
                 gap="24"
             >
                 <SlideRooms rooms={rooms} />

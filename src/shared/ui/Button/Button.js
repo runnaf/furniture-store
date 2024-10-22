@@ -8,7 +8,6 @@ export const Button = ({
     radius = 'rounded', // rounded | circle
     color = 'primary', // primary | secondary | outlined
     outlined,
-    linkHref,
     ...otherProps
 }) => {
 

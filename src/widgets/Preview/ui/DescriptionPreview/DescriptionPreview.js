@@ -8,11 +8,14 @@ import styles from "./DescriptionPreview.module.scss";
 
 export const DescriptionPreview = ({authorized}) => {
     return (
-        <Stack className={styles.wrapper} direction = "column" gap="48">
+        <Stack className={styles.wrapper} direction="column" gap="48">
             <Stack className={styles.headerContainer} direction="column" gap="24">
                 <TitleSecondary />
-                <h1 >Изучите Нашу <span>Коллекцию Cовременной Мебели</span></h1>
-                <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. </Text>
+                <h1 >Познакомься с нашей <span>коллекцией мебели</span></h1>
+                <Text>
+                    Выбирайте из широкого ассортимента качественных товаров, созданных для дома с заботой о каждой детали.
+                    Наши коллекции созданы для того, чтобы сделать ваш дом уютным и современным.
+                </Text>
             </Stack>
             <Stack align= "alignCenter" gap="16">
                 <LinkCustom className={styles.linkShop} path={getRouteShop()}>За Покупками</LinkCustom>

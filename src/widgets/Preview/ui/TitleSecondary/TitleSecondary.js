@@ -5,8 +5,8 @@ import styles from "./TitleSecondary.module.scss";
 export const TitleSecondary = () => {
     return (
         <Stack className={styles.container}>
-            <Text type = "h3" size="s">
-                Лучший Интернет - магазин Мебели
+            <Text type = "h3">
+                надежный интернет-магазин мебели
             </Text>
         </Stack>
         
