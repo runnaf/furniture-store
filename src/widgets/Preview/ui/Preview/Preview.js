@@ -29,5 +29,6 @@ export const Preview = () => {
                 <SlideRooms rooms={rooms} />
             </Slider>
         </section>
-    )
-}
+    );
+};
+
