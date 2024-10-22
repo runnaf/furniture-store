@@ -1,4 +1,5 @@
 import { getRouteCategories, getRouteShop, getRouteSignin } from "../../../../app/routes/lib/helper";
+import { circles } from "../../../../shared/assets/svg/circls";
 import { LinkCustom } from "../../../../shared/ui/LinkCustom/LinkCustom";
 import { Stack } from "../../../../shared/ui/Stack/Stack";
 import { Text } from "../../../../shared/ui/Text/Text";
@@ -17,14 +18,18 @@ export const DescriptionPreview = ({authorized}) => {
                     Наши коллекции созданы для того, чтобы сделать ваш дом уютным и современным.
                 </Text>
             </Stack>
-            <Stack align= "alignCenter" gap="16">
+            <Stack className={styles.linkContainer} align= "alignCenter" gap="16">
                 <LinkCustom className={styles.linkShop} path={getRouteShop()}>За Покупками</LinkCustom>
                 <LinkCustom className={styles.linkCategory} path={getRouteCategories()} color="secondary">Просмотреть категории товаров</LinkCustom>
             </Stack>
             <Stack className={styles.description} gap="16">
-                <LinkCustom to={authorized ? "#": getRouteSignin()} color="yellow" radius="circle">
+                <Stack>
+                    {circles()}
+                <LinkCustom path={authorized ? "#": getRouteSignin()} color="yellow" radius="circle">
                     <VisuallyHidden>Оставить отзыв на выбранные товары</VisuallyHidden>
                 </LinkCustom>
+                </Stack>
+                
                 <Stack direction="column" gap="8">
                     <Text type="h3" size="s">Рейтинг магазина 4.9</Text>
                     <Text >Нам доверяют более 50 тысяч клиентов</Text>
