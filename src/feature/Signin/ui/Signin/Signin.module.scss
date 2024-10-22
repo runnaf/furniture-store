@@ -1,0 +1,34 @@
+.signin {
+    width: 512px;
+    height: 100%;
+}
+
+.forgotPassword {
+    color: var(--green-color);
+    text-decoration: none;
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    background-color: transparent;
+
+    &:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-color: var(--green-color);
+    }
+}
+
+.signUpLink {
+    color: var(--green-color);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-color: var(--green-color);
+    }
+}
+
+.account {
+    font-weight: 500;
+}
+

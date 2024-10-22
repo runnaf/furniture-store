@@ -236,11 +236,13 @@
     }
     .cardText {
         margin-top: 69px;
+        max-width: 251px;
+        text-wrap: wrap;
     }
     .shopButton {
         display: flex;
         align-items: center;
-        gap: var(----gap-8);
+        gap: var(--gap-8);
         width: 120px;
         color: var(--green-color);
         margin-top: 25px;

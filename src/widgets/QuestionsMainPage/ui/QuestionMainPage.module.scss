@@ -1,14 +1,9 @@
 @import '../../../app/styles/media-queries.scss';
+@import '../../../app/styles/mixin.scss';
 
 .questionMainPageContainer {
-    padding: 0 100px; //FIX LATER
-
     > div {
-        width: 1200px;
-
-        @include tablet-m {
-            width: 327px;
-        } 
+        @include section-style;
 
         &:nth-child(1) {
             display: flex;

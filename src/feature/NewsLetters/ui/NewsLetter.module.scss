@@ -1,3 +1,5 @@
+@import '../../../app/styles/media-queries';
+
 //background
 $background-color: var(--background-color);
 $green-background-color: var(--green-color);
@@ -5,8 +7,10 @@ $green-background-color: var(--green-color);
 //color
 $grey-color:var(--secoundry-black-color);
 
+
 //border-radius
 $border-radius-circle: var(--border-radius-circle);
+
 
 .newsLetterContainer {
     position: relative;
@@ -20,51 +24,105 @@ $border-radius-circle: var(--border-radius-circle);
 
         &:nth-child(1) {
             top: 509px;
-            left: 176px;
+            left: 25%;
+
+            @include mobile-xl {
+                top: 520px;
+                left: 30px;
+            }
         }
 
         &:nth-child(2) {
             bottom: 519px;
-            right: 126px;
+            right: 25%;
             rotate: 180deg;
+
+            @include mobile-xl {
+                bottom: 530px;
+                right: 30px;
+            }
         }
     }
 
     > div {
+            width: 1200px;
+    
+            @include desktop-m {
+                width: 1000px;
+            }
+    
+            @include tablet-l {
+                width: 800px;
+            }
+    
+            @include tablet-m {
+                width: 750px;
+            } 
+    
+            @include mobile-xl {
+                width: 570px;
+            }
+    
+            @include mobile-l {
+                width: 327px;
+            }
+
         > div:nth-child(1) {
+            text-align: center;
             > div {
                 align-items: center;
-                > h2 {
-                    text-align: center;
-                    width: 900px;
-                }
             }
             > p {
                 color: $grey-color;
             }
         }
 
-        > div:nth-child(2) {
-            > div {
+        form {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            height: 100px;
+            gap: 16px;
+
+            @include mobile-xl {
+                width: 570px;
+            }
+    
+            @include mobile-l {
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                width: 327px;
+                height: 200px;
+            }
+    
+
+            > div > div > input {
                 position: relative;
-                > div > input {
-                    position: relative;
-                    width: 416px;
-                    height: 66px;
-                    padding-left: 70px;
+                width: 416px;
+                height: 66px;
+                padding-left: 70px;
+
+                @include mobile-xl {
+                    width: 378px;
                 }
 
-                > img {
-                    position: absolute;
-                    border-radius: $border-radius-circle;
-                    background-color: $green-background-color;
-                    height: 50px;
-                    padding: 9px;
-                    left: 8px;
-                    transform: translateY(-50%);
-                    top: 50%;
-                    z-index: 2;
+                @include mobile-l {
+                    width: 327px;
                 }
+        
+            }
+
+            > img {
+                position: absolute;
+                border-radius: $border-radius-circle;
+                background-color: $green-background-color;
+                height: 50px;
+                padding: 9px;
+                left: 8px;
+                transform: translateY(15%);
+                z-index: 2;
             }
 
             > button {

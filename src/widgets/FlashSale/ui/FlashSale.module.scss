@@ -1,5 +1,5 @@
 @import '../../../app/styles/media-queries.scss';
-
+@import '../../../app/styles/mixin.scss';
 
 //background
 $background-color-grey: var(--grey-background-color);
@@ -14,11 +14,10 @@ $border-radius-24: var(--border-radius-24);
 //gap
 $gap-8: var(--gap-8);
 
-
 .flashSaleContainer {
-    padding: 0 100px; //FIX LATER
+    @include section-style;
 
-    @include tablet-m {
+    @include tablet-l {
         flex-direction: column;
         width: 100%;
         gap: 16px;
@@ -33,7 +32,11 @@ $gap-8: var(--gap-8);
             width: 686px;
             height: 578px;
 
-            @include tablet-m {
+            @include desktop-m {
+                width: 568px;
+            }
+
+            @include tablet-l {
                 width: 100%;
                 height: 491px;
                 border-radius: 0;
@@ -46,7 +49,7 @@ $gap-8: var(--gap-8);
                     top: 520px;
                     left: 74px;
 
-                    @include tablet-m {
+                    @include tablet-l {
                         top: 433px;
                         left: 24px;
                     }
@@ -57,7 +60,7 @@ $gap-8: var(--gap-8);
                     right: 75px;
                     rotate: 180deg;
 
-                    @include tablet-m {
+                    @include tablet-l {
                         bottom: 433px;
                         right: 24px;
                     }
@@ -66,10 +69,11 @@ $gap-8: var(--gap-8);
 
             > div {
                 width: 522px;
-
-                @include tablet-m {
-                    width: 326px;
+        
+                @include mobile-l {
+                    width: 327px;
                 }
+
 
                 > div:nth-child(1) {
                     flex-direction: column-reverse;
@@ -80,7 +84,7 @@ $gap-8: var(--gap-8);
                             display: none;
                         }
                         > p {
-                            @include tablet-m {
+                            @include tablet-l {
                                 text-align: center;
                             }
                         }
@@ -96,7 +100,7 @@ $gap-8: var(--gap-8);
         }
 
         &:nth-child(2) {
-            @include tablet-m {
+            @include tablet-l {
                 flex-direction: column;
                 gap: 16px;
             }
@@ -107,23 +111,30 @@ $gap-8: var(--gap-8);
             background-color: $background-color-grey;
             border-radius: $border-radius-24;
 
-            @include tablet-m {
+            @include desktop-m {
+                width: 200px;
+            }
+
+            @include tablet-l {
                 width: 100%;
-                height: 100px;
+                height: 150px;
                 border-radius: 0;
-                rotate: 0deg;
+            }
+
+            @include tablet-m {
+                height: 100px;
             }
             
             &:nth-child(1) > div {
                 justify-content: flex-start; 
 
                 > img:nth-of-type(1) {
-                    @include tablet-m {
-                        width: 351px;
+                    @include tablet-l {
+                        width: 100%;
                         margin-top: 30px;
                     }
                 }
-                @include tablet-m {
+                @include tablet-l {
                     justify-content: center;
                 }
             }
@@ -131,12 +142,12 @@ $gap-8: var(--gap-8);
                 justify-content: flex-end;
 
                 > img:nth-of-type(1) {
-                    @include tablet-m {
-                        width: 351px;
+                    @include tablet-l {
+                        width: 100%;
                         margin-bottom: 200px;
                     }
                 }
-                @include tablet-m {
+                @include tablet-l {
                     justify-content: center;
                 } 
             }
@@ -147,12 +158,19 @@ $gap-8: var(--gap-8);
                 border: $border;
                 border-radius: $border-radius-16;
                 overflow: hidden;
-                
+
+                @include desktop-m {
+                    width: 180px;
+                }
+
+                @include tablet-l {
+                    width: 95%;
+                    height: 130px;
+                    border-radius: $border-radius-12;
+                }
 
                 @include tablet-m {
-                    width: 351px;
-                    height: 76px;
-                    border-radius: $border-radius-12;
+                    height: 80px;
                 }
             }
         }

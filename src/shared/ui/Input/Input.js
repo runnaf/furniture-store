@@ -1,27 +1,19 @@
-import { useState } from 'react';
 import { getStyles } from '../../libs/getStyles';
 import styles from './Input.module.scss';
 
 export const Input = ({
-    value,
-    onChange,
+    register,
+	name,
+	options,
+	setValue,
+	error,
     className,
     label,
-    error = false,
-    errorMessage = '',
-    id,
     ...otherProps
 }) => {
 
-    const [defaultValue, setDefaultValue] = useState(value)
-
-    const handleChange = (e) => {
-        onChange(e.target.value);
-        setDefaultValue(e.target.value)
-    }
-
     const mode = {
-        [styles.error]: error,
+        [styles.error]: !!error,
     };
 
     const additional = [
@@ -32,15 +24,16 @@ export const Input = ({
 
     return (
         <div className={styles.inputWrapper}>
-            {label && <label className={styles.label}>{label}</label>}
-            <input
-                id={id}
-                value={defaultValue}
-                onChange={handleChange}
-                className={inputClasses}
-                {...otherProps}
-            />
-            {error && errorMessage && <span className={styles.errorMessage}>{errorMessage}</span>}
+            {label && <label className={styles.label} htmlFor={name}>{label}</label>}
+            <div>
+                <input
+                    id={name}
+                    {...register(name, options)}
+                    className={inputClasses}
+                    {...otherProps}
+                />
+                <p className={styles.error_text}>{error ? error.message : ''}</p>
+            </div>
         </div>
     );
 };

@@ -1,0 +1,13 @@
+@import '../../../../app/styles/mixin.scss';
+@import '../../../../app/styles/media-queries.scss';
+
+.advantages {
+    @include section-style;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}

@@ -1,4 +1,4 @@
-export const showPasswordIcon = () => {
+export const ShowPasswordIcon = () => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@ export const showPasswordIcon = () => {
     );
 };
 
-export const hidePasswordIcon = () => {
+export const HidePasswordIcon = () => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"

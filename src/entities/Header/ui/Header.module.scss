@@ -1,43 +1,12 @@
 @import '../../../app/styles/media-queries.scss';
+@import '../../../app/styles/mixin.scss';
 
 .header {
     background-color: var(--green-color);
     color: var(--white-color);
-    padding: 17px 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
 
     @include tablet-m {
         flex-direction: column;
-    }
-
-    .discount {
-        margin-left: 30px;
-
-        @include tablet-m {
-            margin-left: 0;
-        }
-    }
-
-    p {
-        font-size: var(--font-size-18);
-
-        a {
-            color: var(--yellow-color);
-            text-decoration-line: underline;
-            text-underline-offset: 4px;
-            margin-left: 5px;
-
-            @include tablet-m {
-                margin-left: 0;
-            }
-        }
-
-        @include tablet-m {
-            line-height: 26px;
-            padding: 16px 24px;
-        }
     }
 
 
@@ -46,31 +15,25 @@
             display: none;
         }
     }
-
-    button {
-        background-color: transparent;
-    }
 }
 
-.cross {
-    display: none;
+.header_container {
+    @include section-style;
+}
 
-    @include tablet-m {
-        display: block;
-        padding: 30px 24px;
-    }
-
+.header_content {
+    padding: 16px 0;
 }
 
 .links a {
-    color: var(--white-color);
+    color: var(--yellow-color);
     font-size: var(--font-size-18);
     font-weight: 500;
 
     &:hover {
         text-decoration: underline;
         text-underline-offset: 4px;
-        text-decoration-color: var(--white-color);
+        text-decoration-color: var(--yellow-color);
     }
 
 }
