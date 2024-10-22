@@ -37,7 +37,6 @@ export function OurProducts () {
                         ))}
                     </Stack>
                 </div>
-
             </Stack>
         </Stack>
     );

@@ -23,6 +23,7 @@ const MainPage = () => {
             <OurProducts />
             <FlashSale />
             <TodayDeals />
+            <Testimonial />
             <NewsBlogs />
             <QuestionMainPage />
             <NewsLetter />
