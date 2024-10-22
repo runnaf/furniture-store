@@ -32,7 +32,7 @@ export function FilterBar() {
             <hr />
             <Filters title='Категория' filters={filtersData.category} selectedFilters={selectedFilters.category} onChange={handleChange} />
             <hr />
-            <Stack direction='column'>
+            <Stack direction='column' gap='16'>
                 <Text className={styles.subtitle}>Цена</Text>
                 <Stack>
                     <span className={styles.price}>{selectedFilters.price[0]}р</span>&nbsp;-&nbsp;
