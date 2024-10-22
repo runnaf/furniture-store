@@ -59,6 +59,10 @@ $opacity-08: var(--opacity-08);
     > div:nth-child(2) {
         height: 214px;
 
+        @include desktop-m {
+            height: 200px;
+        }
+
         @include mobile-l {
             height: 190px;
         }

@@ -20,7 +20,6 @@ export const Stack = forwardRef(({
         32: 'gap32',
         40: 'gap40',
         48: 'gap48',
-        50: 'gap50',
         75: 'gap75'
     };
 

@@ -20,9 +20,11 @@ export const NewsLetter = () => {
     }
 
     return(
-        <Stack className={styles.newsLetterContainer}
-        align='alignCenter'
-        justify='justifyCenter'>
+        <Stack 
+            className={styles.newsLetterContainer}
+            align='alignCenter'
+            justify='justifyCenter'
+        >
             <img src={points} alt="a cluster of dots"/>
             <img src={points} alt="a cluster of dots"/>
             <Stack direction='column'
