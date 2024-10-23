@@ -39,9 +39,9 @@ export const testimonial = [
         speciality: "Покупатель",
         rating: 4.3,
         review: "Хорошее качество мебели, но был небольшой недочет с размером.",
-        id: 4,
+        id: 5,
     }
 ]
 
 export const WIDTH_MOBILE_XL = 1280;  
-export const QUANTITY_CARD_ON_PAGE = 2;
+export const QUANTITY_CARD_ON_PAGE = 3;
