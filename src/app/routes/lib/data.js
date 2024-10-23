@@ -50,12 +50,10 @@ export const routes = [
     },
     {
         link: getRouteSignin(),
-        isNavbar: false,
         page: <SigninPage />
     },
     {
         link: getRouteSignup(),
-        isNavbar: false,
         page: <SignupPage />
     }
 ]

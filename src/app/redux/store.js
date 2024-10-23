@@ -1,9 +1,8 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { blogApi } from "../../widgets/NewsBlogs/api/blogApi";
+import { api } from '../../shared/api/api';
 
 const rootReducer = combineReducers({
-    [blogApi.reducerPath]: blogApi.reducer,
-    // по аналогии следующие api-сервисы,
+    [api.reducerPath]: api.reducer,
 })
 
 export const store = configureStore({

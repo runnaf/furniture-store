@@ -1,20 +1,15 @@
-import { createApi } from "@reduxjs/toolkit/query";
-import { baseQuery } from "../../../app/redux/services/api";
+import { api } from '../../../shared/api/api';
 
-export const blogApi = createApi({
-    reducerPath: 'blogApi',
-    baseQuery: baseQuery,
-    tagTypes: ['Blog'],
+const BLOG_TAG = [{ type: 'Blog', id: arg.id}];
+
+const blogApi = api.injectEndpoints({
     endpoints:(build) => ({
         getAllNews: build.query({
             query: (limit = 9) => ({
                 url: '/blog',
                 params: { limit }
             }),
-            providesTags: (result) =>
-                result ? 
-            [...result.map(({ id }) => ({ type: 'Blog', id })), 'Blog'] 
-            : ['Blog']
+            providesTags: () => BLOG_TAG,
         }),
         addNews: build.mutation({
             query: (body) => ({
@@ -22,7 +17,7 @@ export const blogApi = createApi({
                 method: 'POST',
                 body,
             }),
-            invalidatesTags: ['Blog']
+            invalidatesTags: BLOG_TAG,
         }),
         editNews: build.mutation({
             query: (body) => ({
@@ -30,7 +25,7 @@ export const blogApi = createApi({
                 method: 'PUT',
                 body,
             }),
-            invalidatesTags: (result, error, arg) => [{ type: 'Blog', id: arg.id}]
+            invalidatesTags: BLOG_TAG,
         }),
         deleteNews: build.mutation({
             query: (body) => ({
@@ -38,7 +33,7 @@ export const blogApi = createApi({
                 method: 'DELETE',
                 body,
             }),
-            invalidatesTags: (result, error, arg) => [{ type: 'Blog', id: arg.id}]
+            invalidatesTags: BLOG_TAG,
         })
     })
 })
