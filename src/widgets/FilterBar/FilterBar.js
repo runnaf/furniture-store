@@ -4,7 +4,7 @@ import styles from './FilterBar.module.scss';
 import React, { useState } from 'react';
 import ReactSlider from 'react-slider';
 import { Filters } from '../../entities/Filters/ui/Filters';
-import filtersData from '../../shared/libs/filtersData';
+import filtersData from './lib/filtersData';
 
 export function FilterBar() {
     const [selectedFilters, setSelectedFilters] = useState({

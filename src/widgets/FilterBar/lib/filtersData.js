@@ -1,11 +1,11 @@
-import brown from '../assets/svg/brown.svg';
-import grey from '../assets/svg/grey.svg';
-import black from '../assets/svg/black.svg';
-import green from '../assets/svg/green.svg';
-import red from '../assets/svg/red.svg';
-import orange from '../assets/svg/orange.svg';
-import blue from '../assets/svg/blue.svg';
-import white from '../assets/svg/white.svg';
+import brown from '../../../shared/assets/svg/brown.svg';
+import grey from '../../../shared/assets/svg/grey.svg';
+import black from '../../../shared/assets/svg/black.svg';
+import green from '../../../shared/assets/svg/green.svg';
+import red from '../../../shared/assets/svg/red.svg';
+import orange from '../../../shared/assets/svg/orange.svg';
+import blue from '../../../shared/assets/svg/blue.svg';
+import white from '../../../shared/assets/svg/white.svg';
 
 const filtersData = {
     category: [
