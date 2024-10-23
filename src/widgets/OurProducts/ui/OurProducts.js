@@ -28,7 +28,7 @@ export function OurProducts () {
                     <Stack 
                         justify='justifyBetween'
                         className={styles.cardContainer}
-                        gap='32'
+                        gap='75'
                     >
                         {cardData.map((element) => (
                             <div className={styles.cardWrapper} key={element.id}>
