@@ -21,3 +21,34 @@
     }
 }
 
+//добавлять декоративные элементы points к секциям 
+@mixin point-style {
+    position: relative;
+    overflow: hidden;
+
+    > img {
+        position: absolute;
+
+        &:nth-child(1) {
+            top: 512px;
+            left: 25%;
+
+            @include mobile-xl {
+                top: 520px;
+                left: 30px;
+            }
+        }
+
+        &:nth-child(2) {
+            bottom: 519px;
+            right: 25%;
+            rotate: 180deg;
+
+            @include mobile-xl {
+                bottom: 530px;
+                right: 30px;
+            }
+        }
+    }
+}
+
