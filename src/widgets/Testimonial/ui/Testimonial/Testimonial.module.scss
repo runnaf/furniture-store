@@ -1,17 +1,21 @@
 @import '../../../../app/styles/media-queries.scss';
+@import '../../../../app/styles/mixin.scss';
 
 .testimonialContainer {
     background-color: var(--background-color);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: var(--gap-36);
-    height: 797px;
+    gap: 32px;
+    padding: 70px 0 50px 0;
 
     @include mobile-xl {
         width: 100%;
         align-items: center;
     }
+}
+
+.testimonialsWrapper{
+    @include section-style;
 }
 
 .testimonialContainer > div {

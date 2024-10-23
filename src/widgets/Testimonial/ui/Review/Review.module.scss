@@ -1,15 +1,11 @@
 @import '../../../../app/styles/media-queries.scss';
 
 .reviewItem {
+    padding: 20px;
     background-color: var(--white-color);
     border-radius: 24px;
-    max-width: 584px;
-    min-height: 347px;
+    height: 400px;
     box-sizing: border-box;
-
-    @include mobile-xl {
-        min-height: 404px;
-    }
 }
 
 .wrapper {
@@ -33,19 +29,19 @@
     width: 100px;
 }
 
-.reviewImageContainer {
-    background-color: var(--green-color);
-    width: 175px;
-    height: 175px;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-left-radius: 24px;
+// .reviewImageContainer {
+//     background-color: var(--green-color);
+//     width: 175px;
+//     height: 175px;
+//     border-top-right-radius: 50%;
+//     border-bottom-right-radius: 50%;
+//     border-top-left-radius: 24px;
 
-    @include mobile-xl {
-        width: 120px;
-        height: 120px;
-    }
-}
+//     @include mobile-xl {
+//         width: 120px;
+//         height: 120px;
+//     }
+// }
 
 .quotesIcon {
     flex-grow: 2;
@@ -73,8 +69,6 @@
 }
 
 .review {
-    padding: 0 32px 32px;
     line-height: 1.5;
     opacity: var(--opacity-08);
-    height: inherit;
 }

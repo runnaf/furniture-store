@@ -32,7 +32,10 @@ export const Navbar = () => {
     };
 
     return (
-        <nav className={styles.navbar} onMouseLeave={handleMouseLeave}>
+        <nav 
+            className={styles.navbar} 
+            onMouseLeave={handleMouseLeave}
+        >
             <div className={styles.logo}>
                 <LogoIcon />
             </div>

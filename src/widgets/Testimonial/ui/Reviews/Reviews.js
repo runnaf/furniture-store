@@ -3,12 +3,18 @@ import { Review } from "../Review/Review";
 
 export const Reviews = ({reviews}) => {
     return (
-        <Stack gap="32" align="alignCenter" justify="justifyCenter">
-            {
-                reviews.map(review => 
-                    <Review review = {review} key = {review.id}/>
-                )
-            }
+        <Stack 
+            max
+            align="alignCenter" 
+            justify='justifyBetween'
+            gap='48'
+        >
+            {reviews.map(review => 
+                <Review 
+                    key={review.id}
+                    review={review} 
+                />
+            )}
         </Stack>
     )
 }
