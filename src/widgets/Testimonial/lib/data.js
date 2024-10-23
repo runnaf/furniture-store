@@ -35,5 +35,5 @@ export const testimonial = [
     //     id: 4,
     // }
 ]
-    
+export const WIDTH_MOBILE_XL = 1280;  
 export const QUANTITY_CARD_ON_PAGE = 2;

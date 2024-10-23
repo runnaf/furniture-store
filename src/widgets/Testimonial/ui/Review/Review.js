@@ -12,7 +12,7 @@ export const Review = ({review}) => {
         <Stack className={styles.reviewItem} direction="column" gap="16">
             <Stack gap="16" align="alignCenter" className={styles.wrapper}>
                 <Stack className={styles.reviewImageContainer} align="alignCenter" justify="justifyCenter" />
-                <Stack className={styles.wrapper} direction = "column" justify = "justifyCenter" gap="16">
+                <Stack direction = "column" justify = "justifyCenter" gap="16">
                     <Text size="s">{review.name}</Text>
                     <Text>{review.speciality}</Text>
                     <Stack gap = "8">                         
