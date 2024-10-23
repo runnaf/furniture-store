@@ -9,14 +9,17 @@ import { DescriptionPreview } from "../DescriptionPreview/DescriptionPreview";
 import { Stack } from "../../../../shared/ui/Stack/Stack";
 
 export const Preview = () => {
-    const { currentSlide, nextCard,  prevCard } = useSlider(card.length);
+    const { currentSlide, nextCard, prevCard } = useSlider(card.length);
     const rooms = slicerOfArray(card, currentSlide, QUANTITY_CARD_ON_PAGE);
-    const authorized = false;
     
     return (
         <section className={styles.previewContainer}>
-            <Stack>
-                <DescriptionPreview authorized = {authorized} />
+            <Stack 
+                justify="justifyBetween" 
+                className={styles.previewWrapper} 
+                max
+            >
+                <DescriptionPreview />
                 <Slider 
                     isSideButtons={true} 
                     isBottomButtons={false} 

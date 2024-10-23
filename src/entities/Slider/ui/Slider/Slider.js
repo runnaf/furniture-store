@@ -16,11 +16,27 @@ export const Slider = ({
     handleClickSlide
 }) => {
     return (
-        <Stack className={className} direction = {'column'} gap={gap}>
+        <Stack 
+            className={className} 
+            direction='column'
+            gap={gap}
+        >
             {children}
-            <Stack>
-                {isSideButtons && <SideButtons nextCard = {nextCard}  prevCard = {prevCard} />}
-                {isBottomButtons && <BottomButtons quantitySliders={data} quantityCardsOnPage = {quantityCardsOnPage} currentSlide = {currentSlide} handleClickSlide = {handleClickSlide} />}
+            <Stack justify="justifyCenter">
+                {isSideButtons && (
+                    <SideButtons 
+                        nextCard={nextCard} 
+                        prevCard={prevCard} 
+                    />
+                )}
+                {isBottomButtons && (
+                    <BottomButtons 
+                        quantitySliders={data} 
+                        quantityCardsOnPage={quantityCardsOnPage} 
+                        currentSlide={currentSlide} 
+                        handleClickSlide={handleClickSlide} 
+                    />
+                )}
             </Stack>
         </Stack>
     );

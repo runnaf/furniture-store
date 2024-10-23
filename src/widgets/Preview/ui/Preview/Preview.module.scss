@@ -1,10 +1,9 @@
 @import '../../../../app/styles/media-queries';
+@import '../../../../app/styles/mixin.scss';
 
 .previewContainer {
-    display: flex;
-    justify-content: center;
     background-color: var(--background-color);
-    padding: 131px 0;
+    padding: 65px 0;
     background-image: url("../../../../shared/assets/svg/points.svg"), url("../../../../shared/assets/svg/points.svg");
     background-repeat: no-repeat, no-repeat;
     background-position: top -14px right 38%, bottom -5px left 30%;
@@ -14,9 +13,12 @@
     }
 }
 
+.previewWrapper {
+    @include section-style;
+}
+
 .previewContainer > div {
     gap: var(--gap-125);
-    max-width: 1200px;
 
     & div h2 {
         max-width: 750px;
