@@ -4,8 +4,17 @@ import { Card } from '../../../entities/Card/ui/Card';
 import cardData from '../../../shared/libs/cardData';
 import { HeaderSection } from '../../../shared/ui/HeaderSection/HeaderSection';
 import styles from './OurProducts.module.scss';
+import { buttons } from '../lib/data';
+import { useState } from 'react';
 
 export function OurProducts () {
+
+    const [selectedFilter, setSelectedFilter] = useState(null);
+
+    const handleFilterChange = (filter) => {
+        setSelectedFilter(filter);        
+    };
+
     return (
         <Stack className={styles.parenContainer}>
             <Stack 
@@ -19,10 +28,15 @@ export function OurProducts () {
                 </HeaderSection>
 
                 <Stack gap='16' className={styles.buttonsContainer}>
-                    <Button color='outlined'>Все товары</Button>
-                    <Button >Новинки</Button>
-                    <Button color='outlined'>Популярное</Button>
-                    <Button color='outlined'>Рекомендуемые</Button>
+                    {buttons.map(({ label, filter }) => (
+                        <Button 
+                            key={filter} 
+                            color={selectedFilter === filter ? 'primary' : 'outlined'} 
+                            onClick={() => handleFilterChange(filter)}
+                        >
+                            {label}
+                        </Button>
+                    ))}
                 </Stack>
                 <div className={styles.cardContainerWrapper}>
                     <Stack 
