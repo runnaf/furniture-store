@@ -1,4 +1,5 @@
 @import '../../../app/styles/media-queries';
+@import '../../../app/styles/mixin.scss';
 
 //background
 $background-color: var(--background-color);
@@ -13,36 +14,11 @@ $border-radius-circle: var(--border-radius-circle);
 
 
 .newsLetterContainer {
-    position: relative;
-    overflow: hidden;
     background-color: $background-color;
     width: 100%;
     height: 578px;
 
-    > img {
-        position: absolute;
-
-        &:nth-child(1) {
-            top: 509px;
-            left: 25%;
-
-            @include mobile-xl {
-                top: 520px;
-                left: 30px;
-            }
-        }
-
-        &:nth-child(2) {
-            bottom: 519px;
-            right: 25%;
-            rotate: 180deg;
-
-            @include mobile-xl {
-                bottom: 530px;
-                right: 30px;
-            }
-        }
-    }
+    @include point-style;
 
     > div {
             width: 1200px;

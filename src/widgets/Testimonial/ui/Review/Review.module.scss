@@ -1,16 +1,14 @@
 @import '../../../../app/styles/media-queries.scss';
 
 .reviewItem {
-    padding: 20px;
+    padding: 30px;
     background-color: var(--white-color);
     border-radius: 24px;
-    height: 400px;
+    height: 260px;
     box-sizing: border-box;
 }
 
 .wrapper {
-    width: 552px;
-
     @include mobile-xl {
         flex-wrap: wrap;
         justify-content: space-around;
@@ -28,20 +26,6 @@
 .wrapper svg {
     width: 100px;
 }
-
-// .reviewImageContainer {
-//     background-color: var(--green-color);
-//     width: 175px;
-//     height: 175px;
-//     border-top-right-radius: 50%;
-//     border-bottom-right-radius: 50%;
-//     border-top-left-radius: 24px;
-
-//     @include mobile-xl {
-//         width: 120px;
-//         height: 120px;
-//     }
-// }
 
 .quotesIcon {
     flex-grow: 2;
