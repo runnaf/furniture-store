@@ -1,7 +1,7 @@
 import { Text } from '../../shared/ui/Text/Text';
 import { Stack } from '../../shared/ui/Stack/Stack';
 import styles from './FilterBar.module.scss';
-import React, { useState } from 'react';
+import { useState, useCallback } from 'react';
 import ReactSlider from 'react-slider';
 import { Filters } from '../../entities/Filters/ui/Filters';
 import filtersData from './lib/filtersData';
@@ -15,12 +15,12 @@ export function FilterBar() {
         availability: {}
     });
 
-    const handleChange = (type, value) => {
+    const handleChange = useCallback((type, value) => {
         setSelectedFilters(prev => ({
             ...prev,
             [type]: value
         }));
-    };
+    }, []);
 
     const handleSliderChange = (values) => {
         handleChange('price', values);
@@ -46,7 +46,7 @@ export function FilterBar() {
                     onChange={handleSliderChange}
                     renderThumb={(props) => <div {...props} className={styles.thumb} />}
                     renderTrack={(props, state) => (
-                        <div {...props} className={`${styles.track} ${state.index === 0 ? styles.trackMin : styles.trackMax}`} />
+                        <div {...props} className={`${styles.track} ${state.index === 0 || state.index === 2 ? styles.trackMin : styles.trackMax}`} />
                     )}
                     className={styles.slider}
                 /> 
