@@ -10,4 +10,9 @@
     justify-content: space-between;
     align-items: center;
     flex: 1;
+
+    @include mobile-l {
+        flex-direction: column;
+        gap: 16px;
+    }
 }

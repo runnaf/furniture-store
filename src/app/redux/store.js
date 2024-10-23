@@ -8,5 +8,5 @@ const rootReducer = combineReducers({
 export const store = configureStore({
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) => 
-        getDefaultMiddleware().concat(blogApi.middleware)
+        getDefaultMiddleware().concat(api.middleware)
 })
