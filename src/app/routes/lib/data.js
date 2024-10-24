@@ -9,37 +9,44 @@ export const routes = [
     {
         title: "Главная",
         link: getRouteMain(),
+        isNavbar: true,
         page: <MainPage />
     },
     {
         title: "Магазин",
         link: getRouteShop(),
-        
+        isNavbar: true,
+
     },
     {
         title: "Категории",
         link: getRouteCategories(),
-        
+        isNavbar: true,
+
     },
     {
         title: "Вопросы",
         link: getRouteFAQ(),
-        page: <FAQs/>
+        isNavbar: true,
+        page: <FAQs />
     },
     {
         title: "О нас",
         link: getRouteAbout(),
-        
+        isNavbar: true,
+
     },
     {
         title: "Контакты",
         link: getRouteContact(),
-        
+        isNavbar: true,
+
     },
     {
         title: "Новости",
         link: getRouteBlog(),
-        page: <OurBlog/>
+        isNavbar: true,
+        page: <OurBlog />
     },
     {
         link: getRouteSignin(),

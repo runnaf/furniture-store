@@ -1,26 +1,42 @@
+@import '../../../../app/styles/media-queries.scss';
+
 .reviewItem {
+    padding: 30px;
     background-color: var(--white-color);
     border-radius: 24px;
-    max-width: 584px;
-    height: 347px;
+    height: 260px;
     box-sizing: border-box;
 }
 
 .wrapper {
-    width: 552px;
+    @include mobile-xl {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 100%;
+    }
 }
 
-.reviewImageContainer {
-    background-color: var(--green-color);
-    min-width: 175px;
-    height: 175px;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-left-radius: 24px;
+.wrapper >div:nth-child(2) {
+    @include mobile-xl {
+        order: 2;
+        width: calc(100% - 40px);
+    }
+}
+
+.wrapper svg {
+    width: 100px;
 }
 
 .quotesIcon {
     flex-grow: 2;
+}
+
+.ratingCurrent {
+    width: 30px;
+}
+
+.starDisable {
+    width: 30px;
 }
 
 .ratingCurrent path {
@@ -37,8 +53,6 @@
 }
 
 .review {
-    padding: 0 32px 32px;
     line-height: 1.5;
     opacity: var(--opacity-08);
-    height: inherit;
 }

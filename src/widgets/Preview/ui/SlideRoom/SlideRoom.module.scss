@@ -1,21 +1,31 @@
+@import '../../../../app/styles/media-queries.scss';
+
 .container {
     background-color: var(--white-color);
     padding: 16px 16px 22px 16px;
     border-radius: 24px;
 }
 
-.description a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
+.description {
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+    }
 }
 
-.container img {
-    width: 410px;
-    height: 334px;
-    border-radius: 16px;
-    background-color: var(--background-color);
-    object-fit: cover;
+.container {
+    img {
+        width: 470px;
+        height: 300px;
+        border-radius: 16px;
+        background-color: var(--background-color);
+        object-fit: cover;
+    
+        @include mobile-l {
+            width: 100%;
+        }
+    }
 }

@@ -8,10 +8,14 @@ import styles from "./SlideRoom.module.scss";
 
 export const SlideRoom = ({room}) => {
     return (
-        <Stack className={styles.container} direction="column" gap="32">
-            <img src={room.image} alt={room.name} width="410" height="344"/>
-            <Stack className={styles.description} justify="justifyBetween" gap="16">
-                <Stack direction ="column" gap="16">
+        <Stack className={styles.container} direction="column" gap="16">
+            <img src={room.image} alt={room.name} />
+            <Stack 
+                className={styles.description} 
+                align='alignCenter'
+                justify="justifyBetween" gap="16"
+            >
+                <Stack direction ="column" gap="8">
                     <Text type="h3">{room.name}</Text>
                     <Text>{`Более ${room.quantity} наименований`}</Text>
                 </Stack>

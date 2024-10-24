@@ -7,17 +7,42 @@ import styles from "./Review.module.scss";
 
 const WHOLE_RATING = 5
 
-export const Review = ({review}) => {
+export const Review = ({ review }) => {
+
+    const getStyles = (rating) => {
+        return rating + 1 <= Math.round(review.rating) ? styles.ratingCurrent : styles.starDisable; //TODO
+    };
+
     return (
-        <Stack className={styles.reviewItem} direction="column" gap="16">
-            <Stack gap="16" align="alignCenter" className={styles.wrapper}>
-                <Stack className={styles.reviewImageContainer} align="alignCenter" justify="justifyCenter" />
-                <Stack className={styles.wrapper} direction = "column" justify = "justifyCenter" gap="16">
-                    <Text size="s">{review.name}</Text>
-                    <Text>{review.speciality}</Text>
-                    <Stack gap = "8">                         
+        <Stack 
+            className={styles.reviewItem} 
+            direction="column" gap="16"
+        >
+            <Stack 
+                gap="16" align="alignCenter" 
+                className={styles.wrapper}
+            >
+                {/* <Stack 
+                    className={styles.reviewImageContainer} 
+                    align="alignCenter" 
+                    justify="justifyCenter" 
+                /> */}
+                <Stack 
+                    direction="column" 
+                    justify="justifyCenter" gap="16"
+                >
+                    <Text >
+                        {review.name}
+                    </Text>
+                    <Text>
+                        {review.speciality}
+                    </Text>
+                    <Stack gap="8">                         
                         {Array.from({length: WHOLE_RATING}, (_, i) => i).map(rating =>
-                            <Stack key={rating} id={rating} className={rating + 1 <= Math.round(review.rating) ? styles.ratingCurrent : styles.starDisable}>
+                            <Stack 
+                                key={rating} 
+                                className={getStyles(rating)}
+                            >
                                 {starIcon()}
                             </Stack>
                         )}
@@ -29,11 +54,9 @@ export const Review = ({review}) => {
                     {quotesIcon()}
                 </Stack>
             </Stack>
-            <Stack justify="justifyCenter">
-                <Text className={styles.review} size="s">
-                    {review.review}
-                </Text>
-            </Stack>
+            <Text className={styles.review}>
+                {review.review}
+            </Text>
         </Stack>
     )
 }

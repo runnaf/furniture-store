@@ -1,19 +1,57 @@
+@import '../../../../app/styles/media-queries';
+@import '../../../../app/styles/mixin.scss';
+
 .previewContainer {
-    display: flex;
-    justify-content: center;
-    gap: var(--gap-125);
     background-color: var(--background-color);
-    padding: 131px 0;
+    padding: 70px 0;
     background-image: url("../../../../shared/assets/svg/points.svg"), url("../../../../shared/assets/svg/points.svg");
     background-repeat: no-repeat, no-repeat;
     background-position: top -14px right 38%, bottom -5px left 30%;
-    
+
+    @include mobile-xl {
+        padding: 57px 0;
+    }
+}
+
+.previewWrapper {
+    @include section-style;
+}
+
+.previewContainer > div {
+    gap: var(--gap-125);
+
     & div h2 {
         max-width: 750px;
         line-height: 1.26;
     }
 
-    & a:hover {
-        opacity: var(--opacity-08);
+    @include desktop-l {
+        gap: var(--gap-75);
+        padding: 0 60px;
+    }
+
+    @include desktop-m {
+        flex-direction: column;
+    }
+
+    @include mobile-xl {
+        align-items: center;
+        padding: 57px 0;
+        gap: var(--gap-48);
+        max-width: calc(100% - 48px);
+        align-items: center;
+    }
+}
+
+.previewContainer > div div {
+
+    @include mobile-xl {
+        align-items: center;
+    }
+}
+
+.previewContainer > div div:nth-child(2) {
+    @include desktop-m {
+        align-items: center;
     }
 }

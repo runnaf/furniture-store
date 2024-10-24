@@ -32,12 +32,15 @@ export const Navbar = () => {
     };
 
     return (
-        <nav className={styles.navbar} onMouseLeave={handleMouseLeave}>
+        <nav 
+            className={styles.navbar} 
+            onMouseLeave={handleMouseLeave}
+        >
             <div className={styles.logo}>
                 <LogoIcon />
             </div>
             <ul className={styles.navLinks}>
-                {routes.map(({ title, link }) => (
+                {routes.filter(route => route.isNavbar).map(({ title, link }) => (
                     <li key={title}
                         onMouseEnter={() => handleMouseEnter(title)}
                     >

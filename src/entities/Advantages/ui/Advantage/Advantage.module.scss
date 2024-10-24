@@ -3,6 +3,10 @@
 .container {
     display: flex;
     gap: var(--gap-16);
+
+    @include mobile-l {
+        width: 100%;
+    }
 }
 
 .image {
