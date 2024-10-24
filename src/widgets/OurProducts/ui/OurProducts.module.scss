@@ -33,6 +33,14 @@
     width: calc(100% - 150px);
     margin-left: 150px;
     overflow-x: auto;
+
+    @include tablet-m {        
+        margin-left: 70px;
+    }
+
+    @include mobile-l {        
+        margin-left: 30px;
+    }
 }
 
 .cardContainer {

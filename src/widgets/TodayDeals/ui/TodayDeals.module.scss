@@ -4,6 +4,13 @@
     width: 100%;
     padding-left: 140px;
 
+    @include tablet-m {
+        padding: 0 50px;
+    }
+
+    @include mobile-m {
+        padding: 0 10px;
+    }
 }
 
 .hyphen {
