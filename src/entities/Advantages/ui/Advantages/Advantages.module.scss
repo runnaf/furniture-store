@@ -3,6 +3,10 @@
 
 .advantages {
     @include section-style;
+
+    @include tablet-m {
+        width: fit-content;
+    }
 }
 
 .container {
@@ -11,8 +15,11 @@
     align-items: center;
     flex: 1;
 
-    @include mobile-l {
+    @include tablet-m {
         flex-direction: column;
-        gap: 16px;
+        gap: 48px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-content: flex-start;
     }
 }
