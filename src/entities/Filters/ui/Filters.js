@@ -13,7 +13,7 @@ export function Filters({ title, filters, selectedFilters, onChange}) {
                     key={item.value}
                     name={item.value}
                     checked={selectedFilters[item.value]}
-                    onChange={(name, checked) => {                        
+                    onChange={(name, checked) => {                    
                             onChange(title.toLowerCase(), { ...selectedFilters, [name]: checked });                        
                     }}
                     image={item.image}
