@@ -40,7 +40,7 @@ export const Navbar = () => {
                 <LogoIcon />
             </div>
             <ul className={styles.navLinks}>
-                {routes.map(({ title, link }) => (
+                {routes.filter(route => route.isNavbar).map(({ title, link }) => (
                     <li key={title}
                         onMouseEnter={() => handleMouseEnter(title)}
                     >

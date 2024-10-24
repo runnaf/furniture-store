@@ -8,6 +8,8 @@
     gap: 32px;
     padding: 70px 0 50px 0;
 
+    @include point-style;
+
     @include mobile-xl {
         width: 100%;
         align-items: center;
@@ -15,6 +17,8 @@
 }
 
 .testimonialsWrapper{
+    justify-content: center;
+
     @include section-style;
 }
 

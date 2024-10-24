@@ -1,7 +1,8 @@
 @import '../../../app/styles/media-queries.scss';
 
 .mainContainer {
-    padding: 0 100px; //FIX LATER
+    width: 100%;
+    padding-left: 140px;
 
     @include tablet-m {
         padding: 0 50px;
@@ -28,19 +29,16 @@
 }
 
 .container {
-    overflow: hidden;
-    overflow-x: scroll;;
+    overflow-x: auto;
     white-space:nowrap;
-    width: 98%;
-    overflow: hidden;
+    width: 100%;
+    padding-bottom: 30px;
 
     @include tablet-m {
         width: 80%;
     }
 }
-.container:hover {
-    overflow:overlay;    
-}
+
 
 .cardContainer {
     width: 585px;
