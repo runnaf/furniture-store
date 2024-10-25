@@ -1,0 +1,32 @@
+@import '../../../../app/styles/media-queries.scss';
+
+.header_content {
+    padding: 16px 0;
+    width: 910px;
+
+    .phone {
+        @include tablet-m {
+            display: none;
+        }
+    }
+
+    .cross {
+    display: none;
+
+    @include tablet-m {
+        display: block;
+        padding: 30px 24px;
+    }
+}
+
+.phone {
+    @include tablet-m {
+        display: none;
+    }
+}
+
+button {
+    background-color: transparent;
+}
+
+}
