@@ -24,7 +24,7 @@
 
 .testimonialContainer > div {
     @include mobile-xl {
-        width: calc(100% - 48px);
+        width: 100%;
     }
 }
 
@@ -39,3 +39,20 @@
         text-align: center;
     }
 }
+
+section.testimonialContainer > img:nth-child(1) {
+    @include mobile-xl {
+        top: auto;
+        bottom: 0px;
+        left: 30px;
+    }
+}
+
+section.testimonialContainer > img:nth-child(2) {
+    @include mobile-xl {
+        bottom: auto;
+        top: 0px;
+        right: 30px;
+    }
+}
+
