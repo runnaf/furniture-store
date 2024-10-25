@@ -1,7 +1,7 @@
-import livingRoom from '../../../shared/assets/blogPoster/wardrobe_livingRoom.jpg';
-import bedroom from '../../../shared/assets/blogPoster/trends_2024.jpg';
-import bathroom from '../../../shared/assets/blogPoster/bathroom.jpg';
-import kitchen from '../../../shared/assets/blogPoster/online_shop.jpg'
+import livingRoom from '../../../shared/assets/blogPoster/wardrobe_livingRoom.webp';
+import bedroom from '../../../shared/assets/blogPoster/trends_2024.webp';
+import bathroom from '../../../shared/assets/blogPoster/bathroom.webp';
+import kitchen from '../../../shared/assets/blogPoster/online_shop.webp'
 
 export const card = [
     {

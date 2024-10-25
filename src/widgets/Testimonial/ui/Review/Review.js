@@ -22,11 +22,6 @@ export const Review = ({ review }) => {
                 gap="16" align="alignCenter" 
                 className={styles.wrapper}
             >
-                {/* <Stack 
-                    className={styles.reviewImageContainer} 
-                    align="alignCenter" 
-                    justify="justifyCenter" 
-                /> */}
                 <Stack 
                     direction="column" 
                     justify="justifyCenter" gap="16"
