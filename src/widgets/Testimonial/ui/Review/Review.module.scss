@@ -68,4 +68,23 @@
 .review {
     line-height: 1.5;
     opacity: var(--opacity-08);
+
+    @include mobile-xl {
+        font-size: var(--font-size-18);
+        font-weight: 500;
+    }
+}
+
+.text_name {
+    @include mobile-xl {
+        font-size: var(--font-size-22);
+        font-weight: 500;
+    }
+}
+
+.text_speciality {
+    @include mobile-xl {
+        font-size: var(--font-size-18);
+        font-weight: 500;
+    }
 }

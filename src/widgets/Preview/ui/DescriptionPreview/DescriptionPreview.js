@@ -22,7 +22,7 @@ export const DescriptionPreview = () => {
             </Stack>
             <Stack className={styles.linkContainer} align= "alignCenter" gap="16">
                 <LinkCustom className={styles.linkShop} path={getRouteShop()}>
-                    За Покупками
+                    За покупками
                 </LinkCustom>
                 <LinkCustom className={styles.linkCategory} path={getRouteCategories()} color="secondary">
                     Просмотреть категории товаров
@@ -37,8 +37,12 @@ export const DescriptionPreview = () => {
                 </Stack>
                 
                 <Stack direction="column" gap="8">
-                    <Text type="h3" size="s">Рейтинг магазина 4.9</Text>
-                    <Text >Нам доверяют более 50 тысяч клиентов</Text>
+                    <Text type="h3" size="s" className={styles.text}>
+                        Рейтинг магазина 4.9
+                    </Text>
+                    <Text className={styles.text}>
+                        Нам доверяют более 50 тысяч клиентов
+                    </Text>
                 </Stack>
             </Stack>
         </Stack>

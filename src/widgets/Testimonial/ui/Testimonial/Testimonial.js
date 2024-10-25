@@ -26,7 +26,7 @@ export const Testimonial = () => {
             <img src={points} alt="a cluster of dots"/>
             <img src={points} alt="a cluster of dots"/>
             <HeaderSection subTitle= "Отзывы">
-                Что <span>Говорят наши клиенты</span>
+                Что <span>говорят наши клиенты</span>
             </HeaderSection>
             <Stack 
                 className={styles.testimonialsWrapper}

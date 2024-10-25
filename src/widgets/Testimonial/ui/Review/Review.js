@@ -26,10 +26,10 @@ export const Review = ({ review }) => {
                     direction="column" 
                     justify="justifyCenter" gap="16"
                 >
-                    <Text >
+                    <Text className={styles.text_name}>
                         {review.name}
                     </Text>
-                    <Text>
+                    <Text className={styles.text_speciality}>
                         {review.speciality}
                     </Text>
                     <Stack gap="8" align="alignCenter">                         
