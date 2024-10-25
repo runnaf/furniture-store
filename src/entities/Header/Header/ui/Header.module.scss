@@ -4,13 +4,16 @@
 .header {
     background-color: var(--green-color);
     color: var(--white-color);
-
-    @include tablet-m {
-        flex-direction: column;
-    }
+    padding: 16px 0;
 
     .header_container {
         @include section-style;
+
+            .phone {
+                @include tablet-m {
+                    display: none;
+                }
+            }
 
             .links {
                 a {
@@ -23,31 +26,30 @@
                         text-underline-offset: 4px;
                         text-decoration-color: var(--yellow-color);
                     }
+
+                    .text {
+                        display: block;
+                    
+                        @include tablet-m {
+                            display: none;
+                        }
+                    }
+
+                    .icon {
+                        display: none;
+
+                        @include tablet-m {
+                            display: block;
+                        }
+                    }
                 }
 
                 @include tablet-m {
                     justify-content: flex-end;
                     padding: 0 20px;
                 }
-
-                .text {
-                    display: block;
-
-                    @include tablet-m {
-                        display: none;
-                    }
-                }
-
-                .icon {
-                    display: none;
-
-                    @include tablet-m {
-                        display: block;
-                    }
-                }
-
-            }
         }
+    }
 }
 
 @include tablet-m {

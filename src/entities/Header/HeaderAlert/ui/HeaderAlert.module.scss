@@ -1,32 +1,41 @@
 @import '../../../../app/styles/media-queries.scss';
 
 .header_content {
-    padding: 16px 0;
-    width: 910px;
+    position: absolute;
+    top: 15px;
+    left: 0;  
+    width: 100%; 
+    padding: 0 140px;  
+    color: var(--white-color);
+    
+    @include tablet-m {
+        background-color: var(--green-color);
+        position: static;
+        padding: 10px 0 0 16px;   
+    }
 
     .phone {
         @include tablet-m {
-            display: none;
+            display: none;  
+        }
+    }
+
+    .discount {
+        padding-left: 160px;
+
+        @include tablet-m {
+            padding-left: 0; 
         }
     }
 
     .cross {
-    display: none;
+        display: none; 
 
-    @include tablet-m {
-        display: block;
-        padding: 30px 24px;
+        @include tablet-m {
+            display: block; 
+            padding: 0 16px;
+            background: transparent;
+        }
     }
-}
-
-.phone {
-    @include tablet-m {
-        display: none;
-    }
-}
-
-button {
-    background-color: transparent;
-}
 
 }
