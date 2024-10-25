@@ -39,6 +39,7 @@ export const Accordion = ({ question, answer, isSecond, styleMode }) => {
             <Stack 
                 justify='justifyBetween'
                 align='alignCenter'
+                className={styles.questionContainer}
             >
                 <Text size="s">{question}</Text>
                 <img src={isOpen ? less : more} alt="more or less button"/>
