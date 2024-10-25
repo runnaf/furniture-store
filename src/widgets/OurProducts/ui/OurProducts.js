@@ -12,12 +12,20 @@ import { slicerOfArray } from "../../../entities/Slider/lib/helper";
 import { Slider } from "../../../entities/Slider/ui/Slider/Slider";
 
 export function OurProducts() {
+
     const [selectedFilter, setSelectedFilter] = useState(null);
     const { currentSlide, nextCard, prevCard, handleClickSlide } = useSlider(cardData.length);
-    const width = useResize();
+    const width = useResize();   
 
-    
-    const currentCards = slicerOfArray(cardData, currentSlide, '1');
+    const quantityCardsOnPage = () => {
+        if (width <= 485) {
+            return 1; 
+        } else {
+            return 2;
+        }
+    };
+
+    const currentCards = slicerOfArray(cardData, currentSlide, quantityCardsOnPage());
 
     const handleFilterChange = (filter) => {
         setSelectedFilter(filter);
@@ -47,7 +55,7 @@ export function OurProducts() {
                         <Slider 
                             isSideButtons={false} 
                             isBottomButtons={true} 
-                            quantityCardsOnPage='1'
+                            quantityCardsOnPage={quantityCardsOnPage()}
                             className={styles.slider} 
                             data={cardData} 
                             currentSlide={currentSlide} 
@@ -56,11 +64,13 @@ export function OurProducts() {
                             handleClickSlide={handleClickSlide}
                             gap="25"
                         >
+                            <Stack gap='8' justify='justifyCenter'>
                             {currentCards.map((element) => (
                                 <div className={styles.cardWrapper} key={element.id}>
                                     <Card {...element} />
                                 </div>
                             ))}
+                            </Stack>
                         </Slider>
                     ) : (
                         <Stack 

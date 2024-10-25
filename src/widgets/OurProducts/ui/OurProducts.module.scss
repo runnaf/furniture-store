@@ -11,8 +11,11 @@
             margin: 10px 0;
             gap: var(--gap-12);
             flex-wrap: wrap;
-            width: 60%;
+            width: 85%;
             justify-content: space-around;
+        }
+        @include mobile-xl {
+            width: 47%;
         }
         @include mobile-l {
             gap: var(--gap-8);
@@ -35,7 +38,7 @@
 
         @include mobile-l {
             padding: 5px 0;
-            width: 100px;
+            width: 110px;
             font-size: var(--font-size-14);
         }
     }
@@ -53,6 +56,13 @@
 
     @include mobile-l {        
         margin-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+}
+.slider {
+    button {
+        background-color: var(--grey-background-color);
     }
 }
 
@@ -69,4 +79,9 @@
 
 .cardWrapper {
     display: inline-block;
+
+    @include mobile-l {  
+        display: flex;
+        justify-content: center;
+    }
 }
