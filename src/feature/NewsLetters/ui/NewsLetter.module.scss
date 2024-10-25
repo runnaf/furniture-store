@@ -18,30 +18,14 @@ $border-radius-circle: var(--border-radius-circle);
     width: 100%;
     height: 578px;
 
+    @include mobile-l {
+        padding: 70px 0 50px 0;
+    }
+
     @include point-style;
 
     > div {
-            width: 1200px;
-    
-            @include desktop-m {
-                width: 1000px;
-            }
-    
-            @include tablet-l {
-                width: 800px;
-            }
-    
-            @include tablet-m {
-                width: 750px;
-            } 
-    
-            @include mobile-xl {
-                width: 570px;
-            }
-    
-            @include mobile-l {
-                width: 327px;
-            }
+        @include section-style;
 
         > div:nth-child(1) {
             text-align: center;
@@ -69,25 +53,29 @@ $border-radius-circle: var(--border-radius-circle);
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
-                width: 327px;
+                width: 100%;
                 height: 200px;
             }
     
 
-            > div > div > input {
-                position: relative;
-                width: 416px;
-                height: 66px;
-                padding-left: 70px;
-
-                @include mobile-xl {
-                    width: 378px;
-                }
-
+            > div {
                 @include mobile-l {
-                    width: 327px;
+                    width: 100%;
                 }
-        
+                > div > input {
+                    position: relative;
+                    width: 416px;
+                    height: 66px;
+                    padding-left: 70px;
+
+                    @include mobile-xl {
+                        width: 378px;
+                    }
+
+                    @include mobile-l {
+                        width: 100%;
+                    }
+                }
             }
 
             > img {
@@ -104,6 +92,11 @@ $border-radius-circle: var(--border-radius-circle);
             > button {
                 font-weight: 600;
                 padding: 22px 44px;
+
+                @include mobile-l {
+                    padding: 17px 44px;
+                    width: 100%;
+                }
             }
         }
     }

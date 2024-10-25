@@ -27,10 +27,10 @@ $opacity-08: var(--opacity-08);
     }
 
     > div {
-        width: 379px;
+        width: 392px;
 
         @include mobile-l {
-            width: 327px;
+            width: 100%;
         }
     }
 
@@ -78,19 +78,16 @@ $opacity-08: var(--opacity-08);
 
         > a {
             margin-top: auto;
+            border: none;
+            text-decoration: underline;
+            margin-top: auto;
+            text-underline-offset: 3px;
+            color: $green-color;
+            font-size: $font-size-18;
+            font-weight: 500;
 
             @include mobile-l {
                 margin-top: 0;
-            }
-
-            > button {
-                border: none;
-                text-decoration: underline;
-                margin-top: auto;
-                text-underline-offset: 3px;
-                color: $green-color;
-                font-size: $font-size-18;
-                font-weight: 500;
             }
         }
     }

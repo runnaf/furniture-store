@@ -398,3 +398,5 @@ export const data = [
         read_time: "4 минуты"
     }
 ]
+
+export const QUANTITY_CARD_ON_PAGE = 1;

@@ -59,7 +59,6 @@ export const NewsLetter = () => {
                         <Button color="secondary">
                             Оформить
                         </Button>
-                        
                     </form>
                 </FormProvider>
             </Stack>

@@ -37,7 +37,8 @@ export const Accordion = ({ question, answer, isSecond, styleMode }) => {
         className={styleClass}
         >
             <Stack justify='justifyBetween'
-            align='alignCenter'>
+            align='alignCenter'
+            className={styles.questionContainer}>
                 <Text type="p" size="s">
                     {question}
                 </Text>
