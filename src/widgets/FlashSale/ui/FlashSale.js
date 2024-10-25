@@ -1,12 +1,12 @@
 import { Timer } from "../../../entities/Timers/ui/Timer"
-import { Button } from "../../../shared/ui/Button/Button"
 import { HeaderSection } from "../../../shared/ui/HeaderSection/HeaderSection"
 import { Stack } from "../../../shared/ui/Stack/Stack"
 import chairSale from '../../../shared/assets/svg/chairSale.svg';
 import points from '../../../shared/assets/svg/points.svg';
 import arrowRight from '../../../shared/assets/svg/arrowright.svg'
 import styles from './FlashSale.module.scss'
-import { Link } from "react-router-dom";
+import { LinkCustom } from "../../../shared/ui/LinkCustom/LinkCustom";
+import { getRouteShop } from "../../../app/routes/lib/helper";
 
 export const FlashSale = () => {
 
@@ -14,8 +14,9 @@ export const FlashSale = () => {
         <Stack 
             justify='justifyCenter'
             align='alignCenter'
+            className={styles.flashSale}
         >
-            <Stack 
+            <Stack
                 justify='justifyBetween'
                 className={styles.flashSaleContainer}
             >
@@ -34,12 +35,10 @@ export const FlashSale = () => {
                             Супер <span> Скидки!</span> 
                         </HeaderSection>
                         <Timer styleMode='timerMainContainer' endTime='2024-12-31T20:59:59.000Z'/>
-                        <Link>
-                            <Button>
-                                {'Магазин'}
-                                <img src={arrowRight} alt="arrow"/>
-                            </Button>
-                        </Link>
+                        <LinkCustom to={getRouteShop()}>
+                            Магазин
+                            <img src={arrowRight} alt="arrow"/>
+                        </LinkCustom>
                     </Stack>
                 </Stack>
                 <Stack gap='24'>
