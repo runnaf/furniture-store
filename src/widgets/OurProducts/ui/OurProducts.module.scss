@@ -2,28 +2,41 @@
 
 .container {
     width: 100%;    
-
-    @include tablet-m {
-        margin: 75px 0;
-        width: 80%;
-    }
 }
 
 .buttonsContainer {
     margin: 16px 0 34px 0;
 
-    @include tablet-m {
-        margin: 10px 0;
-        gap: var(--gap-12);
-        flex-wrap: wrap;
-    }
+        @include tablet-m {
+            margin: 10px 0;
+            gap: var(--gap-12);
+            flex-wrap: wrap;
+            width: 60%;
+            justify-content: space-around;
+        }
+        @include mobile-l {
+            gap: var(--gap-8);
+        }
 
     button {
-        padding: 8px 36px;
+        padding: 8px 0;
+        width: 180px;
 
         @include tablet-m {
-            padding: 10px 20px;
+            padding: 10px 0;
+            width: 150px;
             font-size: var(--font-size-18);
+        }
+
+        @include mobile-xl {
+            width: 130px;
+            font-size: var(--font-size-16);
+        }
+
+        @include mobile-l {
+            padding: 5px 0;
+            width: 100px;
+            font-size: var(--font-size-14);
         }
     }
 }
@@ -34,12 +47,12 @@
     margin-left: 150px;
     overflow-x: auto;
 
-    @include tablet-m {        
+    @include tablet-l {        
         margin-left: 70px;
     }
 
     @include mobile-l {        
-        margin-left: 30px;
+        margin-left: 0;
     }
 }
 

@@ -6,23 +6,26 @@ import { HeaderSection } from '../../../shared/ui/HeaderSection/HeaderSection';
 import styles from './OurProducts.module.scss';
 import { buttons } from '../lib/data';
 import { useState } from 'react';
+import { useSlider } from "../../../entities/Slider/hooks/useSlider";
+import { useResize } from "../../../shared/hooks/useResize";
+import { slicerOfArray } from "../../../entities/Slider/lib/helper";
+import { Slider } from "../../../entities/Slider/ui/Slider/Slider";
 
-export function OurProducts () {
-
+export function OurProducts() {
     const [selectedFilter, setSelectedFilter] = useState(null);
+    const { currentSlide, nextCard, prevCard, handleClickSlide } = useSlider(cardData.length);
+    const width = useResize();
+
+    
+    const currentCards = slicerOfArray(cardData, currentSlide, '1');
 
     const handleFilterChange = (filter) => {
-        setSelectedFilter(filter);        
+        setSelectedFilter(filter);
     };
 
     return (
         <Stack className={styles.parenContainer}>
-            <Stack 
-                direction='column' 
-                align='alignCenter' 
-                gap='16' 
-                className={styles.container}
-            >
+            <Stack direction='column' align='alignCenter' gap='16' className={styles.container}>
                 <HeaderSection subTitle='Наша продукция'>
                     <span>Каталог товаров</span>
                 </HeaderSection>
@@ -38,20 +41,43 @@ export function OurProducts () {
                         </Button>
                     ))}
                 </Stack>
+
                 <div className={styles.cardContainerWrapper}>
-                    <Stack 
-                        justify='justifyBetween'
-                        className={styles.cardContainer}
-                        gap='75'
-                    >
-                        {cardData.map((element) => (
-                            <div className={styles.cardWrapper} key={element.id}>
-                                <Card {...element} />
-                            </div>
-                        ))}
-                    </Stack>
+                    {width <= 590 ? ( 
+                        <Slider 
+                            isSideButtons={false} 
+                            isBottomButtons={true} 
+                            quantityCardsOnPage='1'
+                            className={styles.slider} 
+                            data={cardData} 
+                            currentSlide={currentSlide} 
+                            nextCard={nextCard} 
+                            prevCard={prevCard}
+                            handleClickSlide={handleClickSlide}
+                            gap="25"
+                        >
+                            {currentCards.map((element) => (
+                                <div className={styles.cardWrapper} key={element.id}>
+                                    <Card {...element} />
+                                </div>
+                            ))}
+                        </Slider>
+                    ) : (
+                        <Stack 
+                            justify='justifyBetween'
+                            className={styles.cardContainer}
+                            gap='75'
+                        >
+                            {cardData.map((element) => (
+                                <div className={styles.cardWrapper} key={element.id}>
+                                    <Card {...element} />
+                                </div>
+                            ))}
+                        </Stack>
+                    )}
                 </div>
             </Stack>
         </Stack>
     );
-};
+}
+
