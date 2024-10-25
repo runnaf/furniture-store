@@ -19,6 +19,10 @@
         }
         @include mobile-l {
             gap: var(--gap-8);
+            width: 60%;
+        }
+        @include mobile-m {
+            width: 90%;
         }
 
     button {
