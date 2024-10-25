@@ -36,11 +36,11 @@ $border-radius-circle: var(--border-radius-circle);
             } 
     
             @include mobile-xl {
-                width: 570px;
+                width: 100%;
             }
     
             @include mobile-l {
-                width: 327px;
+                width: 100%;
             }
 
         > div:nth-child(1) {
@@ -62,7 +62,7 @@ $border-radius-circle: var(--border-radius-circle);
             gap: 16px;
 
             @include mobile-xl {
-                width: 570px;
+                width: 100%;
             }
     
             @include mobile-l {
@@ -81,13 +81,8 @@ $border-radius-circle: var(--border-radius-circle);
                 padding-left: 70px;
 
                 @include mobile-xl {
-                    width: 378px;
+                    width: 100%;
                 }
-
-                @include mobile-l {
-                    width: 327px;
-                }
-        
             }
 
             > img {
@@ -104,6 +99,10 @@ $border-radius-circle: var(--border-radius-circle);
             > button {
                 font-weight: 600;
                 padding: 22px 44px;
+
+                @include mobile-xl {
+                    width: 12px 44px;
+                }
             }
         }
     }
