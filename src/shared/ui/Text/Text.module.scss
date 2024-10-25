@@ -37,7 +37,7 @@ $mobile-sizes: (
 @include desktop-m {
     @each $name, $size in $sizes {
         .#{$name} {
-            font-size: calc(#{$size} * .8); 
+            font-size: calc(#{$size} * .9); 
         }
     }
 };
