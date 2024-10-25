@@ -27,35 +27,42 @@ export const NewsLetter = () => {
         >
             <img src={points} alt="a cluster of dots"/>
             <img src={points} alt="a cluster of dots"/>
-            <Stack direction='column'
-            align='alignCenter'
-            justify='justifyCenter'
-            gap='48'>
-                <Stack direction='column'
+            <Stack 
+                direction='column'
                 align='alignCenter'
                 justify='justifyCenter'
-                gap='24'>
+                gap='48'
+            >
+                <Stack 
+                    direction='column'
+                    align='alignCenter'
+                    justify='justifyCenter'
+                    gap='24'
+                >
                     <HeaderSection subTitle='Рассылка новостей'>
-                    Оформите подписку <span> на наши новости</span>
+                        Оформите подписку <span> на наши новости</span>
                     </HeaderSection>
-                    <Text type="p">Получите скидку 20% на свой первый заказ, просто подписавшись на наши новости</Text>
+                    <Text>
+                        Получите скидку 20% на свой первый заказ, просто подписавшись на наши новости
+                    </Text>
                 </Stack>
                 <FormProvider {...methods}>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <img src={sms} alt='envelope'/>
                         <Input 
-                        name="email"
-                        register={register}
-                        setValue={setValue}
-                        options={{
-                            required: data.required,
-                            pattern: {
-                                value: emailRegex,
-                                message: data.errors.validEmail
-                            }
-                        }}
-                        placeholder="Введите свою почту"
-                        error={errors.email}/>
+                            name="email"
+                            register={register}
+                            setValue={setValue}
+                            options={{
+                                required: data.required,
+                                pattern: {
+                                    value: emailRegex,
+                                    message: data.errors.validEmail
+                                }
+                            }}
+                            placeholder="Введите свою почту"
+                            error={errors.email}
+                        />
                         <Button color="secondary">
                             Оформить
                         </Button>

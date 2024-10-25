@@ -8,30 +8,32 @@
 
 .headerContainer h1 {
     font-size: var(--font-size-48);
-    // line-height: 1.2;
 
     & span {
         color: var(--green-color)
     }
 
     @include mobile-xl {
-        font-size: var(--font-size-36);
+        font-size: var(--font-size-32);
         text-align: center;
     }
 }
 
-.headerContainer p {
-    line-height: 1.5;
+.headerContainer {
+    p {
+        line-height: 1.5;
 
-    @include mobile-xl {
-        text-align: center;
+        @include mobile-xl {
+            text-align: justify;
+            font-size: 16px;
+        }
     }
 }
 
 .linkContainer {
     @include mobile-xl {
         flex-direction: column;
-        width: fit-content;
+        width: 100%;
     }
 }
 
