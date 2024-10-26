@@ -23,9 +23,9 @@ export const Navbar = () => {
     const getDropdownMenu = (title) => {
         switch (title) {
             case 'Магазин':
-                return <DropdownMenu menuData={dropdownMenus.shop} />;
+                return <DropdownMenu menuData={dropdownMenus.shop} onClose={handleMouseLeave} />;
             case 'Категории':
-                return <DropdownMenu menuData={dropdownMenus.categories} />;
+                return <DropdownMenu menuData={dropdownMenus.categories} onClose={handleMouseLeave} />;
             default:
                 return null;
         }

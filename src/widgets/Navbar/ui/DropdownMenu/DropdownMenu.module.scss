@@ -62,7 +62,7 @@
             margin-bottom: 21px;
         }
   
-          a {
+          .link {
             text-decoration: none;
             color: var(--secoundry-black-color);
             transition: color 0.3s;
@@ -101,6 +101,12 @@
         margin: 10px 0;
         color: var(--black-color);
         font-weight: 600;
+      }
+
+      .hashlink {
+        &:after {
+          content: none;
+      }
       }
   
       .btn {

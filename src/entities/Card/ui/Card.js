@@ -8,6 +8,7 @@ import zoom from '../../../shared/assets/svg/zoom.svg';
 import star from '../../../shared/assets/svg/star.svg';
 import { Timer } from '../../Timers/ui/Timer';
 import arrow from '../../../shared/assets/svg/arrowblack.svg';
+import { LinkCustom } from '../../../shared/ui/LinkCustom/LinkCustom';
 
 export function Card ({
     image,
@@ -72,9 +73,9 @@ export function Card ({
                 {(view === 'extended') && (
                     <>
                         <Text className={styles.cardText}>{cardText}</Text>
-                        <Button color='outlined' className={styles.shopButton}>
+                        <LinkCustom color='secondary' className={styles.shopButton}>
                             Магазин <img src={arrow} alt="arrow"/>
-                        </Button>
+                        </LinkCustom>
                     </>
                 )}
             </Stack>        

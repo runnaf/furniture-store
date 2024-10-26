@@ -16,16 +16,11 @@
             }
 
             .links {
-                a {
+                .link {
                     color: var(--yellow-color);
                     font-size: var(--font-size-18);
                     font-weight: 500;
 
-                    &:hover {
-                        text-decoration: underline;
-                        text-underline-offset: 4px;
-                        text-decoration-color: var(--yellow-color);
-                    }
 
                     .text {
                         display: block;
