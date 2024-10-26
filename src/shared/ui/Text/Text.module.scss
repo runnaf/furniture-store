@@ -45,7 +45,7 @@ $mobile-sizes: (
 @include mobile-l {
     @each $name, $size in $sizes {
         .#{$name} {
-            font-size: calc(#{$size} * .75); 
+            font-size: calc(#{$size} * .9); 
         }
     }
 };
