@@ -1,4 +1,5 @@
 import { api } from '../../../shared/api/api';
+import { endpoints } from '../../../shared/api/endpoints';
 
 const BLOG_TAG = [{ type: 'Blog', id: arg.id}];
 
@@ -6,7 +7,7 @@ const blogApi = api.injectEndpoints({
     endpoints:(build) => ({
         getAllNews: build.query({
             query: (limit = 9) => ({
-                url: '/blog',
+                url: endpoints.lists.block,
                 params: { limit }
             }),
             providesTags: () => BLOG_TAG,
@@ -40,7 +41,8 @@ const blogApi = api.injectEndpoints({
 
 export const {
     useGetAllNewsQuery,
+    useLazyGetAllNewsQuery,
     useAddNewsMutation,
     useEditNewsMutation,
-    useDeleteNewsMutation,
+    useDeleteNewsMutation
 } = blogApi;
