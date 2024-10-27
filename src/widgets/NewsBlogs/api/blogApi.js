@@ -1,7 +1,7 @@
 import { api } from '../../../shared/api/api';
 import { endpoints } from '../../../shared/api/endpoints';
 
-const BLOG_TAG = [{ type: 'Blog', id: arg.id}];
+const BLOG_TAG = [{ type: 'Blog', id: 'Blog'}];
 
 const blogApi = api.injectEndpoints({
     endpoints:(build) => ({
