@@ -13,6 +13,7 @@ import { BottomButtons } from "../../../entities/Slider/ui/BottomButtons/BottomB
 import { useSlider } from "../../../entities/Slider/hooks/useSlider";
 import { slicerOfArray } from "../../../entities/Slider/lib/helper";
 import { getStyles } from "../../../shared/libs/getStyles";
+import { useGetAllNewsQuery, useLazyGetAllNewsQuery } from "../api/blogApi";
 
 
 export const NewsBlogs = () => {
@@ -31,6 +32,9 @@ export const NewsBlogs = () => {
 
     const { currentSlide, handleClickSlide } = useSlider(sortedNews.length);
     const news = slicerOfArray(currentNews, currentSlide, quantityCardsOnPage());
+
+    // const [triggerGetBlogs, {data: blogs, error, isFetching}] = useLazyGetAllNewsQuery();
+    // const {data, isLoading, isError } = useGetAllNewsQuery();
 
     const buttonClass = getStyles(
         width <= 590 ? styles.inBlock : styles.noneBlock,
