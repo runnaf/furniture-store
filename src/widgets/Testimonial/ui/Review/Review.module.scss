@@ -4,7 +4,7 @@
     padding: 30px;
     background-color: var(--white-color);
     border-radius: 24px;
-    height: 260px;
+    min-height: 260px;
     box-sizing: border-box;
 }
 
@@ -76,9 +76,11 @@
 }
 
 .text_name {
+    font-size: var(--font-size-24);
+    font-weight: 500;
+
     @include mobile-xl {
         font-size: var(--font-size-22);
-        font-weight: 500;
     }
 }
 
