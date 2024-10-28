@@ -62,7 +62,7 @@
             margin-bottom: 21px;
         }
   
-          a {
+          .link {
             text-decoration: none;
             color: var(--secoundry-black-color);
             transition: color 0.3s;
@@ -102,12 +102,22 @@
         color: var(--black-color);
         font-weight: 600;
       }
+
+      .hashlink {
+        color: var(--white-color);
+        &:after {
+          content: none;
+      }
+      }
   
       .btn {
-        background-color: var(--green-color);
         padding: 6px 12px;
         border: none;
         margin-top: 16px;
+
+        &:after {
+          content: none;
+      }
       }
     }
   }

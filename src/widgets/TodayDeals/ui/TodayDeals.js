@@ -15,7 +15,7 @@ export function TodayDeals () {
    
     const currentCards = slicerOfArray(cardData, currentSlide, '1');
     return (
-        <Stack direction="column" gap='48' className={styles.mainContainer}>
+        <Stack direction="column" gap='48' className={styles.mainContainer} id="today-deals">
             <HeaderSection subTitle='Выгодные предложения'>
                 <span>Выгодные </span>предложения дня
             </HeaderSection>

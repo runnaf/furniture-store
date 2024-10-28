@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import styles from './Navbar.module.scss';
 import { LogoIcon, likeIcon, cartIcon, loginIcon } from '../../../../shared/assets/svg/navbarIcons';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
@@ -16,24 +16,24 @@ export const Navbar = () => {
         }
     };
 
-    const handleMouseLeave = () => {
+    const handleMouseLeave = useCallback(() => {
         setActiveDropdown(null);
-    };
+    }, []);
 
     const getDropdownMenu = (title) => {
         switch (title) {
             case 'Магазин':
-                return <DropdownMenu menuData={dropdownMenus.shop} />;
+                return <DropdownMenu menuData={dropdownMenus.shop} onClose={handleMouseLeave} />;
             case 'Категории':
-                return <DropdownMenu menuData={dropdownMenus.categories} />;
+                return <DropdownMenu menuData={dropdownMenus.categories} onClose={handleMouseLeave} />;
             default:
                 return null;
         }
     };
 
     return (
-        <nav 
-            className={styles.navbar} 
+        <nav
+            className={styles.navbar}
             onMouseLeave={handleMouseLeave}
         >
             <div className={styles.logo}>

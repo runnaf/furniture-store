@@ -17,6 +17,10 @@ export const MobileNavbar = () => {
         setIsOpen(!isOpen);
     };
 
+    const closeMenu = () => {
+        setIsOpen(false);
+    };
+
     const toggleDropdown = (title) => {
         setActiveDropdown(activeDropdown === title ? null : title);
     };
@@ -64,7 +68,7 @@ export const MobileNavbar = () => {
                                         {activeDropdown === title ? <span>{arrowupIcon()}</span> : <span>{arrowdownIcon()}</span>}
                                     </button>
                                 ) : (
-                                    <Link to={link} className={styles.links}>{title}</Link>
+                                    <Link to={link} className={styles.links} onClick={closeMenu}>{title}</Link>
                                 )}
 
                                 {activeDropdown === title && isDropdownCategory && (
@@ -78,7 +82,7 @@ export const MobileNavbar = () => {
                                                 {activeSubmenu === index && (
                                                     <ul className={styles.subCategory}>
                                                         {menu.subCategories.map((subCategory, subIndex) => (
-                                                            <li key={subIndex}>
+                                                            <li key={subIndex} onClick={closeMenu}>
                                                                 <Link to={getRouteCategories(subCategory.params)}>{subCategory.name}</Link>
                                                             </li>
                                                         ))}
