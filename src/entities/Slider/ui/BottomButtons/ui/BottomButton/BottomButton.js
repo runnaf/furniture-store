@@ -20,7 +20,7 @@ export const BottomButton = ({
 
     return (
         <li className={styles.container} onClick = {()=> handleClickSlide(page)}>
-            <button type="button" className = {stylesBottomButton} />
+            <button type="button" className={stylesBottomButton} />
         </li>
     )
 }
