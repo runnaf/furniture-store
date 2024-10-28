@@ -9,7 +9,7 @@ import { getRouteBlog } from "../../../app/routes/lib/helper";
 import { useCustomScroll } from "../../../shared/hooks/useCustomScroll";
 import { LinkCustom } from "../../../shared/ui/LinkCustom/LinkCustom";
 import { useResize } from "../../../shared/hooks/useResize";
-import { BottomButtons } from "../../../entities/Slider/ui/BottomButtons/BottomButtons";
+import { BottomButtons } from "../../../entities/Slider/ui/BottomButtons/ui/BottomButtons/BottomButtons";
 import { useSlider } from "../../../entities/Slider/hooks/useSlider";
 import { slicerOfArray } from "../../../entities/Slider/lib/helper";
 import { getStyles } from "../../../shared/libs/getStyles";

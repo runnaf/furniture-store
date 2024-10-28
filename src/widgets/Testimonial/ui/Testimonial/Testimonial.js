@@ -7,7 +7,6 @@ import { Reviews } from "../Reviews/Reviews";
 import { useResize } from "../../../../shared/hooks/useResize";
 import styles from "./Testimonial.module.scss";
 import { Stack } from "../../../../shared/ui/Stack/Stack";
-import points from '../../../../shared/assets/svg/points.svg';
 
 export const Testimonial = () => {
     const { currentSlide, nextCard, prevCard, handleClickSlide } = useSlider(testimonial.length);
@@ -23,8 +22,6 @@ export const Testimonial = () => {
 
     return (
         <section className={styles.testimonialContainer}>
-            <img src={points} alt="a cluster of dots"/>
-            <img src={points} alt="a cluster of dots"/>
             <HeaderSection subTitle= "Отзывы">
                 Что <span>Говорят наши клиенты</span>
             </HeaderSection>
