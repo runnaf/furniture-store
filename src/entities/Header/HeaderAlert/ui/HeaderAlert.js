@@ -15,11 +15,8 @@ export const HeaderAlert = () => {
     return (
         !isAuthenticated && isVisible && (
             <Stack
-                className={styles.header_content}
+                className={styles.header_alert}
             >
-                <Text className={styles.phone}>
-                    Позвоните нам: +123-456-789
-                </Text>
                 <Text className={styles.discount}>
                     Зарегистрируйтесь и ПОЛУЧИТЕ скидку 25% на первый заказ.
                 </Text>

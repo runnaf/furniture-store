@@ -4,55 +4,51 @@
 .header {
     background-color: var(--green-color);
     color: var(--white-color);
-    padding: 16px 0;
+
+    @include tablet-m {
+        flex-direction: column;
+    }
 
     .header_container {
         @include section-style;
 
-            .phone {
+        .header_content {
+            padding: 16px 0;
+
+            @include tablet-m {
+                justify-content: flex-end;
+                padding: 16px 18px;
+            }
+
+            .phone, .discount {
                 @include tablet-m {
                     display: none;
                 }
             }
 
             .links {
-                .link {
+                a {
                     color: var(--yellow-color);
                     font-size: var(--font-size-18);
                     font-weight: 500;
+                    position: relative;
 
-
-                    .text {
-                        display: block;
-                    
-                        @include tablet-m {
-                            display: none;
-                        }
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        width: 0;
+                        height: 2px;
+                        left: 0;
+                        bottom: -5px;
+                        background-color: var(--yellow-color);
+                        transition: width 0.3s ease;
                     }
 
-                    .icon {
-                        display: none;
-
-                        @include tablet-m {
-                            display: block;
-                        }
+                    &:hover:after {
+                        width: 100%;
                     }
                 }
-
-                @include tablet-m {
-                    justify-content: flex-end;
-                    padding: 0 20px;
-                }
+            }
         }
-    }
-}
-
-@include tablet-m {
-    .visible {
-        display: flex;
-    }
-
-    .hide {
-        display: none;
     }
 }

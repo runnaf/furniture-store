@@ -104,16 +104,20 @@
       }
 
       .hashlink {
+        color: var(--white-color);
         &:after {
           content: none;
       }
       }
   
       .btn {
-        background-color: var(--green-color);
         padding: 6px 12px;
         border: none;
         margin-top: 16px;
+
+        &:after {
+          content: none;
+      }
       }
     }
   }
