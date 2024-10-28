@@ -23,7 +23,7 @@ export const Testimonial = () => {
     return (
         <section className={styles.testimonialContainer}>
             <HeaderSection subTitle= "Отзывы">
-                Что <span>Говорят наши клиенты</span>
+                Что <span>говорят наши клиенты</span>
             </HeaderSection>
             <Stack 
                 className={styles.testimonialsWrapper}

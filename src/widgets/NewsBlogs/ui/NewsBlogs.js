@@ -43,8 +43,7 @@ export const NewsBlogs = () => {
     )
 
     return(
-        <Stack 
-            className={styles.newsBlogsContainer}>
+        <Stack className={styles.newsBlogsContainer}>
             <Stack
                 className={styles.newsBlogs}
                 direction='column'
