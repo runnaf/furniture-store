@@ -4,9 +4,7 @@
 .previewContainer {
     background-color: var(--background-color);
     padding: 70px 0;
-    background-image: url("../../../../shared/assets/svg/points.svg"), url("../../../../shared/assets/svg/points.svg");
-    background-repeat: no-repeat, no-repeat;
-    background-position: top -14px right 38%, bottom -5px left 30%;
+    @include decoration-element;
 
     @include mobile-xl {
         padding: 57px 0;
