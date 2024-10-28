@@ -35,54 +35,61 @@ $opacity: var(--opacity-08);
         transition: all 0.3s ease;
     }
 
-    > div {
-        > p {
+    .questionContainer {
+        p {
+            cursor: pointer;
             font-weight: 600;
             line-height: 25px;
+            text-align: left;
 
             @include tablet-m {
                 font-size: $font-size-18;
             } 
-            
         }
 
-        &:nth-child(2) {
-            width: 1005px;
-            transition: max-height 0.3s ease, opacity 0.3s ease-in-out, margin-top 0.3s ease-in-out;
-            max-height: 0px; 
-            opacity: 0;
-            overflow: hidden;
+        > img {
+            cursor: pointer;
+        }
+    }
 
-            @include desktop-m {
-                width: 950px;
-            }
-    
-            @include tablet-l {
-                width: 750px;
-            }
-    
-            @include tablet-m {
-                width: 700px;
-            } 
-    
-            @include mobile-xl {
-                width: 520px;
-            }
-    
-            @include mobile-l {
-                width: 300px;
-            }
 
-            > p {
-                opacity: $opacity;
-                font-weight: 400;
-                line-height: 28px;
+    > div:nth-child(2) {
+        width: 1005px;
+        transition: max-height 0.3s ease, opacity 0.3s ease-in-out, margin-top 0.3s ease-in-out;
+        max-height: 0px; 
+        opacity: 0;
+        overflow: hidden;
 
-                @include tablet-m {
-                    font-size: $font-size-16;
-                } 
-            }
+        @include desktop-m {
+            width: 950px;
+        }
+
+        @include tablet-l {
+            width: 750px;
+        }
+
+        @include tablet-m {
+            width: 700px;
         } 
+
+        @include mobile-xl {
+            width: 520px;
+        }
+
+        @include mobile-l {
+            width: 300px;
+        }
+
+        > p {
+            opacity: $opacity;
+            font-weight: 400;
+            line-height: 28px;
+            text-align: left;
+
+            @include tablet-m {
+                font-size: $font-size-16;
+            } 
+        }
 
         &.visible {
             max-height: 1000px;

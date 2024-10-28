@@ -21,8 +21,12 @@ $line-height: 28px;
         width: 522px;
 
         @include tablet-m {
-            gap: 12px;
-            width: 326px;
+            width: 100%;
+        }
+
+        @include mobile-l {
+            gap: 0;
+            justify-content: space-between;
         }
 
         > div {

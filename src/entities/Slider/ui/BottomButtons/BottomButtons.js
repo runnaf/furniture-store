@@ -4,6 +4,8 @@ import styles from "./BottomButtons.module.scss"
 export const BottomButtons = ({quantitySliders, quantityCardsOnPage, currentSlide, handleClickSlide}) => {
     const lengthArray = Math.ceil(quantitySliders.length / quantityCardsOnPage);
     const array = Array.from({length: lengthArray}, (_, i) => i);
+
+
     
     return (
         <ul className = {styles.container}>

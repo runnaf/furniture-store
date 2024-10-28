@@ -9,24 +9,26 @@ export const QuestionMainPage = () => {
     return(
         <Stack 
             className={styles.questionMainPageContainer}
+        >
+            <Stack             
             direction="column"
             justify='justifyCenter'
             align='alignCenter'
-            gap='32'
-        >
-            <HeaderSection subTitle='Есть вопрос?'>
-                Найдите <span> ответ здесь</span>
-            </HeaderSection>
+            gap='32'>
+                <HeaderSection subTitle='Есть вопрос?'>
+                    Найдите <span> ответ здесь</span>
+                </HeaderSection>
 
-            <Stack direction="column" gap='16' max>
-                {questionData.map((item, index) => (
-                    <Accordion 
-                        key={index} 
-                        question={item.question} 
-                        answer={item.answer} 
-                        isSecond={index === 1}
-                    />
-                ))}
+                <Stack direction="column" gap='16' max>
+                    {questionData.map((item, index) => (
+                        <Accordion 
+                            key={index} 
+                            question={item.question} 
+                            answer={item.answer} 
+                            isSecond={index === 1}
+                        />
+                    ))}
+                </Stack>
             </Stack>
         </Stack>
     )

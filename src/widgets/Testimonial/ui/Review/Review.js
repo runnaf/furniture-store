@@ -22,11 +22,6 @@ export const Review = ({ review }) => {
                 gap="16" align="alignCenter" 
                 className={styles.wrapper}
             >
-                {/* <Stack 
-                    className={styles.reviewImageContainer} 
-                    align="alignCenter" 
-                    justify="justifyCenter" 
-                /> */}
                 <Stack 
                     direction="column" 
                     justify="justifyCenter" gap="16"
@@ -37,7 +32,7 @@ export const Review = ({ review }) => {
                     <Text>
                         {review.speciality}
                     </Text>
-                    <Stack gap="8">                         
+                    <Stack gap="8" align="alignCenter">                         
                         {Array.from({length: WHOLE_RATING}, (_, i) => i).map(rating =>
                             <Stack 
                                 key={rating} 

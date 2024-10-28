@@ -14,166 +14,155 @@ $border-radius-24: var(--border-radius-24);
 //gap
 $gap-8: var(--gap-8);
 
-.flashSaleContainer {
-    @include section-style;
+.flashSale {
+    width: 100%;
 
-    @include tablet-l {
-        flex-direction: column;
-        width: 100%;
-        gap: 16px;
-    }
-
-    > div {
-        &:nth-child(1) {
-            position: relative;
-            overflow: hidden;
-            border-radius: $border-radius-24;
-            background-color: $background-color;
-            width: 686px;
-            height: 578px;
-
-            @include desktop-m {
-                width: 568px;
-            }
-
-            @include tablet-l {
-                width: 100%;
-                height: 491px;
-                border-radius: 0;
-            }
-
-            > img {
-                position: absolute;
+    .flashSaleContainer {
+        @include section-style;
         
-                &:nth-child(1) {
-                    top: 520px;
-                    left: 74px;
+        @include tablet-l {
+            flex-direction: column;
+            padding: 0;
+            width: 100%;
+            gap: 16px;
+        }
 
-                    @include tablet-l {
-                        top: 433px;
-                        left: 24px;
+        @include mobile-l {
+            padding: 0;
+        }
+
+        > div {
+            &:nth-child(1) {
+                @include point-style;;
+                border-radius: $border-radius-24;
+                background-color: $background-color;
+                width: 686px;
+                height: 578px;
+
+                @include desktop-m {
+                    width: 568px;
+                }
+
+                @include tablet-l {
+                    width: 100%;
+                    padding: 70px 0 50px 0;
+                    border-radius: 0;
+                }
+
+                > div {
+                    width: 522px;
+            
+                    @include mobile-l {
+                        padding: 0 10px;
+                        width: 100%;
                     }
-                }
+
+
+                    > div:nth-child(1) {
+                        flex-direction: column-reverse;
+                        align-items: center;
         
-                &:nth-child(2) {
-                    bottom: 518px;
-                    right: 75px;
-                    rotate: 180deg;
-
-                    @include tablet-l {
-                        bottom: 433px;
-                        right: 24px;
-                    }
-                }
-            }
-
-            > div {
-                width: 522px;
-        
-                @include mobile-l {
-                    width: 327px;
-                }
-
-
-                > div:nth-child(1) {
-                    flex-direction: column-reverse;
-                    align-items: center;
-    
-                    > div {
-                        > div:nth-child(1) {
-                            display: none;
-                        }
-                        > p {
-                            @include tablet-l {
-                                text-align: center;
+                        > div {
+                            > div:nth-child(1) {
+                                display: none;
+                            }
+                            > p {
+                                @include tablet-l {
+                                    text-align: center;
+                                }
                             }
                         }
                     }
-                }
-    
-                > a > button {
-                    display: flex;
-                    gap: $gap-8;
-                    padding: 16px 32px;
-                }
-            }
-        }
+        
+                    > a  {
+                        display: flex;
+                        gap: $gap-8;
+                        padding: 16px 32px;
 
-        &:nth-child(2) {
-            @include tablet-l {
-                flex-direction: column;
-                gap: 16px;
-            }
-
-        > div {
-            width: 229px;
-            height: 578px;
-            background-color: $background-color-grey;
-            border-radius: $border-radius-24;
-
-            @include desktop-m {
-                width: 200px;
-            }
-
-            @include tablet-l {
-                width: 100%;
-                height: 150px;
-                border-radius: 0;
-            }
-
-            @include tablet-m {
-                height: 100px;
-            }
-            
-            &:nth-child(1) > div {
-                justify-content: flex-start; 
-
-                > img:nth-of-type(1) {
-                    @include tablet-l {
-                        width: 100%;
-                        margin-top: 30px;
+                        @include mobile-l {
+                            justify-content: center;
+                            width: 100%;
+                        }
                     }
                 }
-                @include tablet-l {
-                    justify-content: center;
-                }
             }
-            &:nth-child(2) > div {
-                justify-content: flex-end;
 
-                > img:nth-of-type(1) {
-                    @include tablet-l {
-                        width: 100%;
-                        margin-bottom: 200px;
-                    }
-                }
+            &:nth-child(2) {
                 @include tablet-l {
-                    justify-content: center;
-                } 
-            }
-            
+                    flex-direction: column;
+                    gap: 16px;
+                }
+
             > div {
-                width: 205px;
-                height: 554px;
-                border: $border;
-                border-radius: $border-radius-16;
-                overflow: hidden;
+                width: 229px;
+                height: 578px;
+                background-color: $background-color-grey;
+                border-radius: $border-radius-24;
 
                 @include desktop-m {
-                    width: 180px;
+                    width: 200px;
                 }
 
                 @include tablet-l {
-                    width: 95%;
-                    height: 130px;
-                    border-radius: $border-radius-12;
+                    width: 100%;
+                    height: 150px;
+                    border-radius: 0;
                 }
 
                 @include tablet-m {
-                    height: 80px;
+                    height: 100px;
+                }
+                
+                &:nth-child(1) > div {
+                    justify-content: flex-start; 
+
+                    > img:nth-of-type(1) {
+                        @include tablet-l {
+                            width: 100%;
+                            margin-top: 30px;
+                        }
+                    }
+                    @include tablet-l {
+                        justify-content: center;
+                    }
+                }
+                &:nth-child(2) > div {
+                    justify-content: flex-end;
+
+                    > img:nth-of-type(1) {
+                        @include tablet-l {
+                            width: 100%;
+                            margin-bottom: 200px;
+                        }
+                    }
+                    @include tablet-l {
+                        justify-content: center;
+                    } 
+                }
+                
+                > div {
+                    width: 205px;
+                    height: 554px;
+                    border: $border;
+                    border-radius: $border-radius-16;
+                    overflow: hidden;
+
+                    @include desktop-m {
+                        width: 180px;
+                    }
+
+                    @include tablet-l {
+                        width: 95%;
+                        height: 130px;
+                        border-radius: $border-radius-12;
+                    }
+
+                    @include tablet-m {
+                        height: 80px;
+                    }
                 }
             }
         }
-    }
+        }
     }
 }

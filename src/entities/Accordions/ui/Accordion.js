@@ -36,20 +36,17 @@ export const Accordion = ({ question, answer, isSecond, styleMode }) => {
         onClick={handleClick}
         className={styleClass}
         >
-            <Stack justify='justifyBetween'
-            align='alignCenter'>
-                <Text type="p" size="s">
-                    {question}
-                </Text>
+            <Stack 
+                justify='justifyBetween'
+                align='alignCenter'
+                className={styles.questionContainer}
+            >
+                <Text size="s">{question}</Text>
                 <img src={isOpen ? less : more} alt="more or less button"/>
             </Stack>
             <Stack className={isOpen ? styles.visible : styles.hidden}>
-                <Text type="p" size="xs">
-                    {answer}
-                </Text>
+                <Text>{answer}</Text>
             </Stack>
         </Stack>
     )
 }
-
- 

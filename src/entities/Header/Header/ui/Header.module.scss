@@ -1,0 +1,63 @@
+@import '../../../../app/styles/media-queries.scss';
+@import '../../../../app/styles/mixin.scss';
+
+.header {
+    background-color: var(--green-color);
+    color: var(--white-color);
+    padding: 16px 0;
+
+    .header_container {
+        @include section-style;
+
+            .phone {
+                @include tablet-m {
+                    display: none;
+                }
+            }
+
+            .links {
+                a {
+                    color: var(--yellow-color);
+                    font-size: var(--font-size-18);
+                    font-weight: 500;
+
+                    &:hover {
+                        text-decoration: underline;
+                        text-underline-offset: 4px;
+                        text-decoration-color: var(--yellow-color);
+                    }
+
+                    .text {
+                        display: block;
+                    
+                        @include tablet-m {
+                            display: none;
+                        }
+                    }
+
+                    .icon {
+                        display: none;
+
+                        @include tablet-m {
+                            display: block;
+                        }
+                    }
+                }
+
+                @include tablet-m {
+                    justify-content: flex-end;
+                    padding: 0 20px;
+                }
+        }
+    }
+}
+
+@include tablet-m {
+    .visible {
+        display: flex;
+    }
+
+    .hide {
+        display: none;
+    }
+}

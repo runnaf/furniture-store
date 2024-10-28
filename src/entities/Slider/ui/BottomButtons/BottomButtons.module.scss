@@ -3,26 +3,31 @@
     gap: 12px;
     align-items: center;
     justify-content: center;
-}
 
-.container li {
+    li {
     padding: 20px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
 
-    &:hover {
-        opacity: var(--opacity-06);
-        cursor: pointer;
+        &:hover {
+            opacity: var(--opacity-06);
+            cursor: pointer;
+        }
+
+        button {
+            width: 38px;
+            height: 6px;   
+            
+            &.notPressed {
+                background-color: var(--white-color);
+            }
+        }
     }
+
 }
 
-.container button {
-    width: 38px;
-    height: 6px;    
-}
 
-.notPressed {
-    background-color: var(--white-color);
-}
+
+

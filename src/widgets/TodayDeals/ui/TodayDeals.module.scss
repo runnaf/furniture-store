@@ -4,6 +4,17 @@
     width: 100%;
     padding-left: 140px;
 
+    @include tablet-m {
+        padding: 0 50px;
+    }
+
+    @include mobile-l {
+        padding: 0 30px;
+    }
+
+    @include mobile-m {
+        padding: 0 10px;
+    }
 }
 
 .hyphen {
@@ -28,7 +39,7 @@
     padding-bottom: 30px;
 
     @include tablet-m {
-        width: 80%;
+        width: 90%;
     }
 }
 
@@ -38,9 +49,19 @@
     border-radius: var(--border-radius-24);
     border: var(--border-todayDeals);
     padding: 12px;
-    margin: 0 16px;
+    margin-right: 30px;
 
     @include tablet-m {
         width: 327px;
+    }
+
+    @include mobile-l {
+        width: 250px;
+        padding: 7px;
+    }
+}
+.slider {
+    button {
+        background-color: var(--grey-background-color);
     }
 }

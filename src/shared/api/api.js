@@ -1,11 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import Cookies from "js-cookie";
-
-const config = {
-    develop: 'http://localhost:8000',
-};
-
-export const apiUrl = config.develop;
+import { apiUrl } from "./endpoints";
 
 export const api = createApi({
     reducerPath: 'api',

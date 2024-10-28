@@ -1,9 +1,15 @@
+@import '../../../../app/styles/media-queries';
+
 .container {
     padding: 20px 20px 0 0;
     background-image: url("../../../../shared/assets/svg/fireworks.svg");
     background-repeat: no-repeat;
     background-position: top right;
     width: fit-content;
+
+    @include mobile-l {
+        display: none;
+    }
 }
 
 .container h3 {
@@ -15,6 +21,6 @@
     border-radius: 200px;
     width: fit-content;
     background-image: url("../../../../shared/assets/svg/armchair.svg");
-    background-position: top 8px left 10px;
+    background-position: top 4px left 10px;
     background-repeat: no-repeat;
 }
