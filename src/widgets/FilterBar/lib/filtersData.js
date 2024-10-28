@@ -8,7 +8,9 @@ import blue from '../../../shared/assets/svg/blue.svg';
 import white from '../../../shared/assets/svg/white.svg';
 
 const filtersData = {
-    category: [
+    category: {
+        title: 'Категория',
+        items: [
         { value: 'bedroom', label: 'Спальня' },
         { value: 'livingRoom', label: 'Гостиная' },
         { value: 'office', label: 'Офис' },
@@ -16,8 +18,11 @@ const filtersData = {
         { value: 'kitchen', label: 'Кухня' },
         { value: 'outdoor', label: 'Для улицы' },
         { value: 'decor', label: 'Декор' }
-    ],
-    color: [
+        ]
+    },
+    color: {
+        title: 'Цвет',
+        items: [
         { value: 'brown', label: 'Коричневый', image: brown},
         { value: 'grey', label: 'Серый', image: grey },
         { value: 'black', label: 'Черный', image: black },
@@ -26,18 +31,25 @@ const filtersData = {
         { value: 'orange', label: 'Оранжевый', image: orange },
         { value: 'blue', label: 'Синий', image: blue },
         { value: 'white', label: 'Белый', image: white }
-    ],
-    material: [
+        ]
+    },
+    material: {
+        title: 'Материал',
+        items: [
         { value: 'metal', label: 'Металл' },
         { value: 'wood', label: 'Дерево' },
         { value: 'upholstered', label: 'С мягкой обивкой' },
         { value: 'glass', label: 'Стекло' },
         { value: 'plastic', label: 'Пластик' }
-    ],
-    availability: [
+        ]
+    },
+    availability: {
+        title: 'Доступность',
+        items: [
         { value: 'inStock', label: 'В наличии' },
         { value: 'outOfStock', label: 'Нет в наличии' }
-    ]
-};
+        ]
+    },
+}
 
 export default filtersData;

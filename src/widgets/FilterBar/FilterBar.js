@@ -1,7 +1,7 @@
 import { Text } from '../../shared/ui/Text/Text';
 import { Stack } from '../../shared/ui/Stack/Stack';
 import styles from './FilterBar.module.scss';
-import { useState, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import ReactSlider from 'react-slider';
 import { Filters } from '../../entities/Filters/ui/Filters';
 import filtersData from './lib/filtersData';
@@ -26,12 +26,27 @@ export function FilterBar() {
         handleChange('price', values);
     };
 
+    const renderFilter = (key) => {
+        const {title, items} = filtersData[key];
+        return (
+            <React.Fragment key={key}>
+                <Filters
+                    key={key}
+                    title={title}
+                    filters={items}
+                    selectedFilters={selectedFilters[key]}
+                    onChange={(value) => handleChange(key,value)}
+                />
+                {key !== 'availability' && <hr/>}
+            </React.Fragment>
+        );        
+    }
+
     return (
         <Stack direction='column' gap='24' className={styles.container}>
             <Text type='h2' size='s'>Настройки фильтра</Text>
             <hr />
-            <Filters title='Категория' filters={filtersData.category} selectedFilters={selectedFilters.category} onChange={handleChange} />
-            <hr />
+            {renderFilter('category')}
             <Stack direction='column' gap='16'>
                 <Text className={styles.subtitle}>Цена</Text>
                 <Stack>
@@ -49,14 +64,10 @@ export function FilterBar() {
                         <div {...props} className={`${styles.track} ${state.index === 0 || state.index === 2 ? styles.trackMin : styles.trackMax}`} />
                     )}
                     className={styles.slider}
-                /> 
+                />                 
             </Stack>
             <hr />
-            <Filters title='Цвет' filters={filtersData.color} selectedFilters={selectedFilters.color} onChange={handleChange}  />
-            <hr />
-            <Filters title='Материал' filters={filtersData.material} selectedFilters={selectedFilters.material} onChange={handleChange} />
-            <hr />
-            <Filters title='Доступность' filters={filtersData.availability} selectedFilters={selectedFilters.availability} onChange={handleChange} />
+            {['color', 'material', 'availability'].map(renderFilter)}
         </Stack>
     );
 }
