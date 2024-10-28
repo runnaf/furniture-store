@@ -1,10 +1,10 @@
+import { getRouteSignin, getRouteSignup } from '../../../app/routes/lib/helper';
+import { LinkCustom } from '../../../shared/ui/LinkCustom/LinkCustom';
+import { SigninIcon, SignupIcon } from '../../../shared/assets/svg/headerIcons';
+import { useResize } from '../../../shared/hooks/useResize';
+import { Text } from '../../../shared/ui/Text/Text';
+import { Stack } from '../../../shared/ui/Stack/Stack';
 import styles from './Header.module.scss';
-import { Stack } from '../../../../shared/ui/Stack/Stack';
-import { Text } from '../../../../shared/ui/Text/Text';
-import { getRouteSignin, getRouteSignup } from '../../../../app/routes/lib/helper';
-import { LinkCustom } from '../../../../shared/ui/LinkCustom/LinkCustom';
-import { SigninIcon, SignupIcon } from '../../../../shared/assets/svg/headerIcons';
-import { useResize } from '../../../../shared/hooks/useResize';
 
 export const Header = () => {
     const width = useResize();
