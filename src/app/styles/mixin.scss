@@ -57,3 +57,13 @@
     }
 }
 
+@mixin decoration-element {
+    background-image: url("../../../../shared/assets/svg/points-top.svg"), url("../../../../shared/assets/svg/points.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top -5px right 44%, bottom -13px left 36%;
+
+    @include mobile-xl {
+        background-position: top -5px right 30px, bottom -13px left 30px;
+    }
+}
+

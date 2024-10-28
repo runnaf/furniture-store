@@ -65,19 +65,20 @@
 }
 
 .description div {
+    position: relative;
+    padding-right: 36px;
+
     @include mobile-xl {
         align-items: center;
     }
 }
 
-.description svg {
-    position: relative;
-    right: -20px;
-}
-
 .description a {
-    width: 57px;
-    height: 57px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 60px;
+    height: 60px;
     border: 3px solid var(--white-color);
     display: flex;
     align-items: center;

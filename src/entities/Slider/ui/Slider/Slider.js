@@ -1,5 +1,5 @@
 import { Stack } from "../../../../shared/ui/Stack/Stack";
-import { BottomButtons } from "../BottomButtons/BottomButtons";
+import { BottomButtons } from "../BottomButtons/ui/BottomButtons/BottomButtons";
 import { SideButtons } from "../SideButtons/SideButtons";
 
 export const Slider = ({ 
