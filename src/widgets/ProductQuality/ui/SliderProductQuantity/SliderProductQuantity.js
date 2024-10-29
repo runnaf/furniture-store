@@ -1,6 +1,6 @@
 import chairSale from '../../../../shared/assets/svg/chairSale.svg';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
-import styles from "./SlidetProductQuantity.module.scss";
+import styles from "./SliderProductQuantity.module.scss";
 
 export const SliderProductQuantity = () => {
     return (

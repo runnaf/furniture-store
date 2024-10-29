@@ -7,6 +7,10 @@
     @include tablet-m {
         width: fit-content;
     }
+
+    @include mobile-xl {
+        width: 100%;
+    }
 }
 
 .container {

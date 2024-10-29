@@ -6,7 +6,7 @@ import styles from "./Picture.module.scss"
 
 export const Picture = () => {
     return (
-        <Stack className={styles.container}>
+        <Stack className={styles.wrapper}>
             <img src={picture1} width="585" height="560" alt="мебель представленная в нашем магазине"/>
             <Stack direction="column" className={styles.container}>
                 <img src={picture2} width="584" height="264" alt="мебель представленная в нашем магазине"/>

@@ -14,7 +14,7 @@ export const ProductQuantityDescription = () => {
                 </HeaderSection>
                 <Text>Мы строго следим за качеством нашей продукции, используя только высококлассные материалы и современные технологии производства.</Text>
             </Stack>
-            <Stack>
+            <Stack gap="16">
             {
                 data.map((item) => (
                     <QuantityItem key={item.title} item={item} />

@@ -4,7 +4,7 @@ import armchair from "../../../shared/assets/svg/armchairQuantity.svg"
 export const data = [
     {
         img: wood,
-        title: 'Лучшее качество древесины',
+        title: 'Лучшая древесина',
         text: 'Мы используем только лучшую древесину, что гарантирует эстетическую привлекательность и долговечность.',
     },
     {

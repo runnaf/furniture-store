@@ -24,7 +24,6 @@ export const AboutUs = () => {
             <AboutUsPreview />
             <ProductQuality />
             <Stack direction='column' justify='justifyCenter' align='alignCenter' gap='75'>
-                
             </Stack>
             <Advantages />
         </Stack>
