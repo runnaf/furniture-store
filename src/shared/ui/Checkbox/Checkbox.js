@@ -1,7 +1,7 @@
 import { CheckmarkIcon } from '../../assets/svg/checkmarkIcon';
 import styles from './Checkbox.module.scss';
 
-export const Checkbox = ({ checked, name, onChange, children }) => {
+export const Checkbox = ({ checked, name, onChange, children, image }) => {
 
     const handleCheckboxChange = (e) => {
         const { name, checked } = e.target;
@@ -23,7 +23,10 @@ export const Checkbox = ({ checked, name, onChange, children }) => {
                     <CheckmarkIcon />
                 </span>
             </div>
+            <div className={styles.imgbox}>
+            {image && <img src={image} alt={children} className={styles.imgColor} />}
             <span className={styles.text}>{children} </span>
+            </div>
         </label>
     );
 };
