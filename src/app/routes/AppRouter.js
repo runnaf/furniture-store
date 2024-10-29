@@ -1,9 +1,8 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { routes } from './lib/data'
-import { Navbar } from '../../widgets/Navbar/ui/Navbar/Navbar';
-import { MobileNavbar } from "../../widgets/Navbar/ui/MobileNavbar/MobileNavbar";
 import { Header } from '../../entities/Header/Header/Header';
 import { HeaderAlert } from '../../entities/Header/HeaderAlert/HeaderAlert';
+import { Navbar } from '../../widgets/Navbar/ui/Navbar/Navbar';
 
 export const AppRouter = () => {
     const location = useLocation();
@@ -19,7 +18,6 @@ export const AppRouter = () => {
                     <HeaderAlert />
                     <Header />
                     <Navbar />
-                    <MobileNavbar />
                 </>
             )}
 

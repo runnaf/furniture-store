@@ -6,13 +6,8 @@
     background-color: var(--white-color);
     color: var(--black-color);
     padding: 24px;
-    display: none;
     flex-direction: column;
     font-family: var(--font-family);
-
-    @include tablet-m {
-        display: flex;
-    }
 
     .navLinks {
         padding-top: 55px;
