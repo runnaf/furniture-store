@@ -1,0 +1,14 @@
+@import "../../../app/styles/mixin.scss";
+
+.container {
+    padding-bottom: 50px;
+    & > div:first-child {
+        background-color: var(--background-color);
+        width: 100%;
+
+    & > div {
+        @include section-style
+    }
+    }
+    
+}

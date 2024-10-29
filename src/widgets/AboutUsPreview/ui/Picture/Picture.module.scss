@@ -1,0 +1,8 @@
+.container {
+    gap: inherit;
+    & img {
+        background-color: var(--background-color);
+        border-radius: var(--border-radius-24);
+        object-fit: cover;
+    } 
+}

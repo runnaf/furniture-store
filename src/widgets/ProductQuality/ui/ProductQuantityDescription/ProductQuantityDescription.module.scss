@@ -1,0 +1,7 @@
+@import "../../../../app/styles/mixin.scss";
+
+.container {
+    padding: 55px 100px;
+    border-radius: var(--border-radius-24);
+    @include decoration-element;
+}

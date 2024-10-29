@@ -1,0 +1,9 @@
+@import "../../../../app/styles/mixin.scss";
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: inherit;
+
+    @include section-style;
+}
