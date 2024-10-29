@@ -12,11 +12,7 @@
     height: 68px;
 
     @include section-style;
-
-    @include tablet-m {
-        display: none;
-    }
-
+    
     .navLinks {
         gap: var(--gap-36);
         display: flex;
