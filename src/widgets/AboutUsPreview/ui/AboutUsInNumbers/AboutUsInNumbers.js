@@ -5,7 +5,7 @@ export const AboutUsInNumbers = ({array}) => {
     return (
         <ul className={styles.containerOfNumber}>
             {array.map((item) => (
-                <li>
+                <li key={item.description}>
                     <Text size="xl">{item.number}</Text>
                     <Text>{item.description}</Text>
                 </li>
