@@ -13,7 +13,7 @@ import { Slider } from "../../../entities/Slider/ui/Slider/Slider";
 
 export function OurProducts() {
 
-    const [selectedFilter, setSelectedFilter] = useState(null);
+    const [selectedFilter, setSelectedFilter] = useState('all');
     const { currentSlide, nextCard, prevCard, handleClickSlide } = useSlider(cardData.length);
     const width = useResize();   
 
@@ -32,61 +32,63 @@ export function OurProducts() {
     };
 
     return (
-        <Stack className={styles.parenContainer}>
-            <Stack direction='column' align='alignCenter' gap='16' className={styles.container}>
-                <HeaderSection subTitle='Наша продукция'>
-                    <span>Каталог товаров</span>
-                </HeaderSection>
+        <Stack direction='column' align='alignCenter' gap='32' className={styles.container}>
+            <HeaderSection subTitle='Наша продукция'>
+                <span>Каталог товаров</span>
+            </HeaderSection>
 
-                <Stack gap='16' className={styles.buttonsContainer}>
-                    {buttons.map(({ label, filter }) => (
-                        <Button 
-                            key={filter} 
-                            color={selectedFilter === filter ? 'primary' : 'outlined'} 
-                            onClick={() => handleFilterChange(filter)}
-                        >
-                            {label}
-                        </Button>
-                    ))}
-                </Stack>
+            <Stack 
+                gap='24' 
+                className={styles.buttonsContainer}
+            >
+                {buttons.map(({ label, filter }) => (
+                    <Button 
+                        key={filter} 
+                        color={selectedFilter === filter ? 'primary' : 'outlined'} 
+                        onClick={() => handleFilterChange(filter)}
+                    >
+                        {label}
+                    </Button>
+                ))}
+            </Stack>
 
-                <div className={styles.cardContainerWrapper}>
-                    {width <= 590 ? ( 
-                        <Slider 
-                            isSideButtons={false} 
-                            isBottomButtons={true} 
-                            quantityCardsOnPage={quantityCardsOnPage()}
-                            className={styles.slider} 
-                            data={cardData} 
-                            currentSlide={currentSlide} 
-                            nextCard={nextCard} 
-                            prevCard={prevCard}
-                            handleClickSlide={handleClickSlide}
-                            gap="25"
-                        >
-                            <Stack gap='8' justify='justifyCenter'>
+            <div className={styles.cardContainerWrapper}>
+                {width <= 590 ? ( 
+                    <Slider 
+                        isSideButtons={false} 
+                        isBottomButtons={true} 
+                        quantityCardsOnPage={quantityCardsOnPage()}
+                        className={styles.slider} 
+                        data={cardData} 
+                        currentSlide={currentSlide} 
+                        nextCard={nextCard} 
+                        prevCard={prevCard}
+                        handleClickSlide={handleClickSlide}
+                        gap="25"
+                        color='secondary'
+                    >
+                        <Stack gap='8' justify='justifyCenter'>
                             {currentCards.map((element) => (
                                 <div className={styles.cardWrapper} key={element.id}>
                                     <Card {...element} />
                                 </div>
                             ))}
-                            </Stack>
-                        </Slider>
-                    ) : (
-                        <Stack 
-                            justify='justifyBetween'
-                            className={styles.cardContainer}
-                            gap='75'
-                        >
-                            {cardData.map((element) => (
-                                <div className={styles.cardWrapper} key={element.id}>
-                                    <Card {...element} />
-                                </div>
-                            ))}
                         </Stack>
-                    )}
-                </div>
-            </Stack>
+                    </Slider>
+                ) : (
+                    <Stack 
+                        justify='justifyBetween'
+                        className={styles.cardContainer}
+                        gap='75' //TODO
+                    >
+                        {cardData.map((element) => (
+                            <div className={styles.cardWrapper} key={element.id}>
+                                <Card {...element} />
+                            </div>
+                        ))}
+                    </Stack>
+                )}
+            </div>
         </Stack>
     );
 }
