@@ -12,7 +12,6 @@ export function TodayDeals () {
     const { currentSlide, nextCard, prevCard, handleClickSlide } = useSlider(cardData.length);
     const width = useResize();   
 
-   
     const currentCards = slicerOfArray(cardData, currentSlide, '1');
     return (
         <Stack direction="column" gap='48' className={styles.mainContainer} id="today-deals">

@@ -13,7 +13,7 @@ import { BottomButtons } from "../../../entities/Slider/ui/BottomButtons/ui/Bott
 import { useSlider } from "../../../entities/Slider/hooks/useSlider";
 import { slicerOfArray } from "../../../entities/Slider/lib/helper";
 import { getStyles } from "../../../shared/libs/getStyles";
-import { useGetAllNewsQuery, useLazyGetAllNewsQuery } from "../api/blogApi";
+// import { useGetAllNewsQuery, useLazyGetAllNewsQuery } from "../api/blogApi";
 
 
 export const NewsBlogs = () => {
