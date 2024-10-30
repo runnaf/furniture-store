@@ -2,9 +2,10 @@ import { AboutUsPage } from "../../../pages/AboutUs/ui/AboutUsPage";
 import { FAQs } from "../../../pages/FAQs/ui/FAQs";
 import MainPage from "../../../pages/MainPage/ui/MainPage";
 import { OurBlog } from "../../../pages/OurBlog/ui/OurBlog";
+import { ProductPage } from "../../../pages/ProductPage/ui/ProductPage";
 import SigninPage from "../../../pages/SigninPage/ui/SigninPage";
 import SignupPage from "../../../pages/SignupPage/ui/SignupPage";
-import { getRouteAbout, getRouteBlog, getRouteCategories, getRouteContact, getRouteFAQ, getRouteMain, getRouteShop, getRouteSignin, getRouteSignup } from "./helper";
+import { getRouteAbout, getRouteBlog, getRouteCategories, getRouteContact, getRouteFAQ, getRouteMain, getRouteProduct, getRouteShop, getRouteSignin, getRouteSignup } from "./helper";
 
 export const routes = [
     {
@@ -31,13 +32,12 @@ export const routes = [
         isNavbar: true,
         page: <FAQs />
     },
-    {
-        title: "О нас",
-        link: getRouteAbout(),
-        isNavbar: true,
-        page: <AboutUsPage />
-
-    },
+    // {
+    //     title: "О нас",
+    //     link: getRouteAbout(),
+    //     isNavbar: true,
+    //     page: <AboutUsPage />
+    // },
     {
         title: "Контакты",
         link: getRouteContact(),
@@ -49,6 +49,13 @@ export const routes = [
         link: getRouteBlog(),
         isNavbar: true,
         page: <OurBlog />
+    },
+    {
+        title: "Магазин",
+        link: getRouteAbout(),
+        //link: getRouteProduct(),
+        isNavbar: true,
+        page: <ProductPage />
     },
     {
         link: getRouteSignin(),
