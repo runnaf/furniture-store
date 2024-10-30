@@ -17,7 +17,7 @@ export const ProductQuantityDescription = () => {
             <Stack gap="16">
             {
                 data.map((item) => (
-                    <QuantityItem key={item.title} item={item} />
+                    <QuantityItem key={item.id} item={item} />
                 ))
             }
             </Stack>
