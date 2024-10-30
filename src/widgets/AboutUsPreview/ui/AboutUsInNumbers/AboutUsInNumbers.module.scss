@@ -1,0 +1,16 @@
+.containerOfNumber {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: var(--yellow-color);
+    border-radius: var(--border-radius-24);
+
+    & li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--gap-8);
+        padding: 32px;
+    }
+}
