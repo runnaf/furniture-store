@@ -9,11 +9,24 @@
     flex-direction: column;
     font-family: var(--font-family);
 
-    .navLinks {
-        padding-top: 55px;
+    .menu {
         display: flex;
         flex-direction: column;
         background-color: var(--white-color);
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        padding: 20px;
+        transform: translateY(-100%);
+        transition: transform 0.5s ease-in-out;
+
+        &.menuOpen {
+            transform: translateY(100px); 
+        }
 
         .title {
             padding-bottom: 32px;
@@ -80,6 +93,7 @@
     padding-left: 28px;
     padding-bottom: 24px;
     gap: 24px;
+    
 
     a {
         color: var(--secoundry-black-color);

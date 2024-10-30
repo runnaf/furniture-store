@@ -19,6 +19,8 @@ export const MobileNavbar = () => {
 
     const closeMenu = () => {
         setIsOpen(false);
+        setActiveDropdown(null);
+        setActiveSubmenu(null);
     };
 
     const toggleDropdown = (title) => {
@@ -55,48 +57,46 @@ export const MobileNavbar = () => {
                 ) : null}
             </Stack>
 
-            {isOpen && (
-                <ul className={styles.navLinks}>
-                    {routes.map(({ title, link }) => {
-                        const isDropdownCategory = title === 'Магазин' || title === 'Категории';
+            <ul className={`${styles.menu} ${isOpen ? styles.menuOpen : ''}`}>
+                {routes.map(({ title, link }) => {
+                    const isDropdownCategory = title === 'Магазин' || title === 'Категории';
 
-                        return (
-                            <li key={title} className={styles.title}>
-                                {isDropdownCategory ? (
-                                    <button onClick={() => toggleDropdown(title)}>
-                                        {title}
-                                        {activeDropdown === title ? <span>{arrowupIcon()}</span> : <span>{arrowdownIcon()}</span>}
-                                    </button>
-                                ) : (
-                                    <Link to={link} className={styles.links} onClick={closeMenu}>{title}</Link>
-                                )}
+                    return (
+                        <li key={title} className={styles.title}>
+                            {isDropdownCategory ? (
+                                <button onClick={() => toggleDropdown(title)}>
+                                    {title}
+                                    {activeDropdown === title ? <span>{arrowupIcon()}</span> : <span>{arrowdownIcon()}</span>}
+                                </button>
+                            ) : (
+                                <Link to={link} className={styles.links} onClick={closeMenu}>{title}</Link>
+                            )}
 
-                                {activeDropdown === title && isDropdownCategory && (
-                                    <ul className={styles.titles}>
-                                        {dropdownMenus[title === 'Магазин' ? 'shop' : 'categories'].map((menu, index) => (
-                                            <li key={index}>
-                                                <button onClick={() => toggleSubmenu(index)}>
-                                                    {menu.title}
-                                                    {activeSubmenu === index ? <span>{arrowupIcon()}</span> : <span>{arrowdownIcon()}</span>}
-                                                </button>
-                                                {activeSubmenu === index && (
-                                                    <ul className={styles.subCategory}>
-                                                        {menu.subCategories.map((subCategory, subIndex) => (
-                                                            <li key={subIndex} onClick={closeMenu}>
-                                                                <Link to={getRouteCategories(subCategory.params)}>{subCategory.name}</Link>
-                                                            </li>
-                                                        ))}
-                                                    </ul>
-                                                )}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                )}
-                            </li>
-                        );
-                    })}
-                </ul>
-            )}
+                            {activeDropdown === title && isDropdownCategory && (
+                                <ul className={styles.titles}>
+                                    {dropdownMenus[title === 'Магазин' ? 'shop' : 'categories'].map((menu, index) => (
+                                        <li key={index}>
+                                            <button onClick={() => toggleSubmenu(index)}>
+                                                {menu.title}
+                                                {activeSubmenu === index ? <span>{arrowupIcon()}</span> : <span>{arrowdownIcon()}</span>}
+                                            </button>
+                                            {activeSubmenu === index && (
+                                                <ul className={styles.subCategory}>
+                                                    {menu.subCategories.map((subCategory, subIndex) => (
+                                                        <li key={subIndex} onClick={closeMenu}>
+                                                            <Link to={getRouteCategories(subCategory.params)}>{subCategory.name}</Link>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </li>
+                    );
+                })}
+            </ul>
         </nav>
     );
 };
