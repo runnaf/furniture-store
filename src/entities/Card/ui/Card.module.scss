@@ -1,248 +1,188 @@
 @import '../../../app/styles/media-queries.scss';
 
 .mainContainer {
+    border-radius: var(--border-radius-24);
+    border: var(--border-todayDeals);
+    background-color: var(--background-color);
+    padding: 12px;
     @include tablet-m {
         flex-direction: column;
     }
-}
 
-.cardBase {
-    background-color: var(--background-color);
-    border-radius: var(--border-radius-24);
-    position: relative;
-
-    img {
-        width: 100%;
-    }    
-    .icons {
-        position: absolute; 
-        top: 8px;
-        right: 16px;
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity 0.3s;
-    }
-    .iconsContainer {
-        position: absolute;
-        top: 12px;
-        left: 0;
-        width: 100%;
-        padding: 0 12px;
-        
-        @include tablet-m {
-            top: 8px;
-        }
-    
-        button {
-            background-color: var(--white-color);
-            width: 48px;
-            height: 48px;
-    
-            @include tablet-m {
-                width: 34px;
-                height: 34px;
-            }
-        }
+    .cardBase {
+        background-color: var(--background-color);
+        border-radius: var(--border-radius-24);
+        position: relative;
     
         img {
-            width: 24px;
+            border-radius: var(--border-radius-16);
+            width: 100%;
+        } 
     
-            @include tablet-m {
-                width: 17px;
+        .iconsContainer {
+            .promotion {
+                position: absolute;
+                top: 8px;
+                left: 8px;
+                padding: 8px 16px;
+                border-radius: var(--border-radius-170);
+                background-color: var(--green-color);
+                width: 99px;
+                height: 38px;
+                color: var(--white-color);
+            
+                @include tablet-m {
+                    padding: 6px 12px;
+                    width: 69px;
+                    height: 27px;
+                }
+                p {
+                    @include tablet-m {
+                    font-size: var(--font-size-12);
+                    }
+                }
+            }
+    
+            .icons {
+                position: absolute; 
+                top: 8px;
+                right: 8px;
+                visibility: hidden;
+                opacity: 0;
+                transition: opacity 0.3s;
+    
+                button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: var(--white-color);
+                    width: 48px;
+                    height: 48px;
+            
+                    @include tablet-m {
+                        width: 34px;
+                        height: 34px;
+                    }
+        
+                    img {
+                        width: 24px;
+                
+                        @include tablet-m {
+                            width: 17px;
+                        }
+                    }
+                }
             }
         }
-    }
-    .promotion {
-        padding: 8px 16px;
-        border-radius: var(--border-radius-170);
-        background-color: var(--green-color);
-        width: 99px;
-        height: 38px;
-        color: var(--white-color);
-    
-        @include tablet-m {
-            padding: 6px 12px;
-            width: 69px;
-            height: 27px;
-        }
-    
-        .promotionText {
-    
-            @include tablet-m {
-            font-size: var(--font-size-12);
-            }
-        }
-    }
 
-}
-.cardBase:hover .icons {
-    visibility: visible;
-    opacity: 1;
-}
-.generalCard {
-    @extend .cardBase;
-    width: 276px;
-    height: 331px;
-    
-    @include mobile-xl {
-        width: 100%;
-    } 
-
-    .cardTimer {
-        position: absolute;
-        bottom: 10px;
-        left: 5px;
-    }
-}
-
-.generalCategory {
-.categoryContainer {
-    width: 276px;
-
-    @include tablet-m {
-        width: 100%;
-    }
-}
-.category {
-    color: var(--secoundry-black-color);
-
-    @include tablet-m {
-        font-size: var(--font-size-14);
-        }
-}
-
-.star {
-    width: 24px;
-    height: 24px;
-
-    @include tablet-m {
-        width: 16px;
-        height: 16px;
-    }
-}
-.rating {
-    @include tablet-m {
-        font-size: 14px;
-    }
-}
-.cardName {
-    font-size: var(--font-size-20);
-    font-weight: 600;
-
-    @include tablet-m {
-        font-size: var(--font-size-16);
-        margin-top: 8px;
-    }
-}
-.newPrice {
-    font-size: var(--font-size-24);
-    font-weight: 500;
-
-    @include tablet-m {
-        font-size: var(--font-size-18);
-    }
-}
-.price {
-    color: var(--secoundry-black-color);
-    padding-left: 12px;
-    text-decoration: line-through;
-    font-weight: 400;
-
-    @include tablet-m {
-        padding-left: 4px;
-    }
-}
-}
-
-.extendedCard {
-    @extend .cardBase;  
-    width: 290px;
-    height: 416px;
+    &.generalCard {
+        width: 276px;
+        height: 331px;
 
         @include mobile-l {
-            width: 230px;
+            width: 100%;
             height: 350px;
         }
     
-    .cardTimer {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
+        .cardTimer {
+            position: absolute;
+            bottom: 10px;
+            left: 5px;
+        }
+    }
+
+    &.extendedCard {
+        width: 276px;
+        height: 331px;
+
+        @include mobile-l {
+            width: 100%;
+            height: 350px;
+        }
+
+        .cardTimer {
+            position: absolute;
+            bottom: 10px;
+            left: 5px;
+        }
+    }
+    }
+
+    .cardBase:hover .icons {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .categoryBase {
+        .categoryContainer {
+            width: 276px;
         
-        @include tablet-m {
-            left:60px;
-            bottom: 5px;
-        }
-    }
-}
-.extendedCategory {
-    width: 251px;
-    position: relative;
-
-    @include tablet-m {
-        margin: 0;
-    }
-
-    .category {
-        color: var(--secoundry-black-color);
-    
-        @include tablet-m {
-            font-size: var(--font-size-16);
-            }
-    }
-
-    .cardName {
-        font-size: var(--font-size-24);
-        font-weight: 600;
-
-        @include tablet-m {
-            font-size: var(--font-size-18);
-        }
-    }
-    .newPrice {
-        font-size: var(--font-size-26);
-        font-weight: 500;
-
-        @include tablet-m {
-            font-size: var(--font-size-20);
-        }
-    }
-    .price {
-        color: var(--secoundry-black-color);
-        padding-left: 12px;
-        text-decoration: line-through;
-        font-weight: 400;
-    }
-    .ratingContainer {
-        position: absolute;
-        top: 126px;
-        left: 0;
-
-        @include tablet-m {
-            top: 108px;
-        }
-
-        .rating {
             @include tablet-m {
-                font-size: var(--font-size-16);
+                width: 100%;
+            }
+    
+            .category {
+                color: var(--secoundry-black-color);
+                opacity: var(--opacity-06);
+            }
+            
+            .star {
+                width: 24px;
+                height: 24px;
+            }
+            .rating {
+                font-size: var(--font-size-24);
+                font-weight: 500;
             }
         }
+
+        .textContainer {
+            height: 100%;
+            :nth-child(1) {
+                font-weight: 600;
+            }
+
+            :nth-child(2) {
+                font-weight: 500;
+
+                span {
+                    color: var(--secoundry-black-color);
+                    opacity: var(--opacity-06);
+                    text-decoration: line-through;
+                    font-weight: 400;
+                }
+            }
+        }
+
+    &.extendedCategory {
+        
+        @include mobile-l {
+            height: 270px;
+        }
+
+        .extended {
+            height: 100%;
+        }
+
+        .cardText {
+            max-width: 251px;
+            font-weight: 400;
+            text-wrap: wrap;
+
+            @include mobile-l {
+                max-width: 290px;
+            }
+        }
+        .shopButton {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 110px;
+            color: var(--green-color);
+            border: none;
+        }
     }
-    .cardText {
-        margin-top: 69px;
-        max-width: 251px;
-        text-wrap: wrap;
-    }
-    .shopButton {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 110px;
-        color: var(--green-color);
-        border: none;
     }
 }
 
-.extended {
-    height: 90%;
-}
+

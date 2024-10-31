@@ -32,6 +32,7 @@ export const NewsBlogs = () => {
 
     const { currentSlide, handleClickSlide } = useSlider(sortedNews.length);
     const news = slicerOfArray(currentNews, currentSlide, quantityCardsOnPage());
+    console.log(news)
 
     // const [triggerGetBlogs, {data: blogs, error, isFetching}] = useLazyGetAllNewsQuery();
     // const {data, isLoading, isError } = useGetAllNewsQuery();
@@ -81,8 +82,9 @@ export const NewsBlogs = () => {
                     </Stack>
                     <Stack className={buttonClass}>
                         <BottomButtons
+                            color="secondary"
                             quantitySliders={currentNews}
-                            quantityCardsOnPage={QUANTITY_CARD_ON_PAGE} 
+                            quantityCardsOnPage={quantityCardsOnPage()} 
                             currentSlide={currentSlide} 
                             handleClickSlide={handleClickSlide}/>
                     </Stack>

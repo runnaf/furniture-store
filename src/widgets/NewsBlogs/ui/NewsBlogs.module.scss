@@ -73,14 +73,6 @@ $font-size-18: var(--font-size-18);
             }
 
             .commonButtonClass {
-                > ul > li > button {
-                    background-color: var(--grey-background-color);
-
-                    &:focus {
-                        background-color: var(--green-color);
-                    }
-                }
-
                 &.inBlock {
                     display: block;
                 }
@@ -92,9 +84,4 @@ $font-size-18: var(--font-size-18);
         }
     }
 
-
-    // > li > button {
-    //     &.notPressed {
-    //         background-color: var(--grey-background-color);
-    //     }
 
