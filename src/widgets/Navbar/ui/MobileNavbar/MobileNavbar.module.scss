@@ -90,9 +90,10 @@
     margin-bottom: 30px;
 }
 
-a {
+.links,
+.link {
     position: relative;
-    font-size: var(--font-size-16);
+    font-size: var(--font-size-18);
     color: var(--black-color);
     font-family: var(--font-family);
     text-decoration: none;
