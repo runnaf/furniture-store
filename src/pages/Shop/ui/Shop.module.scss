@@ -1,0 +1,35 @@
+.container {
+    width: 100%;
+
+    .sortContainer {
+        width: 100%;
+    }
+
+    .cardsContainer {
+            width: 892px;
+            flex-wrap: wrap;
+        }
+    .btnContainer {
+        > button {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            padding: 12px 18px;
+            font-size: var(--font-size-20);
+            text-align: center;
+            border: none;
+
+            &.active {
+                background-color: var(--yellow-color);
+            }
+        }
+
+        button:nth-last-of-type(1) {
+            rotate: 180deg;
+            padding: 0;
+        }
+        button:nth-of-type(1) {
+            padding: 0;
+        }
+    }
+}
