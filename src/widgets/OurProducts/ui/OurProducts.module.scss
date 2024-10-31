@@ -24,6 +24,11 @@
                         @include tablet-l {
                             padding: 10px 20px;
                         }
+
+                        @include mobile-xl {
+                            width: 175px;
+                        }
+
                     }
                 }
             }
