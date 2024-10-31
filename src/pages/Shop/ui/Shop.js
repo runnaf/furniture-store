@@ -81,11 +81,12 @@ export const Shop = () => {
             <SectionTitle>
                 <Breadcrumbs routes={routes}/>
             </SectionTitle>
+            <Stack justify='justifyCenter' align='alignCenter' gap='75'>
             <Stack gap='32'>
-                <FilterBar /> 
-                <Stack direction='column' justify='justifyCenter' align='alignCenter' gap='75'>
+                <FilterBar />                 
+                    <Stack direction='column' gap='24'>
                     <Stack className={styles.sortContainer} justify='justifyBetween'>
-                        <Stack>
+                        <Stack align='alignCenter'>
                             <Text>Показано {startIndex}-{endIndex} из {cards.length} результатов</Text>
                         </Stack>
                         <SortMenu options={sortOptions} onSelect={handleSortSelect} />
@@ -102,6 +103,7 @@ export const Shop = () => {
                         <Button color="outlined" onClick={handleNextPage} disabled={currentPage === totalPages}>
                             <img src={arrow} alt="next page"/>
                         </Button>
+                    </Stack>
                     </Stack>
                 </Stack>
             </Stack>
