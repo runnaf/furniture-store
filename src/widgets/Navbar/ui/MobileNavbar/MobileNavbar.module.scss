@@ -63,10 +63,6 @@
     button {
         background: none;
     }
-
-    .toggleMenu {
-        margin-right: 10px;
-    }
 }
 
 .titles {
@@ -92,4 +88,30 @@
 
 .logo_container {
     margin-bottom: 30px;
+}
+
+a {
+    position: relative;
+    font-size: var(--font-size-16);
+    color: var(--black-color);
+    font-family: var(--font-family);
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        left: 0;
+        bottom: -5px;
+        background-color: var(--green-color);
+        transition: width 0.3s ease;
+    }
+
+    &:hover:after,
+    &.active:after {
+        width: 100%;
+    }
+
 }
