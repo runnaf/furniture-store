@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import styles from './MobileNavbar.module.scss';
-import { menuIcon, closeIcon, arrowdownIcon, arrowupIcon, likeIcon, loginIcon, cartIcon, LogoIcon } from '../../../../shared/assets/svg/navbarIcons';
+import { MenuIcon, CloseIcon, ArrowdownIcon, ArrowupIcon, LikeIcon, LoginIcon, CartIcon, LogoIcon } from '../../../../shared/assets/svg/navbarIcons';
 import { routes } from '../../../../app/routes/lib/data';
 import { dropdownMenus } from '../../libs/data';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { getRouteCategories } from '../../../../app/routes/lib/helper';
 import useOverflowHidden from '../../../../shared/hooks/useOverflowHidden';
 
@@ -35,20 +35,20 @@ export const MobileNavbar = () => {
 
     return (
         <nav className={styles.mobileNavbar}>
-            <Stack justify='justifyBetween' align='alignCenter' className={styles.header}>
+            <Stack gap='8' justify='justifyBetween' align='alignCenter' className={styles.header}>
                 <button className={styles.toggleMenu} onClick={toggleMenu}>
-                    {menuIcon()}
+                    {<MenuIcon />}
                 </button>
                 <LogoIcon />
                 <Stack gap="16">
                     <button>
-                        {likeIcon()}
+                        {<LikeIcon />}
                     </button>
                     <button>
-                        {cartIcon()}
+                        {<CartIcon />}
                     </button>
                     <button>
-                        {loginIcon()}
+                        {<LoginIcon />}
                     </button>
                 </Stack>
             </Stack>
@@ -56,7 +56,7 @@ export const MobileNavbar = () => {
             <ul className={`${styles.menu} ${isOpen ? styles.menuOpen : ''}`}>
                 <Stack justify='justifyBetween' className={styles.logo_container}>
                     <button className={styles.toggleMenu} onClick={toggleMenu}>
-                        {closeIcon()}
+                        {<CloseIcon />}
                     </button>
                     <LogoIcon />
                 </Stack>
@@ -68,10 +68,12 @@ export const MobileNavbar = () => {
                             {isDropdownCategory ? (
                                 <button onClick={() => toggleDropdown(title)}>
                                     {title}
-                                    {activeDropdown === title ? <span>{arrowupIcon()}</span> : <span>{arrowdownIcon()}</span>}
+                                    {activeDropdown === title ? <span>{<ArrowupIcon />}</span> : <span>{<ArrowdownIcon />}</span>}
                                 </button>
                             ) : (
-                                <Link to={link} className={styles.links} onClick={closeMenu}>{title}</Link>
+                                <NavLink to={link} className={({ isActive }) =>
+                                    `${styles.links} ${isActive ? styles.active : ''}`
+                                } onClick={closeMenu}>{title}</NavLink>
                             )}
 
                             {activeDropdown === title && isDropdownCategory && (
@@ -80,13 +82,15 @@ export const MobileNavbar = () => {
                                         <li key={index}>
                                             <button onClick={() => toggleSubmenu(index)}>
                                                 {menu.title}
-                                                {activeSubmenu === index ? <span>{arrowupIcon()}</span> : <span>{arrowdownIcon()}</span>}
+                                                {activeSubmenu === index ? <span>{<ArrowupIcon />}</span> : <span>{<ArrowdownIcon />}</span>}
                                             </button>
                                             {activeSubmenu === index && (
                                                 <ul className={styles.subCategory}>
                                                     {menu.subCategories.map((subCategory, subIndex) => (
                                                         <li key={subIndex} onClick={closeMenu}>
-                                                            <Link to={getRouteCategories(subCategory.params)}>{subCategory.name}</Link>
+                                                            <NavLink to={getRouteCategories(subCategory.params)} className={({ isActive }) =>
+                                                                `${styles.link} ${isActive ? styles.active : ''}`
+                                                            }>{subCategory.name}</NavLink>
                                                         </li>
                                                     ))}
                                                 </ul>
