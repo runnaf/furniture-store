@@ -1,17 +1,19 @@
 import { useState } from 'react';
 import styles from './MobileNavbar.module.scss';
-import { logoIcon, menuIcon, closeIcon, arrowdownIcon, arrowupIcon, likeIcon, loginIcon, cartIcon } from '../../../../shared/assets/svg/navbarIcons';
+import { menuIcon, closeIcon, arrowdownIcon, arrowupIcon, likeIcon, loginIcon, cartIcon, LogoIcon } from '../../../../shared/assets/svg/navbarIcons';
 import { routes } from '../../../../app/routes/lib/data';
 import { dropdownMenus } from '../../libs/data';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { Link } from 'react-router-dom';
 import { getRouteCategories } from '../../../../app/routes/lib/helper';
-import { getStyles } from '../../../../shared/libs/getStyles';
+import useOverflowHidden from '../../../../shared/hooks/useOverflowHidden';
 
 export const MobileNavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
     const [activeSubmenu, setActiveSubmenu] = useState(null);
+
+    useOverflowHidden(isOpen);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -31,33 +33,33 @@ export const MobileNavbar = () => {
         setActiveSubmenu(activeSubmenu === index ? null : index);
     };
 
-    const mode = {
-        [styles.open]: isOpen,
-    };
-
     return (
-        <nav className={getStyles(styles.mobileNavbar, mode, [])}>
+        <nav className={styles.mobileNavbar}>
             <Stack justify='justifyBetween' align='alignCenter' className={styles.header}>
                 <button className={styles.toggleMenu} onClick={toggleMenu}>
-                    {isOpen ? closeIcon() : menuIcon()}
+                    {menuIcon()}
                 </button>
-                {logoIcon()}
-                {!isOpen ? (
-                    <Stack gap="16">
-                        <button>
-                            {likeIcon()}
-                        </button>
-                        <button>
-                            {cartIcon()}
-                        </button>
-                        <button>
-                            {loginIcon()}
-                        </button>
-                    </Stack>
-                ) : null}
+                <LogoIcon />
+                <Stack gap="16">
+                    <button>
+                        {likeIcon()}
+                    </button>
+                    <button>
+                        {cartIcon()}
+                    </button>
+                    <button>
+                        {loginIcon()}
+                    </button>
+                </Stack>
             </Stack>
 
             <ul className={`${styles.menu} ${isOpen ? styles.menuOpen : ''}`}>
+                <Stack justify='justifyBetween' className={styles.logo_container}>
+                    <button className={styles.toggleMenu} onClick={toggleMenu}>
+                        {closeIcon()}
+                    </button>
+                    <LogoIcon />
+                </Stack>
                 {routes.map(({ title, link }) => {
                     const isDropdownCategory = title === 'Магазин' || title === 'Категории';
 
