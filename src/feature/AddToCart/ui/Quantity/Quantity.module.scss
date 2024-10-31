@@ -1,0 +1,50 @@
+.containerButton {
+    border: 2px solid rgba(36, 36, 36, 0.1);
+    border-radius: 120px;
+    height: 56px;
+    width: 173px;
+
+    & button {
+        position: relative;
+        background-color: transparent;
+        text-align: center;
+        width: 58px;
+        height: 100%;
+        border-right: 2px solid rgba(36, 36, 36, 0.1);
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 2px;
+            background-color: var(--black-color);
+            bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        &:hover {
+            opacity: var(--opacity-04);
+        }
+    }
+
+    & button:last-child {
+        border-right: none;
+        border-left: 2px solid rgba(36, 36, 36, 0.1);
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 16px;
+            width: 2px;
+            background-color: var(--black-color);
+            bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+}

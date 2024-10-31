@@ -3,6 +3,8 @@ import { SectionTitle } from "../../../entities/SectionTitle/ui/SectionTitle";
 import { Stack } from "../../../shared/ui/Stack/Stack";
 import { routes } from "../../../app/routes/lib/data";
 import styles from "./ProductPage.module.scss";
+import { ProductPreview } from "../../../widgets/ProductPreview/ui/ProductPreview/ProductPreview";
+import { Advantages } from "../../../entities/Advantages/ui/Advantages/Advantages";
 
 export const ProductPage = () => {
     return (
@@ -10,7 +12,8 @@ export const ProductPage = () => {
             <SectionTitle>
                 <Breadcrumbs routes={routes}/>
             </SectionTitle>
-            
+            <ProductPreview />
+            <Advantages />
         </Stack>
     )
 }

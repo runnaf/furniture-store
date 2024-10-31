@@ -34,7 +34,7 @@ export const Slider = ({
                         quantitySliders={data} 
                         quantityCardsOnPage={quantityCardsOnPage} 
                         currentSlide={currentSlide} 
-                        handleClickSlide={handleClickSlide} 
+                        handleClickSlide={handleClickSlide}
                     />
                 )}
             </Stack>
