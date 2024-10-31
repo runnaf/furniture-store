@@ -1,5 +1,5 @@
 import { FormProvider, useForm } from "react-hook-form";
-import { ForgotPasswordForm } from "../ForgotPasswordForm/ForgotPasswordForm"
+import { ForgotPasswordForm } from "../ForgotPasswordForm/ForgotPasswordForm";
 
 export const ForgotPassword = ({ setIsForgotten }) => {
     const methods = useForm({mode: "onSubmit"})
