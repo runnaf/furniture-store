@@ -9,6 +9,7 @@ import { Button } from "../../../shared/ui/Button/Button";
 import { Breadcrumbs } from "../../../entities/BreadCrumbs/ui/BreadCrumbs";
 import { routes } from "../../../app/routes/lib/data";
 import { useSortedNews } from "../../../shared/hooks/useSortedNews";
+import { Advantages } from "../../../entities/Advantages/ui/Advantages/Advantades";
 
 const ARTICLES_PER_PAGE = 9
 
@@ -19,7 +20,6 @@ export const OurBlog = () => {
     const sortedNews = useSortedNews(data)
 
     const totalPages = Math.ceil(sortedNews.length / ARTICLES_PER_PAGE)
-
     const currentNews = useMemo(() => {
         const startIndex = (currentPage - 1) * ARTICLES_PER_PAGE;
         return sortedNews.slice(startIndex, startIndex + ARTICLES_PER_PAGE)
@@ -64,12 +64,23 @@ export const OurBlog = () => {
             direction="column"
             justify='justifyCenter'
             align='alignCenter'
-            gap='75'>
+            gap='75'
+        >
             <SectionTitle>
                 <Breadcrumbs routes={routes}/>
             </SectionTitle>
-            <Stack direction='column' justify='justifyCenter' align='alignCenter' gap='75'>
-                <Stack justify='justifyCenter' align='alignCenter' gap='32'>
+            <Stack 
+                direction='column' 
+                ustify='justifyCenter' 
+                align='alignCenter' 
+                gap='75'
+                className={styles.ourBlog}
+            >
+                <Stack 
+                    justify='justifyCenter' 
+                    align='alignCenter' 
+                    gap='32'
+                >
                     {currentNews.map(news => (
                         <CardBlogs 
                             key={news.id}
@@ -80,7 +91,10 @@ export const OurBlog = () => {
                         />
                     ))}
                 </Stack>
-                <Stack gap='24' justify='justifyCenter'>
+                <Stack 
+                    gap='24' 
+                    justify='justifyCenter'
+                >
                     <Button color="outlined" onClick={handlePreviousPage} disabled={currentPage === 1}>
                         <img src={arrow} alt="previous page"/>
                     </Button>
@@ -89,6 +103,7 @@ export const OurBlog = () => {
                         <img src={arrow} alt="next page"/>
                     </Button>
                 </Stack>
+                <Advantages/>
             </Stack>
         </Stack>
     );
