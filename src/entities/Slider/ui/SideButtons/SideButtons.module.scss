@@ -6,11 +6,6 @@
     align-items: center;
     justify-content: center;
 
-    &:hover,
-    &:focus {
-        opacity:var(--opacity-08);
-    }
-
     &:default {
         opacity: var(--opacity-02);
     }

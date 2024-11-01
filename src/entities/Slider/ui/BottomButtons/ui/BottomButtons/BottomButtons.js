@@ -8,7 +8,6 @@ export const BottomButtons = ({
         handleClickSlide,
         color = 'primary' //primary | secondary
     }) => {
-
     const lengthArray = Math.ceil(quantitySliders.length / quantityCardsOnPage);
     
     const array = Array.from({length: lengthArray}, (_, i) => i);
