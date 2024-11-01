@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import styles from './DesktopNavbar.module.scss';
-import { LogoIcon, likeIcon, cartIcon, loginIcon } from '../../../../shared/assets/svg/navbarIcons';
+import { LogoIcon, LikeIcon, CartIcon, LoginIcon } from '../../../../shared/assets/svg/navbarIcons';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { NavLink } from 'react-router-dom';
 import { routes } from '../../../../app/routes/lib/data';
@@ -53,13 +53,13 @@ export const DesktopNavbar = () => {
             </ul>
             <Stack gap="24">
                 <button>
-                    {likeIcon()}
+                    {<LikeIcon />}
                 </button>
                 <button>
-                    {cartIcon()}
+                    {<CartIcon />}
                 </button>
                 <button>
-                    {loginIcon()}
+                    {<LoginIcon />}
                 </button>
             </Stack>
         </nav>

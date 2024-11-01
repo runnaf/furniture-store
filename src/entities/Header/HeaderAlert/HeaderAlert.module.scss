@@ -6,6 +6,7 @@
     
     @include tablet-m {
         display: flex;
+        gap: 48px;
         background-color: var(--green-color);
         padding: 16px 20px;   
     }
