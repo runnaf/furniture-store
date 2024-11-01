@@ -15,9 +15,18 @@
     width: 1440px;
     margin: auto;
 
+    @include desktop-l {
+        width: 1240px;
+        padding: 0 60px;
+    }
+
     @include desktop-m {
         width: 1100px;
         padding: 0 30px;
+    }
+
+    @include tablet-l {
+        width: 100%;
     }
 
     @include mobile-l {

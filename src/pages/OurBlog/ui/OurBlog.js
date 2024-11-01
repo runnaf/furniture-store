@@ -19,7 +19,6 @@ export const OurBlog = () => {
     const sortedNews = useSortedNews(data)
 
     const totalPages = Math.ceil(sortedNews.length / ARTICLES_PER_PAGE)
-
     const currentNews = useMemo(() => {
         const startIndex = (currentPage - 1) * ARTICLES_PER_PAGE;
         return sortedNews.slice(startIndex, startIndex + ARTICLES_PER_PAGE)
@@ -64,12 +63,23 @@ export const OurBlog = () => {
             direction="column"
             justify='justifyCenter'
             align='alignCenter'
-            gap='75'>
+            gap='75'
+        >
             <SectionTitle>
                 <Breadcrumbs routes={routes}/>
             </SectionTitle>
-            <Stack direction='column' justify='justifyCenter' align='alignCenter' gap='75'>
-                <Stack justify='justifyCenter' align='alignCenter' gap='32'>
+            <Stack 
+                direction='column' 
+                ustify='justifyCenter' 
+                align='alignCenter' 
+                gap='75'
+                className={styles.ourBlog}
+            >
+                <Stack 
+                    justify='justifyCenter' 
+                    align='alignCenter' 
+                    gap='32'
+                >
                     {currentNews.map(news => (
                         <CardBlogs 
                             key={news.id}
@@ -80,7 +90,10 @@ export const OurBlog = () => {
                         />
                     ))}
                 </Stack>
-                <Stack gap='24' justify='justifyCenter'>
+                <Stack 
+                    gap='24' 
+                    justify='justifyCenter'
+                >
                     <Button color="outlined" onClick={handlePreviousPage} disabled={currentPage === 1}>
                         <img src={arrow} alt="previous page"/>
                     </Button>
