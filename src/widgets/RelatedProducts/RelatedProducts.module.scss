@@ -16,6 +16,14 @@
     }
 }
 
-.card {
-    
+.cardsContainer {
+    overflow: hidden;
+
+    & > div {
+        width: 100%;
+        overflow-x: scroll;
+        touch-action: pan-x;
+        scrollbar-width: none;
+        cursor: grab;
+    }
 }

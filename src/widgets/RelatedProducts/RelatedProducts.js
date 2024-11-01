@@ -10,7 +10,7 @@ export const RelatedProducts = () => {
             <HeaderSection subTitle= "Сопутствующие товары">
                 Изучите <span>cопутствующие товары</span>
             </HeaderSection>
-            <Stack gap="32" className={styles.card}>
+            <Stack gap="32" className={styles.cardsContainer}>
                 {cardData.map((element) => (
                     <Card {...element} timer={false} />
                 ))}
