@@ -1,0 +1,20 @@
+.review {
+    .ratingSummary {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+  
+      .ratingScore {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-right: 1rem;
+      }
+    }
+  
+    .reviewList {
+      .reviewItem {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  
