@@ -35,7 +35,7 @@ export function Card ({
             className={styles.mainContainer}
         >
             <Stack className={cardContainer}>
-                <img src={image} alt='item' />
+                <img src={image} alt='item' loading='lazy' width='276'/>
 
                 <Stack justify='justifyBetween' className={styles.iconsContainer}>
                     {promotion > 0 && (
