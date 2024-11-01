@@ -32,12 +32,12 @@ export const routes = [
         isNavbar: true,
         page: <FAQs />
     },
-    {
-        title: "О нас",
-        link: getRouteAbout(),
-        isNavbar: true,
-        page: <AboutUsPage />
-    },
+    // {
+    //     title: "О нас",
+    //     link: getRouteAbout(),
+    //     isNavbar: true,
+    //     page: <AboutUsPage />
+    // },
     {
         title: "Контакты",
         link: getRouteContact(),
@@ -50,13 +50,13 @@ export const routes = [
         isNavbar: true,
         page: <OurBlog />
     },
-    // {
-    //     title: "Товар",
-    //     link: getRouteAbout(),
-    //     //link: getRouteProduct(),
-    //     isNavbar: true,
-    //     page: <ProductPage />
-    // },
+    {
+        title: "Товар",
+        link: getRouteAbout(),
+        //link: getRouteProduct(),
+        isNavbar: true,
+        page: <ProductPage />
+    },
     {
         link: getRouteSignin(),
         page: <SigninPage />

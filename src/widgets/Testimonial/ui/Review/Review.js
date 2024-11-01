@@ -1,18 +1,19 @@
 import { Stars } from "../../../../entities/Stars/Stars";
-import { quotesIcon } from "../../../../shared/assets/svg/quotesIcon";
 import { Stack } from "../../../../shared/ui/Stack/Stack";
 import { Text } from "../../../../shared/ui/Text/Text";
 import styles from "./Review.module.scss";
 
-export const Review = ({ review }) => {
+export const Review = ({ review, children, className }) => {
     return (
         <Stack 
-            className={styles.reviewItem} 
+            className={className} 
             direction="column" gap="16"
         >
             <Stack 
-                gap="16" align="alignCenter" 
                 className={styles.wrapper}
+                gap="16" 
+                align="alignCenter" 
+                justify="justifyBetween"
             >
                 <Stack 
                     direction="column" 
@@ -21,15 +22,13 @@ export const Review = ({ review }) => {
                     <Text className={styles.text_name}>
                         {review.name}
                     </Text>
-                    <Text className={styles.text_speciality}>
+                    <Text className={styles.textSpeciality}>
                         {review.speciality}
                     </Text>
-                    <Stars rating={review.rating} />
                 </Stack>
-                <Stack className={styles.quotesIcon} justify="justifyEnd">
-                    {quotesIcon()}
-                </Stack>
+                {children}
             </Stack>
+            <Stars rating={review.rating} />
             <Text className={styles.review}>
                 {review.review}
             </Text>

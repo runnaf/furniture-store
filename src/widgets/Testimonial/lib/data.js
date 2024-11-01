@@ -43,5 +43,6 @@ export const testimonial = [
     }
 ]
 
-export const WIDTH_MOBILE_XL = 1280;  
+export const WIDTH_DESKTOP = 1280; 
+export const WIDTH_TABLET = 820; 
 export const QUANTITY_CARD_ON_PAGE = 3;
