@@ -13,7 +13,8 @@ export const Slider = ({
     currentSlide, 
     nextCard,  
     prevCard, 
-    handleClickSlide
+    handleClickSlide,
+    color,
 }) => {
     return (
         <Stack 
@@ -35,6 +36,7 @@ export const Slider = ({
                         quantityCardsOnPage={quantityCardsOnPage} 
                         currentSlide={currentSlide} 
                         handleClickSlide={handleClickSlide} 
+                        color={color}
                     />
                 )}
             </Stack>

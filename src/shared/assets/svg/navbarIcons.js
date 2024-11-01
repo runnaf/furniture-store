@@ -36,7 +36,7 @@ export const searchIcon = () => {
     );
 };
 
-export const likeIcon = () => {
+export const LikeIcon = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M12.62 20.8096C12.28 20.9296 11.72 20.9296 11.38 20.8096C8.48 19.8196 2 15.6896 2 8.68961C2 5.59961 4.49 3.09961 7.56 3.09961C9.38 3.09961 10.99 3.97961 12 5.33961C13.01 3.97961 14.63 3.09961 16.44 3.09961C19.51 3.09961 22 5.59961 22 8.68961C22 15.6896 15.52 19.8196 12.62 20.8096Z" stroke="#242424" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -45,7 +45,7 @@ export const likeIcon = () => {
     );
 };
 
-export const cartIcon = () => {
+export const CartIcon = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M2 2H3.74001C4.82001 2 5.67 2.93 5.58 4L4.75 13.96C4.61 15.59 5.89999 16.99 7.53999 16.99H18.19C19.63 16.99 20.89 15.81 21 14.38L21.54 6.88C21.66 5.22 20.4 3.87 18.73 3.87H5.82001" stroke="#242424" strokewsidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
@@ -57,7 +57,7 @@ export const cartIcon = () => {
     );
 };
 
-export const loginIcon = () => {
+export const LoginIcon = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="#242424" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -66,7 +66,7 @@ export const loginIcon = () => {
     )
 }
 
-export const closeIcon = () => {
+export const CloseIcon = () => {
     return (
         <svg width="25" height="30" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12.6057 13.1013L26.3943 26.8899M12.6057 26.8899L26.3943 13.1013" stroke="#242424" strokeWidth="2.4375" strokeLinecap="round" strokeLinejoin="round" />
@@ -74,7 +74,7 @@ export const closeIcon = () => {
     )
 }
 
-export const menuIcon = () => {
+export const MenuIcon = () => {
     return (
         <svg width="25" height="30" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 1H19M1 6H19M1 11H19" stroke="#242424" strokeWidth="2" strokeLinecap="round" />
@@ -83,7 +83,7 @@ export const menuIcon = () => {
     )
 }
 
-export const arrowupIcon = () => {
+export const ArrowupIcon = () => {
     return (
         <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4.07992 15.5498L10.5999 9.0298C11.3699 8.2598 12.6299 8.2598 13.3999 9.0298L19.9199 15.5498" stroke="#242424" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
@@ -92,7 +92,7 @@ export const arrowupIcon = () => {
     )
 }
 
-export const arrowdownIcon = () => {
+export const ArrowdownIcon = () => {
     return (
         <svg width="24" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M19.9201 8.9502L13.4001 15.4702C12.6301 16.2402 11.3701 16.2402 10.6001 15.4702L4.08008 8.9502" stroke="#242424" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />

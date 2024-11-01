@@ -9,11 +9,25 @@
     flex-direction: column;
     font-family: var(--font-family);
 
-    .navLinks {
-        padding-top: 55px;
+    .menu {
         display: flex;
         flex-direction: column;
         background-color: var(--white-color);
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: -100px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        padding: 20px;
+        transform: translateY(-100%);
+        transition: transform 0.5s ease-in-out;
+
+        &.menuOpen {
+            transform: translateY(100px); 
+        }
 
         .title {
             padding-bottom: 32px;
@@ -49,20 +63,6 @@
     button {
         background: none;
     }
-
-    .toggleMenu {
-        margin-right: 10px;
-    }
-
-    &.open {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        z-index: 2000;
-        overflow-y: auto;
-    }
 }
 
 .titles {
@@ -84,4 +84,35 @@
     a {
         color: var(--secoundry-black-color);
     }
+}
+
+.logo_container {
+    margin-bottom: 30px;
+}
+
+.links,
+.link {
+    position: relative;
+    font-size: var(--font-size-18);
+    color: var(--black-color);
+    font-family: var(--font-family);
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        left: 0;
+        bottom: -5px;
+        background-color: var(--green-color);
+        transition: width 0.3s ease;
+    }
+
+    &:hover:after,
+    &.active:after {
+        width: 100%;
+    }
+
 }
