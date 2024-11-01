@@ -11,6 +11,8 @@ import { Button } from "../../../shared/ui/Button/Button"
 import { useEffect, useMemo, useState } from "react"
 import SortMenu from "../../../widgets/SortMenu/ui/SortMenu"
 import { Text } from "../../../shared/ui/Text/Text"
+import { FilterProvider } from "../../../entities/Filters/FilterContext"
+import { ActiveFilters } from "../../../widgets/ActiveFilter/ActiveFilter"
 
 const CARDS_PER_PAGE = 12
 
@@ -71,7 +73,10 @@ export const Shop = () => {
     const startIndex = (currentPage - 1) * CARDS_PER_PAGE + 1;
     const endIndex = Math.min(startIndex + CARDS_PER_PAGE - 1, cards.length);
 
+   
+
     return (
+        <FilterProvider>
         <Stack 
             direction='column' 
             gap='75' 
@@ -91,7 +96,9 @@ export const Shop = () => {
                         </Stack>
                         <SortMenu options={sortOptions} onSelect={handleSortSelect} />
                     </Stack>
-                    <Stack></Stack>
+                    <Stack className={2}>
+                    <ActiveFilters />
+                    </Stack>
                     <Stack gap='32' className={styles.cardsContainer}>
                         {currentCards.map ((element) => <Card {...element}/>)}
                     </Stack>
@@ -108,5 +115,6 @@ export const Shop = () => {
                 </Stack>
             </Stack>
         </Stack>
+        </FilterProvider>
     )
 }

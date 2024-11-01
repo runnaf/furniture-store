@@ -13,7 +13,7 @@ const SortMenu = ({ options, onSelect }) => {
     };
 
     return (
-        <Stack className={styles.sortContainer} gap='48' justify='justifyCenter' align='alignCenter'>
+        <Stack className={styles.sortContainer} gap='24' justify='justifyCenter' align='alignCenter'>
             <span>Сортировка: </span>
             <Button 
                 outlined 
