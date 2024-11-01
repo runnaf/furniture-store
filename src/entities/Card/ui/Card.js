@@ -27,7 +27,7 @@ export function Card ({
         view === 'extended' ? styles.extendedCard : styles.generalCard;
 
     const categoryView = 
-        view === 'extended' ? styles.extendedCategory :styles.generalCategory;
+        view === 'extended' ? styles.extendedCategory : styles.generalCategory;
 
     return (
         <Stack 
@@ -58,10 +58,19 @@ export function Card ({
                 </Stack>
             </Stack>
 
-            <Stack direction='column' className={categoryView}>
-                <Stack justify='justifyBetween' className={styles.categoryContainer}>
-                    <Text className={styles.category}>{category}</Text>
-                    <Stack className={styles.ratingContainer}>
+            <Stack 
+                gap='8' 
+                direction='column' 
+                className={categoryView}
+            >
+                <Stack 
+                    justify='justifyBetween'
+                    className={styles.categoryContainer}
+                >
+                    <Text className={styles.category}>
+                        {category}
+                    </Text>
+                    <Stack gap='8' className={styles.ratingContainer}>
                         <img src={star} alt='star' className={styles.star}></img>
                         <Text className={styles.rating}>{rating}</Text>
                     </Stack>
@@ -71,12 +80,12 @@ export function Card ({
                 <p className={styles.newPrice}>{newPrice}р.<span className={styles.price}>{price}р.</span></p>
                 
                 {(view === 'extended') && (
-                    <>
+                    <Stack direction='column' justify='justifyBetween' className={styles.extended}>
                         <Text className={styles.cardText}>{cardText}</Text>
                         <LinkCustom color='secondary' className={styles.shopButton}>
                             Магазин <img src={arrow} alt="arrow"/>
                         </LinkCustom>
-                    </>
+                    </Stack>
                 )}
             </Stack>        
         </Stack>

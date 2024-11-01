@@ -84,27 +84,23 @@
     width: 276px;
     height: 331px;
     
-    @include tablet-m {
-        width: 158px;
-        height: 188px;
+    @include mobile-xl {
+        width: 100%;
     } 
+
     .cardTimer {
         position: absolute;
         bottom: 10px;
         left: 5px;
-        
-        @include tablet-m {
-            left:1px;
-            bottom: 5px;
-        }
     }
 }
+
 .generalCategory {
 .categoryContainer {
     width: 276px;
 
     @include tablet-m {
-        width: 158px;
+        width: 100%;
     }
 }
 .category {
@@ -114,16 +110,15 @@
         font-size: var(--font-size-14);
         }
 }
+
 .star {
     width: 24px;
     height: 24px;
-    margin-right: 8px;
 
     @include tablet-m {
         width: 16px;
         height: 16px;
-        margin-right: 4px;
-        }
+    }
 }
 .rating {
     @include tablet-m {
@@ -132,7 +127,6 @@
 }
 .cardName {
     font-size: var(--font-size-20);
-    margin-top: 4px;
     font-weight: 600;
 
     @include tablet-m {
@@ -142,7 +136,6 @@
 }
 .newPrice {
     font-size: var(--font-size-24);
-    margin-top: 12px;
     font-weight: 500;
 
     @include tablet-m {
@@ -184,7 +177,6 @@
 }
 .extendedCategory {
     width: 251px;
-    margin-top: 62px;
     position: relative;
 
     @include tablet-m {
@@ -205,18 +197,15 @@
 
         @include tablet-m {
             font-size: var(--font-size-18);
-            margin-top: 4px;
-            }
+        }
     }
     .newPrice {
         font-size: var(--font-size-26);
         font-weight: 500;
-        margin-top: 13px;
 
         @include tablet-m {
             font-size: var(--font-size-20);
-            margin-top: 8px;
-            }
+        }
     }
     .price {
         color: var(--secoundry-black-color);
@@ -247,10 +236,13 @@
     .shopButton {
         display: flex;
         align-items: center;
-        gap: var(--gap-8);
-        width: 120px;
+        justify-content: space-between;
+        width: 110px;
         color: var(--green-color);
-        margin-top: 25px;
         border: none;
     }
+}
+
+.extended {
+    height: 90%;
 }

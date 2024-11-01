@@ -5,46 +5,15 @@
 }
 
 .buttonsContainer {
-    margin: 16px 0 34px 0;
-
-        @include tablet-m {
-            margin: 10px 0;
-            gap: var(--gap-12);
-            flex-wrap: wrap;
-            width: 85%;
-            justify-content: space-around;
-        }
-        @include mobile-xl {
-            width: 47%;
-        }
-        @include mobile-l {
-            gap: var(--gap-8);
-            width: 60%;
-        }
-        @include mobile-m {
-            width: 90%;
-        }
+    @include mobile-xl {
+        width: 90%;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
 
     button {
         padding: 8px 0;
         width: 180px;
-
-        @include tablet-m {
-            padding: 10px 0;
-            width: 150px;
-            font-size: var(--font-size-18);
-        }
-
-        @include mobile-xl {
-            width: 130px;
-            font-size: var(--font-size-16);
-        }
-
-        @include mobile-l {
-            padding: 5px 0;
-            width: 110px;
-            font-size: var(--font-size-14);
-        }
     }
 }
 
@@ -82,7 +51,6 @@
 }
 
 .cardWrapper {
-    display: inline-block;
 
     @include mobile-l {  
         display: flex;
