@@ -9,9 +9,8 @@ import styles from "./Shop.module.scss"
 import arrow from "../../../shared/assets/svg/arrow-down.svg"
 import { Button } from "../../../shared/ui/Button/Button"
 import { useEffect, useMemo, useState } from "react"
-import SortMenu from "../../../widgets/SortMenu/ui/SortMenu"
+import SortMenu from "../../../feature/SortMenu/ui/SortMenu"
 import { Text } from "../../../shared/ui/Text/Text"
-import { FilterProvider } from "../../../entities/Filters/FilterContext"
 import { ActiveFilters } from "../../../widgets/ActiveFilter/ActiveFilter"
 
 const CARDS_PER_PAGE = 12
@@ -76,7 +75,6 @@ export const Shop = () => {
    
 
     return (
-        <FilterProvider>
         <Stack 
             direction='column' 
             gap='75' 
@@ -115,6 +113,5 @@ export const Shop = () => {
                 </Stack>
             </Stack>
         </Stack>
-        </FilterProvider>
     )
 }

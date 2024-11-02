@@ -1,21 +1,20 @@
 import { Text } from '../../shared/ui/Text/Text';
 import { Stack } from '../../shared/ui/Stack/Stack';
 import styles from './FilterBar.module.scss';
-import React, { useCallback } from 'react';
+import React from 'react';
 import ReactSlider from 'react-slider';
 import { Filters } from '../../entities/Filters/ui/Filters';
 import filtersData from './lib/filtersData';
-import { useFilter } from '../../entities/Filters/FilterContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFilter } from '../../entities/Filters/model/filterSlice';
 
 export function FilterBar() {
-    const { selectedFilters, setSelectedFilters } = useFilter();
+    const dispatch = useDispatch();
+    const selectedFilters = useSelector(state => state.filters);
 
-    const handleChange = useCallback((type, value) => {
-        setSelectedFilters(prev => ({
-            ...prev,
-            [type]: value
-        }));
-    }, [setSelectedFilters]);
+    const handleChange = (key, value) => {
+        dispatch(setFilter({ key, value }));
+    };
 
     const handleSliderChange = (values) => {
         handleChange('price', values);
