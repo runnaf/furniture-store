@@ -1,0 +1,16 @@
+@import "../../../app/styles/mixin.scss";
+
+.container {
+    padding-bottom: 50px;
+    & > div {
+        width: 100%;
+    }
+
+    & > div:last-child {
+        @include section-style;
+
+        @include tablet-m {
+            width: 100%;
+        }
+    }
+}

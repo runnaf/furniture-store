@@ -1,0 +1,54 @@
+@import "../../../../app/styles/media-queries.scss";
+
+.container {
+    padding: 50px 0;
+
+    @include tablet-l {
+        position: relative;
+    }
+
+    @include mobile-xl {
+        padding: 0;
+    }
+}
+
+.container p:first-child {
+    color:var(--secoundry-black-color);
+}
+
+.rating {
+    & svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    @include mobile-m {
+        flex-direction: column;
+        align-items: flex-start;
+
+        & p {
+            font-size: var(--font-size-18);
+        }
+    }
+}
+
+.oldPrice {
+    text-decoration: line-through;
+    color: var(--secoundry-black-color);
+    opacity: 0.6;
+}
+
+.tagsContainer {
+    font-weight: 500;
+    font-size: var(--font-size-18);
+    & span {
+        font-weight: 400;
+    }
+}
+
+.inStockContainer {
+    @include mobile-xl {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

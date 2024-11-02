@@ -1,5 +1,5 @@
-import { Text } from "../../../../shared/ui/Text/Text"
-import styles from "./AboutUsInNumbers.module.scss"
+import { Text } from "../../../../shared/ui/Text/Text";
+import styles from "./AboutUsInNumbers.module.scss";
 
 export const AboutUsInNumbers = ({array}) => {
     return (

@@ -1,19 +1,24 @@
+import { quotesIcon } from "../../../../shared/assets/svg/quotesIcon";
 import { Stack } from "../../../../shared/ui/Stack/Stack";
 import { Review } from "../Review/Review";
+import styles from "./Reviews.module.scss";
 
 export const Reviews = ({reviews}) => {
     return (
         <Stack 
             max
-            align="alignCenter" 
+            align="alignStart" 
             justify='justifyBetween'
             gap='48'
+            className={styles.container}
         >
             {reviews.map(review => 
                 <Review 
                     key={review.id}
-                    review={review} 
-                />
+                    review={review}
+                >
+                    {quotesIcon()}
+                </Review>
             )}
         </Stack>
     )
