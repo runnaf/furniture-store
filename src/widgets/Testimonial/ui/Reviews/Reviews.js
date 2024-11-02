@@ -1,5 +1,5 @@
-import { quotesIcon } from "../../../../shared/assets/svg/quotesIcon";
 import { Stack } from "../../../../shared/ui/Stack/Stack";
+import { QuotesIcon } from "../QuotesIcon/QuotesIcon";
 import { Review } from "../Review/Review";
 import styles from "./Reviews.module.scss";
 
@@ -17,7 +17,7 @@ export const Reviews = ({reviews}) => {
                     key={review.id}
                     review={review}
                 >
-                    {quotesIcon()}
+                    <QuotesIcon />
                 </Review>
             )}
         </Stack>

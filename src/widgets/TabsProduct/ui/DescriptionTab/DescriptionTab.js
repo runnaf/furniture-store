@@ -1,7 +1,7 @@
 import styles from './DescriptionTab.module.scss';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { Text } from '../../../../shared/ui/Text/Text';
-import { tabsIcons } from '../../../../shared/assets/svg/tabsIcons';
+import { TabsIcon } from '../TabsIcon/TabsIcon';
 
 export const DescriptionTab = ({ descriptionText, listItems }) => (
     <Stack gap='24' justify='column' className={styles.description}>
@@ -9,7 +9,7 @@ export const DescriptionTab = ({ descriptionText, listItems }) => (
         <ul>
             {listItems.map((item, index) => (
                 <li key={index}>
-                    {tabsIcons()}
+                    <TabsIcon />
                     {item}
                 </li>
             ))}

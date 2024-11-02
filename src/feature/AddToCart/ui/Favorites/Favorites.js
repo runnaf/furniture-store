@@ -1,6 +1,6 @@
-import { likeIcon } from "../../../../shared/assets/svg/navbarIcons";
 import { getStyles } from "../../../../shared/libs/getStyles";
 import { VisuallyHidden } from "../../../../shared/ui/VisuallyHidden/VisuallyHidden";
+import { LikeIcon } from "../LikeIcon/LikeIcon";
 import styles from "./Favorites.module.scss";
 
 export const Favorites = ({favorites, toggleFavorite, className}) => {
@@ -12,7 +12,7 @@ export const Favorites = ({favorites, toggleFavorite, className}) => {
 
     return (
         <button className={ stylesName } type="button" onClick={toggleFavorite}>
-            {likeIcon()}
+            <LikeIcon />
             <VisuallyHidden>{favorites ? 'убрать из избранного' : 'добавить в избранное'}</VisuallyHidden>
         </button>
     )
