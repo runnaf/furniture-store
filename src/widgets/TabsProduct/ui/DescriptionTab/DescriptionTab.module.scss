@@ -1,16 +1,18 @@
-svg {
-  margin-right: 10px;
+.description {
+  & svg {
+    margin-right: 10px;
+  }
+  
+  
+  
+  &  li {
+      display: flex;
+      align-items: center;
+      padding-bottom: 16px;
+      color: var(--secoundry-black-color);
+    }
 }
 
 .text {
   color: var(--secoundry-black-color);
 }
-
-  li {
-    display: flex;
-    align-items: center;
-    padding-bottom: 16px;
-    color: var(--secoundry-black-color);
-  }
-
-
