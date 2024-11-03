@@ -1,9 +1,10 @@
-import { Stars } from "../../../../entities/Stars/Stars";
+
 import { Stack } from "../../../../shared/ui/Stack/Stack";
 import { Text } from "../../../../shared/ui/Text/Text";
 import { InStock } from "../InStock/InStock";
 import styles from "./DescriptionOfProduct.module.scss";
 import { AddToCart } from "../../../../feature/AddToCart/ui/AddToCart/AddToCart";
+import { Stars } from "../../../../entities/Stars/ui/Stars/Stars";
 
 export const DescriptionOfProduct = ({product}) => {
     const {categories, title, rating, inStock, review, price, oldPrice, description, colors, sku, tags} = product;

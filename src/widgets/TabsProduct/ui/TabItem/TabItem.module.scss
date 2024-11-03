@@ -1,0 +1,14 @@
+.tabItem {
+    font-family: var(--font-family);
+    background: none;
+    border: none;
+    color: var(--secoundry-black-color);
+    font-size: var(--font-size-28);
+    font-weight: 600;
+    transition: color 0.3s, font-weight 0.3s;
+
+    &.active {
+    color: var(--black-color);
+    border-bottom: 4px solid var(--green-color); 
+    }
+}

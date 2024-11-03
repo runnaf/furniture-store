@@ -1,0 +1,5 @@
+@import "../../../../app/styles/mixin.scss";
+
+.tabsContainer {
+    @include section-style;
+}

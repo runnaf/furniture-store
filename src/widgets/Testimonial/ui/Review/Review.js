@@ -1,4 +1,4 @@
-import { Stars } from "../../../../entities/Stars/Stars";
+import { Stars } from "../../../../entities/Stars/ui/Stars/Stars";
 import { Stack } from "../../../../shared/ui/Stack/Stack";
 import { Text } from "../../../../shared/ui/Text/Text";
 import styles from "./Review.module.scss";

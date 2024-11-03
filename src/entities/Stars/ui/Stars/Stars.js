@@ -1,6 +1,7 @@
-import { Stack } from "../../shared/ui/Stack/Stack";
-import { starIcon } from "../../shared/assets/svg/starIcon";
-import { VisuallyHidden } from "../../shared/ui/VisuallyHidden/VisuallyHidden";
+
+import { Stack } from "../../../../shared/ui/Stack/Stack";
+import { VisuallyHidden } from "../../../../shared/ui/VisuallyHidden/VisuallyHidden";
+import { StarIcon } from "../StarIcon/StarIcon";
 import styles from "./Stars.module.scss"
 
 
@@ -14,7 +15,7 @@ export const Stars = ({rating}) => {
         <Stack gap="8" align="alignCenter">                         
             {Array.from({length: WHOLE_RATING}, (_, i) => i).map(item =>
                 <Stack key={item} className={getStyles(item)} >
-                    {starIcon()}
+                    <StarIcon />
                 </Stack>
             )}
             <VisuallyHidden>`{Math.round(rating)} звeзд из 5`</VisuallyHidden>

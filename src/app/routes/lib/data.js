@@ -37,7 +37,7 @@ export const routes = [
     //     link: getRouteAbout(),
     //     isNavbar: true,
     //     page: <AboutUsPage />
-    // },
+    // }, //Закомментировано чтобы смотреть страницу с Товаром
     {
         title: "Контакты",
         link: getRouteContact(),
@@ -53,7 +53,7 @@ export const routes = [
     {
         title: "Товар",
         link: getRouteAbout(),
-        //link: getRouteProduct(),
+        //link: getRouteProduct(), Временно добавлен этот объект, чтобы просмотреть изменения
         isNavbar: true,
         page: <ProductPage />
     },
