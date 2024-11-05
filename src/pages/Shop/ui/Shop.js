@@ -11,11 +11,24 @@ import { Button } from "../../../shared/ui/Button/Button"
 import { useEffect, useMemo, useState } from "react"
 import SortMenu from "../../../feature/SortMenu/ui/SortMenu"
 import { Text } from "../../../shared/ui/Text/Text"
-import { ActiveFilters } from "../../../widgets/ActiveFilter/ActiveFilter"
+import { useDispatch, useSelector } from 'react-redux';
+import { clearAllFilters } from '../../../entities/Filters/model/filterSlice';
+import { LinkCustom } from "../../../shared/ui/LinkCustom/LinkCustom";
+import filtersData from "../../../widgets/FilterBar/lib/filtersData";
 
 const CARDS_PER_PAGE = 12
 
 export const Shop = () => {
+
+    const dispatch = useDispatch();
+    const selectedFilters = useSelector(state => state.filters);
+
+    const hasActiveFilters = Object.values(selectedFilters).some(value => {
+        if (Array.isArray(value)) {
+            return value[0] !== 0 && value[1] !== 100000; 
+        }
+        return typeof value === 'object' && Object.keys(value).length > 0; 
+    });
 
     const [currentPage, setCurrentPage] = useState(1)
 
@@ -72,7 +85,7 @@ export const Shop = () => {
     const startIndex = (currentPage - 1) * CARDS_PER_PAGE + 1;
     const endIndex = Math.min(startIndex + CARDS_PER_PAGE - 1, cards.length);
 
-   
+
 
     return (
         <Stack 
@@ -94,9 +107,36 @@ export const Shop = () => {
                         </Stack>
                         <SortMenu options={sortOptions} onSelect={handleSortSelect} />
                     </Stack>
-                    <Stack className={2}>
-                    <ActiveFilters />
-                    </Stack>
+                    <Stack className={styles.activeFiltersContainer} align='alignCenter' gap='16'>
+            {hasActiveFilters && <span>Выбранные фильтры</span>}
+            {Object.entries(selectedFilters).map(([key, value]) => {
+                if (key === 'price') {
+                    if (value[0] !== 0 && value[1] !== 100000) {
+                        return (
+                            <Stack key={key} className={styles.filterChip} gap='8' align='alignCenter'>
+                                {`Цена: ${value[0]} - ${value[1]}`} 
+                            </Stack>
+                        );
+                    }
+                } else if (typeof value === 'object' && Object.keys(value).length > 0) {
+                    const labels = Object.keys(value)
+                        .filter(val => value[val]) 
+                        .map(val => filtersData[key].items.find(item => item.value === val)?.label)
+                        .filter(Boolean) 
+                        .join(', ');
+
+                    return (
+                        <Stack key={key} className={styles.filterChip} gap='8' align='alignCenter'>
+                            {labels}
+                        </Stack>
+                    );
+                }
+                return null;
+            })}
+            {hasActiveFilters && (
+                <LinkCustom className={styles.clearAll} onClick={() => dispatch(clearAllFilters())} color='secondary'>Очистить все</LinkCustom>
+            )}
+        </Stack>
                     <Stack gap='32' className={styles.cardsContainer}>
                         {currentCards.map ((element) => <Card {...element}/>)}
                     </Stack>

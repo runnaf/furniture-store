@@ -13,14 +13,9 @@ const filterSlice = createSlice({
     initialState,
     reducers: {
         setFilter: (state, action) => {
-            const { key, value } = action.payload;
-            state[key] = value;
+            return { ...state, ...action.payload };
         },
-        clearFilter: (state, action) => {
-            const key = action.payload;
-            state[key] = key === 'price' ? [0, 100000] : {};
-        },
-        clearAllFilters: (state) => {
+        clearAllFilters: () => {
             return initialState;
         }
     }

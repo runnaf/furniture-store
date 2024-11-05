@@ -1,7 +1,7 @@
 .container {
     width: 276px;
     color: var(--black-color);
-}
+
 hr {
     width: 276px;
     height: 1px;
@@ -41,5 +41,7 @@ hr {
 .trackMax {
     background-color: var(--green-color);
 }
-
-
+button {
+    padding: 8px 16px;
+}
+}

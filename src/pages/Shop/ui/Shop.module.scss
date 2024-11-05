@@ -9,6 +9,27 @@
             width: 892px;
             flex-wrap: wrap;
         }
+
+    .activeFiltersContainer {
+    flex-wrap: wrap;
+
+        span {
+            font-size: var(--font-size-18);
+        }
+
+        .filterChip {
+            display: flex;
+            align-items: center;
+            background-color: var(--yellow-color); 
+            border-radius: var(--border-radius-170); 
+            padding: 8px 16px; 
+        }
+        
+        .clearAll {
+            color: var(--green-color);
+        }
+    }
+    
     .btnContainer {
         > button {
             display: flex;
