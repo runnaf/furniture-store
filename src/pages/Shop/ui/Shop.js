@@ -3,6 +3,7 @@ import { Breadcrumbs } from "../../../entities/BreadCrumbs/ui/BreadCrumbs"
 import { SectionTitle } from "../../../entities/SectionTitle/ui/SectionTitle"
 import { Stack } from "../../../shared/ui/Stack/Stack"
 import { FilterBar } from "../../../widgets/FilterBar/FilterBar"
+import { MobileFilterBar } from "../../../widgets/FilterBar/ui/MobileFilterBar/MobileFilterBar"
 import cards from "../../../shared/libs/cardData"
 import { Card } from "../../../entities/Card/ui/Card"
 import styles from "./Shop.module.scss"
@@ -15,6 +16,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clearAllFilters } from '../../../entities/Filters/model/filterSlice';
 import { LinkCustom } from "../../../shared/ui/LinkCustom/LinkCustom";
 import filtersData from "../../../widgets/FilterBar/lib/filtersData";
+import { useResize } from "../../../shared/hooks/useResize"
 
 const CARDS_PER_PAGE = 12
 
@@ -85,7 +87,12 @@ export const Shop = () => {
     const startIndex = (currentPage - 1) * CARDS_PER_PAGE + 1;
     const endIndex = Math.min(startIndex + CARDS_PER_PAGE - 1, cards.length);
 
-
+    const width = useResize();
+    const isMobile = width < 1100;
+    const shownResults = 
+    <Stack align='alignCenter'>
+    <Text>Показано {startIndex}-{endIndex} из {cards.length} результатов</Text>
+    </Stack>
 
     return (
         <Stack 
@@ -99,14 +106,13 @@ export const Shop = () => {
             </SectionTitle>
             <Stack justify='justifyCenter' align='alignCenter' gap='75'>
             <Stack gap='32'>
-                <FilterBar />                 
+                {!isMobile ? <FilterBar /> : ''}                 
                     <Stack direction='column' gap='24'>
                     <Stack className={styles.sortContainer} justify='justifyBetween'>
-                        <Stack align='alignCenter'>
-                            <Text>Показано {startIndex}-{endIndex} из {cards.length} результатов</Text>
-                        </Stack>
+                    {isMobile ? <MobileFilterBar /> : shownResults}
                         <SortMenu options={sortOptions} onSelect={handleSortSelect} />
                     </Stack>
+                    {isMobile ? shownResults : ''}
                     <Stack className={styles.activeFiltersContainer} align='alignCenter' gap='16'>
             {hasActiveFilters && <span>Выбранные фильтры</span>}
             {Object.entries(selectedFilters).map(([key, value]) => {
