@@ -82,18 +82,13 @@ $line-height: 28px;
         background: var(--yellow-color);
         border-radius: var(--border-radius-12);
 
-        @include tablet-m {
-            width: 155px;
-            gap: 3px;
-            padding: 0;
+        @include mobile-l {
+            width: 298px;
         }
+
 
         > div {
             width: 61px;
-
-            @include tablet-m {
-                width: 30px;
-            }
 
             &:nth-child(1) {
                 padding: 5px;
@@ -116,10 +111,6 @@ $line-height: 28px;
                 font-family: var(--font-family);
                 font-size: var(--font-size-24);
                 font-weight: $font-weight-m;
-
-                @include tablet-m {
-                    font-size: var(--font-size-18);
-                }
             }
     
             > p:nth-child(2) {
@@ -129,9 +120,6 @@ $line-height: 28px;
                 font-weight: $font-weight-s;
                 opacity: $opacity;
 
-                @include tablet-m {
-                    font-size: var(--font-size-14);
-                }
             }
         }
 

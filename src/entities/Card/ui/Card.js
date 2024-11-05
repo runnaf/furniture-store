@@ -9,6 +9,7 @@ import star from '../../../shared/assets/svg/star.svg';
 import { Timer } from '../../Timers/ui/Timer';
 import arrow from '../../../shared/assets/svg/arrowblack.svg';
 import { LinkCustom } from '../../../shared/ui/LinkCustom/LinkCustom';
+import { getStyles } from '../../../shared/libs/getStyles';
 
 export function Card ({
     image,
@@ -23,20 +24,18 @@ export function Card ({
     cardText,
 }) {
 
-    const cardView = 
-        view === 'extended' ? styles.extendedCard : styles.generalCard;
+    const cardContainer = getStyles(view === 'extended' ? styles.extendedCard : styles.generalCard, {}, [styles.cardBase])
+    const categoryView = getStyles(view === 'extended' ? styles.extendedCategory : '', {}, [styles.categoryBase])
 
-    const categoryView = 
-        view === 'extended' ? styles.extendedCategory :styles.generalCategory;
 
     return (
         <Stack 
-            direction={view === 'extended' ? 'raw' : 'column'} 
+            direction={view === 'extended' ? 'row' : 'column'} 
             gap='16' 
             className={styles.mainContainer}
         >
-            <Stack className={cardView}>
-                <img src={image} alt='item' />
+            <Stack className={cardContainer}>
+                <img src={image} alt='item' loading='lazy' width='276'/>
 
                 <Stack justify='justifyBetween' className={styles.iconsContainer}>
                     {promotion > 0 && (
@@ -58,26 +57,49 @@ export function Card ({
                 </Stack>
             </Stack>
 
-            <Stack direction='column' className={categoryView}>
-                <Stack justify='justifyBetween' className={styles.categoryContainer}>
-                    <Text className={styles.category}>{category}</Text>
-                    <Stack className={styles.ratingContainer}>
+            <Stack 
+                gap='4' 
+                direction='column' 
+                className={categoryView}
+            >
+                <Stack 
+                    align='alignCenter'
+                    justify='justifyBetween'
+                    className={styles.categoryContainer}
+                >
+                    <Text className={styles.category}>
+                        {category}
+                    </Text>
+                    <Stack gap='8' 
+                        align='alignCenter'
+                        className={styles.ratingContainer}
+                    >
                         <img src={star} alt='star' className={styles.star}></img>
                         <Text className={styles.rating}>{rating}</Text>
                     </Stack>
                 </Stack>
+                <Stack 
+                    gap='12'
+                    direction='column'
+                    justify='justifyCenter'
+                    className={styles.textContainer}
+                >
+                    <Text  size = 's'>{name}</Text >
+                    <Text  size = 'xs'>{newPrice}р.<span>  {price}р.</span></Text>
 
-                <p className={styles.cardName}>{name}</p>
-                <p className={styles.newPrice}>{newPrice}р.<span className={styles.price}>{price}р.</span></p>
-                
-                {(view === 'extended') && (
-                    <>
+                    {view === 'extended' && (
+                    <Stack 
+                        direction='column' 
+                        justify='justifyBetween' 
+                        className={styles.extended}
+                    >
                         <Text className={styles.cardText}>{cardText}</Text>
                         <LinkCustom color='secondary' className={styles.shopButton}>
                             Магазин <img src={arrow} alt="arrow"/>
                         </LinkCustom>
-                    </>
+                    </Stack>
                 )}
+                </Stack>
             </Stack>        
         </Stack>
     );

@@ -46,6 +46,13 @@
                     &:hover:after {
                         width: 100%;
                     }
+
+                    @include tablet-m {
+                        &:after {
+                        content: none;
+                        }
+                    }
+
                 }
             }
         }

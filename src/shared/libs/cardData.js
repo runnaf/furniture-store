@@ -10,7 +10,7 @@ const data = [
         promotion: '30',
         timer: '2024-12-31T23:59:59',
         category: 'Кресла',
-        name: 'Кресло бежевое',
+        name: 'Кресло Olivia',
         price: '9000',
         newPrice: '6300',
         rating: '4.9',
@@ -21,7 +21,7 @@ const data = [
         image: bed,
         promotion: '15',
         category: 'Кровати',
-        name: 'Кровать белая',
+        name: 'Кровать Moonshine',
         price: '27600',
         newPrice: '23500',
         rating: '4.9',
@@ -31,7 +31,7 @@ const data = [
         id: '3',
         image: chair2,
         category: 'Кресла',
-        name: 'Кресло-кровать желтое',
+        name: 'Кресло Orange',
         price: '12000',
         newPrice: '12000',
         rating: '4.9',
@@ -42,23 +42,13 @@ const data = [
         image: sofa,
         promotion: '50',
         category: 'Диваны',
-        name: 'Диван серый',
+        name: 'Диван GreenStone',
         price: '16000',
         newPrice: '8000',
         rating: '4.9',
         cardText: 'Лаконичный и элегантный дизайн визуально не перегружает пространство, а пастельные тона обивки будут гармонично сочетаться с широкой гаммой других оттенков в интерьере.'
-    },
-    {
-        id: '5',
-        image: sofa,
-        promotion: '50',
-        category: 'Диваны',
-        name: 'Диван серый',
-        price: '16000',
-        newPrice: '8000',
-        rating: '4.9',
-        cardText: 'Лаконичный и элегантный дизайн визуально не перегружает пространство, а пастельные тона обивки будут гармонично сочетаться с широкой гаммой других оттенков в интерьере.'
-    },
+    }
 ]
 
 export default data;
+export const QUANTITY_CARD_ON_PAGE = 1;
