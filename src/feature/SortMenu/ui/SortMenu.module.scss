@@ -24,6 +24,15 @@
         
         img {
             transform: rotate(270deg);
+
+            @include tablet-m {
+                width: 20px;
+            }
+        }
+
+        @include tablet-m {
+            font-size: var(--font-size-16);
+            padding: 10px 16px;
         }
     }
     .dropdown {

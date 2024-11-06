@@ -88,7 +88,7 @@ export const Shop = () => {
     const endIndex = Math.min(startIndex + CARDS_PER_PAGE - 1, cards.length);
 
     const width = useResize();
-    const isMobile = width < 1100;
+    const isMobile = width < 820;
     const shownResults = 
     <Stack align='alignCenter'>
     <Text>Показано {startIndex}-{endIndex} из {cards.length} результатов</Text>
@@ -104,7 +104,7 @@ export const Shop = () => {
             <SectionTitle>
                 <Breadcrumbs routes={routes}/>
             </SectionTitle>
-            <Stack justify='justifyCenter' align='alignCenter' gap='75'>
+            <Stack justify='justifyCenter' align='alignCenter' gap='75'className={styles.wrapper}>
             <Stack gap='32'>
                 {!isMobile ? <FilterBar /> : ''}                 
                     <Stack direction='column' gap='24'>

@@ -1,13 +1,14 @@
 .container {
-    width: 100%;
+    padding: 0 10px;
+    width: 85%;
 
     .sortContainer {
         width: 100%;
     }
 
     .cardsContainer {
-            width: 892px;
             flex-wrap: wrap;
+            flex-basis: 74%;
         }
 
     .activeFiltersContainer {
