@@ -22,7 +22,6 @@ export const RelatedProducts = () => {
 
     const { currentSlide, handleClickSlide } = useSlider(cardData.length);
     const currentCards = slicerOfArray(cardData, currentSlide, quantityCardsOnPage(cardData));
-    console.log(cardData)
 
     return (
         <section className={styles.wrapper}>

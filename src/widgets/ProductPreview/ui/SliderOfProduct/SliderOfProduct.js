@@ -10,7 +10,7 @@ import styles from "./SliderOfProduct.module.scss";
 export const SliderOfProduct = ({product}) => {
     const { currentSlide, nextCard, prevCard, handleClickSlide } = useSlider(goods.length);
     const array = slicerOfArray(goods, currentSlide, QUANTITY_CARD_ON_PAGE);
-    console.log(array)
+
     return (
         <Slider 
             gap="12" 
@@ -23,7 +23,7 @@ export const SliderOfProduct = ({product}) => {
             <Stack className={styles.previewGoodContainer}>
                 {
                     array.map((previewGood) => (
-                        <img src={previewGood.good} alt={product} width="584" height="700"/>
+                        <img src={previewGood.good} alt={product} width="584" height="700" key={previewGood.id}/>
                     ))
                 }
                 <SideButtons nextCard={nextCard} prevCard={prevCard} />

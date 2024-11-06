@@ -5,7 +5,7 @@ import { DescriptionTab } from '../DescriptionTab/DescriptionTab';
 import { AdditionalInfoTab } from '../AdditionalInfoTab/AdditionalInfoTab';
 import { ReviewTab } from '../ReviewTab/ReviewTab/ReviewTab';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
-import { tabs, descriptionData, additionalInfoData, reviewData } from '../../lib/data';
+import { tabs, descriptionData, additionalInfoData } from '../../lib/data';
 
 
 export const Tabs = () => {
@@ -31,11 +31,7 @@ export const Tabs = () => {
                         listItems={descriptionData.listItems}
                     />}
                 {activeTab === 'additional' && <AdditionalInfoTab additionalInfo={additionalInfoData} />}
-                {activeTab === 'review' && <ReviewTab 
-                    ratingScore={reviewData.ratingScore}
-                    totalReviews={reviewData.totalReviews}
-                    ratingBreakdown={reviewData.ratingBreakdown}
-                    reviews={reviewData.reviews} />}
+                {activeTab === 'review' && <ReviewTab />}
             </Stack>
         </Stack>
     );

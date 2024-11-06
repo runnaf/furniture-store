@@ -4,11 +4,23 @@
     border: none;
     color: var(--secoundry-black-color);
     font-size: var(--font-size-28);
+    opacity: var(--opacity-06);
     font-weight: 600;
     transition: color 0.3s, font-weight 0.3s;
 
     &.active {
-    color: var(--black-color);
-    border-bottom: 4px solid var(--green-color); 
+        position: relative;
+        color: var(--black-color);
+        opacity: 1;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background-color: var(--green-color);
+            bottom: -23px;
+            left: 0;
+        }
     }
 }

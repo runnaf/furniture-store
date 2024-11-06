@@ -7,7 +7,7 @@ import styles from "./Stars.module.scss"
 
 const WHOLE_RATING = 5;
 
-export const Stars = ({rating}) => {
+export const Stars = ({rating, ratingText=true}) => {
     const getStyles = (item) => {
         return item + 1 <= Math.round(rating) ? styles.ratingCurrent : styles.starDisable;
     };
@@ -18,8 +18,13 @@ export const Stars = ({rating}) => {
                     <StarIcon />
                 </Stack>
             )}
-            <VisuallyHidden>`{Math.round(rating)} звeзд из 5`</VisuallyHidden>
-            <span className={styles.ratingTitle}>{rating.toFixed(1)}</span>
+            {ratingText && 
+                <>
+                    <VisuallyHidden>`{Math.round(rating)} звeзд из 5`</VisuallyHidden>
+                    <span className={styles.ratingTitle}>{rating.toFixed(1)}</span>
+                </>
+            }
+            
         </Stack>
     )
 }

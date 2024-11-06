@@ -10,7 +10,7 @@
     }
 }
 
-.text_name {
+.textName {
     font-size: var(--font-size-24);
     font-weight: 500;
 
@@ -24,4 +24,8 @@
         font-size: var(--font-size-18);
         font-weight: 500;
     }
+}
+
+.verified {
+    color: var(--border-inStock-color);
 }
