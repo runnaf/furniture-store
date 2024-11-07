@@ -61,7 +61,7 @@
 }
 
 .favorites {
-    @include tablet-l {
+    @include desktop-m {
         position: absolute;
         right: 0;
         top:30px;

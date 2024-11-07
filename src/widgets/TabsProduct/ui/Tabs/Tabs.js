@@ -13,17 +13,20 @@ export const Tabs = () => {
 
     return (
         <Stack gap='32' justify='column' className={styles.tabsContainer}>
-            <Stack gap='48' align="justifyCenter" className={styles.tabHeaders}>
-                {tabs.map((tab) => (
-                    <TabItem
-                        key={tab.id}
-                        id={tab.id}
-                        label={tab.label}
-                        isActive={activeTab === tab.id}
-                        onClick={() => setActiveTab(tab.id)}
-                    />
-                ))}
+            <Stack className={styles.wrapper}>
+                <Stack gap='48' align="justifyCenter" className={styles.tabHeaders}>
+                    {tabs.map((tab) => (
+                        <TabItem
+                            key={tab.id}
+                            id={tab.id}
+                            label={tab.label}
+                            isActive={activeTab === tab.id}
+                            onClick={() => setActiveTab(tab.id)}
+                        />
+                    ))}
+                </Stack>
             </Stack>
+            
             <Stack justify='column' className={styles.tabContent}>
                 {activeTab === 'description' &&
                     <DescriptionTab

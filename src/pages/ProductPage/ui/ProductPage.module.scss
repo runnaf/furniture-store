@@ -2,15 +2,8 @@
 
 .container {
     padding-bottom: 50px;
-    & > div {
+
+    & > div:first-of-type {
         width: 100%;
-    }
-
-    & > div:last-child {
-        @include section-style;
-
-        @include tablet-m {
-            width: 100%;
-        }
     }
 }

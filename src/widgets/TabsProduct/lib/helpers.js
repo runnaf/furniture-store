@@ -10,6 +10,16 @@ export const getStarsWord = (count) => {
     }
 }
 
+const endingOfTheWord = (totalMonthsPassed) => {
+    if (totalMonthsPassed === 1) {
+        return ''
+    } else if (totalMonthsPassed < 5) {
+        return 'a'
+    } else if (totalMonthsPassed >= 5) {
+        return 'ев'
+    }
+}
+
 export const monthsAgo = (date) => {
     // Преобразуем строку в объект даты
     const inputDate = new Date(date);
@@ -24,7 +34,7 @@ export const monthsAgo = (date) => {
 
     // Возвращаем форматированный результат
     if (totalMonthsPassed > 0) {
-        return totalMonthsPassed + " месяц" + (totalMonthsPassed > 1 ? "а" : "") + " назад";
+        return totalMonthsPassed + " месяц" + endingOfTheWord(totalMonthsPassed) + " назад";
     } else if (totalMonthsPassed === 0) {
         return 'меньше месяца назад'
     } else if (totalMonthsPassed < 0) {

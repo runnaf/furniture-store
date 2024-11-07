@@ -4,6 +4,10 @@
 .advantages {
     @include section-style;
 
+    @include tablet-l {
+        width: 100%;
+    }
+
     @include tablet-m {
         width: fit-content;
     }
