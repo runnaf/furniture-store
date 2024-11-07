@@ -1,116 +1,24 @@
-.reviewList {
-    padding: 1rem;
-    width: 100%; 
-  
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-  
-    .sortSection {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-  
-      span {
-        font-size: 0.875rem;
-        color: #666;
-      }
-  
-      .sortSelect {
-        margin-left: 0.5rem;
-        font-size: 0.875rem;
-        padding: 0.25rem;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        color: #333;
-      }
-    }
-  
-    .reviewItem {
-      border-top: 1px solid #eee;
-      padding: 1rem 0;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-  
-      &:first-child {
-        border-top: none;
-      }
-    }
-  
-    .userSection {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-  
-      .avatar {
-        width: 40px;
-        height: 40px;
-        background-color: #ccc;
-        border-radius: 50%;
-      }
-  
-      .userName {
-        font-weight: bold;
-      }
-  
-      .verified {
-        font-size: 0.875rem;
-        color: #4caf50;
-      }
-  
-      .date {
-        font-size: 0.75rem;
-        color: #888;
-      }
-    }
-  
-    .reviewContent {
-      flex: 1;
-  
-      .reviewTitle {
-        font-size: 1rem;
-        font-weight: bold;
-        margin: 0.5rem 0;
-      }
-  
-      .reviewText {
-        font-size: 0.875rem;
-        color: #555;
-        margin-bottom: 0.5rem;
-      }
-  
-      .rating {
-        display: flex;
-        align-items: center;
-        color: #ffcc00;
-        font-size: 1rem;
-  
-        .ratingValue {
-          margin-left: 0.5rem;
-          font-size: 0.875rem;
-          color: #333;
-        }
-      }
-  
-      .mediaGallery {
-        display: flex;
-        gap: 0.5rem;
-        margin-top: 0.5rem;
-        padding-top: 0.5rem;
-        border-top: 1px solid #e0e0e0;
-  
-        .mediaItem {
-          width: 100%; 
-          max-width: 300px; 
-          height: auto;
-          background-color: #f0f0f0;
-          border-radius: 4px;
-          object-fit: contain; 
-        }
-      }
+.review {
+  border-bottom: 2px solid var(--stroke-color);
+  padding: 33px 0;
+
+  & > div:first-of-type {
+    & > p {
+      color: var(--secoundry-black-color);
     }
   }
+
+  & > div:nth-of-type(2) {
+    order: 2;
+
+    & svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    & span {
+      font-size: var(--font-size-18);
+    }
+  }
+}
   

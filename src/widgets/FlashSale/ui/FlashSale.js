@@ -16,8 +16,9 @@ export const FlashSale = () => {
             align='alignCenter'
             className={styles.flashSale}
         >
-            <Stack
-                justify='justifyBetween'
+            <Stack gap='32'
+                align='alignCenter'
+                justify='justifyCenter'
                 className={styles.flashSaleContainer}
             >
                 <Stack 

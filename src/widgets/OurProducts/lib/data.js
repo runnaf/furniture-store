@@ -1,6 +1,6 @@
 export const buttons = [
-    { label: 'Все товары', filter: 'all' },
-    { label: 'Рекомендуемые', filter: 'recommended' },
-    { label: 'Популярное', filter: 'popular' },
-    { label: 'Новинки', filter: 'new' }
+    { id: 1, label: 'Все товары', filter: 'all' },
+    { id: 2, label: 'Рекомендуемые', filter: 'recommended' },
+    { id: 3, label: 'Популярное', filter: 'popular' },
+    { id: 4, label: 'Новинки', filter: 'new' }
 ];

@@ -16,6 +16,7 @@ export const Reviews = ({reviews}) => {
                 <Review 
                     key={review.id}
                     review={review}
+                    verified={false}
                 >
                     <QuotesIcon />
                 </Review>

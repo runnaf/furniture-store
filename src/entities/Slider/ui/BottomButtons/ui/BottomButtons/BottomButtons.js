@@ -11,6 +11,7 @@ export const BottomButtons = ({
     const lengthArray = Math.ceil(quantitySliders.length / quantityCardsOnPage);
     
     const array = Array.from({length: lengthArray}, (_, i) => i);
+    console.log(array) 
 
     return (
         <ul className = {styles.container}>

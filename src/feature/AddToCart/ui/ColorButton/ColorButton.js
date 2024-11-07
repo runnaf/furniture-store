@@ -2,7 +2,6 @@ import styles from "./ColorButton.module.scss"
 import { getStyles } from "../../../../shared/libs/getStyles";
 
 export const ColorButton = ({color, toggleState, current, className}) => {
-    console.log(color, current)
 
     const additional = [
         className,
