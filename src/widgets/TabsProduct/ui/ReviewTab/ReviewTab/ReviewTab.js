@@ -11,6 +11,8 @@ import styles from './ReviewTab.module.scss';
 export const ReviewTab = () => {
     const rating = countStars(reviews);
     const average = calculateAverageStars(rating).toFixed(1);
+    const authorized = true; //TODO
+    const madePurchase = true //TODO
 
     return (
         <Stack gap="48" direction="column">
@@ -25,7 +27,8 @@ export const ReviewTab = () => {
                     <Text type="h3" size="md">Оставьте свой отзыв</Text>
                     <Text className={styles.text}>Ваш адрес электронной почты не будет опубликован. Обязательные поля отмечены <sup>*</sup></Text>
                 </Stack>
-                <SendingReview />
+                {authorized && madePurchase && <SendingReview />}
+                
             </Stack>
         </Stack>
     )
