@@ -29,7 +29,7 @@ export const ReviewList = ({ reviews }) => {
     return (
         <Stack justify='column' gap="24">
             <Text type='h3' size="md">Отзывы</Text>
-            <Stack align="alignCenter" justify="justifyBetween">
+            <Stack className={styles.wrapper} align="alignCenter" justify="justifyBetween">
                 <Text>{`Показаны ${firstReviews} - ${lastReviews()} из ${reviews.length} результатов`}</Text>
 
                 <Stack align="alignCenter" gap="16">
