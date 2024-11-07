@@ -8,7 +8,7 @@
         border-radius: 24px;
         background-color: var(--grey-background-color);
 
-        @include tablet-l {
+        @include desktop-m {
             width: 100%;
         }
 
