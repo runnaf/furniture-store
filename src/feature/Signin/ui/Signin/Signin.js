@@ -6,7 +6,7 @@ import { Checkbox } from "../../../../shared/ui/Checkbox/Checkbox";
 import { Text } from "../../../../shared/ui/Text/Text";
 import { getRouteSignup } from "../../../../app/routes/lib/helper";
 import { Stack } from "../../../../shared/ui/Stack/Stack";
-import { ForgotPassword } from "../../../ForgotPassword/ui/ForgotPassword/ForgotPassword";
+import { ForgotPassword } from '../ForgotPassword/ForgotPassword';
 import styles from './Signin.module.scss';
 
 export const Signin = () => {

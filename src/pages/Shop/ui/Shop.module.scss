@@ -1,0 +1,57 @@
+.container {
+    padding: 0 10px;
+    width: 85%;
+
+    .sortContainer {
+        width: 100%;
+    }
+
+    .cardsContainer {
+            flex-wrap: wrap;
+            flex-basis: 74%;
+        }
+
+    .activeFiltersContainer {
+    flex-wrap: wrap;
+
+        span {
+            font-size: var(--font-size-18);
+        }
+
+        .filterChip {
+            display: flex;
+            align-items: center;
+            background-color: var(--yellow-color); 
+            border-radius: var(--border-radius-170); 
+            padding: 8px 16px; 
+        }
+        
+        .clearAll {
+            color: var(--green-color);
+        }
+    }
+    
+    .btnContainer {
+        > button {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            padding: 12px 18px;
+            font-size: var(--font-size-20);
+            text-align: center;
+            border: none;
+
+            &.active {
+                background-color: var(--yellow-color);
+            }
+        }
+
+        button:nth-last-of-type(1) {
+            rotate: 180deg;
+            padding: 0;
+        }
+        button:nth-of-type(1) {
+            padding: 0;
+        }
+    }
+}

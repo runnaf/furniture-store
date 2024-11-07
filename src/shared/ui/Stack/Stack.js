@@ -14,6 +14,7 @@ export const Stack = forwardRef(({
 }, ref) => {
 
     const mapGap = {
+        4: 'gap4',
         8: 'gap8',
         12: 'gap12',
         16: 'gap16',

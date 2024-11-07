@@ -1,46 +1,50 @@
 import { Text } from '../../shared/ui/Text/Text';
 import { Stack } from '../../shared/ui/Stack/Stack';
+import { Button } from '../../shared/ui/Button/Button';
 import styles from './FilterBar.module.scss';
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import ReactSlider from 'react-slider';
 import { Filters } from '../../entities/Filters/ui/Filters';
 import filtersData from './lib/filtersData';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFilter, clearAllFilters } from '../../entities/Filters/model/filterSlice';
 
 export function FilterBar() {
-    const [selectedFilters, setSelectedFilters] = useState({
-        category: {},
-        price: [0, 100000],
-        color: {},
-        material: {},
-        availability: {}
-    });
+    const dispatch = useDispatch();
+    const selectedFilters = useSelector(state => state.filters);
+    const [temporaryFilters, setTemporaryFilters] = useState(selectedFilters);
 
-    const handleChange = useCallback((type, value) => {
-        setSelectedFilters(prev => ({
-            ...prev,
-            [type]: value
-        }));
-    }, []);
+    const handleChange = (key, value) => {
+        setTemporaryFilters(prev => ({ ...prev, [key]: value }));
+    };
+
+    const handleShowFilters = () => {
+        dispatch(setFilter(temporaryFilters)); // Устанавливаем выбранные фильтры
+    };
+
+    const handleClearAll = () => {
+        dispatch(clearAllFilters());
+        setTemporaryFilters({}); // Сброс временных фильтров
+    };
 
     const handleSliderChange = (values) => {
         handleChange('price', values);
     };
 
     const renderFilter = (key) => {
-        const {title, items} = filtersData[key];
+        const { title, items } = filtersData[key];
         return (
             <React.Fragment key={key}>
                 <Filters
-                    key={key}
                     title={title}
                     filters={items}
                     selectedFilters={selectedFilters[key]}
-                    onChange={(value) => handleChange(key,value)}
+                    onChange={(value) => handleChange(key, value)}
                 />
-                {key !== 'availability' && <hr/>}
+                {key !== 'availability' && <hr />}
             </React.Fragment>
         );        
-    }
+    };
 
     return (
         <Stack direction='column' gap='24' className={styles.container}>
@@ -57,7 +61,7 @@ export function FilterBar() {
                     min={0}
                     max={100000}
                     step={500}
-                    value={selectedFilters.price}
+                    value={temporaryFilters.price}
                     onChange={handleSliderChange}
                     renderThumb={(props) => <div {...props} className={styles.thumb} />}
                     renderTrack={(props, state) => (
@@ -68,6 +72,8 @@ export function FilterBar() {
             </Stack>
             <hr />
             {['color', 'material', 'availability'].map(renderFilter)}
+            <Button onClick={handleShowFilters}>Показать</Button>            
+            <Button onClick={handleClearAll}>Очистить все</Button>
         </Stack>
     );
 }
