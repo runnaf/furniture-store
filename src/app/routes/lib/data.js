@@ -32,17 +32,16 @@ export const routes = [
         isNavbar: true,
         page: <FAQs />
     },
-    // {
-    //     title: "О нас",
-    //     link: getRouteAbout(),
-    //     isNavbar: true,
-    //     page: <AboutUsPage />
-    // }, //Закомментировано чтобы смотреть страницу с Товаром
+    {
+        title: "О нас",
+        link: getRouteAbout(),
+        isNavbar: true,
+        page: <AboutUsPage />
+    },
     {
         title: "Контакты",
         link: getRouteContact(),
         isNavbar: true,
-
     },
     {
         title: "Новости",
@@ -52,9 +51,7 @@ export const routes = [
     },
     {
         title: "Товар",
-        link: getRouteAbout(),
-        //link: getRouteProduct(), Временно добавлен этот объект, чтобы просмотреть изменения
-        isNavbar: true,
+        link: getRouteProduct(':id'),
         page: <ProductPage />
     },
     {
