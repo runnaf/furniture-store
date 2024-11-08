@@ -41,6 +41,12 @@
         touch-action: pan-x;
         scrollbar-width: none;
         width: 100%;
+
+        cursor: grab;
+
+        @include mobile-l {
+            cursor: default;
+        }
     }
     
 }

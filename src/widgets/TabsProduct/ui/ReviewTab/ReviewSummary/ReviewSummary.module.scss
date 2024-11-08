@@ -1,0 +1,55 @@
+@import "../../../../../app/styles/media-queries.scss";
+
+.reviewSummary {
+  padding-bottom: 50px;
+  border-bottom: 2px solid var(--stroke-color);
+
+  @include mobile-xl {
+    flex-direction: column;
+    gap: var(--gap-32);
+  }
+}
+
+.ratingScoreSection {
+  padding: 22px 75px;
+  border-right: 2px solid var(--stroke-color);
+
+  & > div:last-of-type {
+    & svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+  & p {
+    line-height: 1;
+  }
+
+  @include mobile-xl {
+    border-right: none;
+    border-bottom: 2px solid var(--stroke-color);
+  }
+}
+  
+.ratingBreakdown {
+  width: 100%;
+}
+
+.breakdownRow {
+  & > span {
+    width: 66px;
+  }
+
+  & > div:first-of-type {
+    flex: 1;
+    height: 8px;
+    background-color: var(--stroke-color);
+    border-radius: 4px;
+    overflow: hidden;
+
+    & > div {
+      height: 100%;
+      background-color: var(--yellow-color);
+    }
+  }
+}
+  

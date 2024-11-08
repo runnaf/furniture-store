@@ -4,7 +4,7 @@ export const getColorTitle = (color) => {
             return 'черный';
         case '#622718':
             return 'коричневый';
-        case 'rgba(36, 36, 36, 0.1)':
+        case '#D9D9D9':
             return 'серый';
         case '#008263':
             return 'зеленый';

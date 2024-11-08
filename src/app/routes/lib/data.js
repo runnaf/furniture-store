@@ -42,7 +42,6 @@ export const routes = [
         title: "Контакты",
         link: getRouteContact(),
         isNavbar: true,
-
     },
     {
         title: "Новости",
@@ -50,13 +49,11 @@ export const routes = [
         isNavbar: true,
         page: <OurBlog />
     },
-    // {
-    //     title: "Товар",
-    //     link: getRouteAbout(),
-    //     //link: getRouteProduct(),
-    //     isNavbar: true,
-    //     page: <ProductPage />
-    // },
+    {
+        title: "Товар",
+        link: getRouteProduct(':id'),
+        page: <ProductPage />
+    },
     {
         link: getRouteSignin(),
         page: <SigninPage />

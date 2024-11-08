@@ -51,4 +51,6 @@ const data = [
 ]
 
 export default data;
+
 export const QUANTITY_CARD_ON_PAGE = 1;
+

@@ -1,0 +1,59 @@
+@import "../../../../app/styles/mixin.scss";
+@import "../../../../app/styles/media-queries.scss";
+
+.tabsContainer {
+    @include section-style;
+
+    @include tablet-l {
+        width: 100%;
+    }
+}
+
+.tabHeaders {
+    padding-bottom: 21px;
+    border-bottom: 3px solid var(--stroke-color);
+    width: 100%;
+
+    @include mobile-xl {
+        animation: scroll 5s linear;
+        justify-content: normal;
+        border-bottom: none;
+    }
+    
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        40% {
+            transform: translateX(-30px);
+        }
+        60% {
+            transform: translateX(-15px);
+        }
+    }
+}
+
+.wrapper {
+    @include mobile-xl {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        padding: 40px 0 20px 0;
+        position: relative;
+        scrollbar-width: thin;
+
+        & > * {
+            -webkit-transform: translateZ(0px);
+        }
+
+        &::-webkit-scrollbar {
+            border-radius: 5px;
+            height: 3px;
+            display: block;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--gray-color);
+            border-radius: 5px;
+        }
+    }
+}
