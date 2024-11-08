@@ -87,9 +87,7 @@ export const SendingReview = () => {
                     <label htmlFor="text">Оставьте Ваш отзыв <sup>*</sup></label>
                     <textarea 
                         className={ errors.textarea ? styles.error : ''}
-                        error={errors.textarea}
                         id="textarea"
-                        register={register}
                         {...register('textarea', { required: 'Это поле обязательно к заполнению', minLength: {
                                     value: 30,
                                     message: data.errors.textareaLength

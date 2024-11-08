@@ -9,6 +9,8 @@ import { QUANTITY_REVIEWS_ON_PAGE } from '../../../lib/data';
 import { Pagination } from '../../../../../entities/Pagination/Pagination';
 import { useSlider } from '../../../../../entities/Slider/hooks/useSlider';
 import { Slider } from '../../../../../entities/Slider/ui/Slider/Slider';
+import { CustomSelect } from '../../../../../shared/ui/CustomSelect/CustomSelect';
+import { getValueOption } from '../../../../../shared/libs/getValueOption';
 
 export const ReviewList = ({ reviews }) => {
     const {currentSlide, nextCard,  prevCard, handleClickSlide} = useSlider(reviews.length)
@@ -26,21 +28,22 @@ export const ReviewList = ({ reviews }) => {
         } else return reviews.length
     }
 
+    const options = ['newest', 'oldest', 'highest', 'lowest'];
+
+    // const handleSelectChange = (selected) => {
+    //     console.log('Selected:', selected);
+    // }; для проверки что выбирает пользователь
+
     return (
         <Stack justify='column' gap="24">
             <Text type='h3' size="md">Отзывы</Text>
             <Stack className={styles.wrapper} align="alignCenter" justify="justifyBetween">
                 <Text>{`Показаны ${firstReviews} - ${lastReviews()} из ${reviews.length} результатов`}</Text>
-
-                <Stack align="alignCenter" gap="16">
-                    <span>Сортировать по</span>
-                    <select>
-                        <option value="newest">от новых</option>
-                        <option value="oldest">от старых</option>
-                        <option value="highest">от высокого рейтинга</option>
-                        <option value="lowest">от низкого рейтинга</option>
-                    </select>
-                </Stack>
+                <CustomSelect options={options} 
+                                label="Сортировать по" 
+                                // onChange={handleSelectChange}
+                                getValueOption={getValueOption} 
+                />
             </Stack>
             <Slider 
                     isSideButtons={false} 

@@ -16,7 +16,8 @@
 
     @include mobile-xl {
         animation: scroll 5s linear;
-        animation-iteration-count: infinite;
+        justify-content: normal;
+        border-bottom: none;
     }
     
     @keyframes scroll {
@@ -24,10 +25,10 @@
             transform: translateX(0);
         }
         40% {
-            transform: translateX(-50px);
+            transform: translateX(-30px);
         }
         60% {
-            transform: translateX(50px);
+            transform: translateX(-15px);
         }
     }
 }
@@ -38,7 +39,6 @@
         -webkit-overflow-scrolling: touch;
         white-space: nowrap;
         padding: 40px 0 20px 0;
-        display: flex;
         position: relative;
         scrollbar-width: thin;
 
