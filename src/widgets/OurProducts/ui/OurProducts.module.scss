@@ -10,6 +10,7 @@
 
     .productContainer {
         width: 100%;
+        
         > div {
             width: 100%;
 
@@ -34,6 +35,11 @@
                     overflow-x: scroll;
                     touch-action: pan-x;
                     scrollbar-width: none;
+                    cursor: grab;
+
+                    @include mobile-l {
+                        cursor: default;
+                    }
                 }
             }
         }
