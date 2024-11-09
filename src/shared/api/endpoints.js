@@ -9,6 +9,7 @@ export const endpoints = {
         orders: '/orders',
         reviews: '/reviews',
         blog: '/blog',
+        goods: '/goods'
     },
     user: '/user'
 }

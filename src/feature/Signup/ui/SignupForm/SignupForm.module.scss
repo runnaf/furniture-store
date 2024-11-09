@@ -10,8 +10,7 @@
     font-family: var(--font-family);
 
     @include tablet-m {
-        max-width: 90%;
-        padding: 70px 24px;
+        padding: 40px 0 32px;
     }
 }
 

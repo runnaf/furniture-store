@@ -35,7 +35,7 @@ $gap-8: var(--gap-8);
                 @include point-style;;
                 border-radius: $border-radius-24;
                 background-color: $background-color;
-                width: 686px;
+                width: 726px;
                 height: 578px;
 
                 @include desktop-m {
@@ -88,6 +88,7 @@ $gap-8: var(--gap-8);
 
             &:nth-child(2) {
                 @include tablet-l {
+                    width: 100%;
                     flex-direction: column;
                     gap: 16px;
                 }

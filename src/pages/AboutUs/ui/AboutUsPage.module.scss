@@ -1,0 +1,23 @@
+@import "../../../app/styles/mixin.scss";
+@import "../../../app/styles/media-queries.scss";
+
+.container {
+    padding-bottom: 50px;
+    & > div:first-child {
+        background-color: var(--background-color);
+        width: 100%;
+
+        & > div {
+            @include section-style;
+
+            @include tablet-l {
+                width: 100%;
+                padding: 0 30px;
+            }
+        }
+    }
+    
+    @include mobile-xl {
+        gap: var(--gap-22)
+    }
+}

@@ -1,59 +1,49 @@
 @import '../../../app/styles/media-queries.scss';
+@import '../../../app/styles/mixin';
 
 .container {
-    width: 100%;    
-}
+    @include section-style;  
 
-.buttonsContainer {
-    @include mobile-xl {
-        width: 90%;
-        justify-content: space-around;
-        flex-wrap: wrap;
+    @include tablet-l {
+        width: 100%;
     }
 
-    button {
-        padding: 8px 0;
-        width: 180px;
-    }
-}
+    .productContainer {
+        width: 100%;
+        
+        > div {
+            width: 100%;
 
-.cardContainerWrapper {
-    position: relative;
-    width: calc(100% - 150px);
-    margin-left: 150px;
-    overflow-x: auto;
+            > div {
+                &.filterButtons {
+                    flex-wrap: wrap;
+                
+                    button {
+                        padding: 18px 36px;
+                        font-size: var(--font-size-18);
 
-    @include tablet-l {        
-        margin-left: 70px;
-    }
+                        @include tablet-l {
+                            padding: 10px 20px;
+                        }
+                    }
+                }
+            }
 
-    @include mobile-l {        
-        margin-left: 0;
-        display: flex;
-        justify-content: center;
-    }
-}
-.slider {
-    button {
-        background-color: var(--grey-background-color);
-    }
-}
+            &.cardContainerWrapper {
+                .cardContainer {
+                    width: 100%;
+                    overflow-x: scroll;
+                    touch-action: pan-x;
+                    scrollbar-width: none;
+                    cursor: grab;
 
-.cardContainer {
-    display: inline-flex;
-    gap: 32px;
-    width: max-content;
-    padding: 0 0 30px 0;
-
-    @include tablet-m {        
-        gap: var(--gap-12);
+                    @include mobile-l {
+                        cursor: default;
+                    }
+                }
+            }
+        }
     }
 }
 
-.cardWrapper {
 
-    @include mobile-l {  
-        display: flex;
-        justify-content: center;
-    }
-}

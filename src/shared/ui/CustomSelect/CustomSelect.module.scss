@@ -1,0 +1,78 @@
+@import '../../../app/styles/media-queries.scss';
+
+$border: 1px solid var(--stroke-color);
+$radius: var(--border-radius-170);
+
+.customSelect {
+    & label {
+        display: block;
+    }
+
+    @include mobile-l {
+        width: 100%;
+    }
+}
+
+.wrapper {
+    position: relative;
+    min-width: 200px;
+    width: max-content;
+
+    @include mobile-l {
+        width: 100%;
+    }
+
+}
+
+
+.selectBox {
+    min-width: 200px;
+    width: max-content;
+    border: $border;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: $radius;
+
+    @include mobile-l {
+        width: 100%;
+    }
+}
+
+.selectedOption {
+    flex-grow: 1;
+}
+
+.arrow {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid var(--black-color);
+    border-top: 2px solid var(--black-color);
+    transition: transform 0.3s;
+    transform: rotate(135deg);
+}
+
+.arrow.up {
+    transform: rotate(-45deg);
+    margin-top: 9px;
+}
+
+.options {
+    position: absolute;
+    top: 49px;
+    left: 0;
+    right: 0;
+    border: $border;
+    background: var(--white-color);
+    overflow-y: auto;
+    z-index: 1000;
+    border-radius: var(--border-radius-24);
+}
+
+.option {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background: var(--grey-background-color);
+}

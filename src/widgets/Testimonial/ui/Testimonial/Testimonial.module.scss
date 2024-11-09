@@ -5,6 +5,7 @@
     background-color: var(--background-color);
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 32px;
     padding: 70px 0 50px 0;
 
@@ -14,23 +15,32 @@
         width: 100%;
         align-items: center;
     }
-}
 
-.testimonialsWrapper{
-    justify-content: center;
+    & > div {
+        @include section-style;
 
-    @include section-style;
-}
+        @include tablet-l {
+            padding: 20px 0;
+            max-width: calc(100% - 48px);
+        }
+    }
 
-.testimonialContainer > div {
-    @include mobile-xl {
-        width: 90%;
+    & > div:first-child {
+        text-align: center;
+
+        & > div {
+            justify-content: center;
+        }
     }
 }
 
-.testimonialContainer > div {
-    align-items: center;
+.testimonialsWrapper{
+    & > div {
+        flex-grow: 1;
+        min-width: 100%;
+    }
 }
+
 
 .testimonialContainer > div h2 {
     align-items: center;
@@ -55,4 +65,3 @@ section.testimonialContainer > img:nth-child(2) {
         right: 30px;
     }
 }
-

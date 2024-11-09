@@ -1,4 +1,11 @@
+@import '../../../app/styles/media-queries.scss';
+
 .signin_page {
     height: 100vh;
     padding: 30px 150px;
+
+    @include tablet-m {
+        height: auto;
+        padding: 20px;
+    }
 }

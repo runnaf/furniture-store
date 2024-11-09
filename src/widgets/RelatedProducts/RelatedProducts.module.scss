@@ -1,0 +1,38 @@
+@import "../../app/styles/mixin.scss";
+@import "../../app/styles/media-queries.scss";
+
+.wrapper {
+    @include section-style;
+    gap: var(--gap-48);
+    display: flex;
+    flex-direction: column;
+
+    & > div:first-child {
+        align-items: center;
+    }
+
+    & img {
+        border-radius: 24px;
+        pointer-events: none; 
+    }
+
+    @include tablet-l {
+        width: 100%;
+
+        & h2 {
+            text-align: center;
+        }
+    }
+}
+
+.cardContainer {
+    width: 100%;
+    overflow-x: scroll;
+    touch-action: pan-x;
+    scrollbar-width: none;
+    cursor: grab;
+
+    @include mobile-l {
+        cursor: default;
+    }
+}
