@@ -70,9 +70,13 @@
     background-image: url("../../../../shared/assets/svg/points-top.svg"), url("../../../../shared/assets/svg/points.svg");
     background-repeat: no-repeat, no-repeat;
     background-position: top -5px right 44%, bottom -13px left 36%;
+    background-color: var(--background-color);
 
     @include mobile-xl {
         background-position: top -5px right 30px, bottom -13px left 30px;
     }
 }
 
+@mixin button-hover {
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5), -4px -4px 6px 0 rgba(116, 125, 136, 0.5), inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2), inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
+}

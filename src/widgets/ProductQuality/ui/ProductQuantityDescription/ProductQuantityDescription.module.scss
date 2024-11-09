@@ -1,0 +1,13 @@
+@import "../../../../app/styles/mixin.scss";
+@import "../../../../app/styles/media-queries.scss";
+
+.container {
+    padding: 55px 100px;
+    border-radius: var(--border-radius-24);
+    @include decoration-element;
+
+    @include mobile-xl {
+        padding: 55px 20px;
+        border-radius: 0;
+    }
+}

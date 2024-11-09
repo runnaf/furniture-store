@@ -1,0 +1,35 @@
+@import "../../app/styles/media-queries.scss";
+
+.pagination {
+    & button {
+        width: 48px;
+        height: 48px;
+
+        @include mobile-xl {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    & ul {
+        display: flex;
+        gap: var(--gap-10);
+        align-items: center;
+    }
+
+    & > button {
+        background-image: url(../../shared/assets/svg/arrow-down.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: transparent;
+
+        &:disabled {
+            cursor: initial;
+        }
+    }
+
+    & > button:last-of-type {
+        transform: rotate(180deg);
+    }
+
+
+}

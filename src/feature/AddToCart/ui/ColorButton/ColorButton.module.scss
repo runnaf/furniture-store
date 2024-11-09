@@ -1,0 +1,17 @@
+.containerButtonColor {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.button {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
