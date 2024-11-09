@@ -2,162 +2,146 @@ import { routes } from "../../../app/routes/lib/data"
 import { Breadcrumbs } from "../../../entities/BreadCrumbs/ui/BreadCrumbs"
 import { SectionTitle } from "../../../entities/SectionTitle/ui/SectionTitle"
 import { Stack } from "../../../shared/ui/Stack/Stack"
-import { FilterBar } from "../../../widgets/FilterBar/FilterBar"
-import { MobileFilterBar } from "../../../widgets/FilterBar/ui/MobileFilterBar/MobileFilterBar"
 import cards from "../../../shared/libs/cardData"
 import { Card } from "../../../entities/Card/ui/Card"
 import styles from "./Shop.module.scss"
-import arrow from "../../../shared/assets/svg/arrow-down.svg"
-import { Button } from "../../../shared/ui/Button/Button"
-import { useEffect, useMemo, useState } from "react"
-import SortMenu from "../../../feature/SortMenu/ui/SortMenu"
 import { Text } from "../../../shared/ui/Text/Text"
 import { useDispatch, useSelector } from 'react-redux';
-import { clearAllFilters } from '../../../entities/Filters/model/filterSlice';
-import { LinkCustom } from "../../../shared/ui/LinkCustom/LinkCustom";
-import filtersData from "../../../widgets/FilterBar/lib/filtersData";
+import { clearAllFilters, clearFilter } from '../../../feature/Filter/model/filterSlice';
+import {filtersData} from "../../../feature/Filter/lib/filtersData";
 import { useResize } from "../../../shared/hooks/useResize"
+import SortMenu from "../../../feature/Filter/ui/SortMenu/SortMenu"
+import { FilterBar } from "../../../feature/Filter/ui/FilterBar/FilterBar"
+import { MobileFilterBar } from "../../../feature/Filter/ui/MobileFilterBar/MobileFilterBar"
+import { Advantages } from "../../../entities/Advantages/ui/Advantages/Advantades"
+import { Pagination } from "../../../entities/Pagination.js/ui/Pagination"
+import { Button } from "../../../shared/ui/Button/Button"
+import { DeleteFilter } from "../../../shared/assets/svg/deleteFilter"
 
-const CARDS_PER_PAGE = 12
+// const CARDS_PER_PAGE = 12
 
 export const Shop = () => {
 
+    const width = useResize();
+    const isMobile = width <= 820;
     const dispatch = useDispatch();
-    const selectedFilters = useSelector(state => state.filters);
+    const selectedFilters = useSelector(state => state.filters)
 
-    const hasActiveFilters = Object.values(selectedFilters).some(value => {
-        if (Array.isArray(value)) {
-            return value[0] !== 0 && value[1] !== 100000; 
+    console.log(selectedFilters)
+
+
+    const hasActiveFilters = Object.entries(selectedFilters).some(([key, value]) => {
+        if (Array.isArray(value) && value.length === 2) {
+            return value[0] !== 0 || value[1] !== 100000
+        } 
+        if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+            return Object.keys(value).length > 0;
         }
-        return typeof value === 'object' && Object.keys(value).length > 0; 
+        return false;
     });
 
-    const [currentPage, setCurrentPage] = useState(1)
 
-    const totalPages = Math.ceil(cards.length / CARDS_PER_PAGE)
-
-    const currentCards = useMemo(() => {
-        const startIndex = (currentPage - 1) * CARDS_PER_PAGE;
-        return cards.slice(startIndex, startIndex + CARDS_PER_PAGE)
-    }, [currentPage])
-
-    useEffect(() => {
-        window.scrollTo({ top: 100, behavior: 'smooth' })
-    }, [currentPage]);
-
-    const handlePageChange = (page) => {
-        setCurrentPage(page)
-    };
-
-    const handlePreviousPage = () => {
-        if (currentPage > 1) {
-            setCurrentPage(currentPage - 1)
+    const activeFilters = Object.entries(selectedFilters).reduce((acc, [key, value]) => {
+        if (Array.isArray(value) && value.length === 2) {
+            if (value[0] !== 0 || value[1] !== 100000) {
+                acc.push({ label: `Цена: ${value[0]}₽ - ${value[1]}₽`, key, value });
+            }
+        } else if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+            Object.keys(value).forEach(val => {
+                if (value[val]) {
+                    const label = filtersData[key].items.find(item => item.value === val)?.label;
+                    if (label) acc.push({ label, key, value: val });
+                }
+            })
         }
-    };
+        return acc;
+    }, []);
+    
+    console.log(selectedFilters, hasActiveFilters)
+    const deleteFilter = (remoteFilter) => {
+        dispatch(clearFilter({category: remoteFilter.key, key: remoteFilter.value}))
+    }
 
-    const handleNextPage = () => {
-        if (currentPage < totalPages) {
-            setCurrentPage(currentPage + 1)
-        }
-    };
-
-    const paginationButtons = useMemo(() => {
-        return Array.from({ length: totalPages }, (_, index) => (
-            <Button 
-                key={index} 
-                color="outlined"
-                onClick={() => handlePageChange(index + 1)}
-                disabled={currentPage === index + 1}
-                className={currentPage === index + 1 ? styles.active : ''}>
-                {index + 1}
-            </Button>
-        ));
-    }, [currentPage, totalPages]);
-
-    const sortOptions = [
-        { value: 'default', label: 'По умолчанию' },
-        { value: 'priceAsc', label: 'Цена по возрастанию' },
-        { value: 'priceDesc', label: 'Цена по убыванию' },
-    ];
-
-    const handleSortSelect = (value) => {
-        console.log('Выбрана сортировка:', value);
-    };
-
-    const startIndex = (currentPage - 1) * CARDS_PER_PAGE + 1;
-    const endIndex = Math.min(startIndex + CARDS_PER_PAGE - 1, cards.length);
-
-    const width = useResize();
-    const isMobile = width < 820;
     const shownResults = 
-    <Stack align='alignCenter'>
-    <Text>Показано {startIndex}-{endIndex} из {cards.length} результатов</Text>
+    <Stack 
+        align='alignCenter'
+    >
+        <Text>Показано 9 из 27 результатов</Text>
     </Stack>
 
     return (
         <Stack 
             direction='column' 
             gap='75' 
-            className={styles.container}
             align='alignCenter'
-            justify='justifyCenter'>
+            justify='justifyCenter'
+            className={styles.container}
+        >
             <SectionTitle>
                 <Breadcrumbs routes={routes}/>
             </SectionTitle>
-            <Stack justify='justifyCenter' align='alignCenter' gap='75'className={styles.wrapper}>
-            <Stack gap='32'>
-                {!isMobile ? <FilterBar /> : ''}                 
-                    <Stack direction='column' gap='24'>
-                    <Stack className={styles.sortContainer} justify='justifyBetween'>
-                    {isMobile ? <MobileFilterBar /> : shownResults}
-                        <SortMenu options={sortOptions} onSelect={handleSortSelect} />
-                    </Stack>
-                    {isMobile ? shownResults : ''}
-                    <Stack className={styles.activeFiltersContainer} align='alignCenter' gap='16'>
-            {hasActiveFilters && <span>Выбранные фильтры</span>}
-            {Object.entries(selectedFilters).map(([key, value]) => {
-                if (key === 'price') {
-                    if (value[0] !== 0 && value[1] !== 100000) {
-                        return (
-                            <Stack key={key} className={styles.filterChip} gap='8' align='alignCenter'>
-                                {`Цена: ${value[0]} - ${value[1]}`} 
-                            </Stack>
-                        );
-                    }
-                } else if (typeof value === 'object' && Object.keys(value).length > 0) {
-                    const labels = Object.keys(value)
-                        .filter(val => value[val]) 
-                        .map(val => filtersData[key].items.find(item => item.value === val)?.label)
-                        .filter(Boolean) 
-                        .join(', ');
 
-                    return (
-                        <Stack key={key} className={styles.filterChip} gap='8' align='alignCenter'>
-                            {labels}
+            <Stack 
+                justify='justifyCenter' 
+                align='alignCenter' 
+                gap='75'
+                className={styles.wrapper}
+            >
+                <Stack 
+                    gap='32'
+                >
+                    {!isMobile && <FilterBar /> }                 
+                    <Stack 
+                        direction='column' 
+                        gap='24'
+                    >
+                        <Stack 
+                            className={styles.sortContainer} 
+                            justify='justifyBetween'
+                        >
+                            {isMobile ? <MobileFilterBar /> : shownResults}
+                            <SortMenu/>
                         </Stack>
-                    );
-                }
-                return null;
-            })}
-            {hasActiveFilters && (
-                <LinkCustom className={styles.clearAll} onClick={() => dispatch(clearAllFilters())} color='secondary'>Очистить все</LinkCustom>
-            )}
-        </Stack>
-                    <Stack gap='32' className={styles.cardsContainer}>
-                        {currentCards.map ((element) => <Card {...element}/>)}
-                    </Stack>
-                    <Stack gap='24' justify='justifyCenter' className={styles.btnContainer}>
-                        <Button color="outlined" onClick={handlePreviousPage} disabled={currentPage === 1}>
-                            <img src={arrow} alt="previous page"/>
-                        </Button>
-                        {paginationButtons}
-                        <Button color="outlined" onClick={handleNextPage} disabled={currentPage === totalPages}>
-                            <img src={arrow} alt="next page"/>
-                        </Button>
-                    </Stack>
+
+                        {isMobile && shownResults}
+
+                        {hasActiveFilters && (
+                        <Stack 
+                            className={styles.activeFiltersContainer} 
+                            align="alignCenter" 
+                            gap="16"
+                        >
+                            <span>Выбранные фильтры: </span>
+                            {activeFilters.map((filter, index) => (
+                                <Stack 
+                                    key={index} 
+                                    className={styles.filterChip} 
+                                    gap="8" 
+                                    align="alignCenter"
+                                    justify='justifyCenter'
+                                >
+                                    {filter.label}
+                                    <Button onClick={() => deleteFilter(filter)} color='secondary' outlined>
+                                        <DeleteFilter/>
+                                    </Button>
+                                </Stack>
+                            ))}
+                            <Button className={styles.clearAll} color='link' outlined onClick={() => dispatch(clearAllFilters())}>
+                                Очистить все
+                            </Button>
+                        </Stack>
+                        )}
+                        <Stack 
+                            gap='32' 
+                            className={styles.cardsContainer}
+                        >
+                            {cards.map((element) => <Card key={element.id} {...element}/>)}
+                        </Stack>
+                        <Pagination totalPages={2}/>
                     </Stack>
                 </Stack>
             </Stack>
+            <Advantages/>
         </Stack>
     )
 }

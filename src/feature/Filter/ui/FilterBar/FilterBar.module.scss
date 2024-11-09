@@ -1,0 +1,60 @@
+.container {   
+    color: var(--black-color);
+
+    h2 {
+        line-height: 51px;
+    }
+
+    hr {
+        width: 250px;
+        height: 1px;
+        background-color: var(--stroke-color);
+        border: none;
+        }
+    
+    .priceContainer {
+        .subtitle {
+            font-size: var(--font-size-20);
+            font-weight: 500;
+        }
+
+        p {
+            color: var(--secoundry-black-color);
+        }
+
+        .slider {
+            width: 250px;
+            height: 6px;
+            background: var(--stroke-color);
+            border-radius: 3px;
+        }
+        .thumb {
+            height: 24px;
+            width: 24px;
+            background-color:var(--green-color);
+            border-radius: var(--border-radius-circle);
+            cursor: pointer;
+            border:var(--border-flashSale);
+            margin-top: -7px; 
+        }
+        .track {
+            position: absolute;
+            height: 6px;
+            border-radius: 3px;    
+        }
+        .trackMin {
+            background-color: #ddd;
+        }
+        .trackMax {
+            background-color: var(--green-color);
+        }
+    }
+    
+    .buttonContainer{
+        button {
+            padding: 8px 16px;
+            
+        }
+    }
+    
+}
