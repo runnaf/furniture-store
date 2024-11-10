@@ -1,28 +1,22 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import { Button } from "../../../shared/ui/Button/Button";
 import { Stack } from "../../../shared/ui/Stack/Stack"
-import styles from './Pagination.module.scss'
+import styles from './PaginationPage.module.scss'
 import arrow from "../../../shared/assets/svg/arrow-down.svg"
 
-export const Pagination = ({ totalPages }) => {
-
-    const [currentPage, setCurrentPage] = useState(1)
-
-    const handlePageChange = useCallback((page) => {
-        setCurrentPage(page)
-    }, [])
+export const PaginationPage = ({ totalPages, onPageChange, currentPage}) => {
 
     const handlePreviousPage = useCallback(() => {
         if (currentPage > 1) {
-            setCurrentPage(currentPage - 1);
+            onPageChange(currentPage - 1);
         }
-    }, [currentPage])
+    }, [currentPage, onPageChange]);
 
     const handleNextPage = useCallback(() => {
         if (currentPage < totalPages) {
-            setCurrentPage(currentPage + 1);
+            onPageChange(currentPage + 1);
         }
-    }, [currentPage, totalPages])
+    }, [currentPage, totalPages, onPageChange]);
 
     useEffect(() => {
         window.scrollTo({ top: 100, behavior: 'smooth' })
@@ -34,13 +28,13 @@ export const Pagination = ({ totalPages }) => {
                 key={index} 
                 color="outlined"
                 radius="circle"
-                onClick={() => handlePageChange(index + 1)}
+                onClick={() => onPageChange(index + 1)}
                 disabled={currentPage === index + 1}
                 className={currentPage === index + 1 ? styles.active : ''}>
                 {index + 1}
             </Button>
         ));
-    }, [currentPage, totalPages, handlePageChange]);
+    }, [currentPage, totalPages, onPageChange]);
 
     return(
         <Stack 
