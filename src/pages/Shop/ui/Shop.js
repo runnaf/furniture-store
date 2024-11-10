@@ -138,7 +138,7 @@ export const Shop = () => {
                     </Stack>
                 </Stack>
             </Stack>
-            <Advantages/>
+            <Advantages />
         </Stack>
     )
 }
