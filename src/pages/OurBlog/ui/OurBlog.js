@@ -68,6 +68,7 @@ export const OurBlog = () => {
                     totalPages={data.totalPages}
                     currentPage={data.currentPage}/>
                 </Stack>
+                <Advantages/>
             </Stack>
         );
     }
