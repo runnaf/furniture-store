@@ -29,7 +29,7 @@ export const useCustomScroll = () => {
     }, [])
 
     const handleWheel = useCallback((e) => {
-        containerRef.current.scrollLeft += e.deltaY || e.deltaX; 
+        containerRef.current.scrollLeft += e.deltaX; 
     }, []);
 
     useEffect(() => {

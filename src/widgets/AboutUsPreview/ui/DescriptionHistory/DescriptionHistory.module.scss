@@ -1,0 +1,8 @@
+@import "../../../../app/styles/mixin.scss";
+
+.container {
+    & > div {
+        text-align: center;
+        align-items: center;
+    }
+}

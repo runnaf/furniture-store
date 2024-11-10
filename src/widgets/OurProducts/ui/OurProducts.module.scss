@@ -10,6 +10,7 @@
 
     .productContainer {
         width: 100%;
+        
         > div {
             width: 100%;
 
@@ -24,11 +25,6 @@
                         @include tablet-l {
                             padding: 10px 20px;
                         }
-
-                        @include mobile-xl {
-                            width: 175px;
-                        }
-
                     }
                 }
             }
@@ -39,6 +35,11 @@
                     overflow-x: scroll;
                     touch-action: pan-x;
                     scrollbar-width: none;
+                    cursor: grab;
+
+                    @include mobile-l {
+                        cursor: default;
+                    }
                 }
             }
         }

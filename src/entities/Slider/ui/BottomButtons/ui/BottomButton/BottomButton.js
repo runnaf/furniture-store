@@ -5,7 +5,9 @@ export const BottomButton = ({
         currentSlide, 
         handleClickSlide,
         page,
-        color 
+        color,
+        children, 
+        className
     }) => {
 
         const mode = {
@@ -13,6 +15,7 @@ export const BottomButton = ({
         };
 
         const additional = [
+            className,
             styles[color],
         ];
 
@@ -20,7 +23,9 @@ export const BottomButton = ({
 
     return (
         <li className={styles.container} onClick = {()=> handleClickSlide(page)}>
-            <button type="button" className={stylesBottomButton} />
+            <button type="button" className={stylesBottomButton}>
+                {children}
+            </button>
         </li>
     )
 }

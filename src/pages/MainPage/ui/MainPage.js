@@ -7,7 +7,7 @@ import { TodayDeals } from "../../../widgets/TodayDeals/ui/TodayDeals";
 import styles from './MainPage.module.scss';
 import { Testimonial } from "../../../widgets/Testimonial/ui/Testimonial/Testimonial";
 import { Preview } from "../../../widgets/Preview/ui/Preview/Preview";
-import { Advantages } from "../../../entities/Advantages/ui/Advantages/Advantades";
+import { Advantages } from "../../../entities/Advantages/ui/Advantages/Advantages";
 
 const MainPage = () => {
     return (

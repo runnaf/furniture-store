@@ -1,0 +1,19 @@
+@import "../../../../app/styles/mixin.scss";
+
+.container {
+    @include section-style;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-48);
+
+    @include tablet-l {
+        width: 100%;
+        padding: 0 30px;
+    }
+
+    & > div {
+        text-align: center;
+        align-items: center;
+    }
+}
