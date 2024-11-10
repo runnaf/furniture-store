@@ -13,10 +13,10 @@ import { useResize } from "../../../shared/hooks/useResize"
 import SortMenu from "../../../feature/Filter/ui/SortMenu/SortMenu"
 import { FilterBar } from "../../../feature/Filter/ui/FilterBar/FilterBar"
 import { MobileFilterBar } from "../../../feature/Filter/ui/MobileFilterBar/MobileFilterBar"
-import { Advantages } from "../../../entities/Advantages/ui/Advantages/Advantades"
 import { Pagination } from "../../../entities/Pagination.js/ui/Pagination"
 import { Button } from "../../../shared/ui/Button/Button"
 import { DeleteFilter } from "../../../shared/assets/svg/deleteFilter"
+import { Advantages } from "../../../entities/Advantages/ui/Advantages/Advantages"
 
 // const CARDS_PER_PAGE = 12
 
@@ -141,7 +141,7 @@ export const Shop = () => {
                     </Stack>
                 </Stack>
             </Stack>
-            <Advantages/>
+            <Advantages />
         </Stack>
     )
 }
