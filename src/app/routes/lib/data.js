@@ -28,9 +28,10 @@ export const routes = [
     },
     {
         title: "О нас",
-        link: getRouteAbout(),
+        link: getRouteAbout(1),
         isNavbar: true,
-        page: <AboutUsPage />
+        //page: <AboutUsPage />
+        page: <ProductPage />
     },
     {
         title: "Новости",
