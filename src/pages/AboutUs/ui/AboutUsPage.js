@@ -6,7 +6,7 @@ import { ProductQuality } from "../../../widgets/ProductQuality/ui/ProductQuanti
 import { AboutUsPreview } from "../../../widgets/AboutUsPreview/ui/AboutUsPreview/AboutUsPreview";
 import styles from "./AboutUsPage.module.scss";
 
-export const AboutUsPage = () => {
+const AboutUsPage = () => {
     return (
         <main className={styles.container}>
             <SectionTitle>
@@ -18,3 +18,5 @@ export const AboutUsPage = () => {
         </main>
     )
 }
+
+export default AboutUsPage

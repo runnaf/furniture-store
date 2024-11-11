@@ -7,7 +7,7 @@ import { RelatedProducts } from "../../../widgets/RelatedProducts/RelatedProduct
 import { Tabs } from "../../../widgets/TabsProduct/ui/Tabs/Tabs";
 import styles from "./ProductPage.module.scss";
 
-export const ProductPage = () => {
+const ProductPage = () => {
     return (
         <main className={styles.container}>
             <SectionTitle>
@@ -20,3 +20,5 @@ export const ProductPage = () => {
         </main>
     )
 }
+
+export default ProductPage
