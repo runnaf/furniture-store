@@ -3,10 +3,6 @@
 
 .tabsContainer {
     @include section-style;
-
-    @include tablet-l {
-        width: 100%;
-    }
 }
 
 .tabHeaders {

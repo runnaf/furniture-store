@@ -31,28 +31,15 @@
 
         .title {
             padding-bottom: 32px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
         }
 
         li {
             font-size: var(--font-size-18);
             color: var(--black-color);
 
-            button {
-                background: none;
-                color: var(--black-color);
-                text-align: left;
-                font-size: var(--font-size-18);
-                font-weight: 500;
-                display: flex;
-                justify-content: space-between;
-                width: 100%;
-
-                span {
-                    display: flex;
-                    align-items: center;
-                }
-
-            }
             .links {
                 color: var(--black-color);
                 font-weight: 500;
@@ -71,6 +58,10 @@
 
     button {
         margin-bottom: 24px;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
     }
 }
 
@@ -115,4 +106,8 @@
         width: 100%;
     }
 
+}
+
+.linksShop {
+    
 }

@@ -7,6 +7,7 @@ import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { NavLink } from 'react-router-dom';
 import { getRouteCategories } from '../../../../app/routes/lib/helper';
 import useOverflowHidden from '../../../../shared/hooks/useOverflowHidden';
+import { ScrollToTop } from '../../../../shared/libs/scrollToTop';
 
 export const MobileNavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,6 +24,7 @@ export const MobileNavbar = () => {
         setIsOpen(false);
         setActiveDropdown(null);
         setActiveSubmenu(null);
+        ScrollToTop();
     };
 
     const toggleDropdown = (title) => {
@@ -32,6 +34,11 @@ export const MobileNavbar = () => {
     const toggleSubmenu = (index) => {
         setActiveSubmenu(activeSubmenu === index ? null : index);
     };
+
+    const onClickShop = (title) => {
+        closeMenu()
+        toggleDropdown(title)
+    }
 
     return (
         <nav className={styles.mobileNavbar}>
@@ -61,15 +68,21 @@ export const MobileNavbar = () => {
                     <LogoIcon />
                 </Stack>
                 {routes.map(({ title, link }) => {
-                    const isDropdownCategory = title === 'Магазин' || title === 'Категории';
+                    const isDropdownCategory = title === 'Магазин' ;
 
                     return (
                         <li key={title} className={styles.title}>
                             {isDropdownCategory ? (
-                                <button onClick={() => toggleDropdown(title)}>
-                                    {title}
-                                    {activeDropdown === title ? <span>{<ArrowupIcon />}</span> : <span>{<ArrowdownIcon />}</span>}
-                                </button>
+                                <Stack justify="justifyBetween">
+                                    <NavLink to={link} className={({ isActive }) =>
+                                        `${styles.links} ${isActive ? styles.active : ''}`
+                                    } onClick={() => onClickShop(title)}>
+                                        {title}
+                                    
+                                    </NavLink>
+                                    <button onClick={() => toggleDropdown(title)}>{activeDropdown === title ? <ArrowupIcon /> : <ArrowdownIcon />}</button>
+                                </Stack>
+                                
                             ) : (
                                 <NavLink to={link} className={({ isActive }) =>
                                     `${styles.links} ${isActive ? styles.active : ''}`

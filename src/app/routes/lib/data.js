@@ -21,12 +21,6 @@ export const routes = [
 
     },
     {
-        title: "Категории",
-        link: getRouteCategories(),
-        isNavbar: true,
-
-    },
-    {
         title: "Вопросы",
         link: getRouteFAQ(),
         isNavbar: true,
@@ -37,11 +31,6 @@ export const routes = [
         link: getRouteAbout(),
         isNavbar: true,
         page: <AboutUsPage />
-    },
-    {
-        title: "Контакты",
-        link: getRouteContact(),
-        isNavbar: true,
     },
     {
         title: "Новости",
