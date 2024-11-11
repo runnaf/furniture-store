@@ -1,0 +1,12 @@
+@use "../../../../app/styles/media-queries.scss" as media;
+
+.container {
+    @include media.mobile-xl {
+        align-items: center;
+
+        & p {
+            text-align: center;
+        }
+    }
+
+}
