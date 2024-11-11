@@ -7,5 +7,5 @@ export const getRouteContact = () => '/contact';
 export const getRouteBlog = () => '/blog';
 export const getRouteSignin = () => '/signin';
 export const getRouteSignup = () => '/signup';
-export const getRouteProduct = (param, id) => `/shop/shop${param ? `/${param}` : ''}/${id}`;
+export const getRouteProduct = (param, id) => `/shop${param ? `/${param}` : ''}/${id}`;
 

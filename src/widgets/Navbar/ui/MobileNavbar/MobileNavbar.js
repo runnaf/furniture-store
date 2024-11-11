@@ -17,7 +17,9 @@ export const MobileNavbar = () => {
     useOverflowHidden(isOpen);
 
     const toggleMenu = () => {
+        ScrollToTop();
         setIsOpen(!isOpen);
+        setActiveDropdown(false);
     };
 
     const closeMenu = () => {
@@ -67,9 +69,8 @@ export const MobileNavbar = () => {
                     </button>
                     <LogoIcon />
                 </Stack>
-                {routes.map(({ title, link }) => {
+                {routes.filter(route => route.isNavbar).map(({ title, link }) => {
                     const isDropdownCategory = title === 'Магазин' ;
-
                     return (
                         <li key={title} className={styles.title}>
                             {isDropdownCategory ? (
@@ -91,7 +92,7 @@ export const MobileNavbar = () => {
 
                             {activeDropdown === title && isDropdownCategory && (
                                 <ul className={styles.titles}>
-                                    {dropdownMenus[title === 'Магазин' ? 'shop' : 'categories'].map((menu, index) => (
+                                    {dropdownMenus['shop'].map((menu, index) => (
                                         <li key={index}>
                                             <button onClick={() => toggleSubmenu(index)}>
                                                 {menu.title}

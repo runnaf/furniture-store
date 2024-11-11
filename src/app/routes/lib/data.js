@@ -5,7 +5,7 @@ import { OurBlog } from "../../../pages/OurBlog/ui/OurBlog";
 import { ProductPage } from "../../../pages/ProductPage/ui/ProductPage";
 import SigninPage from "../../../pages/SigninPage/ui/SigninPage";
 import SignupPage from "../../../pages/SignupPage/ui/SignupPage";
-import { getRouteAbout, getRouteBlog, getRouteCategories, getRouteContact, getRouteFAQ, getRouteMain, getRouteProduct, getRouteShop, getRouteSignin, getRouteSignup } from "./helper";
+import { getRouteAbout, getRouteBlog, getRouteFAQ, getRouteMain, getRouteProduct, getRouteShop, getRouteSignin, getRouteSignup } from "./helper";
 
 export const routes = [
     {
