@@ -13,10 +13,10 @@ import { useResize } from "../../../shared/hooks/useResize"
 import SortMenu from "../../../feature/Filter/ui/SortMenu/SortMenu"
 import { FilterBar } from "../../../feature/Filter/ui/FilterBar/FilterBar"
 import { MobileFilterBar } from "../../../feature/Filter/ui/MobileFilterBar/MobileFilterBar"
-import { Pagination } from "../../../entities/Pagination.js/ui/Pagination"
 import { Button } from "../../../shared/ui/Button/Button"
 import { DeleteFilter } from "../../../shared/assets/svg/deleteFilter"
 import { Advantages } from "../../../entities/Advantages/ui/Advantages/Advantages"
+import { PaginationPage } from "../../../entities/PaginationPage/ui/PaginationPage"
 
 // const CARDS_PER_PAGE = 12
 
@@ -26,9 +26,6 @@ export const Shop = () => {
     const isMobile = width <= 820;
     const dispatch = useDispatch();
     const selectedFilters = useSelector(state => state.filters)
-
-    console.log(selectedFilters)
-
 
     const hasActiveFilters = Object.entries(selectedFilters).some(([key, value]) => {
         if (Array.isArray(value) && value.length === 2) {
@@ -137,7 +134,7 @@ export const Shop = () => {
                         >
                             {cards.map((element) => <Card key={element.id} {...element}/>)}
                         </Stack>
-                        <Pagination totalPages={2}/>
+                        <PaginationPage totalPages={2}/>
                     </Stack>
                 </Stack>
             </Stack>
