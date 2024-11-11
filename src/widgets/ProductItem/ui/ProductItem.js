@@ -10,8 +10,7 @@ export const ProductItem = () => {
 
     const {
         data
-    } = useGetProductQuery('1')
-    console.log(useGetProductQuery)
+    } = useGetProductQuery('671a7363e7c54db428bcda25')
 
     console.log(data)
 

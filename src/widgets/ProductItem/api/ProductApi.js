@@ -1,12 +1,10 @@
 import { api } from "../../../shared/api/api";
+import { endpoints } from "../../../shared/api/endpoints";
 import { createApiConfig } from "../../../shared/api/helpers";
-
-const PRODUCT_TAG = [{type: 'Product', id: 'Product'}];
 
 const productApi = api.injectEndpoints({
     endpoints: (build) => ({
-        getProduct: (id) => createApiConfig('GET', `/shop/${id}`),
-        providesTags: () => PRODUCT_TAG,
+        getProduct: (id) => createApiConfig('GET', `${endpoints.shop}/${id}`),
     })
 })
 
