@@ -16,11 +16,11 @@ export const ProductItem = () => {
         data
     } = useGetProductQuery(id)
 
-    // const {
-    //     review
-    // } = useGetReviewsQuery(data.reviews[0])
+    const {
+        review
+    } = useGetReviewsQuery(data.reviews[0])
 
-    // console.log(review)
+    console.log(review)
 
     return (
         <Stack direction="column" gap="75">

@@ -11,7 +11,6 @@ import styles from "./AboutUsPage.module.scss";
 const AboutUsPage = () => {
     return (
         <main className={styles.container}>
-
              {/* TODO */}
             <Link to={getRouteProduct('671a7363e7c54db428bcda25')}>к товару</Link>
             <SectionTitle>

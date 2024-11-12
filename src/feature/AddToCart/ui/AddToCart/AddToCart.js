@@ -25,7 +25,7 @@ export const AddToCart = ({gap, colors, currentColor, isProduct=false}) => {
 
     //выбранный цвет
     const [current, setCurrent] = useState(currentColor);
-console.log(current)
+
     //количество товара
     const [count, setCount] = useState(INITIAL_VALUE);
     const increaseCount = () =>{
@@ -39,7 +39,6 @@ console.log(current)
 
     //открытие модального окна
     const addToCart = () => {
-        console.log(colors && current === undefined)
         if (!isProduct) {
             changeColorModal()
         }
