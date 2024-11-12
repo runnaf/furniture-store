@@ -1,3 +1,5 @@
+@import '../../../../app/styles/media-queries.scss';
+
 .container {   
     color: var(--black-color);
 
@@ -13,6 +15,13 @@
         }
         
     .buttonContainer{
+        position: sticky;
+        top: 10px;
+        z-index: 10;
+
+        @include tablet-m {
+            top:50px
+        }
         button {
             padding: 8px 16px;
             

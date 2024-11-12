@@ -4,10 +4,14 @@ import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { FilterBar } from '../FilterBar/FilterBar';
 import { Button } from '../../../../shared/ui/Button/Button';
 import { useToggleMenu } from '../../../../shared/hooks/useToggleMenu';
+import useOverflowHidden from '../../../../shared/hooks/useOverflowHidden';
+import { DeleteFilter } from '../../../../shared/assets/svg/deleteFilter';
 
 export function MobileFilterBar() {
 
-    const { isOpen, toggleMenu, menuRef } = useToggleMenu()
+    const { isOpen, toggleMenu, menuRef } = useToggleMenu();
+
+    useOverflowHidden(isOpen);
 
     return (
         <Stack>
@@ -27,8 +31,8 @@ export function MobileFilterBar() {
                     direction='column' 
                     gap='12'
                 >
-                    <Button onClick={toggleMenu} className={styles.closeButton} 
-                    color='primary'>Закрыть</Button>
+                    <Button onClick={toggleMenu}>
+                        <DeleteFilter/></Button>
                     <FilterBar toggleMenu={toggleMenu}/>
                 </Stack>
             </Stack>
