@@ -10,13 +10,23 @@ export const getStarsWord = (count) => {
     }
 }
 
-const endingOfTheWord = (totalMonthsPassed) => {
+export const endingOfTheWord = (totalMonthsPassed) => {
     if (totalMonthsPassed === 1) {
         return ''
     } else if (totalMonthsPassed < 5) {
         return 'a'
     } else if (totalMonthsPassed >= 5) {
         return 'ев'
+    }
+}
+
+export const endingOfTheWordReview = (reviews) => {
+    if (reviews === 1) {
+        return ''
+    } else if (reviews < 5) {
+        return 'a'
+    } else if (reviews >= 5) {
+        return 'ов'
     }
 }
 
@@ -54,8 +64,8 @@ export const countStars = (ratings) => {
 
     // Проходим по каждому объекту в массиве
     ratings.forEach(item => {
-        if (item.rating >= 1 && item.rating <= 5) {
-            starCount[Math.round(item.rating)]++;
+        if (item.rate >= 1 && item.rate <= 5) {
+            starCount[Math.round(item.rate)]++;
         }
     });
 

@@ -1,7 +1,7 @@
 import { Stars } from '../../../../../entities/Stars/ui/Stars/Stars';
 import { Stack } from '../../../../../shared/ui/Stack/Stack';
 import { Text } from '../../../../../shared/ui/Text/Text';
-import { getStarsWord } from '../../../lib/helpers';
+import { endingOfTheWordReview, getStarsWord } from '../../../lib/helpers';
 import styles from './ReviewSummary.module.scss';
 
 export const ReviewSummary = ({ ratingScore, totalReviews, rating }) => (
@@ -12,7 +12,7 @@ export const ReviewSummary = ({ ratingScore, totalReviews, rating }) => (
                 <Text>&nbsp;из 5</Text>
             </Stack>
             <Stars rating={ratingScore} ratingText={false}></Stars>
-            <Text className={styles.totalReviews}>({totalReviews} отзывов)</Text>
+            <Text className={styles.totalReviews}>{`${totalReviews} отзыв${endingOfTheWordReview(totalReviews)}`}</Text>
         </Stack>
         <Stack className={styles.ratingBreakdown} direction="column" gap="16">
             {Object.entries(rating).map(([stars, count]) => (

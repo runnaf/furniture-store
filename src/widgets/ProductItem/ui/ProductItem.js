@@ -16,6 +16,8 @@ export const ProductItem = () => {
 
     if (isLoading) return //TODO - лоадер или скелетоны надо будет сделать, пока данные не загружены с бэкенда
 
+    console.log(data)
+
     return (
         <Stack direction="column" gap="75">
             <SectionTitle>

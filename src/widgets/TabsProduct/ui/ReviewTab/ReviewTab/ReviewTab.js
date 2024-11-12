@@ -12,24 +12,25 @@ import styles from './ReviewTab.module.scss';
 
 export const ReviewTab = () => {
     const { id } = useParams();
-    const rating = countStars(reviews);
-    const average = calculateAverageStars(rating).toFixed(1);
+    
     const authorized = true; //TODO
     const madePurchase = true //TODO
 
     const {data, isLoading} = useGetReviewsByProductIdQuery(id);
-    console.log(data);
     
     if(isLoading) return //TODO
+
+    const rating = countStars(data);
+    const average = calculateAverageStars(rating).toFixed(1);
 
     return (
         <Stack gap="48" direction="column">
             <ReviewSummary
                 ratingScore={average}
-                totalReviews={reviews.length}
+                totalReviews={data.length}
                 rating={rating}
             />
-            <ReviewList reviews={reviews} />
+            <ReviewList reviews={data} />
             <Stack direction="column" gap="24">
                 <Stack direction="column" gap="16">
                     <Text type="h3" size="md">Оставьте свой отзыв</Text>

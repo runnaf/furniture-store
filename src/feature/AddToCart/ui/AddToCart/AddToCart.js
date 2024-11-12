@@ -6,7 +6,7 @@ import { Favorites } from "../Favorites/Favorites";
 import { Quantity } from "../Quantity/Quantity";
 import { Text } from "../../../../shared/ui/Text/Text";
 import { ColorButton } from "../ColorButton/ColorButton"
-import { getColorForStyle, getColorTitle } from "../../lib/helper";
+import { getColorTitle } from "../../lib/helper";
 import { ModalColor } from "../../../ModalColor/ModalColor";
 import { ColorButtons } from "../ColorButtons/ColorButtons";
 import { useModal } from "../../../../shared/hooks/useModal";

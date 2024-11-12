@@ -3,8 +3,8 @@ import { Stack } from "../../../../shared/ui/Stack/Stack";
 import { Text } from "../../../../shared/ui/Text/Text";
 import styles from "./Review.module.scss";
 
-export const Review = ({ review, children, className }) => {
-    const {name, speciality, rating, text, title, verified} = review;
+export const Review = ({ data, children, className }) => {
+    const {name, speciality, status, rating, review, title, verified, rate} = data;
 
     return (
         <Stack 
@@ -24,17 +24,17 @@ export const Review = ({ review, children, className }) => {
                     <Text className={styles.textName}>
                         {name}
                     </Text>
-                    {verified && <Text className={styles.verified}>(подтвержденный профиль)</Text>}
+                    <Text className={styles.verified}>{verified ? '(подтвержденный профиль)' : status}</Text>
                     { speciality && <Text className={styles.textSpeciality}>
                         {speciality}
                     </Text>}
                 </Stack>
                 {children}
             </Stack>
-            <Stars rating={rating} />
+            <Stars rating={rating ? rating : rate} />
             {title && <Text size="s">{title}</Text>}
             <Text className={styles.review}>
-                {text}
+                {review}
             </Text>
         </Stack>
     )
