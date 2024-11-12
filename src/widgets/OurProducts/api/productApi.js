@@ -1,17 +1,17 @@
 import { api } from "../../../shared/api/api";
 import { endpoints } from "../../../shared/api/endpoints";
 import { createApiConfig } from "../../../shared/api/helpers";
+import { createQueryString } from "./queryUtils";
 
 
 const PRODUCT_TAG = [{ type: 'Product', id: 'Product'}];
-
 
 const productApi = api.injectEndpoints({
     endpoints:(build) => ({
         getAllProducts: build.query({
             query: ({ params }) => createApiConfig(
                 'GET', 
-                `${endpoints.lists.goods}?${new URLSearchParams(params).toString()}`
+                `${endpoints.lists.goods}?${createQueryString(params)}`
             ),
             providesTags: () => PRODUCT_TAG,
         }),

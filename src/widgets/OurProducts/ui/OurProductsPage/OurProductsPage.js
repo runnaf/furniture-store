@@ -9,14 +9,30 @@ import { DeleteFilter } from "../../../../shared/assets/svg/deleteFilter"
 import { Button } from "../../../../shared/ui/Button/Button"
 import { Stack } from "../../../../shared/ui/Stack/Stack"
 import { Text } from "../../../../shared/ui/Text/Text"
+import { useGetAllProductsQuery } from "../../api/productApi"
 import { cards } from "../../lib/data"
 import styles from './OurProductsPage.module.scss'
+
+const PAGE = 1;
+const ARTICLE_PER_PAGE = 12;
 
 
 export const OurProductsPage = ({ isMobile }) => {
 
     const dispatch = useDispatch();
     const selectedFilters = useSelector(state => state.filters)
+    const selectedOption = useSelector(state => state.sort)
+
+        const { data, error, isLoading } = useGetAllProductsQuery({
+            params: {
+                page: PAGE,
+                limit: ARTICLE_PER_PAGE,
+                sort: selectedOption,
+                filter: selectedFilters
+            } 
+        }) //TODO
+
+    console.log(data, error, isLoading)
 
     const hasActiveFilters = Object.entries(selectedFilters).some(([key, value]) => {
         if (Array.isArray(value) && value.length === 2) {
