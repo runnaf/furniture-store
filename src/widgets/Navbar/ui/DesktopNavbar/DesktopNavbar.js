@@ -49,9 +49,11 @@ export const DesktopNavbar = () => {
                     <li key={title}
                         onMouseEnter={() => handleMouseEnter(title)}
                     >
-                        <NavLink to={link} className={({ isActive }) =>
+                        <NavLink 
+                        to={link} className={({ isActive }) =>
                             `${styles.link} ${isActive ? styles.active : ''}`
-                        } onClick={ScrollToTop()}>{title}</NavLink>
+                        } 
+                        onClick={ScrollToTop()}>{title}</NavLink>
                         {activeDropdown === title && getDropdownMenu(title)}
                     </li>
                 ))}

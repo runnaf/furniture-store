@@ -9,7 +9,7 @@ const productApi = api.injectEndpoints({
         }),
         getReviews: build.query({
             query: (id) => createApiConfig('GET', `${endpoints.lists.reviews}/${id}`)
-        })
+        }) 
     })
 })
 

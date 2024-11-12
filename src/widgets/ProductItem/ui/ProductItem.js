@@ -9,7 +9,6 @@ import { SectionTitle } from "../../../entities/SectionTitle/ui/SectionTitle";
 import { Breadcrumbs } from "../../../entities/BreadCrumbs/ui/BreadCrumbs";
 import { routes } from "../../../app/routes/lib/data";
 
-
 export const ProductItem = () => {
     const { id } = useParams();
 
@@ -22,7 +21,6 @@ export const ProductItem = () => {
     // } = useGetReviewsQuery(data.reviews[0])
 
     // console.log(review)
-
 
     return (
         <Stack direction="column" gap="75">
