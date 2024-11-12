@@ -5,23 +5,23 @@ import { RelatedProducts } from "../../RelatedProducts/RelatedProducts"
 import { Tabs } from "../../TabsProduct/ui/Tabs/Tabs"
 import { Advantages } from "../../../entities/Advantages/ui/Advantages/Advantages"
 import { Stack } from "../../../shared/ui/Stack/Stack"
+import { useParams } from "react-router"
 
 export const ProductItem = () => {
+    const { id } = useParams();
 
     const {
         data
-    } = useGetProductQuery('671a7363e7c54db428bcda25')
+    } = useGetProductQuery(id)
 
     console.log(data)
 
     return (
-        <Stack direction="column" gap="16">
+        <Stack direction="column" gap="75">
             <ProductPreview />
             <Tabs />
             <RelatedProducts />
             <Advantages />
         </Stack>
-        
-
     )
 }
