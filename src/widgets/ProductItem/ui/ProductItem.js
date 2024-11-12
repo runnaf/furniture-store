@@ -5,12 +5,13 @@ import { RelatedProducts } from "../../RelatedProducts/RelatedProducts"
 import { Tabs } from "../../TabsProduct/ui/Tabs/Tabs"
 import { Advantages } from "../../../entities/Advantages/ui/Advantages/Advantages"
 import { Stack } from "../../../shared/ui/Stack/Stack"
+import { useParams } from "react-router"
 
 export const ProductItem = () => {
 
-    const {
-        data
-    } = useGetProductQuery('671a7363e7c54db428bcda25')
+    const { id } = useParams();
+    
+    const {data} = useGetProductQuery(id)
 
     console.log(data)
 
