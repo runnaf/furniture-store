@@ -26,17 +26,11 @@ const Shop = () => {
             </SectionTitle>
 
             <Stack 
-                justify='justifyCenter' 
-                align='alignCenter' 
-                gap='75'
+                gap='32'
                 className={styles.wrapper}
             >
-                <Stack 
-                    gap='32'
-                >
-                    {!isMobile && <FilterBar /> }                 
-                    <OurProductsPage isMobile={isMobile}/>
-                </Stack>
+                {!isMobile && <FilterBar /> }                 
+                <OurProductsPage isMobile={isMobile}/>
             </Stack>
             <Advantages />
         </Stack>

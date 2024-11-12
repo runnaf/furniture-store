@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { Card } from "../../../../entities/Card/ui/Card"
+import { PaginationLib } from "../../../../entities/PaginationLib/PaginationLib"
 import { filtersData } from "../../../../feature/Filter/lib/filtersData"
 import { clearAllFilters, clearFilter } from "../../../../feature/Filter/model/filterSlice"
 import { MobileFilterBar } from "../../../../feature/Filter/ui/MobileFilterBar/MobileFilterBar"
@@ -98,10 +99,18 @@ export const OurProductsPage = ({ isMobile }) => {
             </Stack>
             )}
             <Stack 
-                gap='32' 
-                className={styles.cardsContainer}
+                direction='column'
+                gap='75'
             >
-                {cards.map((element) => <Card key={element.id} {...element}/>)}
+                <Stack 
+                    gap='32' 
+                    className={styles.cardsContainer}
+                >
+                    {cards.map((element) => <Card key={element.id} {...element}/>)}
+                </Stack>
+                <PaginationLib
+                forcePage={2}
+                pageCount={3}/>
             </Stack>
         </Stack>
     )
