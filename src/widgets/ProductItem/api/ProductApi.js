@@ -4,16 +4,16 @@ import { createApiConfig } from "../../../shared/api/helpers";
 
 const productApi = api.injectEndpoints({
     endpoints: (build) => ({
-        getProduct: build.query({
+        getProductById: build.query({
             query: (id) => createApiConfig('GET', `${endpoints.lists.shop}/${id}`),
         }),
-        getReviews: build.query({
+        getReviewsByProductId: build.query({
             query: (id) => createApiConfig('GET', `${endpoints.lists.reviews}/${id}`)
         }) 
     })
 })
 
 export const {
-    useGetProductQuery,
-    useGetReviewsQuery
+    useGetProductByIdQuery,
+    useGetReviewsByProductIdQuery,
 } = productApi;

@@ -6,13 +6,21 @@ import { Stack } from '../../../../../shared/ui/Stack/Stack';
 import { calculateAverageStars, countStars } from '../../../lib/helpers';
 import { SendingReview } from '../../../../../feature/SendingReview/SendingReview';
 import { Text } from '../../../../../shared/ui/Text/Text';
+import { useParams } from 'react-router';
+import { useGetReviewsByProductIdQuery } from '../../../../ProductItem/api/ProductApi';
 import styles from './ReviewTab.module.scss';
 
 export const ReviewTab = () => {
+    const { id } = useParams();
     const rating = countStars(reviews);
     const average = calculateAverageStars(rating).toFixed(1);
     const authorized = true; //TODO
     const madePurchase = true //TODO
+
+    const {data, isLoading} = useGetReviewsByProductIdQuery(id);
+    console.log(data);
+    
+    if(isLoading) return //TODO
 
     return (
         <Stack gap="48" direction="column">

@@ -10,7 +10,6 @@ import styles from './Tabs.module.scss';
 
 export const Tabs = ({data}) => {
     const [activeTab, setActiveTab] = useState('description');
-    console.log(data)
     const { description } = data;
     const { list, paragraphs} = description
 
