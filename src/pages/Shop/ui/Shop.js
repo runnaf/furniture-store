@@ -14,11 +14,7 @@ const Shop = () => {
     const isMobile = width <= 820;
     
     return (
-        <Stack 
-            direction='column' 
-            gap='75' 
-            align='alignCenter'
-            justify='justifyCenter'
+        <main 
             className={styles.container}
         >
             <SectionTitle>
@@ -33,7 +29,7 @@ const Shop = () => {
                 <OurProductsPage isMobile={isMobile}/>
             </Stack>
             <Advantages />
-        </Stack>
+        </main>
     )
 }
 
