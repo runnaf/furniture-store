@@ -8,4 +8,4 @@ export const getRouteBlog = () => '/blog';
 export const getRouteSignin = () => '/signin';
 export const getRouteSignup = () => '/signup';
 export const getRouteProduct = (id, param) => `/shop${param ? `/${param}` : ''}/${id}`;
-
+// export const getRuoteReviews = (id) => `/reviews/${id}`;

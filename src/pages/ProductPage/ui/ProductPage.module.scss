@@ -8,5 +8,9 @@
 
     & > div:first-of-type {
         width: 100%;
+
+        & > div:first-of-type {
+            width: 100%;
+        }
     }
 }

@@ -1,11 +1,14 @@
 
-import { useGetProductQuery } from "../api/ProductApi"
-import { ProductPreview } from "../../ProductPreview/ui/ProductPreview/ProductPreview"
-import { RelatedProducts } from "../../RelatedProducts/RelatedProducts"
-import { Tabs } from "../../TabsProduct/ui/Tabs/Tabs"
-import { Advantages } from "../../../entities/Advantages/ui/Advantages/Advantages"
-import { Stack } from "../../../shared/ui/Stack/Stack"
-import { useParams } from "react-router"
+import { useParams } from "react-router";
+import { useGetProductQuery, useGetReviewsQuery } from "../api/ProductApi";
+import { ProductPreview } from "../../ProductPreview/ui/ProductPreview/ProductPreview";
+import { RelatedProducts } from "../../RelatedProducts/RelatedProducts";
+import { Tabs } from "../../TabsProduct/ui/Tabs/Tabs";
+import { Stack } from "../../../shared/ui/Stack/Stack";
+import { SectionTitle } from "../../../entities/SectionTitle/ui/SectionTitle";
+import { Breadcrumbs } from "../../../entities/BreadCrumbs/ui/BreadCrumbs";
+import { routes } from "../../../app/routes/lib/data";
+
 
 export const ProductItem = () => {
     const { id } = useParams();
@@ -14,14 +17,21 @@ export const ProductItem = () => {
         data
     } = useGetProductQuery(id)
 
-    console.log(data)
+    // const {
+    //     review
+    // } = useGetReviewsQuery(data.reviews[0])
+
+    // console.log(review)
+
 
     return (
         <Stack direction="column" gap="75">
-            <ProductPreview />
-            <Tabs />
+            <SectionTitle>
+                <Breadcrumbs routes={routes} isProduct = {true} name = {data.name}/>
+            </SectionTitle>
+            <ProductPreview data={data} />
+            <Tabs data={data}/>
             <RelatedProducts />
-            <Advantages />
         </Stack>
     )
 }

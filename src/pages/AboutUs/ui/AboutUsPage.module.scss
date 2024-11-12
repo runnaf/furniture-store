@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
 
-    & > div:first-child {
+    & > div:first-of-type {
         background-color: var(--background-color);
         width: 100%;
 

@@ -1,15 +1,19 @@
 import { useState } from 'react';
-import styles from './Tabs.module.scss';
 import { TabItem } from '../TabItem/TabItem';
 import { DescriptionTab } from '../DescriptionTab/DescriptionTab';
 import { AdditionalInfoTab } from '../AdditionalInfoTab/AdditionalInfoTab';
 import { ReviewTab } from '../ReviewTab/ReviewTab/ReviewTab';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
-import { tabs, descriptionData, additionalInfoData } from '../../lib/data';
+import { tabs } from '../../lib/data';
+import styles from './Tabs.module.scss';
 
 
-export const Tabs = () => {
+export const Tabs = ({data}) => {
     const [activeTab, setActiveTab] = useState('description');
+    console.log(data)
+    const { description } = data;
+    const { list, paragraphs} = description
+
 
     return (
         <Stack gap='32' justify='column' className={styles.tabsContainer}>
@@ -30,10 +34,10 @@ export const Tabs = () => {
             <Stack justify='column' className={styles.tabContent}>
                 {activeTab === 'description' &&
                     <DescriptionTab
-                        descriptionText={descriptionData.descriptionText}
-                        listItems={descriptionData.listItems}
+                        list={list}
+                        paragraphs={paragraphs}
                     />}
-                {activeTab === 'additional' && <AdditionalInfoTab additionalInfo={additionalInfoData} />}
+                {activeTab === 'additional' && <AdditionalInfoTab data={data} />}
                 {activeTab === 'review' && <ReviewTab />}
             </Stack>
         </Stack>
