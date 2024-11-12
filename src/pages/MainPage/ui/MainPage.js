@@ -1,7 +1,7 @@
 import { NewsLetter } from "../../../feature/NewsLetters/ui/NewsLetter";
 import { FlashSale } from "../../../widgets/FlashSale/ui/FlashSale";
 import { NewsBlogsSection } from "../../../widgets/NewsBlogs/ui/NewsBlogsSection/NewsBlogsSection";
-import { OurProducts } from "../../../widgets/OurProducts/ui/OurProducts";
+import { OurProducts } from "../../../widgets/OurProducts/ui/OurProductsSection/OurProducts";
 import { QuestionMainPage } from "../../../widgets/QuestionsMainPage/ui/QuestionMainPage";
 import { TodayDeals } from "../../../widgets/TodayDeals/ui/TodayDeals";
 import styles from './MainPage.module.scss';

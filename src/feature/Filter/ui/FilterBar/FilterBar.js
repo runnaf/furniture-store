@@ -1,23 +1,21 @@
 import { Text } from '../../../../shared/ui/Text/Text';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { Button } from '../../../../shared/ui/Button/Button';
-import styles from './FilterBar.module.scss';
 import React, { useCallback, useEffect, useState } from 'react';
-import ReactSlider from 'react-slider';
-import { Filters } from '../../../../entities/Filters/ui/Filters';
+import { FiltersItem } from '../FiltersItem/FiltersItem';
 import { filtersData } from '../../../Filter/lib/filtersData';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter, clearAllFilters } from '../../model/filterSlice';
 import { useResize } from '../../../../shared/hooks/useResize';
-
+import { FilterPrice } from '../FilterPrice/FilterPrice';
+import styles from './FilterBar.module.scss';
 
 export function FilterBar({ toggleMenu }) {
 
     const width = useResize()
-
-    const dispatch = useDispatch();
-    const selectedFilters = useSelector(state => state.filters);
-    const [temporaryFilters, setTemporaryFilters] = useState(selectedFilters);
+    const dispatch = useDispatch()
+    const selectedFilters = useSelector((state) => state.filters)
+    const [temporaryFilters, setTemporaryFilters] = useState(selectedFilters)
 
     useEffect(() => {
         setTemporaryFilters(selectedFilters)
@@ -26,33 +24,27 @@ export function FilterBar({ toggleMenu }) {
     const handleChange = useCallback((key, value) => {
         setTemporaryFilters((prev) => ({
             ...prev,
-            [key]: key === 'price' ? value : {
-                ...prev[key],
-                ...value
-            }
+            [key]: key === 'price' ? value : { ...prev[key], ...value }
         }))
     }, [])
-    
+
     const handleShowFilters = useCallback(() => {
         dispatch(setFilter(temporaryFilters))
-        if(width <= 820) toggleMenu()
-    }, [dispatch, temporaryFilters, toggleMenu, width]);
+        if (width <= 820) toggleMenu()
+    }, [dispatch, temporaryFilters, toggleMenu, width])
+
 
     const handleClearAll = useCallback(() => {
-        dispatch(clearAllFilters());
-        setTemporaryFilters({}); 
-    }, [dispatch])
+        dispatch(clearAllFilters())
+        setTemporaryFilters(selectedFilters)
+    }, [dispatch, selectedFilters])
 
-    const handleSliderChange = useCallback((values) => {
-        handleChange('price', values);
-    }, [handleChange])
 
     const renderFilter = (key) => {
         const { title, items } = filtersData[key];
         return (
-            <React.Fragment>
-                <Filters
-                    key={key}
+            <React.Fragment key={key}>
+                <FiltersItem
                     title={title}
                     filters={items}
                     selectedFilters={selectedFilters[key]}
@@ -60,59 +52,31 @@ export function FilterBar({ toggleMenu }) {
                 />
                 {key !== 'availability' && <hr />}
             </React.Fragment>
-        )    
-    }
+        );
+    };
 
     return (
         <Stack 
-            direction='column' 
-            gap='24' 
+            direction="column" 
+            gap="24" 
             className={styles.container}
         >
-            <Text type='h2' size='s'>Настройки фильтра</Text>
-
+            <Text type="h2" size="s">Настройки фильтра</Text>
             <hr />
             {renderFilter('category')}
-            <Stack 
-                className={styles.priceContainer}
-                direction='column' 
-                gap='16'
-            >
-                <Text className={styles.subtitle}>Цена</Text>
-                <Stack>
-                    <Text className={styles.price}>{selectedFilters.price[0]}₽</Text>&nbsp;-&nbsp;
-                    <Text className={styles.price}>{selectedFilters.price[1]}₽</Text>
-                </Stack>
-                <ReactSlider
-                    min={0}
-                    max={100000}
-                    step={500}
-                    value={temporaryFilters.price}
-                    onChange={handleSliderChange}
-                    renderThumb={(props) => {
-                        const { key, ...restProps } = props
-                        return (
-                            <div {...restProps} key={key} className={styles.thumb} />
-                        )}}
-                    renderTrack={(props, state) => {
-                        const { key, ...restProps } = props;  
-                        return (
-                            <div {...restProps} key={key} className={`${styles.track} ${state.index === 1 ? styles.trackMax : styles.trackMin}`} />
-                        );
-                    }}
-                    className={styles.slider}
-                    
-                />                 
-            </Stack>
+            <FilterPrice 
+                onHandleChange={handleChange}
+                onHandleClearAll={handleClearAll}
+                temporaryFilters={temporaryFilters}/>
             <hr />
             {['color', 'material', 'availability'].map(renderFilter)}
-            <Stack
-                gap='8'
-                direction='column'
+            <Stack 
+                gap="8" 
+                direction="column" 
                 className={styles.buttonContainer}
             >
-                <Button onClick={handleShowFilters}>Показать</Button>            
-                <Button color='outlined'  onClick={handleClearAll}>Очистить</Button>
+                <Button onClick={handleShowFilters}>Показать</Button>
+                <Button color="outlined" onClick={handleClearAll}>Очистить</Button>
             </Stack>
         </Stack>
     );

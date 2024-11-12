@@ -1,7 +1,6 @@
 import { useState } from "react";
-import ReactPaginate from "react-paginate";
 import { CardBlogs } from "../../../../entities/CardBlogs/ui/CardBlogs";
-import { ArrowPagination } from "../../../../shared/assets/svg/arrowPagination";
+import { PaginationLib } from "../../../../entities/PaginationLib/PaginationLib";
 import { Stack } from "../../../../shared/ui/Stack/Stack";
 import { useGetAllNewsQuery } from "../../api/blogApi";
 import styles from './NewsBlogsPage.module.scss'
@@ -48,28 +47,10 @@ export const NewsBlogsPage = () => {
                 />
                 ))}
             </Stack>
-            <Stack 
-                justify='center'
-                align='center'
-            >
-                <ReactPaginate
-                containerClassName={styles.paginationContainer}
-                nextLabel={<ArrowPagination/>}
-                previousLabel={<ArrowPagination/>}
-                nextClassName={styles.next}
-                previousClassName={styles.previous}
-                activeClassName={styles.active}
-                pageClassName={styles.page}
-                disabledLinkClassName={styles.disabledLink}
+            <PaginationLib
                 onPageChange={handlePageChange}
                 forcePage={selectPage - 1} 
-                pageCount={data?.totalPages ?? 1} 
-                pageRangeDisplayed={5}
-                marginPagesDisplayed={1}
-                breakLabel=". . ."
-                breakClassName={styles.break}
-                />
-            </Stack>
+                pageCount={data?.totalPages ?? 1} />
         </Stack>
     )
 }
