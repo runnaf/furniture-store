@@ -3,7 +3,7 @@ import { QuotesIcon } from "../QuotesIcon/QuotesIcon";
 import { Review } from "../Review/Review";
 import styles from "./Reviews.module.scss";
 
-export const Reviews = ({reviews}) => {
+export const Reviews = ({ reviews }) => {
     return (
         <Stack 
             max

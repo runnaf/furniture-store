@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { ColorButton } from "../ColorButton/ColorButton";
 import styles from "./ColorButtons.module.scss"
 

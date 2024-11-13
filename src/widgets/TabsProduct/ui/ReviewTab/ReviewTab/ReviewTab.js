@@ -1,7 +1,5 @@
-import React from 'react';
 import { ReviewSummary } from '../ReviewSummary/ReviewSummary';
 import { ReviewList } from '../ReviewList/ReviewList';
-import { reviews } from '../../../lib/data';
 import { Stack } from '../../../../../shared/ui/Stack/Stack';
 import { calculateAverageStars, countStars } from '../../../lib/helpers';
 import { SendingReview } from '../../../../../feature/SendingReview/SendingReview';
