@@ -38,10 +38,9 @@
         padding: 0 20px 10px 20px;
 
         > button {
-            position: sticky;
-            top: 50px;
-            right: 100px;
-            width: 20%;
+            position: absolute;
+            top: 15px;
+            right: 50px;
             z-index: 12;
             background-color: transparent;
         }

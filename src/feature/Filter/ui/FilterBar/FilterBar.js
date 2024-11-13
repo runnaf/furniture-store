@@ -61,14 +61,7 @@ export function FilterBar({ toggleMenu }) {
             gap="24" 
             className={styles.container}
         >
-            <Text type="h2" size="s">Настройки фильтра</Text>
-            <Stack 
-                gap="8" 
-                className={styles.buttonContainer}
-            >
-                <Button onClick={handleShowFilters}>Показать</Button>
-                <Button color="outlined" onClick={handleClearAll}>Сбросить</Button>
-            </Stack>
+            <Text type="h2" size="s">Настройки фильтров</Text>            
             <hr />
             {renderFilter('category')}
             <FilterPrice 
@@ -76,7 +69,14 @@ export function FilterBar({ toggleMenu }) {
                 onHandleClearAll={handleClearAll}
                 temporaryFilters={temporaryFilters}/>
             <hr />
-            {['color', 'material', 'availability'].map(renderFilter)}           
+            {['color', 'material', 'availability'].map(renderFilter)}   
+            <Stack 
+                gap="8" 
+                className={styles.buttonContainer}
+            >
+                <Button onClick={handleShowFilters}>Показать</Button>
+                <Button color="outlined" onClick={handleClearAll}>Сбросить</Button>
+            </Stack>        
         </Stack>
     );
 }
