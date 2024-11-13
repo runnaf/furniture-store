@@ -1,0 +1,80 @@
+@import '../../../../app/styles/media-queries.scss';
+@import '../../../../app/styles/mixin.scss';
+
+.ourBlog {
+    @include section-style;
+
+
+    > div:nth-child(1) {
+        flex-wrap: wrap;
+        width: 100%;
+
+        > div {
+            flex: 1 1 calc(34% - 32px); 
+            max-width: calc(34% - 32px);
+
+            @include tablet-l {
+                flex: 1 1 calc(51% - 32px); 
+                max-width: calc(51% - 32px);
+            }
+
+            @include mobile-l {
+                flex: 1 1 100%; 
+                max-width: 100%;
+            }
+
+            > div {
+                width: 100%;
+            }
+        }
+    }
+
+    .paginationContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 24px;
+
+        .page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: var(--border-radius-circle);
+            width: 50px;
+            height: 50px;
+            font-weight: 500;
+            font-size: var(--font-size-20);
+        }
+
+        .active {
+            background-color: var(--yellow-color);
+        }
+
+        .next, .previous {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+
+            > a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+        }
+
+        .next {
+            rotate: 180deg;
+        }
+
+        .disabledLink {
+            opacity: 0.4;
+        } 
+
+        .break {
+            font-weight: 600;
+        }
+    }
+}

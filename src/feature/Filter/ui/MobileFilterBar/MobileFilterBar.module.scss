@@ -1,0 +1,59 @@
+.filterButton {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-size-20);
+    gap: 10px;
+    font-weight: 500;
+
+    &:hover {
+        box-shadow: none;
+    }
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.popup {
+    background-color: var(--white-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    z-index: 12;
+    box-shadow: 1px 0 10px 0 var(--black-color);
+
+
+    .popupContent {
+        max-height: 98%;
+        width: 100%; 
+        overflow-y: scroll;
+        touch-action: pan-x;
+        scrollbar-width: none;
+        padding: 0 20px 10px 20px;
+
+        > button {
+            position: sticky;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-18);
+            font-weight: 500;
+            border-radius: 0 0 24px 24px;
+            top: 0;
+            width: 100%;
+            height: 50px;
+            padding: 20px;
+            z-index: 12;
+        }
+    }
+}
+
+
+
+

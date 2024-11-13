@@ -4,7 +4,6 @@ import { Text } from "../../../../shared/ui/Text/Text";
 import styles from "./Review.module.scss";
 
 export const Review = ({ data, children, className }) => {
-
     const {name, status, rating, review, title, verified, rate} = data;
 
     return (

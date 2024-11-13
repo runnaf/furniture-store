@@ -1,15 +1,15 @@
 import { Stack } from '../../../shared/ui/Stack/Stack';
 import { Text } from '../../../shared/ui/Text/Text';
 import { Button } from '../../../shared/ui/Button/Button';
-import styles from './Card.module.scss';
 import cart from '../../../shared/assets/svg/cart.svg';
 import heart from '../../../shared/assets/svg/heart.svg';
-import zoom from '../../../shared/assets/svg/zoom.svg';
 import star from '../../../shared/assets/svg/star.svg';
 import { Timer } from '../../Timers/ui/Timer';
 import arrow from '../../../shared/assets/svg/arrowblack.svg';
 import { LinkCustom } from '../../../shared/ui/LinkCustom/LinkCustom';
 import { getStyles } from '../../../shared/libs/getStyles';
+import { ArrowIcon } from '../../Slider/ui/ArrowIcon/ArrowIcon';
+import styles from './Card.module.scss';
 
 export function Card ({
     image,
@@ -20,7 +20,7 @@ export function Card ({
     price,
     newPrice,
     rating,
-    view,// general | extended
+    view = 'general',// general | extended
     cardText,
 }) {
 
@@ -34,23 +34,36 @@ export function Card ({
             gap='16' 
             className={styles.mainContainer}
         >
-            <Stack className={cardContainer}>
+            <Stack 
+                className={cardContainer}
+            >
                 <img src={image} alt='item' loading='lazy' width='276'/>
 
-                <Stack justify='justifyBetween' className={styles.iconsContainer}>
+                <Stack 
+                    justify='justifyBetween' 
+                    className={styles.iconsContainer}
+                >
                     {promotion > 0 && (
-                        <Stack className={styles.promotion}>        
+                        <Stack 
+                            align='alignCenter'
+                            className={styles.promotion}
+                        >        
                             <Text className={styles.promotionText}>{promotion}% off</Text>
                         </Stack>
                     )}
-                    <Stack direction='column' gap='8' className={styles.icons}>
+                    <Stack 
+                        direction='column' 
+                        gap='8' 
+                        className={styles.icons}
+                    >
                         <Button radius='circle'><img src={heart} alt='heart'/></Button>
-                        <Button radius='circle'><img src={zoom} alt='zoom'/></Button>
                         <Button radius='circle'><img src={cart} alt='cart'/></Button>
                     </Stack>
                 </Stack>
 
-                <Stack className={styles.cardTimer}>            
+                <Stack 
+                    className={styles.cardTimer}
+                >            
                     {timer && (
                         <Timer styleMode="timerCardContainer" endTime={timer}/>
                     )} 
@@ -70,7 +83,8 @@ export function Card ({
                     <Text className={styles.category}>
                         {category}
                     </Text>
-                    <Stack gap='8' 
+                    <Stack 
+                        gap='8' 
                         align='alignCenter'
                         className={styles.ratingContainer}
                     >
@@ -84,8 +98,25 @@ export function Card ({
                     justify='justifyCenter'
                     className={styles.textContainer}
                 >
-                    <Text  size = 's'>{name}</Text >
-                    <Text  size = 'xs'>{newPrice}р.<span>  {price}р.</span></Text>
+                    <Text type='h3'>{name}</Text >
+                    <Stack 
+                        justify='justifyBetween'
+                    >
+                        <Stack
+                            align="alignCenter"
+                            gap='12'
+                            className={styles.priceContainer}
+                        >
+                            {newPrice &&
+                            <Text className={styles.price}>{newPrice.toLocaleString("ru-RU")} ₽</Text>}
+                            <Text>{price.toLocaleString("ru-RU")} ₽</Text>
+                        </Stack>
+                        {view === 'general' && 
+                        <LinkCustom color='transparent'>
+                            <ArrowIcon/>
+                        </LinkCustom>
+                        }
+                    </Stack>
 
                     {view === 'extended' && (
                     <Stack 

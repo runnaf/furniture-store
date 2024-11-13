@@ -1,0 +1,21 @@
+@import '../../../app/styles/mixin.scss';
+@import '../../../app/styles/media-queries.scss';
+
+//box-shadow
+$box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+-4px -4px 6px 0 rgba(116, 125, 136, .5), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 75px;
+    width: 100%;
+
+    .wrapper {
+        @include section-style;
+    }
+}

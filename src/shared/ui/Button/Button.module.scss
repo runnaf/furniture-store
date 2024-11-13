@@ -62,6 +62,34 @@ $text-black-color: var(--black-color);
     background-color: transparent;
     border: 1.5px solid $stroke-color;
     color: $text-black-color;
+    
+    &:hover {
+        box-shadow: $box-shadow;
+    }
+}
+
+.link {
+    background-color: transparent;
+    color: $text-black-color;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        left: 0;
+        bottom: -5px;
+        background-color: var(--green-color);
+        transition: width 0.3s ease;
+
+    }
+
+    &:hover:after {
+        width: 100%;
+    }
 }
 
 .rounded {

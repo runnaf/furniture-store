@@ -1,4 +1,3 @@
-import React from 'react';
 import { ReviewSummary } from '../ReviewSummary/ReviewSummary';
 import { ReviewList } from '../ReviewList/ReviewList';
 import { Stack } from '../../../../../shared/ui/Stack/Stack';

@@ -1,5 +1,5 @@
-@import '../../../app/styles/media-queries';
-@import '../../../app/styles/mixin.scss';
+@import '../../../../app/styles/media-queries';
+@import '../../../../app/styles/mixin.scss';
 
 //font-size
 $font-size-18: var(--font-size-18);
@@ -11,9 +11,6 @@ $font-size-18: var(--font-size-18);
     .newsBlogs {
         @include section-style;
 
-        @include tablet-l {
-            width: 100%;
-        }
         
         .news_header {
             width: 100%;
