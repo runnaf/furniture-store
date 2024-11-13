@@ -1,12 +1,12 @@
-import styles from './DescriptionTab.module.scss';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { Text } from '../../../../shared/ui/Text/Text';
+import styles from './DescriptionTab.module.scss';
 
-export const DescriptionTab = ({ descriptionText, listItems }) => (
+export const DescriptionTab = ({ list, paragraphs }) => (
     <Stack gap='24' justify='column' className={styles.description}>
-        <Text>{descriptionText}</Text>
+        <Text>{list}</Text>
         <ul>
-            {listItems.map((item, index) => (
+            {paragraphs.map((item, index) => (
                 <li key={index}>
                     {item}
                 </li>

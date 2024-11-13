@@ -1,13 +1,11 @@
 import { DescriptionOfProduct } from "../DescriptionOfProduct/DescriptionOfProduct";
-import {data} from "../../libs/data";
-import styles from "./ProductPreview.module.scss";
 import { SliderOfProduct } from "../SliderOfProduct/SliderOfProduct";
+import styles from "./ProductPreview.module.scss";
 
-export const ProductPreview = () => {
-    const {title} = data
+export const ProductPreview = ({data}) => {
     return (
         <section className={styles.container}>
-            <SliderOfProduct product={title} />
+            <SliderOfProduct data={data} />
             <DescriptionOfProduct product = {data} />
         </section>
     )

@@ -13,7 +13,7 @@ export const useSlider = (quantityCards, initialIndex = 0) => {
         } else setCurrentSlide(currentSlide + 1)
     }
 
-    const prevCard = () => {
+    const prevCard = () => { 
         if (currentSlide === 0) {
             setCurrentSlide(quantityCards - 1)
         } else setCurrentSlide(currentSlide - 1)

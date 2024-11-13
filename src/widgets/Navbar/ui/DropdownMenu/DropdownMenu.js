@@ -5,11 +5,17 @@ import { getRouteCategories } from '../../../../app/routes/lib/helper';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { Text } from '../../../../shared/ui/Text/Text';
 import { LinkCustom } from '../../../../shared/ui/LinkCustom/LinkCustom';
+import { getStyles } from '../../../../shared/libs/getStyles';
 
 
-export const DropdownMenu = ({ menuData, onClose }) => {
+export const DropdownMenu = ({ menuData, onClose, isVisible }) => {
+    const mode = {
+        [styles.isVisible]: isVisible
+    }
+
+    const stylesCompomemt = getStyles(styles.dropdown, mode, [])
     return (
-        <Stack justify="justifyAround" className={styles.dropdown}>
+        <Stack justify="justifyAround" className={stylesCompomemt}>
             {menuData.map((column, index) => (
                 <Stack gap="24" direction="column" key={index} className={styles.column}>
                     <Text type="h3" size="xs">{column.title}</Text>

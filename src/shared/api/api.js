@@ -15,5 +15,5 @@ export const api = createApi({
         }
     }),
     tagTypes: ['Blog', 'Product'],
-    endpoints: (build) => ({}),
+    endpoints: (builder) => ({}),
 });

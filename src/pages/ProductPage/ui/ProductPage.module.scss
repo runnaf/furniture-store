@@ -1,9 +1,16 @@
-@import "../../../app/styles/mixin.scss";
-
 .container {
     padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-75);
 
     & > div:first-of-type {
         width: 100%;
+
+        & > div:first-of-type {
+            width: 100%;
+        }
     }
 }

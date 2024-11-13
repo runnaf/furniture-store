@@ -3,7 +3,7 @@ import { Text } from '../../../shared/ui/Text/Text';
 import { Stack } from '../../../shared/ui/Stack/Stack';
 import styles from './BreadCrumbs.module.scss'
 
-export const Breadcrumbs = ({ routes, separator = ' / ' }) => {
+export const Breadcrumbs = ({ routes, separator = ' / ', isProduct = false, name}) => {
   const location = useLocation()
 
   const breadcrumbs = location.pathname
@@ -33,12 +33,12 @@ export const Breadcrumbs = ({ routes, separator = ' / ' }) => {
     direction='column'
     align="alignCenter"
     gap='16'>
-      <Text type='h1'>{title}</Text>
+      <Text type='h1'>{isProduct? name : title}</Text>
       <nav>
         {breadcrumbs.map((crumb, index) => (
           <li key={crumb.link}>
-            {crumb.isLast ? (
-              <Text type='p'>{crumb.title}</Text>
+            {crumb.isLast ? ( 
+              <Text type='p'>{isProduct? name : crumb.title}</Text>
             ) : (
               <Link to={crumb.link}>
                 <Text type='p'>{crumb.title}</Text>

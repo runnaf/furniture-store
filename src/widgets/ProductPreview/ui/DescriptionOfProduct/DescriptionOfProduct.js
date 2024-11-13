@@ -2,18 +2,19 @@
 import { Stack } from "../../../../shared/ui/Stack/Stack";
 import { Text } from "../../../../shared/ui/Text/Text";
 import { InStock } from "../InStock/InStock";
-import styles from "./DescriptionOfProduct.module.scss";
 import { AddToCart } from "../../../../feature/AddToCart/ui/AddToCart/AddToCart";
 import { Stars } from "../../../../entities/Stars/ui/Stars/Stars";
+import styles from "./DescriptionOfProduct.module.scss";
 
 export const DescriptionOfProduct = ({product}) => {
-    const {categories, title, rating, inStock, review, price, oldPrice, description, colors, sku, tags} = product;
-
+    const { sub_categories, name, inStock = true, rating=4.9, review='250' , sale_price, price, short_description, article_number, color, tags } = product
+     // TODO  inStock, rating, review, colors=['Черный', 'Коричневый', 'Серый', 'Желтый']
+    // const colors=['Черный', 'Коричневый', 'Серый', 'Желтый']
     return (
         <Stack className={styles.container} direction="column" gap="24">
-            <Text>{categories}</Text>
+            <Text>{sub_categories}</Text>
             <Stack className={styles.inStockContainer} gap="16" align="alignCenter">
-                <Text size="s">{title}</Text>
+                <Text size="s">{name}</Text>
                 {inStock && <InStock />}
             </Stack>
             <Stack className={styles.rating} gap="8" align="alignCenter">
@@ -21,13 +22,13 @@ export const DescriptionOfProduct = ({product}) => {
                 <Text size="s">({review} отзывов)</Text>
             </Stack>
             <Stack gap="8" align="alignCenter">
-                <Text size="md">{price} руб.</Text>
-                {oldPrice && <Text className={styles.oldPrice} size="md">{oldPrice} руб.</Text>}
+                <Text size="md">{sale_price} руб.</Text>
+                {price && <Text className={styles.oldPrice} size="md">{price} руб.</Text>}
             </Stack>
-            <Text>{description}</Text>
-            <AddToCart gap="32" colors={colors} currentColor={colors[1]}/>
+            <Text>{short_description}</Text>
+            <AddToCart gap="32" currentColor = {color} isProduct={true} />
             <Stack className={styles.tagsContainer} direction="column" gap="12">
-                <Text>Артикул: <span>{sku}</span></Text>
+                <Text>Артикул: <span>{article_number}</span></Text>
                 <Text>Тэги: <span>{tags.join(', ')}</span></Text>
             </Stack>
         </Stack>

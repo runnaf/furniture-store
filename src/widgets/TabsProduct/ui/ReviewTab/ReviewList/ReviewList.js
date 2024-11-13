@@ -57,18 +57,22 @@ export const ReviewList = ({ reviews }) => {
                     gap="16"
                 >
                     {reviewsOnPage.map((review) => (
-                        <Review className={styles.review} key={review.id} review={review}>
+                        <Review className={styles.review} key={review.id} data={review}>
                             <Text>{monthsAgo(review.date)}</Text>
                         </Review>
                 ))}
-                    <Pagination 
-                        array={reviews} 
-                        quantityPages = {QUANTITY_REVIEWS_ON_PAGE} 
-                        currentSlide={currentSlide} 
-                        nextCard={ nextCard } 
-                        prevCard={ prevCard } 
-                        handleClickSlide = { handleClickSlide }
-                    />
+                    {
+                        reviews.length > QUANTITY_REVIEWS_ON_PAGE && (
+                            <Pagination 
+                                array={reviews} 
+                                quantityPages = {QUANTITY_REVIEWS_ON_PAGE} 
+                                currentSlide={currentSlide} 
+                                nextCard={ nextCard } 
+                                prevCard={ prevCard } 
+                                handleClickSlide = { handleClickSlide }
+                            />
+                        )
+                    }
                 </Slider>
         </Stack>
     )

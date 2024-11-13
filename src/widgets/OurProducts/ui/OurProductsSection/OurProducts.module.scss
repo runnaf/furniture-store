@@ -4,10 +4,6 @@
 .container {
     @include section-style;  
 
-    @include tablet-l {
-        width: 100%;
-    }
-
     .productContainer {
         width: 100%;
         

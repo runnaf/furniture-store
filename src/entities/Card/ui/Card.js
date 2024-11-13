@@ -9,6 +9,7 @@ import arrow from '../../../shared/assets/svg/arrowblack.svg';
 import { LinkCustom } from '../../../shared/ui/LinkCustom/LinkCustom';
 import { getStyles } from '../../../shared/libs/getStyles';
 import { ArrowIcon } from '../../Slider/ui/ArrowIcon/ArrowIcon';
+import { getRouteProduct } from '../../../app/routes/lib/helper';
 import styles from './Card.module.scss';
 
 export function Card ({
@@ -112,7 +113,10 @@ export function Card ({
                             <Text>{price.toLocaleString("ru-RU")} ₽</Text>
                         </Stack>
                         {view === 'general' && 
-                        <LinkCustom color='transparent'>
+                        <LinkCustom 
+                            to={getRouteProduct('671a7363e7c54db428bcda25')} //TODO - передать _id товара
+                            color='transparent'
+                        >
                             <ArrowIcon/>
                         </LinkCustom>
                         }

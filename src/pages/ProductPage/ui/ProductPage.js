@@ -1,23 +1,14 @@
-import { Breadcrumbs } from "../../../entities/BreadCrumbs/ui/BreadCrumbs";
-import { SectionTitle } from "../../../entities/SectionTitle/ui/SectionTitle";
-import { Stack } from "../../../shared/ui/Stack/Stack";
-import { routes } from "../../../app/routes/lib/data";
-import styles from "./ProductPage.module.scss";
-import { ProductPreview } from "../../../widgets/ProductPreview/ui/ProductPreview/ProductPreview";
+import { ProductItem } from "../../../widgets/ProductItem/ui/ProductItem";
 import { Advantages } from "../../../entities/Advantages/ui/Advantages/Advantages";
-import { RelatedProducts } from "../../../widgets/RelatedProducts/RelatedProducts";
-import { Tabs } from "../../../widgets/TabsProduct/ui/Tabs/Tabs";
+import styles from "./ProductPage.module.scss";
 
-export const ProductPage = () => {
+const ProductPage = () => {
     return (
-        <Stack direction="column" justify='justifyCenter' align='alignCenter' gap='75' className={styles.container}>
-            <SectionTitle>
-                <Breadcrumbs routes={routes}/>
-            </SectionTitle>
-            <ProductPreview />
-            <Tabs />
-            <RelatedProducts />
+        <main className={styles.container}>
+            <ProductItem />
             <Advantages />
-        </Stack>
+        </main>
     )
 }
+
+export default ProductPage
