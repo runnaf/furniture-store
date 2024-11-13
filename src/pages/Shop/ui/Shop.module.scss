@@ -8,120 +8,14 @@ inset -4px -4px 6px 0 rgba(255,255,255,.2),
 inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
 
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 75px;
     width: 100%;
 
     .wrapper {
         @include section-style;
-    }
-
-    .sortContainer {
-        width: 100%;
-    }
-
-    .cardsContainer {
-            flex-wrap: wrap;
-            width: 100%;
-
-            > div {
-                flex: 1 1 calc(34% - 30px); 
-                max-width: calc(34% - 30px);
-                @include desktop-m {
-                    flex: 1 1 calc(52% - 32px); 
-                    max-width: calc(52% - 32px);
-                }
-
-                @include mobile-l {
-                    flex: 1 1 100%; 
-                    max-width: 100%;
-                }
-                > div {
-                    width: 100% !important;
-
-                    &:nth-child(1) {
-                        height: 270px;
-
-                        img {
-                            height: 270px;
-                        }
-
-                        > div:nth-child(3) {
-                            width: 95% !important;
-                            left: 2.5%;
-
-                            > div {
-                                width: 100%;
-
-                                > div {
-                                    width: 40px;
-
-                                    @include desktop-m {
-                                        width: 60px;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    &:nth-child(2) {
-                        >div {
-                            width: 100%  !important;
-                        }
-                    }
-                }
-        }
-    }
-
-    .activeFiltersContainer {
-    flex-wrap: wrap;
-
-        span {
-            font-size: var(--font-size-18);
-        }
-
-        .filterChip {
-            display: flex;
-            align-items: center;
-            background-color: var(--yellow-color); 
-            border-radius: var(--border-radius-170); 
-            padding: 8px 16px; 
-
-            button {
-                display: flex;
-                border: none;
-                border-radius: var(--border-radius-circle);
-                &:hover {
-                    box-shadow: $box-shadow;
-                }
-            }
-        }
-        
-        .clearAll {
-            color: var(--green-color);
-            border: none;
-        }
-    }
-    
-    .btnContainer {
-        > button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            font-weight: 500;
-            padding: 10px;
-            font-size: var(--font-size-20);
-            border: none;
-
-            &.active {
-                background-color: var(--yellow-color);
-            }
-        }
-
-        button:nth-last-of-type(1) {
-            rotate: 180deg;
-            padding: 0;
-        }
-        button:nth-of-type(1) {
-            padding: 0;
-        }
     }
 }

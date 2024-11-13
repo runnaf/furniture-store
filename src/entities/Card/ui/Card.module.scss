@@ -1,11 +1,11 @@
-@import '../../../app/styles/media-queries.scss';
+@use '../../../app/styles/media-queries.scss' as media;
 
 .mainContainer {
     border-radius: var(--border-radius-24);
     border: var(--border-todayDeals);
     background-color: var(--background-color);
     padding: 12px;
-    @include tablet-m {
+    @include media.tablet-m {
         flex-direction: column;
     }
 
@@ -27,17 +27,16 @@
                 padding: 8px 16px;
                 border-radius: var(--border-radius-170);
                 background-color: var(--green-color);
-                width: 99px;
                 height: 38px;
                 color: var(--white-color);
             
-                @include tablet-m {
+                @include media.tablet-m {
                     padding: 6px 12px;
                     width: 69px;
                     height: 27px;
                 }
                 p {
-                    @include tablet-m {
+                    @include media.tablet-m {
                     font-size: var(--font-size-12);
                     }
                 }
@@ -50,6 +49,16 @@
                 visibility: hidden;
                 opacity: 0;
                 transition: opacity 0.3s;
+
+                button:nth-child(1):hover {
+                    background-color: var(--yellow-color);
+                    transition: background-color 0.5s ease;
+                }
+
+                button:nth-child(2):hover {
+                    background-color: var(--green-color-hover);
+                    transition: background-color 0.5s ease;
+                }
     
                 button {
                     display: flex;
@@ -58,17 +67,24 @@
                     background-color: var(--white-color);
                     width: 48px;
                     height: 48px;
+
+                    &:hover {
+                        box-shadow: none;
+                    }
+
             
-                    @include tablet-m {
+                    @include media.tablet-m {
                         width: 34px;
                         height: 34px;
                     }
         
                     img {
                         width: 24px;
+                        height: 24px;
                 
-                        @include tablet-m {
+                        @include media.tablet-m {
                             width: 17px;
+                            height: 17px;
                         }
                     }
                 }
@@ -79,7 +95,7 @@
         width: 276px;
         height: 331px;
 
-        @include mobile-l {
+        @include media.mobile-l {
             width: 100%;
             height: 350px;
         }
@@ -95,7 +111,7 @@
         width: 276px;
         height: 331px;
 
-        @include mobile-l {
+        @include media.mobile-l {
             width: 100%;
             height: 350px;
         }
@@ -111,13 +127,14 @@
     .cardBase:hover .icons {
         visibility: visible;
         opacity: 1;
+        transition: opacity 0.8s ease;
     }
 
     .categoryBase {
         .categoryContainer {
             width: 276px;
         
-            @include tablet-m {
+            @include media.tablet-m {
                 width: 100%;
             }
     
@@ -127,36 +144,44 @@
             }
             
             .star {
-                width: 24px;
-                height: 24px;
+                width: 18px;
+                height: 18px;
             }
             .rating {
-                font-size: var(--font-size-24);
                 font-weight: 500;
             }
         }
 
         .textContainer {
             height: 100%;
-            :nth-child(1) {
+            h3 {
                 font-weight: 600;
             }
 
-            :nth-child(2) {
-                font-weight: 500;
+            .priceContainer {
+                p {
+                    font-weight: 500;
+                }
 
-                span {
+                :nth-child(2) {
+                    font-weight: 500;
                     color: var(--secoundry-black-color);
                     opacity: var(--opacity-06);
                     text-decoration: line-through;
-                    font-weight: 400;
+                }
+            }
+
+            a {
+                svg {
+                    fill: var(--green-color);
+                    rotate: 135deg;
                 }
             }
         }
 
     &.extendedCategory {
         
-        @include mobile-l {
+        @include media.mobile-l {
             height: 270px;
         }
 
@@ -164,12 +189,19 @@
             height: 100%;
         }
 
+        .textContainer {
+            gap: 16px;
+            h3 {
+                font-size: 20px;
+            }
+        }
+
         .cardText {
+            opacity: var(--opacity-08);
             max-width: 251px;
-            font-weight: 400;
             text-wrap: wrap;
 
-            @include mobile-l {
+            @include media.mobile-l {
                 max-width: 290px;
             }
         }
