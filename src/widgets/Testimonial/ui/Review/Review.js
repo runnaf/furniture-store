@@ -4,7 +4,8 @@ import { Text } from "../../../../shared/ui/Text/Text";
 import styles from "./Review.module.scss";
 
 export const Review = ({ data, children, className }) => {
-    const {name, speciality, status, rating, review, title, verified, rate} = data;
+
+    const {name, status, rating, review, title, verified, rate} = data;
 
     return (
         <Stack 
@@ -24,10 +25,7 @@ export const Review = ({ data, children, className }) => {
                     <Text className={styles.textName}>
                         {name}
                     </Text>
-                    <Text className={styles.verified}>{verified ? '(подтвержденный профиль)' : status}</Text>
-                    { speciality && <Text className={styles.textSpeciality}>
-                        {speciality}
-                    </Text>}
+                    {status && <Text>{verified ? '(подтвержденный профиль)' : status}</Text>}
                 </Stack>
                 {children}
             </Stack>
