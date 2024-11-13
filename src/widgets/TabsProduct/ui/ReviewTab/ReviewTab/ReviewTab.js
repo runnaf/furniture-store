@@ -14,9 +14,11 @@ export const ReviewTab = () => {
     const authorized = true; //TODO
     const madePurchase = true //TODO
 
-    const {data, isLoading} = useGetReviewsByProductIdQuery(id);
+    const { data, isLoading, error } = useGetReviewsByProductIdQuery(id);
     
     if(isLoading) return //TODO
+
+    if (error) return //TODO
 
     const rating = countStars(data);
     const average = calculateAverageStars(rating).toFixed(1);
