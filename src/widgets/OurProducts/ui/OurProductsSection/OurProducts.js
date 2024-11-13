@@ -1,16 +1,15 @@
-import { Stack } from '../../../shared/ui/Stack/Stack';
-import { Button } from '../../../shared/ui/Button/Button';
-import { Card } from '../../../entities/Card/ui/Card';
-import cardData, { QUANTITY_CARD_ON_PAGE } from '../../../shared/libs/cardData';
-import { HeaderSection } from '../../../shared/ui/HeaderSection/HeaderSection';
+import { Stack } from '../../../../shared/ui/Stack/Stack';
+import { Button } from '../../../../shared/ui/Button/Button';
+import { Card } from '../../../../entities/Card/ui/Card';
+import { HeaderSection } from '../../../../shared/ui/HeaderSection/HeaderSection';
 import styles from './OurProducts.module.scss';
-import { buttons } from '../lib/data';
+import { buttons, cards, QUANTITY_CARD_ON_PAGE } from '../../lib/data';
 import { useState } from 'react';
-import { useSlider } from "../../../entities/Slider/hooks/useSlider";
-import { useResize } from "../../../shared/hooks/useResize";
-import { slicerOfArray } from "../../../entities/Slider/lib/helper";
-import { useCustomScroll } from '../../../shared/hooks/useCustomScroll';
-import { BottomButtons } from '../../../entities/Slider/ui/BottomButtons/ui/BottomButtons/BottomButtons';
+import { useSlider } from "../../../../entities/Slider/hooks/useSlider";
+import { useResize } from "../../../../shared/hooks/useResize";
+import { slicerOfArray } from "../../../../entities/Slider/lib/helper";
+import { useCustomScroll } from '../../../../shared/hooks/useCustomScroll';
+import { BottomButtons } from '../../../../entities/Slider/ui/BottomButtons/ui/BottomButtons/BottomButtons';
 
 export function OurProducts() {
 
@@ -25,8 +24,8 @@ export function OurProducts() {
         } else return 4;
     }
 
-    const { currentSlide, handleClickSlide } = useSlider(cardData.length);
-    const currentCards = slicerOfArray(cardData, currentSlide, quantityCardsOnPage());
+    const { currentSlide, handleClickSlide } = useSlider(cards.length);
+    const currentCards = slicerOfArray(cards, currentSlide, quantityCardsOnPage());
 
     const handleFilterChange = (filter) => {
         setSelectedFilter(filter);
@@ -93,7 +92,7 @@ export function OurProducts() {
                     {width <= 590 && 
                     <BottomButtons
                         color='secondary'
-                        quantitySliders={cardData}
+                        quantitySliders={cards}
                         quantityCardsOnPage={quantityCardsOnPage()} 
                         currentSlide={currentSlide} 
                         handleClickSlide={handleClickSlide}

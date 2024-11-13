@@ -4,14 +4,21 @@ import points from '../../../shared/assets/svg/points.svg';
 
 export  const SectionTitle = ({ children }) => {
     return(
-        <Stack direction="column"
-        justify='justifyCenter'
-        align='alignCenter'
-        gap='16'
-        className={styles.sectionTitleContainer}>
-            <img src={points} alt="a cluster of dots"/>
-            <img src={points} alt="a cluster of dots"/>
-            {children}
+        <Stack 
+            justify='justifyCenter'
+            align='alignCenter'
+            className={styles.sectionTitleContainer}
+        >
+            <Stack 
+                direction="column"
+                justify='justifyCenter'
+                align='alignCenter'
+                gap='16'
+            >
+                <img src={points} alt="a cluster of dots"/>
+                <img src={points} alt="a cluster of dots"/>
+                {children}
+            </Stack>
         </Stack>
     )
 }

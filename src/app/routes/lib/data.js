@@ -1,8 +1,9 @@
 import AboutUsPage from "../../../pages/AboutUs/ui/AboutUsPage";
 import { FAQs } from "../../../pages/FAQs/ui/FAQs";
 import MainPage from "../../../pages/MainPage/ui/MainPage";
-import { OurBlog } from "../../../pages/OurBlog/ui/OurBlog";
-import ProductPage from "../../../pages/ProductPage/ui/ProductPage";
+import OurBlog from "../../../pages/OurBlog/ui/OurBlog";
+import Shop from "../../../pages/Shop/ui/Shop";
+import { ProductPage } from "../../../pages/ProductPage/ui/ProductPage";
 import SigninPage from "../../../pages/SigninPage/ui/SigninPage";
 import SignupPage from "../../../pages/SignupPage/ui/SignupPage";
 import { getRouteAbout, getRouteBlog, getRouteFAQ, getRouteMain, getRouteProduct, getRouteShop, getRouteSignin, getRouteSignup } from "./helper";
@@ -18,7 +19,7 @@ export const routes = [
         title: "Магазин",
         link: getRouteShop(),
         isNavbar: true,
-
+        page: <Shop />
     },
     {
         title: "Вопросы",

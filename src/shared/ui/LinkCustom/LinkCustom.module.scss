@@ -70,6 +70,10 @@ $text-black-color: var(--black-color);
     }
 }
 
+.transparent {
+    background-color: transparent;
+}
+
 .yellow {
     background-color: $yellow-color;
     color: $text-black-color;

@@ -7,7 +7,7 @@ import orange from '../../../shared/assets/svg/orange.svg';
 import blue from '../../../shared/assets/svg/blue.svg';
 import white from '../../../shared/assets/svg/white.svg';
 
-const filtersData = {
+export const filtersData = {
     category: {
         title: 'Категория',
         items: [
@@ -52,4 +52,4 @@ const filtersData = {
     },
 }
 
-export default filtersData;
+ 

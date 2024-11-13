@@ -1,43 +1,37 @@
 @import '../../../app/styles/media-queries';
+@import '../../../app/styles/mixin';
 
 $background-color: var(--background-color);
 
 .sectionTitleContainer {
     position: relative;
     overflow: hidden;
-    margin: auto;
-    width: 1440px;
     height: 215px;
     background: $background-color;
+    width: 100%;
 
     @include tablet-m {
-        width: 375px;
         height: 186px;
     }
 
-
-    > img {
-        position: absolute;
-
-        &:nth-child(1) {
-            top: 150px;
-            left: 241px;
-
-            @include tablet-m {
-                top: 140px;
-                left: 45px;
+    > div {
+        position: relative;
+        width: 80vw;
+        
+        > img {
+            position: absolute;
+    
+            &:nth-child(1) {
+                top: 97%;
+                left: 5%;
             }
-        }
-
-        &:nth-child(2) {
-            bottom: 157px;
-            right: 218px;
-            rotate: 180deg;
-
-            @include tablet-m {
-                bottom: 140px;
-                right: 26px;
+    
+            &:nth-child(2) {
+                bottom: 97%;
+                right: 5%;
+                rotate: 180deg;
             }
         }
     }
+
 }

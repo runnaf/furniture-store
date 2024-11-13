@@ -13,7 +13,7 @@ export const CardBlogs = ({ title, poster, description, date }) => {
             <Stack direction='column'
             justify='justifyCenter'
             align='alignCenter'>
-                <img src={poster} alt="poster on the topic of news"/>
+                <img src={poster.url} alt={poster.alt}/>
                 <Text>
                     {date}
                 </Text>
