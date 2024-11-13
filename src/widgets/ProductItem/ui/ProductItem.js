@@ -11,12 +11,9 @@ import { routes } from "../../../app/routes/lib/data";
 
 export const ProductItem = () => {
     const { id } = useParams();
-
     const { data, isLoading} = useGetProductByIdQuery(id);
 
     if (isLoading) return //TODO - лоадер или скелетоны надо будет сделать, пока данные не загружены с бэкенда
-
-    console.log(data)
 
     return (
         <Stack direction="column" gap="75">
