@@ -1,6 +1,6 @@
-import { Stars } from "../../../../entities/Stars/ui/Stars/Stars";
-import { Stack } from "../../../../shared/ui/Stack/Stack";
-import { Text } from "../../../../shared/ui/Text/Text";
+import { Stars } from "../../entities/Stars/ui/Stars/Stars";
+import { Stack } from "../../shared/ui/Stack/Stack";
+import { Text } from "../../shared/ui/Text/Text";
 import styles from "./Review.module.scss";
 
 export const Review = ({ data, children, className }) => {

@@ -7,7 +7,7 @@ import { Quantity } from "../Quantity/Quantity";
 import { Text } from "../../../../shared/ui/Text/Text";
 import { ColorButton } from "../ColorButton/ColorButton"
 import { getColorTitle } from "../../lib/helper";
-import { ModalColor } from "../../../ModalColor/ModalColor";
+import { ModalColor } from "../../../../entities/ModalColor/ModalColor";
 import { ColorButtons } from "../ColorButtons/ColorButtons";
 import { useModal } from "../../../../shared/hooks/useModal";
 import styles from "./AddToCart.module.scss";
@@ -39,6 +39,7 @@ export const AddToCart = ({gap, colors, currentColor, isProduct=false}) => {
 
     //открытие модального окна
     const addToCart = () => {
+        console.log(colors && current === undefined)
         if (!isProduct) {
             changeColorModal()
         }

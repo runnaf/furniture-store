@@ -1,6 +1,6 @@
 import { Stack } from "../../../../shared/ui/Stack/Stack";
 import { QuotesIcon } from "../QuotesIcon/QuotesIcon";
-import { Review } from "../Review/Review";
+import { Review } from "../../../../entities/Review/Review";
 import styles from "./Reviews.module.scss";
 
 export const Reviews = ({ reviews }) => {
@@ -13,9 +13,9 @@ export const Reviews = ({ reviews }) => {
             gap='48'
             className={styles.container}
         >
-            {reviews.map(review => 
+            {reviews.map((review, id) => 
                 <Review 
-                    key={review.id}
+                    key={id}
                     data={review}
                     verified={false}
                     status={false}

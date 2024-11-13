@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ReviewList.module.scss';
 import { Stack } from '../../../../../shared/ui/Stack/Stack';
-import { Review } from '../../../../Testimonial/ui/Review/Review';
+import { Review } from '../../../../../entities/Review/Review';
 import { Text } from '../../../../../shared/ui/Text/Text';
 import { monthsAgo } from '../../../lib/helpers';
 import { slicerOfArray } from '../../../../../entities/Slider/lib/helper';
@@ -56,8 +56,8 @@ export const ReviewList = ({ reviews }) => {
                     prevCard={ prevCard }
                     gap="16"
                 >
-                    {reviewsOnPage.map((review) => (
-                        <Review className={styles.review} key={review.id} data={review}>
+                    {reviewsOnPage.map((review, id) => (
+                        <Review className={styles.review} key={id} data={review}>
                             <Text>{monthsAgo(review.date)}</Text>
                         </Review>
                 ))}
