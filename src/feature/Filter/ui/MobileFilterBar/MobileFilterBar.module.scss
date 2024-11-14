@@ -1,3 +1,5 @@
+@import '../../../../app/styles/media-queries.scss';
+
 .filterButton {
     display: flex;
     align-items: center;
@@ -29,9 +31,17 @@
     box-shadow: 1px 0 10px 0 var(--black-color);
     transition: transform 0.5s ease-in-out; 
     transform: translateX(-100%); 
-
+    
     &.open {
         transform: translateX(0);
+    }
+
+    @include mobile-l {
+        width: 350px;
+    }
+
+    @include mobile-m {
+        width: 100%;
     }
 
     .popupContent {
