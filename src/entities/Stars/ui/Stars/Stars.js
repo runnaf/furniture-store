@@ -21,7 +21,7 @@ export const Stars = ({rating, ratingText=true}) => {
             {ratingText && 
                 <>
                     <VisuallyHidden>`{Math.round(rating)} звeзд из 5`</VisuallyHidden>
-                    <span className={styles.ratingTitle}>{rating.toFixed(1)}</span>
+                    <span className={styles.ratingTitle}>{Number(rating).toFixed(1)}</span>
                 </>
             }
             

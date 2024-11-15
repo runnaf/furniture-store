@@ -24,8 +24,8 @@ export const SliderOfProduct = ({data}) => {
         >
             <Stack className={styles.previewGoodContainer}>
                 {
-                    array.map((previewGood) => (
-                        <img src={previewGood} alt={sub_categories} width="584" height="700" key={previewGood.id}/>
+                    array.map((previewGood, id) => (
+                        <img src={previewGood} alt={sub_categories} width="584" height="700" key={id}/>
                     ))
                 }
                 <SideButtons nextCard={nextCard} prevCard={prevCard} />

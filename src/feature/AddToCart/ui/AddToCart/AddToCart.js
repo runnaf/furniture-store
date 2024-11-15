@@ -11,10 +11,12 @@ import { ModalColor } from "../../../../entities/ModalColor/ModalColor";
 import { ColorButtons } from "../ColorButtons/ColorButtons";
 import { useModal } from "../../../../shared/hooks/useModal";
 import styles from "./AddToCart.module.scss";
+import { useParams } from "react-router";
 
 const INITIAL_VALUE = 1;
 
 export const AddToCart = ({gap, colors, currentColor, isProduct=false}) => {
+    const id = useParams()
     const [changeColorModal, drawColorModal] = useModal()
 
     //состояние избранного товара
@@ -39,7 +41,7 @@ export const AddToCart = ({gap, colors, currentColor, isProduct=false}) => {
 
     //открытие модального окна
     const addToCart = () => {
-        console.log(colors && current === undefined)
+        console.log(current, count, favorites, id)
         if (!isProduct) {
             changeColorModal()
         }

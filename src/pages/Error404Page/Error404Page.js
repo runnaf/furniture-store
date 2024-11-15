@@ -7,7 +7,6 @@ const Error404Page = () => {
             <Error404 />
         </main>
     )
-       
 }
 
-export default Error404Page
+export default Error404Page;

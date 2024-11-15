@@ -7,6 +7,7 @@ import { Text } from '../../../../../shared/ui/Text/Text';
 import { useParams } from 'react-router';
 import { useGetReviewsByProductIdQuery } from '../../../../ProductItem/api/ProductApi';
 import styles from './ReviewTab.module.scss';
+import Error404Page from '../../../../../pages/Error404Page/Error404Page';
 
 export const ReviewTab = () => {
     const { id } = useParams();
@@ -18,19 +19,25 @@ export const ReviewTab = () => {
     
     if(isLoading) return //TODO
 
-    if (error) return //TODO
+    if (error) return <Error404Page />
 
     const rating = countStars(data);
     const average = calculateAverageStars(rating).toFixed(1);
 
     return (
         <Stack gap="48" direction="column">
-            <ReviewSummary
-                ratingScore={average}
-                totalReviews={data.length}
-                rating={rating}
-            />
-            <ReviewList reviews={data} />
+            { data.length > 0 || data === undefined ? (
+                <>
+                    <ReviewSummary
+                    ratingScore={average}
+                    totalReviews={data.length}
+                    rating={rating}
+                    />
+                    <ReviewList reviews={data} />
+                </>
+            )
+            : <Text size="md" type='h3'>Еще никто не оставил отзыв на данный товар, хотите быть первым?</Text>
+            }
             <Stack direction="column" gap="24">
                 <Stack direction="column" gap="16">
                     <Text type="h3" size="md">Оставьте свой отзыв</Text>
