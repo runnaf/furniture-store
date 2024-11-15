@@ -47,7 +47,7 @@ export const filtersData = {
         title: 'Доступность',
         items: [
         { value: 'inStock', label: 'В наличии' },
-        { value: 'outOfStock', label: 'Нет в наличии' }
+        { value: 'outOfStock', label: 'Под заказ' }
         ]
     },
 }
