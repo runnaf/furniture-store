@@ -8,7 +8,7 @@ export const endpoints = {
     lists: {
         orders: '/orders',
         reviews: '/reviews',
-        block: '/blog',
+        blog: '/blog',
         shop: '/shop'
     },
     user: '/user'
