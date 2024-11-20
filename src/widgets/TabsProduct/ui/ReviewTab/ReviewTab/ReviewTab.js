@@ -4,29 +4,34 @@ import { Stack } from '../../../../../shared/ui/Stack/Stack';
 import { calculateAverageStars, countStars } from '../../../lib/helpers';
 import { SendingReview } from '../../../../../feature/SendingReview/SendingReview';
 import { Text } from '../../../../../shared/ui/Text/Text';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { useGetReviewsByProductIdQuery } from '../../../../ProductItem/api/ProductApi';
+import { useEffect } from 'react';
 import styles from './ReviewTab.module.scss';
-import Error404Page from '../../../../../pages/Error404Page/Error404Page';
 
 export const ReviewTab = () => {
     const { id } = useParams();
+    const { data, isLoading, error } = useGetReviewsByProductIdQuery(id);
+
+    const navigate = useNavigate();
+    useEffect(() => {
+        // Если есть ошибка, редиректим на страницу ошибки
+        if (error) {
+            navigate('/not-found');
+        }
+    }, [error, navigate]);
     
     const authorized = true; //TODO
     const madePurchase = true //TODO
-
-    const { data, isLoading, error } = useGetReviewsByProductIdQuery(id);
     
     if(isLoading) return //TODO
-
-    if (error) return <Error404Page />
 
     const rating = countStars(data);
     const average = calculateAverageStars(rating).toFixed(1);
 
     return (
         <Stack gap="48" direction="column">
-            { data.length > 0 || data === undefined ? (
+            { data !== undefined || data.length > 0 ? (
                 <>
                     <ReviewSummary
                     ratingScore={average}

@@ -10,6 +10,8 @@ export const getColorTitle = (color) => {
             return 'Зеленый';
         case '#006F9E':
             return 'Синий';
+        case '#FFF':
+            return 'Белый';
         default:
             return null;
     }
@@ -31,6 +33,8 @@ export const getColorForStyle = (color) => {
             return '#FFBA35';
         case 'Красный':
                 return '#F04646';
+        case 'Белый':
+            return '#FFF';       
         default:
             return null;
     }

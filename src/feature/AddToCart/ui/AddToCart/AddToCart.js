@@ -7,17 +7,14 @@ import { Quantity } from "../Quantity/Quantity";
 import { Text } from "../../../../shared/ui/Text/Text";
 import { ColorButton } from "../ColorButton/ColorButton"
 import { getColorTitle } from "../../lib/helper";
-import { ModalColor } from "../../../../entities/ModalColor/ModalColor";
 import { ColorButtons } from "../ColorButtons/ColorButtons";
-import { useModal } from "../../../../shared/hooks/useModal";
-import styles from "./AddToCart.module.scss";
 import { useParams } from "react-router";
+import styles from "./AddToCart.module.scss";
 
 const INITIAL_VALUE = 1;
 
 export const AddToCart = ({gap, colors, currentColor, isProduct=false}) => {
     const id = useParams()
-    const [changeColorModal, drawColorModal] = useModal()
 
     //состояние избранного товара
     const [favorites, setFavorites] = useState(false);
@@ -42,24 +39,18 @@ export const AddToCart = ({gap, colors, currentColor, isProduct=false}) => {
     //открытие модального окна
     const addToCart = () => {
         console.log(current, count, favorites, id)
-        if (!isProduct) {
-            changeColorModal()
-        }
     }
 
     return (
         <Stack className={styles.wrapper} gap={gap} direction="column">
             <Stack gap="12" direction="column">
                 <Text size="s">Цвет: {getColorTitle(current)}</Text>
-                {colors && current !== undefined && isProduct && (
+                {colors && current !== undefined && (
                     <ColorButtons colors={colors} setCurrent={setCurrent} current={current} />
                 )}
-                {!colors && current !== undefined && isProduct && (
+                {!colors && current !== undefined && (
                     <ColorButton color={currentColor} setCurrent={setCurrent} current={currentColor} /> 
                 )} 
-                {!isProduct && drawColorModal(
-                    <ModalColor colors = { colors } changeColorModal={changeColorModal} setCurrent={ setCurrent } current={current} />
-                )}
             </Stack>
             <Stack className={styles.containerButton} align="alignCenter" gap="12">
                 <Quantity className={styles.quantity} count={count}  increaseCount={increaseCount} decreaseCount={decreaseCount}/>

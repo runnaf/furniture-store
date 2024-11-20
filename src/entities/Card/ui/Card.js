@@ -11,6 +11,9 @@ import { getStyles } from '../../../shared/libs/getStyles';
 import { ArrowIcon } from '../../Slider/ui/ArrowIcon/ArrowIcon';
 import { getRouteProduct } from '../../../app/routes/lib/helper';
 import styles from './Card.module.scss';
+import { useModal } from '../../../shared/hooks/useModal';
+import { useState } from 'react';
+import { ModalColor } from '../../ModalColor/ModalColor';
 
 export function Card ({
     image,
@@ -23,18 +26,28 @@ export function Card ({
     rating,
     view = 'general',// general | extended
     cardText,
+    colors
 }) {
 
     const cardContainer = getStyles(view === 'extended' ? styles.extendedCard : styles.generalCard, {}, [styles.cardBase])
     const categoryView = getStyles(view === 'extended' ? styles.extendedCategory : '', {}, [styles.categoryBase])
 
+    const [changeColorModal, drawColorModal] = useModal()
+    const [currentColor, setCurrentColor] = useState('');
 
+    const addToCart = () => {
+        changeColorModal()
+    }
+console.log(currentColor)
     return (
         <Stack 
             direction={view === 'extended' ? 'row' : 'column'} 
             gap='16' 
             className={styles.mainContainer}
         >
+            {colors && drawColorModal(
+                    <ModalColor colors = { colors } changeColorModal={changeColorModal} setCurrent={ setCurrentColor } current={currentColor} />
+                )}
             <Stack 
                 className={cardContainer}
             >
@@ -58,7 +71,7 @@ export function Card ({
                         className={styles.icons}
                     >
                         <Button radius='circle'><img src={heart} alt='heart'/></Button>
-                        <Button radius='circle'><img src={cart} alt='cart'/></Button>
+                        <Button radius='circle' onClick={addToCart}><img src={cart} alt='cart'/></Button>
                     </Stack>
                 </Stack>
 

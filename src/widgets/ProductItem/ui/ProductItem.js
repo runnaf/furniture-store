@@ -1,5 +1,5 @@
 
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useGetProductByIdQuery } from "../api/ProductApi";
 import { ProductPreview } from "../../ProductPreview/ui/ProductPreview/ProductPreview";
 import { RelatedProducts } from "../../RelatedProducts/RelatedProducts";
@@ -8,16 +8,22 @@ import { Stack } from "../../../shared/ui/Stack/Stack";
 import { SectionTitle } from "../../../entities/SectionTitle/ui/SectionTitle";
 import { Breadcrumbs } from "../../../entities/BreadCrumbs/ui/BreadCrumbs";
 import { routes } from "../../../app/routes/lib/data";
-import Error404Page from "../../../pages/Error404Page/Error404Page";
+import { useEffect } from "react";
 
 export const ProductItem = () => {
     const { id } = useParams();
-  
     const { data, isLoading, error } = useGetProductByIdQuery(id);
+    
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        // Если есть ошибка, редиректим на страницу ошибки
+        if (error) {
+            navigate('/not-found');
+        }
+    }, [error, navigate]);
 
     if (isLoading) return //TODO - лоадер или скелетоны надо будет сделать, пока данные не загружены с бэкенда
-    
-    if (error) return <Error404Page />
     
     return (
         <Stack direction="column" gap="75">
