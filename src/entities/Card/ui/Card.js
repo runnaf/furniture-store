@@ -36,9 +36,14 @@ export function Card ({
     const [currentColor, setCurrentColor] = useState('');
 
     const addToCart = () => {
-        changeColorModal()
+        if(currentColor === '') {
+            changeColorModal()
+        } else {
+            console.log(currentColor) //TODO
+        }
+        
     }
-console.log(currentColor)
+
     return (
         <Stack 
             direction={view === 'extended' ? 'row' : 'column'} 
