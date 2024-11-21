@@ -41,6 +41,7 @@
         touch-action: pan-x;
         scrollbar-width: none;
         width: 100%;
+        cursor: grab;
 
         > div {
             width: auto;
@@ -49,8 +50,6 @@
                 width: 100%;
             }
         }
-
-        cursor: grab;
 
         @include media.mobile-l {
             cursor: default;
