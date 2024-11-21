@@ -5,8 +5,14 @@
     border: var(--border-todayDeals);
     background-color: var(--background-color);
     padding: 12px;
+    width: auto;
+
     @include media.tablet-m {
         flex-direction: column;
+    }
+
+    @include media.mobile-l {
+        width: 100%;
     }
 
     .cardBase {
@@ -17,6 +23,7 @@
         img {
             border-radius: var(--border-radius-16);
             width: 100%;
+            object-fit: cover;
         } 
     
         .iconsContainer {
@@ -96,7 +103,7 @@
         height: 331px;
 
         @include media.mobile-l {
-            width: 100%;
+            width: 100% !important;
             height: 350px;
         }
     
@@ -104,6 +111,10 @@
             position: absolute;
             bottom: 10px;
             left: 5px;
+            
+            @include media.mobile-l {
+                width: 98%;
+            }
         }
     }
 
@@ -120,6 +131,10 @@
             position: absolute;
             bottom: 10px;
             left: 5px;
+
+            @include media.mobile-l {
+                width: 98%;
+            }
         }
     }
     }

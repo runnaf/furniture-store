@@ -83,7 +83,8 @@ $line-height: 28px;
         border-radius: var(--border-radius-12);
 
         @include mobile-l {
-            width: 298px;
+            justify-content: space-between;
+            width: 100%;
         }
 
 

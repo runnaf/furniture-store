@@ -36,11 +36,11 @@
         transform: translateX(0);
     }
 
-    @include mobile-l {
+    @include mobile-xl {
         width: 350px;
     }
 
-    @include mobile-m {
+    @include mobile-l {
         width: 100%;
     }
 
