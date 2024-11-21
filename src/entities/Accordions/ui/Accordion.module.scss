@@ -106,19 +106,11 @@ $opacity: var(--opacity-08);
 
 
     &.pageFAQ {
-        width: 687px; 
-
-        @include tablet-m {
-            width: 327px;
-        } 
+        width: 100%; 
 
         > div {
             &:nth-child(2)  {
-                width: 591px;
-
-                @include tablet-m {
-                    width: 303px;
-                } 
+                width: 98%;
             }
         }
     }
