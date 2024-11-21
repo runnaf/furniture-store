@@ -12,18 +12,16 @@ import { ArrowIcon } from '../../Slider/ui/ArrowIcon/ArrowIcon';
 import { getRouteProduct } from '../../../app/routes/lib/helper';
 import styles from './Card.module.scss';
 
-export function Card ({
-    image,
-    promotion,
-    timer,
-    category,
-    name,
-    price,
-    newPrice,
-    rating,
+export const Card = ({ 
+    id, color, rating, 
+    promotion, sub_categories, name, 
+    price, sale_price, timer,
+    short_description,
     view = 'general',// general | extended
-    cardText,
-}) {
+}) => {
+
+
+    const firstImage = color[0]?.images?.[2] || null;
 
     const cardContainer = getStyles(view === 'extended' ? styles.extendedCard : styles.generalCard, {}, [styles.cardBase])
     const categoryView = getStyles(view === 'extended' ? styles.extendedCategory : '', {}, [styles.categoryBase])
@@ -38,13 +36,13 @@ export function Card ({
             <Stack 
                 className={cardContainer}
             >
-                <img src={image} alt='item' loading='lazy' width='276'/>
+                <img src={firstImage.url} alt={firstImage.alt} loading='lazy' width='276'/>
 
                 <Stack 
                     justify='justifyBetween' 
                     className={styles.iconsContainer}
                 >
-                    {promotion > 0 && (
+                    {promotion && (
                         <Stack 
                             align='alignCenter'
                             className={styles.promotion}
@@ -82,7 +80,7 @@ export function Card ({
                     className={styles.categoryContainer}
                 >
                     <Text className={styles.category}>
-                        {category}
+                        {sub_categories}
                     </Text>
                     <Stack 
                         gap='8' 
@@ -108,13 +106,13 @@ export function Card ({
                             gap='12'
                             className={styles.priceContainer}
                         >
-                            {newPrice &&
-                            <Text className={styles.price}>{newPrice.toLocaleString("ru-RU")} ₽</Text>}
+                            {sale_price &&
+                            <Text className={styles.price}>{sale_price.toLocaleString("ru-RU")} ₽</Text>}
                             <Text>{price.toLocaleString("ru-RU")} ₽</Text>
                         </Stack>
                         {view === 'general' && 
                         <LinkCustom 
-                            to={getRouteProduct('671a7363e7c54db428bcda25')} //TODO - передать _id товара
+                            to={getRouteProduct(id)}
                             color='transparent'
                         >
                             <ArrowIcon/>
@@ -128,7 +126,7 @@ export function Card ({
                         justify='justifyBetween' 
                         className={styles.extended}
                     >
-                        <Text className={styles.cardText}>{cardText}</Text>
+                        <Text className={styles.cardText}>{short_description}</Text>
                         <LinkCustom color='secondary' className={styles.shopButton}>
                             Магазин <img src={arrow} alt="arrow"/>
                         </LinkCustom>
