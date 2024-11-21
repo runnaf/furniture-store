@@ -10,6 +10,8 @@ export const endpoints = {
         reviews: '/reviews',
         blog: '/blog',
         shop: '/shop',
+        cart: '/cart',
+        wish_list: '/wish_list'
     },
     user: '/user'
 }
