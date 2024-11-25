@@ -22,7 +22,6 @@ export const useCustomScroll = () => {
 
     const handleMouseMove = useCallback((e) => {
         if (!isDragging.current) return;
-        e.preventDefault()
         const x = e.pageX - containerRef.current.offsetLeft;
         const walk = (x - startX.current); 
         containerRef.current.scrollLeft = scrollLeft.current - walk;

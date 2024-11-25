@@ -1,4 +1,4 @@
-const data = [
+export const dataFAQ = [
     {
         title: 'Общая информация',
         content: [
@@ -113,5 +113,4 @@ const data = [
         ]
     }
 ]
-
-export default data;
+ 

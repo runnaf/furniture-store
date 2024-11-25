@@ -5,7 +5,6 @@ import { LinkCustom } from "../../../shared/ui/LinkCustom/LinkCustom";
 import { getRouteBlog } from "../../../app/routes/lib/helper";
 
 export const CardBlogs = ({ title, poster, description, date }) => {
-
     return(
         <Stack direction='column'
         gap='24'

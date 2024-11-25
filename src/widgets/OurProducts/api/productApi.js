@@ -3,29 +3,28 @@ import { endpoints } from "../../../shared/api/endpoints";
 import { createApiConfig } from "../../../shared/api/helpers";
 import { createQueryString } from "./queryUtils";
 
-
-const PRODUCT_TAG = [{ type: 'Product', id: 'Product'}];
+const PRODUCT_TAG = [{ type: 'Product', id: 'Products'}];
 
 const productApi = api.injectEndpoints({
     endpoints:(build) => ({
         getAllProducts: build.query({
-            query: ({ params }) => createApiConfig(
+            query: (params) => createApiConfig(
                 'GET', 
-                `${endpoints.lists.goods}?${createQueryString(params)}`
+                `${endpoints.lists.shop}/${params.limit}/${params.page}?${createQueryString(params.filters)}`
             ),
             providesTags: () => PRODUCT_TAG,
         }),
         getProduct: build.query({
             query: ({ id }) => createApiConfig(
                 'GET',
-                `${endpoints.lists.goods}/${id}`
+                `${endpoints.lists.shop}/${id}`
             ),
             providesTags: () => PRODUCT_TAG,
         }),
         addProduct: build.mutation({
             query: (body) => createApiConfig(
                 'POST',
-                endpoints.lists.goods,
+                `${endpoints.lists.shop}/product`,
                 body
             ),
             invalidatesTags: PRODUCT_TAG,
@@ -33,7 +32,7 @@ const productApi = api.injectEndpoints({
         editProduct: build.mutation({
             query: (body) => createApiConfig(
                 'PUT',
-                `${endpoints.lists.goods}/${body.id}`,
+                `${endpoints.lists.shop}/${body.id}`,
                 body
             ),
             invalidatesTags: PRODUCT_TAG,
@@ -41,7 +40,7 @@ const productApi = api.injectEndpoints({
         deleteProduct: build.mutation({
             query: ({ id }) => createApiConfig(
                 'DELETE',
-                `${endpoints.lists.goods}/${id}`
+                `${endpoints.lists.shop}/${id}`
             ),
             invalidatesTags: PRODUCT_TAG,
         })

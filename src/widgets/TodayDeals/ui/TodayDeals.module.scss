@@ -1,10 +1,10 @@
-@import '../../../app/styles/media-queries.scss';
-@import '../../../app/styles/mixin';
+@use '../../../app/styles/media-queries.scss' as media;
+@use '../../../app/styles/mixin' as mixin;
 
 .mainContainer {
-    @include section-style;
+    @include mixin.section-style;
 
-    @include tablet-l {
+    @include media.tablet-l {
         width: 100%;
     }
 
@@ -18,13 +18,13 @@
             font-weight: 600;
             align-self: end;
 
-            @include mobile-l {
+            @include media.mobile-l {
                 width: 100%;
                 text-align: center;
                 align-self: center;
             }
         }
-        @include mobile-l {
+        @include media.mobile-l {
             flex-direction: column;
             text-align: center;
             align-items: center;
@@ -41,10 +41,17 @@
         touch-action: pan-x;
         scrollbar-width: none;
         width: 100%;
-
         cursor: grab;
 
-        @include mobile-l {
+        > div {
+            width: auto;
+
+            @include media.mobile-l {
+                width: 100%;
+            }
+        }
+
+        @include media.mobile-l {
             cursor: default;
         }
     }

@@ -1,5 +1,6 @@
-import AboutUsPage from "../../../pages/AboutUsPage/ui/AboutUsPage";
-import { FAQs } from "../../../pages/FAQs/ui/FAQs";
+
+import AboutUsPage from "../../../pages/AboutUs/ui/AboutUsPage";
+import FAQs from '../../../pages/FAQs/ui/FAQs';
 import MainPage from "../../../pages/MainPage/ui/MainPage";
 import OurBlog from "../../../pages/OurBlog/ui/OurBlog";
 import Shop from "../../../pages/Shop/ui/Shop";
@@ -27,7 +28,7 @@ export const routes = [
         title: "Вопросы",
         link: getRouteFAQ(),
         isNavbar: true,
-        page: <FAQs />
+        page: <FAQs/>
     },
     {
         title: "О нас",
