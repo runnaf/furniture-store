@@ -8,20 +8,17 @@ import { Stack } from "../../../shared/ui/Stack/Stack";
 import { SectionTitle } from "../../../entities/SectionTitle/ui/SectionTitle";
 import { Breadcrumbs } from "../../../entities/BreadCrumbs/ui/BreadCrumbs";
 import { routes } from "../../../app/routes/lib/data";
-import { useEffect } from "react";
 
 export const ProductItem = () => {
     const { id } = useParams();
     const { data, isLoading, error } = useGetProductByIdQuery(id);
-    
+    console.log(error)
+    console.log(data)
     const navigate = useNavigate();
 
-    useEffect(() => {
-        // Если есть ошибка, редиректим на страницу ошибки
-        if (error) {
-            navigate('/not-found');
-        }
-    }, [error, navigate]);
+    if (error) {
+      navigate('/not-found');
+    }
 
     if (isLoading) return //TODO - лоадер или скелетоны надо будет сделать, пока данные не загружены с бэкенда
     

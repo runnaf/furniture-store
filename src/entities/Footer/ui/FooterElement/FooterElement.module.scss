@@ -1,0 +1,39 @@
+@use '../../../../app/styles/media-queries.scss' as media;
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: inherit;
+
+  @include media.desktop-m {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: var(--gap-36);
+  }
+
+  @include media.mobile-l {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.wrapper {
+  display: grid;
+  gap: var(--gap-30);
+  height: fit-content;
+
+  @include media.mobile-xl {
+    gap: var(--gap-22);
+  }
+
+  & > h3 {
+    color: var(--white-color);
+    font-size: var(--font-size-20);
+  }
+
+  & li {
+    width: max-content;
+  }
+
+  & a {
+    padding: 10px;
+  }
+}

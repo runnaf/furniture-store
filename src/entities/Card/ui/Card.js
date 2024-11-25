@@ -132,7 +132,7 @@ export function Card ({
                         </Stack>
                         {view === 'general' && 
                         <LinkCustom 
-                            to={getRouteProduct('671a7363e7c54db428bcda25')} //TODO - передать _id товара
+                            to={getRouteProduct('673dc0d8f7beba6eebc7cc17')} //TODO - передать _id товара
                             color='transparent'
                         >
                             <ArrowIcon/>

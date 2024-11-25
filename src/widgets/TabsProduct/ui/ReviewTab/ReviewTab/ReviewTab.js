@@ -6,7 +6,6 @@ import { SendingReview } from '../../../../../feature/SendingReview/SendingRevie
 import { Text } from '../../../../../shared/ui/Text/Text';
 import { useNavigate, useParams } from 'react-router';
 import { useGetReviewsByProductIdQuery } from '../../../../ProductItem/api/ProductApi';
-import { useEffect } from 'react';
 import styles from './ReviewTab.module.scss';
 
 export const ReviewTab = () => {
@@ -14,17 +13,15 @@ export const ReviewTab = () => {
     const { data, isLoading, error } = useGetReviewsByProductIdQuery(id);
 
     const navigate = useNavigate();
-    useEffect(() => {
-        // Если есть ошибка, редиректим на страницу ошибки
-        if (error) {
-            navigate('/not-found');
-        }
-    }, [error, navigate]);
     
     const authorized = true; //TODO
     const madePurchase = true //TODO
     
     if(isLoading) return //TODO
+
+    if (error) {
+      navigate('/not-found');
+  }
 
     const rating = countStars(data);
     const average = calculateAverageStars(rating).toFixed(1);

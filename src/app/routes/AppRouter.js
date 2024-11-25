@@ -3,6 +3,7 @@ import { routes } from './lib/data'
 import { Header } from '../../entities/Header/Header/Header';
 import { HeaderAlert } from '../../entities/Header/HeaderAlert/HeaderAlert';
 import { Navbar } from '../../widgets/Navbar/ui/Navbar/Navbar';
+import { Footer } from '../../entities/Footer/ui/Footer/Footer';
 
 export const AppRouter = () => {
     const location = useLocation();
@@ -31,6 +32,7 @@ export const AppRouter = () => {
                     />
                 )}
             </Routes>
+            <Footer />
         </>
     );
 };

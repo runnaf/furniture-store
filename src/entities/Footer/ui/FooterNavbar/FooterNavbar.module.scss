@@ -1,0 +1,38 @@
+@use '../../../../app/styles/mixin.scss' as mixin;
+@use '../../../../app/styles/media-queries.scss' as media;
+
+.container {
+  background-color: var(--green-color);
+  padding: 75px 0;
+
+  @include media.mobile-xl {
+    padding: 50px 0;
+  }
+
+  & > div {
+    @include mixin.section-style;
+
+    & >div:first-of-type {
+      max-width: min-content;
+      gap: var(--gap-48);
+
+      & img {
+        width: 223px;
+        height: auto;
+      }
+
+      @include media.mobile-xl {
+        max-width: 100%;
+      }
+    }
+  
+    & p {
+      color: var(--white-color);
+      flex: 1;
+    }
+
+    @include media.mobile-xl {
+      flex-direction: column;
+    }
+  }
+}
