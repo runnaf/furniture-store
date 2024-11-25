@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 import { Button } from "../../../../shared/ui/Button/Button"
 import { LinkCustom } from "../../../../shared/ui/LinkCustom/LinkCustom"
 import { Stack } from "../../../../shared/ui/Stack/Stack";
@@ -13,8 +13,8 @@ import styles from "./AddToCart.module.scss";
 
 const INITIAL_VALUE = 1;
 
-export const AddToCart = ({gap, colors, currentColor, isProduct=false}) => {
-    const id = useParams()
+export const AddToCart = ({gap, colors, currentColor}) => {
+    const {id, color} = useParams()
 
     //состояние избранного товара
     const [favorites, setFavorites] = useState(false);
@@ -23,7 +23,7 @@ export const AddToCart = ({gap, colors, currentColor, isProduct=false}) => {
     }
 
     //выбранный цвет
-    const [current, setCurrent] = useState(currentColor);
+    const [current, setCurrent] = useState(color);
 
     //количество товара
     const [count, setCount] = useState(INITIAL_VALUE);

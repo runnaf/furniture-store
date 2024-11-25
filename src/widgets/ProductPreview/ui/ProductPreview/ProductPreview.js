@@ -2,12 +2,12 @@ import { DescriptionOfProduct } from "../DescriptionOfProduct/DescriptionOfProdu
 import { SliderOfProduct } from "../SliderOfProduct/SliderOfProduct";
 import styles from "./ProductPreview.module.scss";
 
-export const ProductPreview = ({data}) => {
-    console.log(data)
+export const ProductPreview = ({data, color}) => {
+
     return (
         <section className={styles.container}>
-            <SliderOfProduct data={data} />
-            <DescriptionOfProduct product = {data} />
+          <SliderOfProduct data={data} currentColor={color} />
+          <DescriptionOfProduct product = {data} />
         </section>
     )
 }

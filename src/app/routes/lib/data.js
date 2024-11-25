@@ -44,7 +44,7 @@ export const routes = [
     },
     {
         title: "Товар",
-        link: getRouteProduct(':id'),
+        link: getRouteProduct(':id', ':color'),
         page: <ProductPage />
     },
     {

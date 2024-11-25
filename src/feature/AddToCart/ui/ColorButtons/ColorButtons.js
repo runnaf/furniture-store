@@ -6,7 +6,7 @@ export const ColorButtons = ({colors, setCurrent, current}) => {
         <ul className={styles.container}>
             {
                 colors.map((color) => (
-                    <ColorButton key={color} color={color} setCurrent={setCurrent} current={current}/>
+                    <ColorButton key={color.value} color={color.value} setCurrent={setCurrent} current={current}/>
                 ))
             }
         </ul>

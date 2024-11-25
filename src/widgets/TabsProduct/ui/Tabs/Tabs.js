@@ -7,13 +7,12 @@ import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { tabs } from '../../lib/data';
 import styles from './Tabs.module.scss';
 
-
 export const Tabs = ({data}) => {
     const [activeTab, setActiveTab] = useState('description');
     const { description } = data;
     const { list, paragraphs} = description
 
-
+console.log(data)
     return (
         <Stack gap='32' justify='column' className={styles.tabsContainer}>
             <Stack className={styles.wrapper}>

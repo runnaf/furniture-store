@@ -23,8 +23,6 @@ export const Card = ({
     view = 'general',// general | extended
 
 }) => {
-
-console.log(id, color)
     const firstImage = color[0]?.images?.[2] || null;
 
     const cardContainer = getStyles(view === 'extended' ? styles.extendedCard : styles.generalCard, {}, [styles.cardBase])
@@ -48,9 +46,9 @@ console.log(id, color)
             gap='16' 
             className={styles.mainContainer}
         >
-            {/* {colors && drawColorModal(
-                    <ModalColor colors = { colors } changeColorModal={changeColorModal} setCurrent={ setCurrentColor } current={currentColor} />
-                )} */}
+            {color && drawColorModal(
+                    <ModalColor colors = { color } changeColorModal={changeColorModal} setCurrent={ setCurrentColor } current={currentColor} />
+                )}
             <Stack 
                 className={cardContainer}
             >
@@ -130,7 +128,7 @@ console.log(id, color)
                         </Stack>
                         {view === 'general' && 
                         <LinkCustom 
-                            to={getRouteProduct(id)}
+                            to={getRouteProduct(id, currentColor? currentColor: color[0]?.value )}
                             color='transparent'
                         >
                             <ArrowIcon/>

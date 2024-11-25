@@ -10,12 +10,13 @@ import styles from "./DescriptionOfProduct.module.scss";
 import { countStars, endingOfTheWordReview, calculateAverageStars } from "../../../TabsProduct/lib/helpers";
 
 export const DescriptionOfProduct = ({product}) => {
-    const { id } = useParams();
+    const { id, color } = useParams();
     const { data } = useGetReviewsByProductIdQuery(id);
-
     const stars = Number(calculateAverageStars(countStars(data)))
 
-    const { sub_categories, name, inStock = true, sale_price, price, short_description, color, article_number, tags } = product
+    const { sub_categories, name, inStock = true, sale_price, price, short_description, article_number, tags } = product;
+    const colors = product.color;
+  
     return (
         <Stack className={styles.container} direction="column" gap="24">
             <Text>{sub_categories}</Text>
@@ -32,7 +33,7 @@ export const DescriptionOfProduct = ({product}) => {
                 {price && <Text className={styles.oldPrice} size="md">{price} руб.</Text>}
             </Stack>
             <Text>{short_description}</Text>
-            <AddToCart gap="32" currentColor={color} />
+            <AddToCart gap="32" currentColor={color} colors={colors} />
             <Stack className={styles.tagsContainer} direction="column" gap="12">
                 <Text>Артикул: <span>{article_number}</span></Text>
                 <Text>Тэги: <span>{tags.join(', ')}</span></Text>

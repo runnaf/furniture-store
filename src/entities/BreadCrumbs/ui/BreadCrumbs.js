@@ -15,18 +15,18 @@ export const Breadcrumbs = ({ routes, separator = ' / ', isProduct = false, name
     const link = `${prevLink}${segment}`
     const route = routes.find((r) => r.link === link)
     const isLast = index === arr.length - 1;
+    const isLastProduct = index === arr.length - 2;
 
     acc.push({
       title: route ? route.title : segment, 
       link: link, 
-      isLast: isLast,
+      isLast: isProduct ? isLastProduct : isLast,
     });
-
+console.log(arr)
     return acc;
   }, [{ title: 'Главная', link: '/' }]);
   const currentRoute = breadcrumbs[breadcrumbs.length - 1]
   const title = currentRoute.isLast ? currentRoute.title : ''
-
 
   return (
     <Stack className={styles.breadCrumbsContainer}

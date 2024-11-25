@@ -5,10 +5,13 @@ import { SideButtons } from "../../../../entities/Slider/ui/SideButtons/SideButt
 import { Slider } from "../../../../entities/Slider/ui/Slider/Slider";
 import { Stack } from "../../../../shared/ui/Stack/Stack";
 import {QUANTITY_CARD_ON_PAGE} from "../../libs/data";
+import { getImagesByColor } from "../../libs/helper";
 import styles from "./SliderOfProduct.module.scss";
 
-export const SliderOfProduct = ({data}) => {    
-    const {sub_categories, images} = data;
+export const SliderOfProduct = ({data, currentColor}) => {    
+    const {color} = data;
+    const images = getImagesByColor(currentColor, color)
+
     const { currentSlide, nextCard, prevCard, handleClickSlide } = useSlider(images.length);
 
     const array = slicerOfArray(images, currentSlide, QUANTITY_CARD_ON_PAGE);
@@ -24,18 +27,18 @@ export const SliderOfProduct = ({data}) => {
         >
             <Stack className={styles.previewGoodContainer}>
                 {
-                    array.map((previewGood, index) => (
-                        <img src={previewGood} alt={sub_categories} width="584" height="700" key={index}/>
+                    array.map((previewGood) => (
+                        <img src={previewGood.url} alt={previewGood.alt} width="584" height="700" key={previewGood._id}/>
                     ))
                 }
                 <SideButtons nextCard={nextCard} prevCard={prevCard} />
             </Stack>
             
             <ul className={styles.imagesContainer}>
-                {images.map((good, id) => 
+                {images.map((good, index) => 
                 (
-                    <BottomButton key={id} className={id === currentSlide ? styles.currentSlider : ''} currentSlide={currentSlide} handleClickSlide={handleClickSlide} page={id}>
-                        <img src={good} alt={sub_categories} width="137" height="164"/>
+                    <BottomButton key={good._id} className={index === currentSlide ? styles.currentSlider : ''} currentSlide={currentSlide} handleClickSlide={handleClickSlide} page={index}>
+                        <img src={good.url} alt={good.alt} width="137" height="164"/>
                     </BottomButton>
                 )
                 )}

@@ -10,10 +10,8 @@ import { Breadcrumbs } from "../../../entities/BreadCrumbs/ui/BreadCrumbs";
 import { routes } from "../../../app/routes/lib/data";
 
 export const ProductItem = () => {
-    const { id } = useParams();
+    const { id, color } = useParams();
     const { data, isLoading, error } = useGetProductByIdQuery(id);
-    console.log(error)
-    console.log(data)
     const navigate = useNavigate();
 
     if (error) {
@@ -31,7 +29,7 @@ export const ProductItem = () => {
                     name={data.name} 
                 />
             </SectionTitle>
-            <ProductPreview data={data} isLoading={isLoading} skeletons={4} />
+            <ProductPreview data={data} color={color} isLoading={isLoading} skeletons={4} />
             <Tabs data={data}/>
             <RelatedProducts />
         </Stack>

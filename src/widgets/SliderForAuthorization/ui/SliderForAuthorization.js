@@ -1,8 +1,8 @@
 import { data, QUANTITY_CARD_ON_PAGE } from "../lib/data";
 import { Slider } from "../../../entities/Slider/ui/Slider/Slider";
 import { useSlider } from "../../../entities/Slider/hooks/useSlider";
-import styles from "./SliderForAuthorization.module.scss";
 import { slicerOfArray } from "../../../entities/Slider/lib/helper";
+import styles from "./SliderForAuthorization.module.scss";
 
 export const SliderForAuthorization = () => {
   const { currentSlide, nextCard, prevCard, handleClickSlide } = useSlider(data.length)

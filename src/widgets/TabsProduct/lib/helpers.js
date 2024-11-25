@@ -85,4 +85,9 @@ export const calculateAverageStars = (starsObject) => {
 
     // Проверка, что totalCount не равен 0, чтобы избежать деления на ноль
     return totalCount > 0 ? totalStars / totalCount : 0;
+};
+
+// функция которая принимает массив значений материалов и возвращает строку 
+export const getLabelsAsString = (objectsArray) => {
+  return objectsArray.map(obj => obj.label).join(', ');
 }
