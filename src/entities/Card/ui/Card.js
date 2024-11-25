@@ -24,7 +24,7 @@ export const Card = ({
 
 }) => {
 
-
+console.log(id, color)
     const firstImage = color[0]?.images?.[2] || null;
 
     const cardContainer = getStyles(view === 'extended' ? styles.extendedCard : styles.generalCard, {}, [styles.cardBase])
@@ -130,11 +130,7 @@ export const Card = ({
                         </Stack>
                         {view === 'general' && 
                         <LinkCustom 
-<<<<<<< HEAD
-                            to={getRouteProduct('673dc0d8f7beba6eebc7cc17')} //TODO - передать _id товара
-=======
                             to={getRouteProduct(id)}
->>>>>>> develop
                             color='transparent'
                         >
                             <ArrowIcon/>

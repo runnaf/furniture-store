@@ -6,10 +6,10 @@ export const BottomButton = ({
         handleClickSlide,
         page,
         color,
+        yellow,
         children, 
         className
     }) => {
-
         const mode = {
             [styles.current] : currentSlide === page
         };
@@ -17,6 +17,7 @@ export const BottomButton = ({
         const additional = [
             className,
             styles[color],
+            styles[yellow]
         ];
 
         const stylesBottomButton = getStyles(styles.button, mode, additional)

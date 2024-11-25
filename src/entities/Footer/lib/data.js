@@ -41,7 +41,6 @@ export const elements = [
         text: 'Возврат',
         path: '',
       },
-      ,
       {
         text: 'Часто задаваемые вопросы',
         path: getRouteFAQ(),

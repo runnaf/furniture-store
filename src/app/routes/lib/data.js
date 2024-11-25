@@ -1,5 +1,5 @@
 
-import AboutUsPage from "../../../pages/AboutUs/ui/AboutUsPage";
+import AboutUsPage from "../../../pages/AboutUsPage/ui/AboutUsPage";
 import FAQs from '../../../pages/FAQs/ui/FAQs';
 import MainPage from "../../../pages/MainPage/ui/MainPage";
 import OurBlog from "../../../pages/OurBlog/ui/OurBlog";
