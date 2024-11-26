@@ -6,7 +6,8 @@ import Shop from "../../../pages/Shop/ui/Shop";
 import ProductPage from "../../../pages/ProductPage/ui/ProductPage";
 import SigninPage from "../../../pages/SigninPage/ui/SigninPage";
 import SignupPage from "../../../pages/SignupPage/ui/SignupPage";
-import { getRouteAbout, getRouteBlog, getRouteFAQ, getRouteMain, getRouteProduct, getRouteShop, getRouteSignin, getRouteSignup } from "./helper";
+import { getRouteAbout, getRouteBlog, getRouteFAQ, getRouteMain, getRouteProduct, getRouteShop, getRouteSignin, getRouteSignup, getRouteWishlist } from "./helper";
+import WishlistPage from "../../../pages/WishList/WishListPage";
 
 export const routes = [
     {
@@ -51,5 +52,11 @@ export const routes = [
     {
         link: getRouteSignup(),
         page: <SignupPage />
+    },
+    {
+        title: "Избранное",
+        link: getRouteWishlist(),
+        isNavbar: true,
+        page: <WishlistPage />
     }
 ]
