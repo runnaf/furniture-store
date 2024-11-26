@@ -20,8 +20,8 @@ export const Breadcrumbs = ({ routes, separator = ' / ', isProduct = false, name
       title: route ? route.title : segment, 
       link: link, 
       isLast: isLast,
-    });  
-console.log(acc)
+    });
+
     return acc;
   }, [{ title: 'Главная', link: '/' }]);
 

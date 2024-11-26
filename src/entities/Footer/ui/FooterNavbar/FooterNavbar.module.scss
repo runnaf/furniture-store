@@ -12,13 +12,25 @@
   & > div {
     @include mixin.section-style;
 
+    @include media.tablet-m {
+      gap: var(--gap-30);
+    }
+
     & >div:first-of-type {
       max-width: min-content;
       gap: var(--gap-48);
 
+      @include media.tablet-m {
+        gap: var(--gap-30);
+      }
+
       & img {
         width: 223px;
         height: auto;
+
+        @include media.tablet-m {
+          width: 180px;
+        }
       }
 
       @include media.mobile-xl {

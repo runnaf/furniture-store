@@ -37,3 +37,16 @@
     padding: 10px;
   }
 }
+
+ul.wrapper {
+  gap: var(--gap-8);
+
+  & > li {
+    display: flex;
+    width: 100%;
+
+    & > a {
+      width: 100%;
+    }
+  }
+}

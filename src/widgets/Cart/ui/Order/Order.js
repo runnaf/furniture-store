@@ -21,7 +21,7 @@ export const Order = ({items, totalPrice, discount, coupon}) => {
       <Stack direction="column" gap="32">
         {
           Object.entries(dataOrder).map(([title, quantity]) => (
-            <OrderItem title={title} quantity={quantity} />
+            <OrderItem title={title} quantity={quantity} key={title} />
           ))
         }
       </Stack>

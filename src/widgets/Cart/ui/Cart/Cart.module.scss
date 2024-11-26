@@ -10,6 +10,7 @@
 
   @include media.tablet-l {
     width: fit-content;
+    flex-direction: column;
   }
 
   @include media.mobile-xl {
@@ -18,28 +19,12 @@
 }
 
 .container {
-  border-collapse: collapse;
-  width: 100%;
-}
+  @include media.mobile-xl {
+    justify-content: start;
+    flex-direction: column;
 
-.header {
-  & tr {
-    &:first-child th:first-child {
-      padding-left: 55px;
-      border-top-left-radius: var(--border-radius-12);
-      border-bottom-left-radius: var(--border-radius-12);  
-    }
-
-    &:first-child th:last-child {
-      padding-right: 16px;
-      border-top-right-radius: var(--border-radius-12); 
-      border-bottom-right-radius: var(--border-radius-12); 
-    }
-
-    & th {
-      text-align: left;
-      background-color: var(--yellow-color);
-      padding: 16px 0;
+    & > button {
+      order: -1;
     }
   }
 }

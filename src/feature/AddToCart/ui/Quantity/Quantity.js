@@ -8,7 +8,7 @@ export const Quantity = ({quantity, className}) => {
     const stylesClass = getStyles(styles.containerButton, true, [className]);
 
     const [count, setCount] = useState(quantity);
-    console.log(count)
+
     const increaseCount = () =>{
         setCount(count + 1)
     }

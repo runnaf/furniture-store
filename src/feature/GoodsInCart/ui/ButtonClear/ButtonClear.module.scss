@@ -1,0 +1,25 @@
+.buttonClear {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    background-color: var(--black-color);
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+}

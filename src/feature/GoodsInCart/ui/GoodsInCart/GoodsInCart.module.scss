@@ -1,39 +1,33 @@
-@use "../../../../app/styles/mixin.scss" as mixin;
-
-
 .container {
-  padding: 24px 0;
-  border-bottom: 2px solid var(--grey-background-color);
+  border-collapse: collapse;
+  width: 100%;
+}
 
-  & td {
-    padding: 24px 0;
-    text-align: start;
-    
+.header {
+  & tr {
+    &:first-child th:first-child {
+      padding-left: 55px;
+      border-top-left-radius: var(--border-radius-12);
+      border-bottom-left-radius: var(--border-radius-12);  
+    }
+
+    &:first-child th:last-child {
+      padding-right: 16px;
+      border-top-right-radius: var(--border-radius-12); 
+      border-bottom-right-radius: var(--border-radius-12); 
+    }
+
+    & th {
+      text-align: left;
+      background-color: var(--yellow-color);
+      padding: 16px 0;
+    }
   }
 }
 
-.buttonClear {
-  position: relative;
-  width: 32px;
-  height: 32px;
-  background-color: transparent;
-
-  &::after,
-  &::before {
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 2px;
-    background-color: var(--black-color);
-    bottom: 0;
-    top: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    transform: rotate(45deg);
-  }
-
-  &::before {
-    transform: rotate(-45deg);
-  }
+.containerMobile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-22);
 }

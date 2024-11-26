@@ -12,7 +12,6 @@ export const Tabs = ({data}) => {
     const { description } = data;
     const { list, paragraphs} = description
 
-console.log(data)
     return (
         <Stack gap='32' justify='column' className={styles.tabsContainer}>
             <Stack className={styles.wrapper}>

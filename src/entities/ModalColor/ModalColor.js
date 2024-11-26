@@ -5,7 +5,7 @@ import { ColorButtons } from "../../feature/AddToCart/ui/ColorButtons/ColorButto
 import styles from "./ModalColor.module.scss";
 
 export const ModalColor = ({colors, setCurrent, current, changeColorModal}) => {
-console.log(current)
+
     return (
 
             <Stack className={styles.container} direction="column" gap="32" align="alignCenter" justify="justifyCenter">
