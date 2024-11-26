@@ -5,7 +5,7 @@ import { Stack } from "../../../shared/ui/Stack/Stack";
 import { SliderForAuthorization } from "../../../widgets/SliderForAuthorization/ui/SliderForAuthorization";
 import styles from './SigninPage.module.scss';
 
-const DESKTOP_WIDTH = 1280;
+const DESKTOP_WIDTH = 1024;
 
 const SigninPage = () => {
   const width = useResize();
