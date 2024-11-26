@@ -1,4 +1,3 @@
-
 import AboutUsPage from "../../../pages/AboutUsPage/ui/AboutUsPage";
 import FAQs from '../../../pages/FAQs/ui/FAQs';
 import MainPage from "../../../pages/MainPage/ui/MainPage";
@@ -8,7 +7,10 @@ import ProductPage from "../../../pages/ProductPage/ui/ProductPage";
 import SigninPage from "../../../pages/SigninPage/ui/SigninPage";
 import SignupPage from "../../../pages/SignupPage/ui/SignupPage";
 import Error404 from "../../../pages/Error404Page/Error404Page";
-import { getRouteAbout, getRouteBlog, getRouteError404, getRouteFAQ, getRouteMain, getRouteProduct, getRouteShop, getRouteSignin, getRouteSignup } from "./helper";
+import CartPage from "../../../pages/CartPage/CartPage";
+import ChecoutPage from "../../../pages/ChecoutPage/ChecoutPage";
+import { getRouteAbout, getRouteBlog, getRouteCart, getRouteCheckout, getRouteError404, getRouteFAQ, getRouteMain, getRouteProduct, getRouteShop, getRouteSignin, getRouteSignup } from "./helper";
+
 
 
 export const routes = [
@@ -58,5 +60,16 @@ export const routes = [
     {
         link: getRouteError404(),
         page: <Error404 />
+    },
+    { 
+      title: "Корзина",
+      link: getRouteCart(),
+      page: <CartPage />
+    },
+    { 
+      title: "Оформление",
+      link: getRouteCheckout(),
+      page: <ChecoutPage />
     }
+
 ]

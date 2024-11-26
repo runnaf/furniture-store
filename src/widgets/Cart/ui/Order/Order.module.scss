@@ -1,0 +1,13 @@
+.container {
+  width: 379px;
+  height: fit-content;
+  padding: 24px;
+  border-radius: var(--border-radius-12);
+  border: 2px solid var(--grey-background-color);
+
+  & a {
+    text-align: center;
+    width: 100%;
+    padding: 16px;
+  }
+}

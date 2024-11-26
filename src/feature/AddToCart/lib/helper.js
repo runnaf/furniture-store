@@ -1,17 +1,19 @@
 export const getColorTitle = (color) => {
     switch (color) {
-        case '#242424':
+        case 'black':
             return 'Черный';
-        case '#622718':
+        case 'brown':
             return 'Коричневый';
-        case '#D9D9D9':
+        case 'grey':
             return 'Серый';
-        case '#008263':
+        case 'green':
             return 'Зеленый';
-        case '#006F9E':
+        case 'blue':
             return 'Синий';
-        case '#FFF':
+        case 'white':
             return 'Белый';
+        case 'yellow':
+            return 'Желтый';
         default:
             return null;
     }

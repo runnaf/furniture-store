@@ -1,0 +1,45 @@
+@use "../../../../app/styles/mixin.scss" as mixin;
+@use "../../../../app//styles/media-queries.scss" as media;
+
+.wrapper {
+  @include mixin.section-style;
+
+  & > div:first-of-type {
+    width: 100%;
+  }
+
+  @include media.tablet-l {
+    width: fit-content;
+  }
+
+  @include media.mobile-xl {
+    width: 100%;
+  }
+}
+
+.container {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.header {
+  & tr {
+    &:first-child th:first-child {
+      padding-left: 55px;
+      border-top-left-radius: var(--border-radius-12);
+      border-bottom-left-radius: var(--border-radius-12);  
+    }
+
+    &:first-child th:last-child {
+      padding-right: 16px;
+      border-top-right-radius: var(--border-radius-12); 
+      border-bottom-right-radius: var(--border-radius-12); 
+    }
+
+    & th {
+      text-align: left;
+      background-color: var(--yellow-color);
+      padding: 16px 0;
+    }
+  }
+}

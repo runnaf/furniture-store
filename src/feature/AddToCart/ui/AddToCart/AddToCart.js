@@ -25,20 +25,9 @@ export const AddToCart = ({gap, colors, currentColor}) => {
     //выбранный цвет
     const [current, setCurrent] = useState(color);
 
-    //количество товара
-    const [count, setCount] = useState(INITIAL_VALUE);
-    const increaseCount = () =>{
-        setCount(count + 1)
-    }
-    const decreaseCount = () => {
-        if (count !== 1) {
-            setCount(count - 1)
-        }
-    }
-
     //открытие модального окна
     const addToCart = () => {
-        console.log(current, count, favorites, id)
+        console.log(current, favorites, id)
     }
 
     return (
@@ -53,7 +42,7 @@ export const AddToCart = ({gap, colors, currentColor}) => {
                 )} 
             </Stack>
             <Stack className={styles.containerButton} align="alignCenter" gap="12">
-                <Quantity className={styles.quantity} count={count}  increaseCount={increaseCount} decreaseCount={decreaseCount}/>
+                <Quantity className={styles.quantity} quantity={INITIAL_VALUE} />
                 <Stack align="alignCenter" gap="12">
                     <Button onClick={addToCart}>В корзину</Button>
                     <LinkCustom color="yellow" path="">Купить сейчас</LinkCustom>

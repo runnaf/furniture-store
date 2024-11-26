@@ -9,4 +9,6 @@ export const getRouteSignin = () => '/signin';
 export const getRouteSignup = () => '/signup';
 export const getRouteProduct = (id, color) => `/shop/${id}${color ? `/${color}` : ''}`;
 export const getRouteError404 = () => '*'
+export const getRouteCart = () => '/cart';
+export const getRouteCheckout = () => '/checout';
 // export const getRuoteReviews = (id) => `/reviews/${id}`;

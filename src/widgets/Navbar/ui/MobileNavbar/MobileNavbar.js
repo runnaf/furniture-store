@@ -5,9 +5,10 @@ import { routes } from '../../../../app/routes/lib/data';
 import { dropdownMenus } from '../../libs/data';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { NavLink } from 'react-router-dom';
-import { getRouteCategories } from '../../../../app/routes/lib/helper';
+import { getRouteCart, getRouteCategories } from '../../../../app/routes/lib/helper';
 import useOverflowHidden from '../../../../shared/hooks/useOverflowHidden';
 import { ScrollToTop } from '../../../../shared/libs/scrollToTop';
+import { LinkCustom } from '../../../../shared/ui/LinkCustom/LinkCustom';
 
 export const MobileNavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -53,9 +54,9 @@ export const MobileNavbar = () => {
                     <button>
                         {<LikeIcon />}
                     </button>
-                    <button>
-                        {<CartIcon />}
-                    </button>
+                    <LinkCustom color='secondary' path={getRouteCart()} onClick={ScrollToTop()}>
+                      {<CartIcon />}
+                    </LinkCustom>
                     <button>
                         {<LoginIcon />}
                     </button>

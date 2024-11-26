@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  justify-content:center;
+  align-items: flex-start;
+  gap: var(--gap-12);
+
+  & button {
+    padding: 16px 32px;
+    height: fit-content;
+  }
+}
