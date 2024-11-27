@@ -1,0 +1,50 @@
+table {
+    width: 1200px;    
+    border-collapse: collapse;
+    gap: var(--gap-16);
+    text-align: left;
+    font-size: var(--font-size-18);
+
+    th {
+        font-weight: 500;
+    }
+
+    tr {
+        border-bottom: 1px solid var(--stroke-color);
+        height: 156px;
+    }
+
+    tr:first-child {
+        border-radius: var(--border-radius-12);
+        background-color: var(--yellow-color);
+        height: 59px;
+    }
+
+    .itemDescription {
+
+        p:first-child {
+            font-weight: 500;
+        }
+        p:last-child {
+            color: var(--secoundry-black-color);
+        }
+    }
+
+    td:nth-child(3) {
+        font-weight: 500;
+    }
+
+    td:nth-child(5) {
+        color: var(--border-inStock-color);
+    }
+
+    img {
+        width: 90px;
+        height: 108px;
+        background-color: rgb(222, 220, 220);
+    }
+    button {
+        padding: 18px 30px;
+        width: 98%;
+    }
+}
