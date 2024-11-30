@@ -38,7 +38,6 @@ export const OurProductsPage = ({ isMobile }) => {
             filter: selectedFilters
         }
     })
-    console.log(data)
 
     if (isLoading) {
         return <Stack>Loading...</Stack> //TODO
@@ -139,10 +138,19 @@ export const OurProductsPage = ({ isMobile }) => {
                     className={styles.cardsContainer}
                 >
                     {data?.products.map(product => (
-                        <Card key={product._id} id={product._id}  color={product.color} rating={product.rating}
-                        promotion={product.promotion} sub_categories={product.sub_categories} name={product.name}
-                        price={product.price} sale_price={product.sale_price} timer={product.timer}
-                        short_description={product.short_description}/>
+                        <Card 
+                            key={product._id} 
+                            id={product._id}  
+                            color={product.color} 
+                            rating={product.rating}
+                            promotion={product.promotion} 
+                            sub_categories={product.sub_categories} 
+                            name={product.name}
+                            price={product.price} 
+                            sale_price={product.sale_price} 
+                            timer={product.timer}
+                            short_description={product.short_description}
+                        />
                     )
                     )}
                 </Stack>

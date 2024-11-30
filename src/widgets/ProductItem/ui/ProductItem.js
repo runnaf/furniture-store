@@ -10,12 +10,13 @@ import { Breadcrumbs } from "../../../entities/BreadCrumbs/ui/BreadCrumbs";
 import { routes } from "../../../app/routes/lib/data";
 
 export const ProductItem = () => {
-    const { id, color } = useParams();
+    const { id } = useParams();
     const { data, isLoading, error } = useGetProductByIdQuery(id);
+    
     const navigate = useNavigate();
 
     if (error) {
-      navigate('/not-found');
+        navigate('/not-found');
     }
 
     if (isLoading) return //TODO - лоадер или скелетоны надо будет сделать, пока данные не загружены с бэкенда
@@ -29,7 +30,11 @@ export const ProductItem = () => {
                     name={data.name} 
                 />
             </SectionTitle>
-            <ProductPreview data={data} color={color} isLoading={isLoading} skeletons={4} />
+            <ProductPreview 
+                data={data} 
+                isLoading={isLoading} 
+                skeletons={4} 
+            />
             <Tabs data={data}/>
             <RelatedProducts />
         </Stack>

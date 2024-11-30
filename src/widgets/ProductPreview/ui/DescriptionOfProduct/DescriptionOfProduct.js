@@ -8,15 +8,16 @@ import { useParams } from "react-router";
 import { useGetReviewsByProductIdQuery } from "../../../ProductItem/api/ProductApi";
 import styles from "./DescriptionOfProduct.module.scss";
 import { countStars, endingOfTheWordReview, calculateAverageStars } from "../../../TabsProduct/lib/helpers";
+import { ColorButtons } from "../../../../entities/Card/ui/ColorButtons/ColorButtons";
 
-export const DescriptionOfProduct = ({product}) => {
-    const { id, color } = useParams();
+export const DescriptionOfProduct = ({ product, handleSelectColor, currentColor }) => {
+    const { id } = useParams();
     const { data } = useGetReviewsByProductIdQuery(id);
     const stars = Number(calculateAverageStars(countStars(data)))
 
     const { sub_categories, name, inStock = true, sale_price, price, short_description, article_number, tags } = product;
     const colors = product.color;
-  
+
     return (
         <Stack className={styles.container} direction="column" gap="24">
             <Text>{sub_categories}</Text>
@@ -33,7 +34,17 @@ export const DescriptionOfProduct = ({product}) => {
                 {price && <Text className={styles.oldPrice} size="md">{price} руб.</Text>}
             </Stack>
             <Text>{short_description}</Text>
-            <AddToCart gap="32" currentColor={color} colors={colors} />
+
+            <Stack gap='16' align="alignCenter">
+                <Text>Цвет:</Text>
+                <ColorButtons 
+                    colors={colors} 
+                    handleSelectColor={handleSelectColor}
+                    current={currentColor}
+                />
+            </Stack>
+            
+            <AddToCart gap="32"/>
             <Stack className={styles.tagsContainer} direction="column" gap="12">
                 <Text>Артикул: <span>{article_number}</span></Text>
                 <Text>Тэги: <span>{tags.join(', ')}</span></Text>
