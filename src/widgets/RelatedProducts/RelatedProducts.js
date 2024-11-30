@@ -21,7 +21,8 @@ export const RelatedProducts = () => {
     }
 
     const { currentSlide, handleClickSlide } = useSlider(cardData.length);
-    const currentCards = slicerOfArray(cardData, currentSlide, quantityCardsOnPage(cardData));
+    // const currentCards = slicerOfArray(cardData, currentSlide, quantityCardsOnPage(cardData));
+    
 
     return (
         <section className={styles.wrapper}>
@@ -42,6 +43,7 @@ export const RelatedProducts = () => {
                         className={styles.cardContainer}
                         ref={containerRef}
                     >
+                    {/* TODO */}
                     {/* {currentCards.map(element => (
                         <Card key={element.id} {...element} timer={false}/>
                     ))} */}

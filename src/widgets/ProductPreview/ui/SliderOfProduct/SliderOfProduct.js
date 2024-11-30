@@ -8,8 +8,10 @@ import {QUANTITY_CARD_ON_PAGE} from "../../libs/data";
 import { getImagesByColor } from "../../libs/helper";
 import styles from "./SliderOfProduct.module.scss";
 
-export const SliderOfProduct = ({data, currentColor}) => {    
-    const {color} = data;
+export const SliderOfProduct = ({ data, currentColor }) => {    
+    const { color } = data;
+    console.log(color);
+    
     const images = getImagesByColor(currentColor, color)
 
     const { currentSlide, nextCard, prevCard, handleClickSlide } = useSlider(images.length);

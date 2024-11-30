@@ -1,54 +1,27 @@
-import { useState } from "react";
 import { Button } from "../../../../shared/ui/Button/Button"
 import { LinkCustom } from "../../../../shared/ui/LinkCustom/LinkCustom"
 import { Stack } from "../../../../shared/ui/Stack/Stack";
-import { Favorites } from "../Favorites/Favorites";
 import { Quantity } from "../Quantity/Quantity";
-import { Text } from "../../../../shared/ui/Text/Text";
-import { ColorButton } from "../ColorButton/ColorButton"
-import { getColorTitle } from "../../lib/helper";
-import { ColorButtons } from "../ColorButtons/ColorButtons";
-import { useParams } from "react-router";
 import styles from "./AddToCart.module.scss";
 
 const INITIAL_VALUE = 1;
 
-export const AddToCart = ({gap, colors, currentColor}) => {
-    const {id, color} = useParams()
-
-    //состояние избранного товара
-    const [favorites, setFavorites] = useState(false);
-    const toggleFavorite = () => {
-        setFavorites(!favorites)
-    }
-
-    //выбранный цвет
-    const [current, setCurrent] = useState(color);
-
-    //открытие модального окна
+export const AddToCart = ({ color, id}) => {
+    //TODO - кол-во получить доступ к значение в этом компоненте
     const addToCart = () => {
-        console.log(current, favorites, id)
+        console.log(id, color, )
     }
 
     return (
-        <Stack className={styles.wrapper} gap={gap} direction="column">
-            <Stack gap="12" direction="column">
-                <Text size="s">Цвет: {getColorTitle(current)}</Text>
-                {colors && current !== undefined && (
-                    <ColorButtons colors={colors} setCurrent={setCurrent} current={current} />
-                )}
-                {!colors && current !== undefined && (
-                    <ColorButton color={currentColor} setCurrent={setCurrent} current={currentColor} /> 
-                )} 
-            </Stack>
+        <Stack className={styles.wrapper} gap={32} direction="column">
             <Stack className={styles.containerButton} align="alignCenter" gap="12">
                 <Quantity className={styles.quantity} quantity={INITIAL_VALUE} />
                 <Stack align="alignCenter" gap="12">
                     <Button onClick={addToCart}>В корзину</Button>
+                    {/* TODO - считаю данная кнопка не нужна */}
                     <LinkCustom color="yellow" path="">Купить сейчас</LinkCustom>
                 </Stack>
-                <Favorites className={styles.favorites} favorites={favorites} toggleFavorite={toggleFavorite} />
             </Stack>
         </Stack>
-    )
-}
+    );
+};
