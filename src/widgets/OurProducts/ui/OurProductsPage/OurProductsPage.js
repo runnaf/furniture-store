@@ -38,6 +38,7 @@ export const OurProductsPage = ({ isMobile }) => {
             filter: selectedFilters
         }
     })
+    console.log(data)
 
     if (isLoading) {
         return <Stack>Loading...</Stack> //TODO

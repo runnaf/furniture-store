@@ -4,6 +4,11 @@
     height: 100vh;
     padding: 30px 150px;
 
+    & > form,
+    & > div {
+      flex: 1;
+    }
+
     @include tablet-m {
         height: auto;
         padding: 20px;

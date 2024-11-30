@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 import { Button } from "../../../../shared/ui/Button/Button"
 import { LinkCustom } from "../../../../shared/ui/LinkCustom/LinkCustom"
 import { Stack } from "../../../../shared/ui/Stack/Stack";
@@ -7,15 +7,14 @@ import { Quantity } from "../Quantity/Quantity";
 import { Text } from "../../../../shared/ui/Text/Text";
 import { ColorButton } from "../ColorButton/ColorButton"
 import { getColorTitle } from "../../lib/helper";
-import { ModalColor } from "../../../../entities/ModalColor/ModalColor";
 import { ColorButtons } from "../ColorButtons/ColorButtons";
-import { useModal } from "../../../../shared/hooks/useModal";
+import { useParams } from "react-router";
 import styles from "./AddToCart.module.scss";
 
 const INITIAL_VALUE = 1;
 
-export const AddToCart = ({gap, colors, currentColor, isProduct=false}) => {
-    const [changeColorModal, drawColorModal] = useModal()
+export const AddToCart = ({gap, colors, currentColor}) => {
+    const {id, color} = useParams()
 
     //состояние избранного товара
     const [favorites, setFavorites] = useState(false);
@@ -24,43 +23,26 @@ export const AddToCart = ({gap, colors, currentColor, isProduct=false}) => {
     }
 
     //выбранный цвет
-    const [current, setCurrent] = useState(currentColor);
-
-    //количество товара
-    const [count, setCount] = useState(INITIAL_VALUE);
-    const increaseCount = () =>{
-        setCount(count + 1)
-    }
-    const decreaseCount = () => {
-        if (count !== 1) {
-            setCount(count - 1)
-        }
-    }
+    const [current, setCurrent] = useState(color);
 
     //открытие модального окна
     const addToCart = () => {
-        console.log(colors && current === undefined)
-        if (!isProduct) {
-            changeColorModal()
-        }
+        console.log(current, favorites, id)
     }
 
     return (
         <Stack className={styles.wrapper} gap={gap} direction="column">
             <Stack gap="12" direction="column">
                 <Text size="s">Цвет: {getColorTitle(current)}</Text>
-                {colors && current !== undefined && isProduct && (
+                {colors && current !== undefined && (
                     <ColorButtons colors={colors} setCurrent={setCurrent} current={current} />
                 )}
-                {!colors && current !== undefined && isProduct && (
+                {!colors && current !== undefined && (
                     <ColorButton color={currentColor} setCurrent={setCurrent} current={currentColor} /> 
                 )} 
-                {!isProduct && drawColorModal(
-                    <ModalColor colors = { colors } changeColorModal={changeColorModal} setCurrent={ setCurrent } current={current} />
-                )}
             </Stack>
             <Stack className={styles.containerButton} align="alignCenter" gap="12">
-                <Quantity className={styles.quantity} count={count}  increaseCount={increaseCount} decreaseCount={decreaseCount}/>
+                <Quantity className={styles.quantity} quantity={INITIAL_VALUE} />
                 <Stack align="alignCenter" gap="12">
                     <Button onClick={addToCart}>В корзину</Button>
                     <LinkCustom color="yellow" path="">Купить сейчас</LinkCustom>

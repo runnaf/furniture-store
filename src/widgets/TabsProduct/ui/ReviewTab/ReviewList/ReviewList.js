@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './ReviewList.module.scss';
 import { Stack } from '../../../../../shared/ui/Stack/Stack';
 import { Review } from '../../../../../entities/Review/Review';
 import { Text } from '../../../../../shared/ui/Text/Text';
@@ -11,6 +10,7 @@ import { useSlider } from '../../../../../entities/Slider/hooks/useSlider';
 import { Slider } from '../../../../../entities/Slider/ui/Slider/Slider';
 import { CustomSelect } from '../../../../../shared/ui/CustomSelect/CustomSelect';
 import { getValueOption } from '../../../../../shared/libs/getValueOption';
+import styles from './ReviewList.module.scss';
 
 export const ReviewList = ({ reviews }) => {
     const {currentSlide, nextCard,  prevCard, handleClickSlide} = useSlider(reviews.length)

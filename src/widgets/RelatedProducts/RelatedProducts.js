@@ -1,13 +1,13 @@
 import { HeaderSection } from "../../shared/ui/HeaderSection/HeaderSection"
 import { Stack } from "../../shared/ui/Stack/Stack";
 import cardData, { QUANTITY_CARD_ON_PAGE } from '../../shared/libs/cardData';
-import styles from "./RelatedProducts.module.scss";
 import { Card } from "../../entities/Card/ui/Card";
 import { useSlider } from "../../entities/Slider/hooks/useSlider";
 import { slicerOfArray } from "../../entities/Slider/lib/helper";
 import { useResize } from "../../shared/hooks/useResize";
 import { useCustomScroll } from "../../shared/hooks/useCustomScroll";
 import { BottomButtons } from "../../entities/Slider/ui/BottomButtons/ui/BottomButtons/BottomButtons";
+import styles from "./RelatedProducts.module.scss";
 
 export const RelatedProducts = () => {
 
@@ -42,9 +42,9 @@ export const RelatedProducts = () => {
                         className={styles.cardContainer}
                         ref={containerRef}
                     >
-                    {currentCards.map(element => (
+                    {/* {currentCards.map(element => (
                         <Card key={element.id} {...element} timer={false}/>
-                    ))}
+                    ))} */}
                     </Stack>
                     {width <= 590 && 
                     <BottomButtons

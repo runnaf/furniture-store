@@ -1,0 +1,10 @@
+.container {
+  height: fit-content;
+  display: grid;
+  gap: var(--gap-32);
+
+  & > h3 {
+    color: var(--white-color);
+    font-size: var(--font-size-20);
+  }
+}

@@ -11,6 +11,9 @@ import { getStyles } from '../../../shared/libs/getStyles';
 import { ArrowIcon } from '../../Slider/ui/ArrowIcon/ArrowIcon';
 import { getRouteProduct } from '../../../app/routes/lib/helper';
 import styles from './Card.module.scss';
+import { useModal } from '../../../shared/hooks/useModal';
+import { useState } from 'react';
+import { ModalColor } from '../../ModalColor/ModalColor';
 
 export const Card = ({ 
     id, color, rating, 
@@ -18,14 +21,24 @@ export const Card = ({
     price, sale_price, timer,
     short_description,
     view = 'general',// general | extended
+
 }) => {
-
-
     const firstImage = color[0]?.images?.[2] || null;
 
     const cardContainer = getStyles(view === 'extended' ? styles.extendedCard : styles.generalCard, {}, [styles.cardBase])
     const categoryView = getStyles(view === 'extended' ? styles.extendedCategory : '', {}, [styles.categoryBase])
 
+    const [changeColorModal, drawColorModal] = useModal()
+    const [currentColor, setCurrentColor] = useState('');
+
+    const addToCart = () => {
+        if(currentColor === '') {
+            changeColorModal()
+        } else {
+            console.log(currentColor) //TODO
+        }
+        
+    }
 
     return (
         <Stack 
@@ -33,6 +46,9 @@ export const Card = ({
             gap='16' 
             className={styles.mainContainer}
         >
+            {color && drawColorModal(
+                    <ModalColor colors = { color } changeColorModal={changeColorModal} setCurrent={ setCurrentColor } current={currentColor} />
+                )}
             <Stack 
                 className={cardContainer}
             >
@@ -56,7 +72,7 @@ export const Card = ({
                         className={styles.icons}
                     >
                         <Button radius='circle'><img src={heart} alt='heart'/></Button>
-                        <Button radius='circle'><img src={cart} alt='cart'/></Button>
+                        <Button radius='circle' onClick={addToCart}><img src={cart} alt='cart'/></Button>
                     </Stack>
                 </Stack>
 
@@ -112,7 +128,7 @@ export const Card = ({
                         </Stack>
                         {view === 'general' && 
                         <LinkCustom 
-                            to={getRouteProduct(id)}
+                            to={getRouteProduct(id, currentColor? currentColor: color[0]?.value )}
                             color='transparent'
                         >
                             <ArrowIcon/>

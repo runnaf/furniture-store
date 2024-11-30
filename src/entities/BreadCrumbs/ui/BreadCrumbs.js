@@ -11,7 +11,7 @@ export const Breadcrumbs = ({ routes, separator = ' / ', isProduct = false, name
   .reduce((acc, segment, index, arr) => {
     if (!segment) return acc
 
-    const prevLink = acc.length > 0 ? acc[acc.length - 1].link : '';
+    const prevLink = acc.length > 0 ? acc[acc.length - 1].link : '';    
     const link = `${prevLink}${segment}`
     const route = routes.find((r) => r.link === link)
     const isLast = index === arr.length - 1;
@@ -24,9 +24,20 @@ export const Breadcrumbs = ({ routes, separator = ' / ', isProduct = false, name
 
     return acc;
   }, [{ title: 'Главная', link: '/' }]);
+
+  if (isProduct) {
+    if (breadcrumbs.length > 1) {
+      breadcrumbs.pop(); // Удаляем предпоследний элемент
+    }
+
+    // Устанавливаем isLast для последнего элемента в true, если он существует
+    if (breadcrumbs.length > 0) {
+      breadcrumbs[breadcrumbs.length - 1].isLast = true;
+    }
+  }
+
   const currentRoute = breadcrumbs[breadcrumbs.length - 1]
   const title = currentRoute.isLast ? currentRoute.title : ''
-
 
   return (
     <Stack className={styles.breadCrumbsContainer}
@@ -38,7 +49,7 @@ export const Breadcrumbs = ({ routes, separator = ' / ', isProduct = false, name
         {breadcrumbs.map((crumb, index) => (
           <li key={crumb.link}>
             {crumb.isLast ? ( 
-              <Text type='p'>{isProduct? name : crumb.title}</Text>
+              <Text type='p'>{isProduct ? name : crumb.title}</Text>
             ) : (
               <Link to={crumb.link}>
                 <Text type='p'>{crumb.title}</Text>
@@ -51,5 +62,3 @@ export const Breadcrumbs = ({ routes, separator = ' / ', isProduct = false, name
     </Stack>
   );
 };
-
-
