@@ -5,9 +5,9 @@ import { Stack } from "../../../../shared/ui/Stack/Stack";
 import { Favorites } from "../Favorites/Favorites";
 import { Quantity } from "../Quantity/Quantity";
 import { Text } from "../../../../shared/ui/Text/Text";
-import { ColorButton } from "../ColorButton/ColorButton"
+import { ColorButton } from "../../../../entities/Card/ui/ColorButton/ColorButton"
 import { getColorTitle } from "../../lib/helper";
-import { ColorButtons } from "../ColorButtons/ColorButtons";
+import { ColorButtons } from "../../../../entities/Card/ui/ColorButtons/ColorButtons";
 import { useParams } from "react-router";
 import styles from "./AddToCart.module.scss";
 

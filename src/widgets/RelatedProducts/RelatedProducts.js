@@ -42,9 +42,10 @@ export const RelatedProducts = () => {
                         className={styles.cardContainer}
                         ref={containerRef}
                     >
-                    {/* {currentCards.map(element => (
+                    {/* TODO */}
+                    {currentCards.map(element => (
                         <Card key={element.id} {...element} timer={false}/>
-                    ))} */}
+                    ))}
                     </Stack>
                     {width <= 590 && 
                     <BottomButtons
