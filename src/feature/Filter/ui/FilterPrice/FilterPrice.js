@@ -87,9 +87,6 @@ export const FilterPrice = ({ onHandleChange, temporaryFilters }) => {
                             return (
                                 <div 
                                     {...restProps} 
-                                    aria-valuemin={state.valueNow[0]}
-                                    aria-valuemax={state.valueNow[1]}
-                                    aria-valuenow={state.valueNow[state.index]}
                                     aria-labelledby="price-slider"
                                     key={key} 
                                     className={styles.thumb} 
