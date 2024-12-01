@@ -22,6 +22,7 @@ export const ColorButton = ({ color, handleSelectColor, current }) => {
         <li className={styles.containerButtonColor} style={{
             borderColor: current === color ? getColorForStyle(color) : 'var(--stroke-color)',
         }}>
+            {/* TODO - добавить название цветов */}
             <button 
                 value={color} 
                 id="color" 
@@ -29,6 +30,8 @@ export const ColorButton = ({ color, handleSelectColor, current }) => {
                 type="button" 
                 onClick={handleColorChange} 
                 style={{ backgroundColor: getColorForStyle(color) }}
+                aria-pressed={current === color}
+                aria-label={`Выбрать цвет ${color}`}
             />
         </li>
     )

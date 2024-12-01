@@ -5,7 +5,7 @@
     @include mixin.section-style;
     
     @include media.tablet-l {
-      width: fit-content;
+        width: fit-content;
     }
 
     @include media.mobile-xl {

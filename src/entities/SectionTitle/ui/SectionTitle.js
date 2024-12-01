@@ -1,6 +1,6 @@
 import { Stack } from "../../../shared/ui/Stack/Stack";
 import styles from './SectionTitle.module.scss'
-import points from '../../../shared/assets/svg/points.svg';
+import points from '../../../shared/assets/svg/points.svg'; //TODO - сделать компонент
 
 export  const SectionTitle = ({ children }) => {
     return(
