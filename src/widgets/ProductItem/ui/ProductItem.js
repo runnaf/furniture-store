@@ -1,5 +1,5 @@
 
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useGetProductByIdQuery } from "../api/ProductApi";
 import { ProductPreview } from "../../ProductPreview/ui/ProductPreview/ProductPreview";
 import { RelatedProducts } from "../../RelatedProducts/RelatedProducts";
@@ -11,12 +11,15 @@ import { routes } from "../../../app/routes/lib/data";
 
 export const ProductItem = () => {
     const { id } = useParams();
-  
     const { data, isLoading, error } = useGetProductByIdQuery(id);
+    
+    const navigate = useNavigate();
+
+    if (error) {
+        navigate('/not-found');
+    }
 
     if (isLoading) return //TODO - лоадер или скелетоны надо будет сделать, пока данные не загружены с бэкенда
-
-    if (error) return //TODO - сообщение об ошибке
     
     return (
         <Stack direction="column" gap="75">
@@ -27,7 +30,11 @@ export const ProductItem = () => {
                     name={data.name} 
                 />
             </SectionTitle>
-            <ProductPreview data={data} />
+            <ProductPreview 
+                data={data} 
+                isLoading={isLoading} 
+                skeletons={4} 
+            />
             <Tabs data={data}/>
             <RelatedProducts />
         </Stack>

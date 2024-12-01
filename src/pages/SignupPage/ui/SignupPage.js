@@ -1,17 +1,23 @@
-// import { Slider } from "../../../entities/Slider/ui/Slider";
 import { Signup } from "../../../feature/Signup/ui/Signup/Signup";
+import { useResize } from "../../../shared/hooks/useResize";
 import { Stack } from "../../../shared/ui/Stack/Stack";
+import { SliderForAuthorization } from "../../../widgets/SliderForAuthorization/ui/SliderForAuthorization";
 import styles from './SignupPage.module.scss';
 
+const DESKTOP_WIDTH = 1024;
+
 const SignupPage = () => {
+    const width = useResize();
+    const isDesktop = width > DESKTOP_WIDTH;
     return (
         <Stack 
         className={styles.signup_page} 
             justify='justifyBetween' 
             align='alignCenter'
+            gap='75'
         >
             <Signup />
-            {/* <Slider /> */}
+            {isDesktop && <SliderForAuthorization />}
         </Stack>
     );
 };

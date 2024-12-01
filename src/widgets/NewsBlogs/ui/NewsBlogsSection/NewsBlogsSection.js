@@ -19,8 +19,6 @@ const PAGE = 1;
 export const NewsBlogsSection = () => {
 
     const {data, isLoading, isError } = useGetAllNewsQuery({ limit: ARTICLES_PER_PAGE, page: PAGE})
-    console.log(data);
-    
 
     const containerRef = useCustomScroll();
     const width = useResize();

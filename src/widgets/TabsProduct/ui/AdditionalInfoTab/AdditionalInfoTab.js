@@ -1,10 +1,12 @@
-
 import { Stack } from '../../../../shared/ui/Stack/Stack';
+import { getLabelsAsString } from '../../lib/helpers';
 import styles from './AdditionalInfoTab.module.scss';
 
 export const AdditionalInfoTab = ({ data }) => {
     const {information} = data;
-    const {brand, color, colors, dimensions, material, weight} = information
+    const {brand, dimensions, material, color, weight} = information
+    const colors = color.join(', ')
+    const materials = getLabelsAsString(material);
 
     return (
         <Stack direction='column' className={styles.tableContainer}>
@@ -18,11 +20,11 @@ export const AdditionalInfoTab = ({ data }) => {
                 <tbody>
                     <tr>
                         <td>Материал сиденья</td>
-                        <td>{material}</td>
+                        <td>{materials}</td>
                     </tr>
                     <tr>
                         <td>Цвет</td>                        
-                        <td>{colors ? '' : color}</td>
+                        <td>{colors}</td>
                     </tr>
                     <tr>
                         <td>Вес</td>

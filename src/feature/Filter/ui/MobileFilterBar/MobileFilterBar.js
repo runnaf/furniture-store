@@ -7,12 +7,15 @@ import { useToggleMenu } from '../../../../shared/hooks/useToggleMenu';
 import useOverflowHidden from '../../../../shared/hooks/useOverflowHidden';
 import { DeleteFilter } from '../../../../shared/assets/svg/deleteFilter';
 import styles from './MobileFilterBar.module.scss'; 
+import { getStyles } from '../../../../shared/libs/getStyles';
 
 export function MobileFilterBar() {
 
     const { isOpen, toggleMenu, menuRef } = useToggleMenu();
-    const [isVisible, setVisible] = useState(false);
+    const [isVisible, setVisible] = useState(false); //TODO  - зачем это?
+    useOverflowHidden(isOpen);
 
+    //TODO - что-то сложное для восприятия
     useEffect(() => {
         if (isOpen) {
             const timer = setTimeout(() => {
@@ -27,11 +30,16 @@ export function MobileFilterBar() {
         }
     }, [isOpen]);
 
-    useOverflowHidden(isOpen);
     
     return (
         <Stack>
-            <Button color='outlined' onClick={toggleMenu} className={styles.filterButton}>
+            <Button 
+                color='outlined' 
+                onClick={toggleMenu} 
+                className={styles.filterButton}
+                aria-expanded={isOpen}
+                aria-controls="filter-menu"
+            >
                 <img src={filter} alt="Фильтр" className={styles.filterIcon} />
                 Фильтр
             </Button>
@@ -39,15 +47,21 @@ export function MobileFilterBar() {
             {isVisible && (
                 <Stack 
                     ref={menuRef} 
+                    id="filter-menu"
+                    role="dialog"
+                    aria-labelledby="filter-title"
                     justify='justifyCenter'
-                    className={`${styles.popup} ${isOpen ? styles.open : ''}`}
+                    className={getStyles(styles.popup, {[styles.open]: isOpen})}
                 >
                     <Stack 
                         className={styles.popupContent} 
                         direction='column' 
                         gap='12'
                     >
-                        <Button onClick={toggleMenu}>
+                        <Button 
+                            onClick={toggleMenu} 
+                            aria-label="Закрыть фильтры"
+                        >
                             <DeleteFilter/>
                         </Button>
                         <FilterBar toggleMenu={toggleMenu}/>

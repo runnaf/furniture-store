@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
+//TODO - перенести ко всем хукам
 function useCountdownTimer(endTime) {
 
     const calculateTimeLeft = useCallback(() => {

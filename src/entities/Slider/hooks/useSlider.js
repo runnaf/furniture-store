@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+//TODO - перенести ко всем хука
 export const useSlider = (quantityCards, initialIndex = 0) => {
     const [currentSlide, setCurrentSlide] = useState(initialIndex);
 

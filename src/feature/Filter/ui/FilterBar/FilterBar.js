@@ -12,32 +12,36 @@ import styles from './FilterBar.module.scss';
 
 export function FilterBar({ toggleMenu }) {
 
-    const width = useResize()
-    const dispatch = useDispatch()
-    const selectedFilters = useSelector((state) => state.filters)
-    const [temporaryFilters, setTemporaryFilters] = useState(selectedFilters)
+    const width = useResize();
+    const dispatch = useDispatch();
+    const selectedFilters = useSelector((state) => state.filters);
+    const [temporaryFilters, setTemporaryFilters] = useState(selectedFilters);
 
+    //TODO - а почему здесь useEffect, который обновляетя temporaryFilters
+    //мы же можем сразу использовать selectedFilters?
     useEffect(() => {
         setTemporaryFilters(selectedFilters)
-    }, [selectedFilters])
+    }, [selectedFilters]);
 
     const handleChange = useCallback((key, value) => {
         setTemporaryFilters((prev) => ({
             ...prev,
             [key]: key === 'price' ? value : { ...prev[key], ...value }
         }))
-    }, [])
+    }, []);
 
     const handleShowFilters = useCallback(() => {
         dispatch(setFilter(temporaryFilters))
         if (width <= 820) toggleMenu()
-    }, [dispatch, temporaryFilters, toggleMenu, width])
+    }, [dispatch, temporaryFilters, toggleMenu, width]);
 
 
     const handleClearAll = useCallback(() => {
-        dispatch(clearAllFilters())
+        dispatch(clearAllFilters());
+
+        //TODO - вот это тоже не нужно, то что обновлеятся в редакс рендер происходит
         setTemporaryFilters(selectedFilters)
-    }, [dispatch, selectedFilters])
+    }, [dispatch, selectedFilters]);
 
 
     const renderFilter = (key) => {
@@ -67,8 +71,13 @@ export function FilterBar({ toggleMenu }) {
             <FilterPrice 
                 onHandleChange={handleChange}
                 onHandleClearAll={handleClearAll}
-                temporaryFilters={temporaryFilters}/>
+                temporaryFilters={temporaryFilters}
+            />
             <hr />
+
+            {/* TODO - м.б так, не люблю ничего закардкоженное и почему мы обрамываем их, 
+            давайте поменяем местами, пусть будет сначала цена, а потом все остальное
+             Object.keys(filtersData).map(renderFilter) */}
             {['color', 'material', 'availability'].map(renderFilter)}   
             <Stack 
                 gap="8" 
@@ -79,4 +88,4 @@ export function FilterBar({ toggleMenu }) {
             </Stack>        
         </Stack>
     );
-}
+};

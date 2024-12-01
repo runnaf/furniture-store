@@ -10,6 +10,8 @@ $green-color: var(--green-color);
 $green-color-hover: var(--green-color-hover);
 $white-color: var(--white-color);
 $grey-color: var(--grey-background-color);
+$yellow-color: var(--yellow-color);
+$yellow-color-hover: var(--yellow-color-hover);
 
 $box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
 -4px -4px 6px 0 rgba(116, 125, 136, .5), 
@@ -29,12 +31,29 @@ inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
         background-color: $grey-color;
     }
 
+    &:hover {
+      background-color: $green-color-hover;
+      box-shadow: none;
+
+      &.yellow {
+        background-color: $yellow-color-hover;
+      }
+  }
+
     &.current {
         background-color: $green-color;
         cursor: initial;
 
         &:hover {
-            background-color: $green-color-hover;
+          background-color: $green-color;
+        }
+
+        &.yellow {
+          background-color: $yellow-color;
+
+          &:hover {
+            background-color: $yellow-color;
+          }
         }
     }
 

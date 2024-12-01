@@ -21,9 +21,7 @@ export function TodayDeals () {
         limit: ARTICLE_PER_PAGE,
         page: 1,
         filters: {}
-    })
-
-    console.log(data, error, isLoading)
+    });
 
     const { currentSlide, handleClickSlide } = useSlider(data ? data.products.lenght : 0);
     const width = useResize()
@@ -38,6 +36,7 @@ export function TodayDeals () {
     }
 
     const currentCards = slicerOfArray(data ? data.products : [], currentSlide, quantityCardsOnPage());
+
     return (
         <Stack 
             direction="column" 
@@ -69,6 +68,7 @@ export function TodayDeals () {
                     className={styles.cardContainer}
                     ref={containerRef}
                 >
+                    {/* TODO - исправить карточку */}
                     {currentCards.map((element) => (
                         <div key={element.id}>
                             <Card {...element} view="extended" />
