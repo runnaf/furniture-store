@@ -4,12 +4,16 @@ import { Button } from "../../../../shared/ui/Button/Button";
 import styles from "./Coupon.module.scss";
 
 export const Coupon = () => {
-  const methods = useForm({ mode: 'onChange' })
-  const { register, setValue, formState: { errors } } = methods;
+  const methods = useForm({ mode: "onChange" });
+  const {
+    register,
+    setValue,
+    formState: { errors },
+  } = methods;
 
   return (
     <form className={styles.container}>
-      <Input 
+      <Input
         name="coupon"
         register={register}
         setValue={setValue}
@@ -18,5 +22,5 @@ export const Coupon = () => {
       />
       <Button type="submit">Применить купон</Button>
     </form>
-  )
-}
+  );
+};

@@ -6,11 +6,11 @@ import styles from "./GoodsInCart.module.scss";
 
 const WIDTH_MOBILE = 767;
 
-export const GoodsInCart = ({data}) => {
+export const GoodsInCart = ({ data }) => {
   const width = useResize();
   const isDesktop = width > WIDTH_MOBILE;
 
-  return isDesktop ?  (
+  return isDesktop ? (
     <table className={styles.container}>
       <thead className={styles.header}>
         <HeaderCart />
@@ -27,5 +27,5 @@ export const GoodsInCart = ({data}) => {
         <GoodsInCartMobile key={index} {...good} />
       ))}
     </ul>
-  )
-}
+  );
+};

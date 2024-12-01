@@ -1,3 +1,5 @@
+//TODO в фичу выбора цвета перенести
+
 export const getColorTitle = (color) => {
     switch (color) {
         case 'black':

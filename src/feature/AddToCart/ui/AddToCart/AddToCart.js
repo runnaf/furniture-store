@@ -8,6 +8,8 @@ const INITIAL_VALUE = 1;
 
 export const AddToCart = ({ color, id}) => {
     //TODO - кол-во получить доступ к значение в этом компоненте
+    //думаю надо на уровне редакс корзину генерировать, а то так много пропсов передаем
+
     const addToCart = () => {
         console.log(id, color, )
     }
