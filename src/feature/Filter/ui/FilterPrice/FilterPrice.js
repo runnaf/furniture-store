@@ -15,6 +15,7 @@ export const FilterPrice = ({ onHandleChange, temporaryFilters }) => {
     const minPrice = watch('minPrice', temporaryFilters.price ? temporaryFilters.price[0] : 0)
     const maxPrice = watch('maxPrice', temporaryFilters.price ? temporaryFilters.price[1] : 100000)
 
+    //TODO useCallback надо обернуть, функции передаются в пропсах
     const handleMinInputChange = (e) => {
         const inputValue = Math.min(100000, Math.max(0, Number(e.target.value)))
         setValue('minPrice', inputValue)
@@ -83,7 +84,17 @@ export const FilterPrice = ({ onHandleChange, temporaryFilters }) => {
                         onChange={handleSliderChange}
                         renderThumb={(props) => {
                             const { key, ...restProps } = props;
-                            return <div {...restProps} key={key} className={styles.thumb} />
+                            return (
+                                <div 
+                                    {...restProps} 
+                                    aria-valuemin={state.valueNow[0]}
+                                    aria-valuemax={state.valueNow[1]}
+                                    aria-valuenow={state.valueNow[state.index]}
+                                    aria-labelledby="price-slider"
+                                    key={key} 
+                                    className={styles.thumb} 
+                                />
+                            )
                         }}
                         renderTrack={(props, state) => {
                             const { key, ...restProps } = props;

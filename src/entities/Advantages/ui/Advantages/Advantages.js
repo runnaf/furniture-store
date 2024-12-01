@@ -15,6 +15,5 @@ export const Advantages = () => {
                 )}
             </ul>
         </Stack>
-
     );
 };

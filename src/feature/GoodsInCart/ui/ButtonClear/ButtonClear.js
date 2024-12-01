@@ -6,5 +6,5 @@ export const ButtonClear = () => {
     <button type="button" className={styles.buttonClear}>
       <VisuallyHidden>Удалить товар из корзины</VisuallyHidden>
     </button>
-  )
-}
+  );
+};

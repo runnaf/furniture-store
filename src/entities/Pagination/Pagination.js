@@ -4,12 +4,23 @@ import { BottomButton } from "../Slider/ui/BottomButtons/ui/BottomButton/BottomB
 import { getArray } from "./libs/helpers";
 import styles from "./Pagination.module.scss";
 
+//TODO - почему у нас 2 пагинации, это для товара как я понимаю
+//предлагаю ее в папку с описанием товара поместить, больше нигде не используется
 export const Pagination = ({array, quantityPages, currentSlide, handleClickSlide, nextCard,  prevCard}) => {
     const pages = getArray(array.length, quantityPages);
 
     return (
-        <Stack align="alignCenter" justify="justifyCenter" className={styles.pagination} gap="12">
-            <button type="button" disabled={currentSlide===0} onClick={prevCard}>
+        <Stack 
+            align="alignCenter" 
+            justify="justifyCenter" 
+            className={styles.pagination} 
+            gap="12"
+        >
+            <button 
+                type="button" 
+                disabled={currentSlide===0} 
+                onClick={prevCard}
+            >
                 <VisuallyHidden>листать влево</VisuallyHidden>
             </button>
             <ul>
@@ -24,9 +35,13 @@ export const Pagination = ({array, quantityPages, currentSlide, handleClickSlide
                     >{page}</BottomButton>
                 ))}
             </ul>
-            <button type="button" disabled={currentSlide===pages.length - 1} onClick={nextCard}>
+            <button 
+                type="button" 
+                disabled={currentSlide===pages.length - 1} 
+                onClick={nextCard}
+            >
                 <VisuallyHidden>листать вправо</VisuallyHidden>
             </button>
         </Stack>
-    )
-}
+    );
+};

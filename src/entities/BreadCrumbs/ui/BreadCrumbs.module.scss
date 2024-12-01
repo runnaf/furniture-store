@@ -14,19 +14,21 @@ $opacity-08: var(--opacity-08);
         font-weight: 600;
     }
     > nav {
-        display: flex;
-        gap: 12px;
-
-        > li {
+        ul {
             display: flex;
-            opacity: $opacity-08;
-            color: $color-black;
-            font-weight: 500;
             gap: 12px;
 
-            > a, p {
-                color: $color-black;
+            > li {
+                display: flex;
                 opacity: $opacity-08;
+                color: $color-black;
+                font-weight: 500;
+                gap: 12px;
+    
+                > a, p {
+                    color: $color-black;
+                    opacity: $opacity-08;
+                }
             }
         }
     }

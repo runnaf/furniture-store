@@ -31,11 +31,20 @@ const SortMenu = () => {
                 outlined 
                 onClick={toggleMenu} 
                 className={styles.sortButton}
+                aria-haspopup="menu"
+                aria-expanded={isOpen}
+                aria-controls="sort-menu"
             >
                 {selectedOption.label} <img src={arrow} alt="arrow" />
             </Button>
             {isOpen && (
-                <div className={styles.dropdown}>
+                <div 
+                    className={styles.dropdown}
+                    id="sort-menu"
+                    role="menu"
+                    aria-hidden={!isOpen}
+                >
+                    {/* TODO - советуют такие вещи выносить в useMemo */}
                     {sortData.map((option) => (
                         <div 
                             key={option.value} 
@@ -51,4 +60,4 @@ const SortMenu = () => {
     );
 };
 
-export default SortMenu;
+export default SortMenu; //TODO - экспорт по дефолту только на pages
