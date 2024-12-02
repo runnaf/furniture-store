@@ -3,8 +3,8 @@
 .mobileContainer {
     
     img {
-        width: 80px;
-        height: 96px;
+        width: 85px;
+        height: 100px;
         background-color: rgb(222, 220, 220);
     }
 
@@ -27,7 +27,7 @@
 
 }
 table {
-    width: 1200px;    
+    width: 84%;    
     border-collapse: collapse;
     gap: var(--gap-16);
     text-align: left;
@@ -90,12 +90,21 @@ table {
     padding: 18px 30px;
 }
 .container {
+    width: 84%;
+    align-self: center;
+    @include tablet-l {
+        flex-wrap: wrap;
+    }
     @include tablet-m {
         flex-direction: column;
         gap:var(--gap-32);
     }
 
     .linkContainer {
+        @include tablet-l {
+            width: 100%;
+            justify-content: space-between;
+        }
         @include tablet-m {
         flex-direction: column;
         }
@@ -107,18 +116,28 @@ table {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 275px;
+            width: 270px;
             height: 54px;
             border-radius: var(--border-radius-170);
             border: 1px solid var(--stroke-color);
+            @include tablet-m {
+                width: 98%;
+                }
         }
         button {
+            @include tablet-l {
+                width: 253px;
+            }
             @include tablet-m {
-            width: 275px;
+            width: 98%;
             }
         }
     }
     .buttonsContainer {
+        @include tablet-l {
+            width: 100%;
+            justify-content:flex-end;
+        }
         @include tablet-m  {
         flex-direction: column;
         }

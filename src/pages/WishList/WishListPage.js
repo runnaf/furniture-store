@@ -4,6 +4,7 @@ import { Breadcrumbs } from "../../entities/BreadCrumbs/ui/BreadCrumbs"
 import { SectionTitle } from "../../entities/SectionTitle/ui/SectionTitle"
 import { Stack } from "../../shared/ui/Stack/Stack"
 import { WishList } from "../../widgets/WishList/ui/Wishlist"
+import styles from './WishlistPage.module.scss'
 
 const WishlistPage = () => {
     return (
@@ -11,8 +12,10 @@ const WishlistPage = () => {
             <SectionTitle>
                 <Breadcrumbs routes={routes}/>                
             </SectionTitle>
-            <WishList/>
-            <Advantages/>
+            <Stack direction='column' className={styles.container}>
+                <WishList/>
+                <Advantages/>
+            </Stack>
         </Stack>
     )
 }
