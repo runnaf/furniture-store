@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Modal } from "../ui/Modal/Modal";
+import useOverflowHidden from "./useOverflowHidden";
 
 export const useModal = () => {
     const [isOpen, setIsOpen] = useState(false);
+    useOverflowHidden();
 
     const changeOpen = () => {
         setIsOpen(p => !p);
@@ -18,11 +20,9 @@ export const useModal = () => {
     const drawModal = child => {
         return (
             isOpen &&
-
-            <Modal setIsOpen={setIsOpen} >
-                {child}
-            </Modal>
-
+                <Modal setIsOpen={setIsOpen} >
+                    {child}
+                </Modal>
         );
     };
 

@@ -1,14 +1,14 @@
-@import '../../../../app/styles/mixin.scss';
-@import '../../../../app/styles/media-queries.scss';
+@use '../../../../app/styles/mixin.scss' as mixin;
+@use '../../../../app/styles/media-queries.scss' as media;
 
 .advantages {
-    @include section-style;
-
-    @include tablet-m {
+    @include mixin.section-style;
+    
+    @include media.tablet-l {
         width: fit-content;
     }
 
-    @include mobile-xl {
+    @include media.mobile-xl {
         width: 100%;
     }
 }
@@ -19,7 +19,7 @@
     align-items: center;
     flex: 1;
 
-    @include tablet-m {
+    @include media.tablet-m {
         flex-direction: column;
         gap: 48px;
         align-items: flex-start;

@@ -4,13 +4,13 @@ import { VisuallyHidden } from "../../../../shared/ui/VisuallyHidden/VisuallyHid
 import { StarIcon } from "../StarIcon/StarIcon";
 import styles from "./Stars.module.scss"
 
-
 const WHOLE_RATING = 5;
 
-export const Stars = ({rating, ratingText=true}) => {
+export const Stars = ({ rating, ratingText = true }) => {
     const getStyles = (item) => {
         return item + 1 <= Math.round(rating) ? styles.ratingCurrent : styles.starDisable;
     };
+
     return (
         <Stack gap="8" align="alignCenter">                         
             {Array.from({length: WHOLE_RATING}, (_, i) => i).map(item =>
@@ -21,7 +21,7 @@ export const Stars = ({rating, ratingText=true}) => {
             {ratingText && 
                 <>
                     <VisuallyHidden>`{Math.round(rating)} звeзд из 5`</VisuallyHidden>
-                    <span className={styles.ratingTitle}>{rating.toFixed(1)}</span>
+                    <span className={styles.ratingTitle}>{Number(rating).toFixed(1)}</span>
                 </>
             }
             

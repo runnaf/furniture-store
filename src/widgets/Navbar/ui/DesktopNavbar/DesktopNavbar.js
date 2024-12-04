@@ -7,6 +7,8 @@ import { routes } from '../../../../app/routes/lib/data';
 import { dropdownMenus } from '../../libs/data';
 import { DropdownMenu } from '../DropdownMenu/DropdownMenu';
 import { ScrollToTop } from '../../../../shared/libs/scrollToTop';
+import { LinkCustom } from '../../../../shared/ui/LinkCustom/LinkCustom';
+import { getRouteCart } from '../../../../app/routes/lib/helper';
 
 export const DesktopNavbar = () => {
     const [activeDropdown, setActiveDropdown] = useState(null);
@@ -62,9 +64,9 @@ export const DesktopNavbar = () => {
                 <button>
                     {<LikeIcon />}
                 </button>
-                <button>
+                <LinkCustom color='secondary' path={getRouteCart()} onClick={ScrollToTop()}>
                     {<CartIcon />}
-                </button>
+                </LinkCustom>
                 <button>
                     {<LoginIcon />}
                 </button>

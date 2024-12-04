@@ -6,7 +6,8 @@ export const BottomButtons = ({
         quantityCardsOnPage, 
         currentSlide, 
         handleClickSlide,
-        color = 'primary' //primary | secondary
+        color = 'primary', //primary | secondary
+        yellow
     }) => {
     const lengthArray = Math.ceil(quantitySliders.length / quantityCardsOnPage);
     
@@ -21,6 +22,7 @@ export const BottomButtons = ({
                     color={color} 
                     currentSlide={currentSlide} 
                     handleClickSlide={handleClickSlide} 
+                    yellow={yellow}
                 />
             )}
         </ul>

@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Card } from "../../../../entities/Card/ui/Card"
 import { PaginationLib } from "../../../../entities/PaginationLib/PaginationLib"
@@ -10,29 +11,41 @@ import { Button } from "../../../../shared/ui/Button/Button"
 import { Stack } from "../../../../shared/ui/Stack/Stack"
 import { Text } from "../../../../shared/ui/Text/Text"
 import { useGetAllProductsQuery } from "../../api/productApi"
-import { cards } from "../../lib/data"
 import styles from './OurProductsPage.module.scss'
 
-const PAGE = 1;
-const ARTICLE_PER_PAGE = 12;
 
+const ARTICLE_PER_PAGE = 12;
 
 export const OurProductsPage = ({ isMobile }) => {
 
     const dispatch = useDispatch();
     const selectedFilters = useSelector(state => state.filters)
     const selectedOption = useSelector(state => state.sort)
+    const [selectPage, setSelectPage] = useState(1);
+    
+    const handlePageChange = (e) => {
+        setSelectPage(e.selected + 1);
+    };
 
-        const { data, error, isLoading } = useGetAllProductsQuery({
-            params: {
-                page: PAGE,
-                limit: ARTICLE_PER_PAGE,
-                sort: selectedOption,
-                filter: selectedFilters
-            } 
-        }) //TODO
+    const { 
+    data,
+    error, 
+    isLoading } = useGetAllProductsQuery({
+            limit: ARTICLE_PER_PAGE,
+            page: selectPage,
+            filters: {
+            sort: selectedOption,
+            filter: selectedFilters
+        }
+    })
 
-    console.log(data, error, isLoading)
+    if (isLoading) {
+        return <Stack>Loading...</Stack> //TODO
+    }
+
+    if (error) {
+        return <Stack>Error: {error.message}</Stack> //TODO
+    }
 
     const hasActiveFilters = Object.entries(selectedFilters).some(([key, value]) => {
         if (Array.isArray(value) && value.length === 2) {
@@ -74,7 +87,7 @@ export const OurProductsPage = ({ isMobile }) => {
 
     return(
         <Stack 
-        className={styles.ourProductsPage}
+            className={styles.ourProductsPage}
             direction='column' 
             gap='24'
         >
@@ -115,18 +128,36 @@ export const OurProductsPage = ({ isMobile }) => {
             </Stack>
             )}
             <Stack 
+                className={styles.cardsPage}
                 direction='column'
+                justify='justifyBetween'
                 gap='75'
             >
                 <Stack 
                     gap='32' 
                     className={styles.cardsContainer}
                 >
-                    {cards.map((element) => <Card key={element.id} {...element}/>)}
+                    {data?.products.map(product => (
+                        <Card 
+                            key={product._id} 
+                            id={product._id}  
+                            color={product.color} 
+                            rating={product.rating}
+                            promotion={product.promotion} 
+                            sub_categories={product.sub_categories} 
+                            name={product.name}
+                            price={product.price} 
+                            sale_price={product.sale_price} 
+                            timer={product.timer}
+                            short_description={product.short_description}
+                        />
+                    )
+                    )}
                 </Stack>
                 <PaginationLib
-                forcePage={2}
-                pageCount={3}/>
+                    onPageChange={handlePageChange}
+                    forcePage={selectPage - 1} 
+                    pageCount={data?.totalPages ?? 1} />
             </Stack>
         </Stack>
     )

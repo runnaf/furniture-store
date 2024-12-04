@@ -1,0 +1,50 @@
+@use '../../../../app/styles/mixin.scss' as mixin;
+@use '../../../../app/styles/media-queries.scss' as media;
+
+.container {
+  background-color: var(--green-color);
+  padding: 32px 0;
+
+  @include media.mobile-xl {
+    padding: 20px 0;
+  }
+
+  & > div {
+    @include mixin.section-style;
+
+    @include media.tablet-m {
+      gap: var(--gap-30);
+    }
+
+    & >div:first-of-type {
+      max-width: min-content;
+      gap: var(--gap-48);
+
+      @include media.tablet-m {
+        gap: var(--gap-30);
+      }
+
+      & img {
+        width: 223px;
+        height: auto;
+
+        @include media.tablet-m {
+          width: 180px;
+        }
+      }
+
+      @include media.mobile-xl {
+        max-width: 100%;
+      }
+    }
+  
+    & p {
+      color: var(--white-color);
+      flex: 1;
+    }
+
+    @include media.mobile-xl {
+      flex-direction: column;
+    }
+  }
+}

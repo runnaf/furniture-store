@@ -1,0 +1,10 @@
+@use '../../../../app/styles/mixin.scss' as mixin;
+
+.container {
+  background-color: var(--yellow-color);
+  padding: 23px 0;
+
+  & div {
+    @include mixin.section-style;
+  }
+}

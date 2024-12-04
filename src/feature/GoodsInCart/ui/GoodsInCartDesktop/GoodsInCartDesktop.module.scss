@@ -1,0 +1,13 @@
+@use "../../../../app/styles/mixin.scss" as mixin;
+
+
+.container {
+  padding: 24px 0;
+  border-bottom: 2px solid var(--grey-background-color);
+
+  & td {
+    padding: 24px 0;
+    text-align: start;
+    
+  }
+}

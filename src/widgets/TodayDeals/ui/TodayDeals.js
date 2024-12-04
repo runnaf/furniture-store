@@ -1,7 +1,6 @@
 import { Stack } from "../../../shared/ui/Stack/Stack";
-import cardData, { QUANTITY_CARD_ON_PAGE } from '../../../shared/libs/cardData';
+import cardData from '../../../shared/libs/cardData';
 import { Card } from "../../../entities/Card/ui/Card";
-import styles from './TodayDeals.module.scss';
 import { HeaderSection } from "../../../shared/ui/HeaderSection/HeaderSection";
 import { useSlider } from "../../../entities/Slider/hooks/useSlider";
 import { useResize } from "../../../shared/hooks/useResize";
@@ -10,9 +9,21 @@ import { BottomButtons } from "../../../entities/Slider/ui/BottomButtons/ui/Bott
 import { useCustomScroll } from "../../../shared/hooks/useCustomScroll";
 import { LinkCustom } from "../../../shared/ui/LinkCustom/LinkCustom";
 import { getRouteShop } from "../../../app/routes/lib/helper";
+import { useGetAllProductsQuery } from "../../OurProducts/api/productApi";
+import styles from './TodayDeals.module.scss';
+
+const QUANTITY_CARD_ON_PAGE = 1;
+const ARTICLE_PER_PAGE = 5;
 
 export function TodayDeals () {
-    const { currentSlide, handleClickSlide } = useSlider(cardData.length);
+
+    const { data, error, isLoading } = useGetAllProductsQuery({
+        limit: ARTICLE_PER_PAGE,
+        page: 1,
+        filters: {}
+    });
+
+    const { currentSlide, handleClickSlide } = useSlider(data ? data.products.lenght : 0);
     const width = useResize()
     const containerRef = useCustomScroll()
 
@@ -24,7 +35,8 @@ export function TodayDeals () {
         } else return cardData.length;
     }
 
-    const currentCards = slicerOfArray(cardData, currentSlide, quantityCardsOnPage());
+    const currentCards = slicerOfArray(data ? data.products : [], currentSlide, quantityCardsOnPage());
+
     return (
         <Stack 
             direction="column" 
@@ -56,6 +68,7 @@ export function TodayDeals () {
                     className={styles.cardContainer}
                     ref={containerRef}
                 >
+                    {/* TODO - исправить карточку */}
                     {currentCards.map((element) => (
                         <div key={element.id}>
                             <Card {...element} view="extended" />

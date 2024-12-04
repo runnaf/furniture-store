@@ -61,13 +61,14 @@ export const countStars = (ratings) => {
         4: 0,
         5: 0
     };
-
-    // Проходим по каждому объекту в массиве
-    ratings.forEach(item => {
-        if (item.rate >= 1 && item.rate <= 5) {
-            starCount[Math.round(item.rate)]++;
-        }
-    });
+    if (ratings) {
+        // Проходим по каждому объекту в массиве
+        ratings.forEach(item => {
+            if (item.rate >= 1 && item.rate <= 5) {
+                starCount[Math.round(item.rate)]++;
+            }
+        });
+    }
 
     // Возвращаем объект с количеством звезд
     return starCount;
@@ -84,4 +85,9 @@ export const calculateAverageStars = (starsObject) => {
 
     // Проверка, что totalCount не равен 0, чтобы избежать деления на ноль
     return totalCount > 0 ? totalStars / totalCount : 0;
+};
+
+// функция которая принимает массив значений материалов и возвращает строку 
+export const getLabelsAsString = (objectsArray) => {
+  return objectsArray.map(obj => obj.label).join(', ');
 }
