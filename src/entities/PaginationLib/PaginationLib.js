@@ -4,6 +4,7 @@ import { Stack } from "../../shared/ui/Stack/Stack"
 import styles from './PaginationLib.module.scss'
 
 export const PaginationLib = ({onPageChange, forcePage, pageCount}) => {
+    console.log(typeof onPageChange, forcePage, pageCount)
     return(
         <Stack 
             className={styles.container}

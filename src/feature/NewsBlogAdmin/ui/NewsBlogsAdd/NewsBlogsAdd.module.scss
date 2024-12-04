@@ -1,0 +1,21 @@
+@use '../../../../app/styles/mixin.scss' as mixin;
+
+.newsBlogAdd {
+    @include mixin.section-style;
+
+    > div {
+        width: 100%;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        width: 100%;
+    }
+
+    button {
+        padding: 10px;
+        text-align: center;
+    }
+}

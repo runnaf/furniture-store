@@ -45,12 +45,14 @@
     }
 
     .popupContent {
-        max-height: 98%;
+        max-height: 100%;
         width: 100%; 
         overflow-y: scroll;
         touch-action: pan-x;
         scrollbar-width: none;
         padding: 0 20px 10px 20px;
+        // background: linear-gradient(0deg, rgba(72, 72, 72, 1) 0%,
+        // rgb(72 72 72 / 14%) 4%, rgba(72, 72, 72, 0) 100%);
 
         > button {
             position: absolute;

@@ -75,7 +75,7 @@ export function FilterBar({ toggleMenu }) {
                 className={styles.buttonContainer}
             >
                 <Button onClick={handleShowFilters}>Показать</Button>
-                <Button color="outlined" onClick={handleClearAll}>Сбросить</Button>
+                <Button color="secondary" onClick={handleClearAll}>Сбросить</Button>
             </Stack>        
         </Stack>
     );

@@ -100,6 +100,6 @@ export function OurProducts() {
                 </Stack>
             </Stack>
         </Stack>
-    );
+    )
 }
 
