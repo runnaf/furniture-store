@@ -9,12 +9,39 @@ import { Button } from "../../../shared/ui/Button/Button"
 import { useResize } from "../../../shared/hooks/useResize"
 import styles from './Wishlist.module.scss'
 
+const mockData = [
+    {
+        id: '1',
+        imageUrl: 'url',
+        productName: 'Стул',
+        color: 'Зеленый',
+        price: 19990,
+        dateAdded: '2024-10-01',
+        stockStatus: 'В наличии',
+    },
+    {
+        id: '2',
+        imageUrl: 'url',
+        productName: 'Кровать',
+        color: 'Белый',
+        price: 19990,
+        dateAdded: '2024-10-11',
+        stockStatus: 'В наличии',
+    },
+]; // TO DO
+
 
 export const WishList = () => {
 
     const dispatch = useDispatch();
+/* 
+    const { data, error, isLoading } = useGetWishListQuery({ limit: 10, page: 1 }); */
 
-    const { data, error, isLoading } = useGetWishListQuery({ limit: 10, page: 1 });
+    const data = mockData; 
+
+    const isLoading = false;
+    const error = null;
+
     const wishlist = useSelector(state => state.wishlist.wishlist);
 
     useEffect(() => {
@@ -30,7 +57,6 @@ export const WishList = () => {
     const handleClear = () => {
         dispatch(clearWishlist());
     };
-
 
     const width = useResize();    
 
@@ -53,10 +79,9 @@ export const WishList = () => {
            {width < 820 ? (
             <Stack direction='column' gap='48'>
                 {wishlist?.map(item => (
-                    <Stack direction='column' gap='24'>
-                    <Stack 
-                    key={item.id} 
-                    className={styles.mobileContainer}
+                    <Stack direction='column' gap='24' key={item.id}>
+                    <Stack                      
+                     className={styles.mobileContainer}
                      gap='16' 
                      justify='justifyAround'
                      >                        
@@ -68,7 +93,9 @@ export const WishList = () => {
                         <Text>{item.dateAdded}</Text>
                         <Text>{item.stockStatus}</Text>                        
                         </Stack>
-                        <DeleteFilter onClick={() => handleDelete(item.id)} />
+                        <button onClick={() => handleDelete(item.id)} className={styles.deleteButton}> 
+                            <DeleteFilter />
+                        </button>
                     </Stack>
                     <Button className={styles.button}>В корзину</Button>
                     </Stack>
@@ -90,7 +117,11 @@ export const WishList = () => {
                 <tbody>
                     {wishlist?.map(item => (
                         <tr key={item.id}>
-                            <td><DeleteFilter onClick={() => handleDelete(item.id)} /></td>
+                            <td>
+                                <button onClick={() => handleDelete(item.id)} className={styles.deleteButton}> 
+                                    <DeleteFilter />
+                                </button>
+                            </td>
                             <td>
                                 <Stack gap='12'>
                                     <img src={item.imageUrl} alt={item.productName} />

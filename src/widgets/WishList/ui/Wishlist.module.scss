@@ -26,6 +26,15 @@
     }
 
 }
+.deleteButton {
+    background-color: transparent;
+    padding: 0 20px 0 0;
+    @include tablet-l {
+        padding: 0;
+        display: flex;
+        align-self: flex-start;
+    }
+}
 table {
     width: 84%;    
     border-collapse: collapse;
