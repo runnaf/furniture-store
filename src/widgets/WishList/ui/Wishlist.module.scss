@@ -150,5 +150,9 @@ table {
         @include tablet-m  {
         flex-direction: column;
         }
+        button:first-child {
+            height: 20px;
+            align-self: center;
+        }
     }
 }
