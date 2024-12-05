@@ -14,9 +14,6 @@ const Shop = () => {
     const width = useResize();
     const isMobile = width <= 820;
 
-    const token = Cookies.get('authToken')
-    console.log(token)
-
     return (
         <main 
             className={styles.container}
