@@ -14,11 +14,6 @@ export const Signin = () => {
     const [isForgotten, setIsForgotten] = useState(false);
 
     const methods = useForm({mode: "onSubmit"})
-    const { handleSubmit, reset } = methods;
-
-    const onSubmit = () => {
-        reset();
-    };
 
     const handleCheckboxChange = (name, checked) => {
         console.log(name);
@@ -35,7 +30,7 @@ export const Signin = () => {
                 className={styles.signin}
                 gap='24'
             >
-                <SigninForm onSubmit={handleSubmit(onSubmit)}/>
+                <SigninForm/>
 
                 <Stack 
                         justify="justifyBetween" 

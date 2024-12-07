@@ -11,7 +11,13 @@ export const endpoints = {
         blog: '/blog',
         shop: '/shop',
         cart: '/cart',
-        wish_list: '/wish_list'
+        wish_list: '/wish_list',
+        auth: '/registration',
+        login: '/login',
+        logout: '/logout',
+        reset_password: '/reset-password',
+        refresh_password: '/refresh-password',
+        refresh: '/refresh'
     },
     user: '/user'
 }

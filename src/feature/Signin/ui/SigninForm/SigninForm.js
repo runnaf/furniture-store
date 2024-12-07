@@ -10,20 +10,38 @@ import { LogoIcon } from '../../../../shared/assets/svg/navbarIcons';
 import { getRouteMain } from '../../../../app/routes/lib/helper';
 import { emailRegex } from '../../../../shared/libs/validation/getValidate';
 import { data } from '../../../../shared/libs/validation/errors/data'
+import Cookies from "js-cookie";
+import { useLoginMutation } from '../../api/signinApi';
 import styles from './SigninForm.module.scss';
 
-export const SigninForm = ({ onSubmit }) => {
+
+export const SigninForm = () => {
 
     const [showPassword, setShowPassword] = useState(false);
-
-    const { register, setValue, formState: { errors } } = useFormContext(); 
-
+    const { register, handleSubmit, setValue, reset, formState: { errors } } = useFormContext();
     const PasswordToggleIcon = showPassword ? <HidePasswordIcon /> : <ShowPasswordIcon />;
+    
+    const [loginUser, { error, isLoading }] = useLoginMutation();
+
+    console.log(error, isLoading) //todo
+
+    const onSubmit = async (formData) => {
+        const { email, password } = formData;
+        try {
+            const response = await loginUser({ email, password }).unwrap();
+            if (response?.token?.accessToken) {
+                Cookies.set('authToken', response.token.accessToken, { secure: true })
+            }
+            reset()
+        } catch (err) {
+            console.error('Ошибка авторизации:', err)
+        }
+    }
 
     return (
         <form 
             className={styles.form} 
-            onSubmit={onSubmit}
+            onSubmit={handleSubmit(onSubmit)}
         >
             <Link to={getRouteMain()}>
                 <LogoIcon />
