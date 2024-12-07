@@ -34,8 +34,9 @@ const mockData = [
 export const WishList = () => {
 
     const dispatch = useDispatch();
-/* 
-    const { data, error, isLoading } = useGetWishListQuery({ limit: 10, page: 1 }); */
+
+    /* const { data, error, isLoading } = useGetWishListQuery({ limit: 10, page: 1 });
+    console.log(data); */
 
     const data = mockData; 
 
