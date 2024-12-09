@@ -1,7 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { useGetWishListQuery } from "../api/wishListApi"
-import { setWishlist, deleteItem, clearWishlist } from '../model/WishlistSlice';
+import { useGetWishListQuery, useDeleteFromWishListMutation, useClearWishListMutation } from "../api/wishListApi"
 import { Stack } from "../../../shared/ui/Stack/Stack"
 import { Text } from "../../../shared/ui/Text/Text"
 import { DeleteFilter } from '../../../shared/assets/svg/deleteFilter'
@@ -9,54 +6,20 @@ import { Button } from "../../../shared/ui/Button/Button"
 import { useResize } from "../../../shared/hooks/useResize"
 import styles from './Wishlist.module.scss'
 
-const mockData = [
-    {
-        id: '1',
-        imageUrl: 'url',
-        productName: 'Стул',
-        color: 'Зеленый',
-        price: 19990,
-        dateAdded: '2024-10-01',
-        stockStatus: 'В наличии',
-    },
-    {
-        id: '2',
-        imageUrl: 'url',
-        productName: 'Кровать',
-        color: 'Белый',
-        price: 19990,
-        dateAdded: '2024-10-11',
-        stockStatus: 'В наличии',
-    },
-]; // TO DO
-
-
 export const WishList = () => {
 
-    const dispatch = useDispatch();
+    const { data, error, isLoading } = useGetWishListQuery({ limit: 10, page: 1 });
+    console.log(data);
+    const [deleteFromWishList] = useDeleteFromWishListMutation();
+    const [clearWishList] = useClearWishListMutation();
 
-    /* const { data, error, isLoading } = useGetWishListQuery({ limit: 10, page: 1 });
-    console.log(data); */
-
-    const data = mockData; 
-
-    const isLoading = false;
-    const error = null;
-
-    const wishlist = useSelector(state => state.wishlist.wishlist);
-
-    useEffect(() => {
-        if (data) {
-            dispatch(setWishlist(data));
-        }
-    }, [data, dispatch]);
-
-    const handleDelete = (id) => {
-        dispatch(deleteItem(id));
+    const handleDelete = async (id) => {
+        await deleteFromWishList({ id });
     };
 
-    const handleClear = () => {
-        dispatch(clearWishlist());
+    const handleClear = async () => {
+        await clearWishList();
+        alert('Избранное очищено!');
     };
 
     const width = useResize();    
@@ -79,7 +42,7 @@ export const WishList = () => {
         <Stack direction='column' gap='32'>
            {width < 820 ? (
             <Stack direction='column' gap='48'>
-                {wishlist?.map(item => (
+                {data?.map(item => (
                     <Stack direction='column' gap='24' key={item.id}>
                     <Stack                      
                      className={styles.mobileContainer}
@@ -116,7 +79,7 @@ export const WishList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {wishlist?.map(item => (
+                    {data?.map(item => (
                         <tr key={item.id}>
                             <td>
                                 <button onClick={() => handleDelete(item.id)} className={styles.deleteButton}> 
