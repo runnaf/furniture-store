@@ -8,6 +8,11 @@ export const phoneRegex = /^\+?[0-9\s-]{10,15}$/;
 
 export const numberRegex = /^[0-9]+$/;
 
+export const valid = {
+    'idRegex': /^[a-f0-9]{24}$/,
+    'numberRegex': /^[0-9]+$/
+}
+
 export const validatePassword = (password) => {
     if (!password) {
         return data.required;

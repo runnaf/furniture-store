@@ -1,0 +1,5 @@
+@use '../../../app/styles//mixin.scss' as mixin;
+
+.productAdmin {
+    @include mixin.title-admin;
+}
