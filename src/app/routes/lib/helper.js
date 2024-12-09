@@ -1,4 +1,5 @@
 export const getRouteMain = () => '/';
+export const getRouteAdmin = () => '/admin';
 export const getRouteShop = () => '/shop';
 export const getRouteFAQ = () => '/faqs';
 export const getRouteCategories = (param) => `/shop${param ? `/${param}` : ''}`;

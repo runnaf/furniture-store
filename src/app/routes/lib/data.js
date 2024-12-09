@@ -1,6 +1,7 @@
 import AboutUsPage from "../../../pages/AboutUsPage/ui/AboutUsPage";
 import FAQs from '../../../pages/FAQs/ui/FAQs';
 import MainPage from "../../../pages/MainPage/ui/MainPage";
+import Admin from "../../../pages/Admin/ui/Admin";
 import OurBlog from "../../../pages/OurBlog/ui/OurBlog";
 import Shop from "../../../pages/Shop/ui/Shop";
 import ProductPage from "../../../pages/ProductPage/ui/ProductPage";
@@ -10,7 +11,7 @@ import Error404 from "../../../pages/Error404Page/Error404Page";
 import CartPage from "../../../pages/CartPage/CartPage";
 import ChecoutPage from "../../../pages/ChecoutPage/ChecoutPage";
 import WishlistPage from "../../../pages/WishList/WishListPage";
-import { getRouteAbout, getRouteBlog, getRouteCart, getRouteCheckout, getRouteError404, getRouteFAQ, getRouteMain, getRouteProduct, getRouteShop, getRouteSignin, getRouteSignup, getRouteWishlist } from "./helper";
+import { getRouteAbout, getRouteAdmin, getRouteBlog, getRouteCart, getRouteCheckout, getRouteError404, getRouteFAQ, getRouteMain, getRouteProduct, getRouteShop, getRouteSignin, getRouteSignup, getRouteWishlist } from "./helper";
 
 
 
@@ -20,6 +21,12 @@ export const routes = [
         link: getRouteMain(),
         isNavbar: true,
         page: <MainPage />
+    },
+    {
+        title: "Админ-панель",
+        link: getRouteAdmin(),
+        isNavbar: false,
+        page: <Admin/>
     },
     {
         title: "Магазин",
