@@ -13,6 +13,7 @@ import { getRouteProduct } from '../../../app/routes/lib/helper';
 import styles from './Card.module.scss';
 import { useModal } from '../../../shared/hooks/useModal';
 import { ModalColor } from './ModalColor/ModalColor';
+import { useAddInWishListMutation } from '../../../widgets/WishList/api/wishListApi';
 
 //TODO карточка уже переросала в целый widgets, здесь 2 фичи - добавить в избранное и в корзину
 export const Card = ({ 
@@ -24,6 +25,7 @@ export const Card = ({
 
 }) => {
     const firstImage = color[0]?.images?.[2] || {};
+    const [addInWishList] = useAddInWishListMutation();
 
     const cardContainer = getStyles(view === 'extended' 
         ? styles.extendedCard 
@@ -36,6 +38,19 @@ export const Card = ({
     );
 
     const [changeColorModal, drawColorModal] = useModal();
+
+    const handleAddToWishlist = async () => {
+        const itemToAdd = {
+            id,
+            color,
+            name,
+            price,
+            sale_price,
+            short_description,
+        };
+        await addInWishList(itemToAdd);
+        alert('Товар добавлен в избранное!');
+    };
 
     //TODO карточку надо декомпозировать на компоненты
     return (
@@ -79,6 +94,7 @@ export const Card = ({
                         <Button 
                             radius='circle' 
                             ariaLabel="Добавить в избранное"
+                            onClick={handleAddToWishlist}
                         >
                             <img src={heart} alt='heart'/>
                         </Button>

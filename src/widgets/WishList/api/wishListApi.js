@@ -27,6 +27,13 @@ const wishListApi = api.injectEndpoints({
                 `${endpoints.lists.wish_list}/${id}`
             ),
             invalidatesTags: WISH_LIST_TAG,
+        }),
+        clearWishList: build.mutation({
+            query: () => createApiConfig(
+                'DELETE',
+                endpoints.lists.wish_list
+            ),
+            invalidatesTags: WISH_LIST_TAG,
         })
     })
 })
@@ -35,5 +42,6 @@ export const {
     useGetWishListQuery,
     useLazyGetWishListQuery,
     useAddInWishListMutation,
-    useDeleteFromWishListMutation
+    useDeleteFromWishListMutation,
+    useClearWishListMutation
 } = wishListApi

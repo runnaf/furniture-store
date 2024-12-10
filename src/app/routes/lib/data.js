@@ -10,7 +10,8 @@ import SignupPage from "../../../pages/SignupPage/ui/SignupPage";
 import Error404 from "../../../pages/Error404Page/Error404Page";
 import CartPage from "../../../pages/CartPage/CartPage";
 import ChecoutPage from "../../../pages/ChecoutPage/ChecoutPage";
-import { getRouteAbout, getRouteAdmin, getRouteBlog, getRouteCart, getRouteCheckout, getRouteError404, getRouteFAQ, getRouteMain, getRouteProduct, getRouteShop, getRouteSignin, getRouteSignup } from "./helper";
+import WishlistPage from "../../../pages/WishList/WishListPage";
+import { getRouteAbout, getRouteAdmin, getRouteBlog, getRouteCart, getRouteCheckout, getRouteError404, getRouteFAQ, getRouteMain, getRouteProduct, getRouteShop, getRouteSignin, getRouteSignup, getRouteWishlist } from "./helper";
 
 
 
@@ -77,6 +78,12 @@ export const routes = [
       title: "Оформление",
       link: getRouteCheckout(),
       page: <ChecoutPage />
+    },
+    {
+        title: "Избранное",
+        link: getRouteWishlist(),
+        isNavbar: true,
+        page: <WishlistPage />
     }
 
 ]

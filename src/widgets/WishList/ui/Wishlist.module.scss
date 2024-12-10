@@ -1,0 +1,158 @@
+@import "../../../app/styles/media-queries.scss";
+
+.mobileContainer {
+    
+    img {
+        width: 85px;
+        height: 100px;
+        background-color: rgb(222, 220, 220);
+    }
+
+    p:first-child {
+        font-weight: 500;
+        font-size: var(--font-size-20);
+    }
+    p:nth-child(2) {
+        color: var(--secoundry-black-color);
+    }
+    p:nth-child(3) {
+        font-weight: 500;
+    }
+    p:nth-child(4) {
+        line-height: 200%;
+    }
+    p:last-child {
+        color: var(--border-inStock-color);        
+    }
+
+}
+.deleteButton {
+    background-color: transparent;
+    padding: 0 20px 0 0;
+    @include tablet-l {
+        padding: 0;
+        display: flex;
+        align-self: flex-start;
+    }
+}
+table {
+    width: 84%;    
+    border-collapse: collapse;
+    gap: var(--gap-16);
+    text-align: left;
+    font-size: var(--font-size-18);
+
+    th {
+        font-weight: 500;
+    }
+
+    th:first-child {
+        border-top-left-radius: var(--border-radius-12);
+        border-bottom-left-radius: var(--border-radius-12);
+    }
+    
+    th:last-child {
+        border-top-right-radius: var(--border-radius-12);
+        border-bottom-right-radius: var(--border-radius-12);
+    }
+
+    tr {
+        border-bottom: 1px solid var(--stroke-color);
+        height: 156px;
+    }
+
+    thead tr {
+        background-color: var(--yellow-color);
+        height: 59px;
+    }
+
+    .itemDescription {
+
+        p:first-child {
+            font-weight: 500;
+        }
+        p:last-child {
+            color: var(--secoundry-black-color);
+        }
+    }
+
+    td:nth-child(3) {
+        font-weight: 500;
+    }
+
+    td:nth-child(5) {
+        color: var(--border-inStock-color);
+    }
+
+    img {
+        width: 90px;
+        height: 108px;
+        background-color: rgb(222, 220, 220);
+    }
+    button {
+        padding: 18px 30px;
+        width: 98%;
+    }
+}
+
+.button {
+    padding: 18px 30px;
+}
+.container {
+    width: 84%;
+    align-self: center;
+    @include tablet-l {
+        flex-wrap: wrap;
+    }
+    @include tablet-m {
+        flex-direction: column;
+        gap:var(--gap-32);
+    }
+
+    .linkContainer {
+        @include tablet-l {
+            width: 100%;
+            justify-content: space-between;
+        }
+        @include tablet-m {
+        flex-direction: column;
+        }
+        p {
+            text-decoration: underline;
+            font-size: var(--font-size-18);
+        }
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 270px;
+            height: 54px;
+            border-radius: var(--border-radius-170);
+            border: 1px solid var(--stroke-color);
+            @include tablet-m {
+                width: 98%;
+                }
+        }
+        button {
+            @include tablet-l {
+                width: 253px;
+            }
+            @include tablet-m {
+            width: 98%;
+            }
+        }
+    }
+    .buttonsContainer {
+        @include tablet-l {
+            width: 100%;
+            justify-content:flex-end;
+        }
+        @include tablet-m  {
+        flex-direction: column;
+        }
+        button:first-child {
+            height: 20px;
+            align-self: center;
+        }
+    }
+}
