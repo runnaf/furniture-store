@@ -14,8 +14,14 @@
         max-width: 100%;
     }
     .mobileContainer {
+        @include mobile-l {
+            gap: 8px;
+        }
+        @include mobile-m {
+            gap: 16px;
+        }
         img {
-            width: 100%;
+            width: 90px;
             object-fit: cover;
             height: 100px;
             background-color: rgb(222, 220, 220);
@@ -63,6 +69,10 @@
         display: flex;
         justify-content: center;
         padding: 16px 32px;
+
+        @include mobile-l {
+            width: 100%;
+        }
     }
 }
 
