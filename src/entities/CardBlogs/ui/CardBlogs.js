@@ -27,7 +27,7 @@ export const CardBlogs = ({ title, poster, description, date }) => {
                 <Text type="p" size="md">{title}</Text>
                 <Text type='p'>{description}</Text>
                 <LinkCustom to={getRouteBlog()} color='outlined'>
-                    Read More
+                    Подробнее
                 </LinkCustom>
             </Stack>
         </Stack>

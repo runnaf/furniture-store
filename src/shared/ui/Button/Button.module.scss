@@ -68,6 +68,11 @@ $text-black-color: var(--black-color);
     }
 }
 
+.transparent {
+    background-color: transparent;
+    border: none;
+}
+
 .link {
     background-color: transparent;
     color: $text-black-color;

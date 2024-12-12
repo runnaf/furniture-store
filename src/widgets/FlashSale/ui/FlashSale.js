@@ -2,11 +2,12 @@ import { Timer } from "../../../entities/Timers/ui/Timer"
 import { HeaderSection } from "../../../shared/ui/HeaderSection/HeaderSection"
 import { Stack } from "../../../shared/ui/Stack/Stack"
 import chairSale from '../../../shared/assets/svg/chairSale.svg';
-import points from '../../../shared/assets/svg/points.svg';
 import arrowRight from '../../../shared/assets/svg/arrowright.svg'
-import styles from './FlashSale.module.scss'
 import { LinkCustom } from "../../../shared/ui/LinkCustom/LinkCustom";
 import { getRouteShop } from "../../../app/routes/lib/helper";
+import { Points } from "../../../shared/assets/svg/points";
+import { VisuallyHidden } from "../../../shared/ui/VisuallyHidden/VisuallyHidden";
+import styles from './FlashSale.module.scss'
 
 export const FlashSale = () => {
 
@@ -25,8 +26,14 @@ export const FlashSale = () => {
                     justify='justifyCenter'
                     align='alignCenter'
                 >
-                    <img src={points} alt="a cluster of dots"/>
-                    <img src={points} alt="a cluster of dots"/>
+                    <>
+                    <Points/>
+                    <VisuallyHidden>Декоративный элемент</VisuallyHidden>
+                    </>
+                    <>
+                    <Points/>
+                    <VisuallyHidden>Декоративный элемент</VisuallyHidden>
+                    </>
                     <Stack gap='48'
                         direction="column"
                         justify='justifyCenter'

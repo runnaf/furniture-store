@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { Stack } from "../../../shared/ui/Stack/Stack";
+import { VisuallyHidden } from "../../../shared/ui/VisuallyHidden/VisuallyHidden";
 import { Text } from "../../../shared/ui/Text/Text";
 import { getStyles } from "../../../shared/libs/getStyles";
+import { Minus, Plus } from "lucide-react";
 import styles from './Accordion.module.scss';
-import less from '../../../shared/assets/svg/less.svg'; //TODO сделать как компонент
-import more from '../../../shared/assets/svg/more.svg'; //TODO сделать как компонент
-
 
 export const Accordion = ({ question, answer, isSecond, styleMode }) => {
 
@@ -13,32 +12,20 @@ export const Accordion = ({ question, answer, isSecond, styleMode }) => {
 
     const handleClick = () => setIsOpen(prev => !prev);
 
-    //TODO - какой-то мне не понятный синтаксис - это здесь точно надо?
-    const mode = { [styleMode]: true }
-    //TODO - как насчет такого варианта? вместо строки 30
-    // [styles.openAnswer]: isOpen,
-    // [styles.closedAnswer]: !isOpen,
-
-    const additional = [
-        styles[styleMode]
-    ];
-
-    const baseClass = styles.accordionContainer;
-
     const dynamicStyles = getStyles(
-        //TODO - может быть перенести в mode, а здесь написать styles.accordionContainer?
-        isOpen ? styles.openAnswer : styles.closedAnswer, 
-        mode,
-        additional
-    );
+        styles.accordionContainer, 
 
-    const styleClass = `${baseClass} ${dynamicStyles}`;
+        {[styles.openAnswer]: isOpen,
+        [styles.closedAnswer]: !isOpen},
+        
+        [styles[styleMode]]
+    )
 
     return(
         <Stack 
             direction="column" 
             onClick={handleClick}
-            className={styleClass}
+            className={dynamicStyles}
         >
             <Stack 
                 justify='justifyBetween'
@@ -46,10 +33,17 @@ export const Accordion = ({ question, answer, isSecond, styleMode }) => {
                 className={styles.questionContainer}
             >
                 <Text size="s">{question}</Text>
-                <img 
-                    src={isOpen ? less : more} 
-                    alt={isOpen ? 'сollapse' : 'уxpand'} //я здесь исправила текст, но если это будет svg, то лучше сделать как у Ирины кнопки
-                />
+                {isOpen ? 
+                <>
+                    <Plus color="var(--yellow-color)"/>
+                    <VisuallyHidden>Показать текст</VisuallyHidden>
+                </>
+                :
+                <>
+                    <Minus color="var(--green-color)"/>
+                    <VisuallyHidden>Скрыть текст</VisuallyHidden>
+                </>
+                }
             </Stack>
             <Stack className={isOpen ? styles.visible : styles.hidden}>
                 <Text>{answer}</Text>
