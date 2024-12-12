@@ -12,13 +12,9 @@ export const Card = ({
     view = 'general',// general | extended
 }) => {
 
+    console.log(id)
+
     const firstImage = color[0]?.images?.[2] || {};
-
-    const cardContainer = getStyles(view === 'extended' 
-        ? styles.extendedCard 
-        : styles.generalCard, {}, [styles.cardBase]
-    );
-
 
     return (
         <Stack 
