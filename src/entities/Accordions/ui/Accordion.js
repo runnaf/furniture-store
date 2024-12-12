@@ -3,8 +3,8 @@ import { Stack } from "../../../shared/ui/Stack/Stack";
 import { Text } from "../../../shared/ui/Text/Text";
 import { getStyles } from "../../../shared/libs/getStyles";
 import styles from './Accordion.module.scss';
-import less from '../../../shared/assets/svg/less.svg'; //TODO сделать как компонент
-import more from '../../../shared/assets/svg/more.svg'; //TODO сделать как компонент
+import { More } from "../../../shared/assets/svg/more";
+import { Less } from "../../../shared/assets/svg/less";
 
 
 export const Accordion = ({ question, answer, isSecond, styleMode }) => {
@@ -46,10 +46,7 @@ export const Accordion = ({ question, answer, isSecond, styleMode }) => {
                 className={styles.questionContainer}
             >
                 <Text size="s">{question}</Text>
-                <img 
-                    src={isOpen ? less : more} 
-                    alt={isOpen ? 'сollapse' : 'уxpand'} //я здесь исправила текст, но если это будет svg, то лучше сделать как у Ирины кнопки
-                />
+                {isOpen ? <Less/> : <More/>}
             </Stack>
             <Stack className={isOpen ? styles.visible : styles.hidden}>
                 <Text>{answer}</Text>
