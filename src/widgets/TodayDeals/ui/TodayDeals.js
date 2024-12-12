@@ -1,6 +1,6 @@
 import { Stack } from "../../../shared/ui/Stack/Stack";
 import cardData from '../../../shared/libs/cardData';
-import { Card } from "../../../entities/Card/ui/Card";
+import { Card } from "../../../entities/Card/ui/Card/Card";
 import { HeaderSection } from "../../../shared/ui/HeaderSection/HeaderSection";
 import { useSlider } from "../../../entities/Slider/hooks/useSlider";
 import { useResize } from "../../../shared/hooks/useResize";
@@ -11,6 +11,8 @@ import { LinkCustom } from "../../../shared/ui/LinkCustom/LinkCustom";
 import { getRouteShop } from "../../../app/routes/lib/helper";
 import { useGetAllProductsQuery } from "../../OurProducts/api/productApi";
 import styles from './TodayDeals.module.scss';
+import { CardInteraction } from "../../../feature/CartInteraction/ui/CardInteraction/CardInteraction";
+
 
 const QUANTITY_CARD_ON_PAGE = 1;
 const ARTICLE_PER_PAGE = 5;
@@ -68,10 +70,10 @@ export function TodayDeals () {
                     className={styles.cardContainer}
                     ref={containerRef}
                 >
-                    {/* TODO - исправить карточку */}
                     {currentCards.map((element) => (
-                        <div key={element.id}>
-                            <Card {...element} view="extended" />
+                        <div key={element.id} >
+                            <Card {...element} view="extended"/>
+                            <CardInteraction {...element}/>
                         </div>
                     ))}
                 </Stack>

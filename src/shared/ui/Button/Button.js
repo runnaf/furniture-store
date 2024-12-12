@@ -6,7 +6,7 @@ export const Button = ({
     children,
     size = 'xs',
     radius = 'rounded', // rounded | circle
-    color = 'primary', // primary | secondary | outlined
+    color = 'primary', // primary | secondary | outlined | transparent
     outlined,
     ...otherProps
 }) => {

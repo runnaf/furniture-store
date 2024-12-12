@@ -9,6 +9,8 @@ import { Button } from "../../../../shared/ui/Button/Button";
 //TODO - по своей сути это фича выбор цвета, я бы вынесла в фичу, и в таком случае нам не придется дублировать
 //плюс также кнопки смены приходится отдавать другому документу, что не правильно делать, а то здесь удалим и там работать не будет
 export const ModalColor = ({ id, colors, changeColorModal }) => {
+
+    console.log(id, colors, changeColorModal)
     
     const [currentColor, setCurrentColor] = useState(colors[0].value ?? '');
     
