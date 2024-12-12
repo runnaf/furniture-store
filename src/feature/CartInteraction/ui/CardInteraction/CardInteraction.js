@@ -7,18 +7,20 @@ import { ModalColor } from '../../../../entities/Card/ui/ModalColor/ModalColor';
 import { useAddInWishListMutation } from '../../../../widgets/WishList/api/wishListApi';
 import styles from './CardInteraction.module.scss';
 
+
 export const CardInteraction = ({ 
-    id, image, color, name, 
+    _id, color, name, 
     price, sale_price, availability
 }) => {
 
     const [addInWishList, { error, isLoading }] = useAddInWishListMutation();
+    const image = color[0]?.images?.[2] || {};
 
     const [changeColorModal, drawColorModal] = useModal();
 
     const handleAddToWishlist = async () => {
         await addInWishList({
-            product_id: id,
+            product_id: _id,
             image: {
                 alt: image.alt,
                 url: image.url
@@ -34,8 +36,8 @@ export const CardInteraction = ({
                 value: availability.value,
                 label: availability.label
             }
-        }).unwrap();
-        alert('Товар добавлен в избранное!');
+        }).unwrap()
+        alert('Товар добавлен в избранное!')
     }
 
     return (
@@ -45,7 +47,7 @@ export const CardInteraction = ({
                 <ModalColor 
                     colors={color} 
                     changeColorModal={changeColorModal} 
-                    id={id}
+                    id={_id}
                 />
             )}
 

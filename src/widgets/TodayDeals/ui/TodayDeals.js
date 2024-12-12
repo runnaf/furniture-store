@@ -71,7 +71,7 @@ export function TodayDeals () {
                     ref={containerRef}
                 >
                     {currentCards.map((element) => (
-                        <div key={element.id} >
+                        <div key={element._id} >
                             <Card {...element} view="extended"/>
                             <CardInteraction {...element}/>
                         </div>
