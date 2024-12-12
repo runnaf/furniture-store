@@ -40,8 +40,7 @@ export function OurProducts() {
 
     const handleFilterChange = (filter) => {
         setSelectedFilter(filter);
-    };
-    
+    }
 
     return (
         <Stack 
