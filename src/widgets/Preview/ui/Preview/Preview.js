@@ -1,6 +1,6 @@
 
 import { Slider } from "../../../../entities/Slider/ui/Slider/Slider";
-import { useSlider } from "../../../../entities/Slider/hooks/useSlider";
+import { useSlider } from "../../../../shared/hooks/useSlider";
 import { card, QUANTITY_CARD_ON_PAGE } from "../../lib/data";
 import { slicerOfArray } from "../../../../entities/Slider/lib/helper";
 import { SlideRooms } from "../SlideRooms/SlideRooms";

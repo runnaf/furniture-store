@@ -2,7 +2,7 @@ import { Stack } from "../../../shared/ui/Stack/Stack";
 import cardData from '../../../shared/libs/cardData';
 import { Card } from "../../../entities/Card/ui/Card";
 import { HeaderSection } from "../../../shared/ui/HeaderSection/HeaderSection";
-import { useSlider } from "../../../entities/Slider/hooks/useSlider";
+import { useSlider } from "../../../shared/hooks/useSlider";
 import { useResize } from "../../../shared/hooks/useResize";
 import { slicerOfArray } from "../../../entities/Slider/lib/helper";
 import { BottomButtons } from "../../../entities/Slider/ui/BottomButtons/ui/BottomButtons/BottomButtons";

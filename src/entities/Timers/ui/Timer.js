@@ -1,6 +1,6 @@
 import { Stack } from '../../../shared/ui/Stack/Stack.js';
 import styles from './Timer.module.scss'
-import useCountdownTimer from "../lib/useCountdownTimer.js";
+import useCountdownTimer from "../../../shared/hooks/useCountdownTimer.js";
 import React from "react";
 import { getStyles } from '../../../shared/libs/getStyles.js';
 

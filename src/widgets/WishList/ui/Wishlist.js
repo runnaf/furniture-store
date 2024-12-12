@@ -49,13 +49,13 @@ export const WishList = () => {
                      gap='16' 
                      justify='justifyAround'
                      >                        
-                        <img src={item.imageUrl} alt={item.productName} />
+                        <img src={item.imageUrl} alt={item.name} />
                         <Stack direction='column' gap='8'>
-                        <Text>{item.productName}</Text>
+                        <Text>{item.name}</Text>
                         <Text>Color: {item.color}</Text>
                         <Text>{item.price} руб.</Text>
-                        <Text>{item.dateAdded}</Text>
-                        <Text>{item.stockStatus}</Text>                        
+                        <Text>{item.createdAt}</Text>
+                        <Text>{item.availability}</Text>                        
                         </Stack>
                         <button onClick={() => handleDelete(item.id)} className={styles.deleteButton}> 
                             <DeleteFilter />
