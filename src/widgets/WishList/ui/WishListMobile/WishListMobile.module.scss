@@ -9,7 +9,7 @@
     flex: 1 1 calc(52% - 32px); 
     max-width: calc(52% - 32px);
 
-    @include mobile-l {
+    @include mobile-m {
         flex: 1 1 100%; 
         max-width: 100%;
     }
@@ -31,6 +31,11 @@
         p:first-child {
             font-weight: 500;
             font-size: var(--font-size-20);
+
+            @include mobile-l {
+                font-size: var(--font-size-18);
+            }
+
         }
         p:nth-child(2) {
             color: var(--secoundry-black-color);
@@ -42,6 +47,10 @@
                 font-weight: 500;
                 width: 100%;
                 font-size: var(--font-size-18);
+
+                @include mobile-l {
+                    font-size: var(--font-size-16);
+                }
             }
 
             :nth-child(2) {

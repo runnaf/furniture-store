@@ -1,7 +1,5 @@
 import { useGetWishListQuery, useDeleteFromWishListMutation, useClearWishListMutation } from "../api/wishListApi"
 import { Stack } from "../../../shared/ui/Stack/Stack"
-import { Text } from "../../../shared/ui/Text/Text"
-import { DeleteFilter } from '../../../shared/assets/svg/deleteFilter'
 import { Button } from "../../../shared/ui/Button/Button"
 import { useResize } from "../../../shared/hooks/useResize"
 import styles from './Wishlist.module.scss'
