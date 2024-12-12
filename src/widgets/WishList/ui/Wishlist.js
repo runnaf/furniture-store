@@ -26,8 +26,8 @@ export const WishList = () => {
 
     const width = useResize();    
 
-    if (isLoading) return <div>Loading</div>;
-    if (error) return <div>Error loading wish list</div>;
+    if (isLoading) return <div>Loading</div>//todo
+    if (error) return <div>Error loading wish list</div>//todo
 
     const copyToClipboard = () => {
         navigator.clipboard.writeText(window.location.href)
