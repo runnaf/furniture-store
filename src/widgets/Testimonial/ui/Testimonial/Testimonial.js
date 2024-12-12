@@ -1,7 +1,7 @@
 import { Slider } from "../../../../entities/Slider/ui/Slider/Slider";
 import { HeaderSection } from "../../../../shared/ui/HeaderSection/HeaderSection";
 import { QUANTITY_CARD_ON_PAGE, testimonial, WIDTH_DESKTOP, WIDTH_TABLET } from "../../lib/data";
-import { useSlider } from "../../../../entities/Slider/hooks/useSlider";
+import { useSlider } from "../../../../shared/hooks/useSlider";
 import { slicerOfArray } from "../../../../entities/Slider/lib/helper";
 import { Reviews } from "../Reviews/Reviews";
 import { useResize } from "../../../../shared/hooks/useResize";

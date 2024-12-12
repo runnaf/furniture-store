@@ -30,7 +30,7 @@
   }
 
   & li {
-    width: max-content;
+    width: max-content;    
   }
 
   & a {
@@ -38,15 +38,19 @@
   }
 }
 
+.darkLink {
+  color: var(--white-color);
+
+    &:after {      
+      background-color: var(--white-color);
+    }
+}
+
 ul.wrapper {
   gap: var(--gap-8);
 
   & > li {
     display: flex;
-    width: 100%;
-
-    & > a {
-      width: 100%;
-    }
+    width: 100%;    
   }
 }

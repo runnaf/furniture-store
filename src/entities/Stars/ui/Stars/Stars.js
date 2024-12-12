@@ -1,7 +1,7 @@
 
 import { Stack } from "../../../../shared/ui/Stack/Stack";
 import { VisuallyHidden } from "../../../../shared/ui/VisuallyHidden/VisuallyHidden";
-import { StarIcon } from "../StarIcon/StarIcon";
+import { StarIcon } from "../../../../shared/assets/svg/starIcon";
 import styles from "./Stars.module.scss"
 
 const WHOLE_RATING = 5;

@@ -9,13 +9,20 @@
     flex: 1 1 calc(52% - 32px); 
     max-width: calc(52% - 32px);
 
-    @include mobile-l {
+    @include mobile-m {
         flex: 1 1 100%; 
         max-width: 100%;
     }
     .mobileContainer {
+        @include mobile-l {
+            gap: 8px;
+        }
+
+        @include mobile-m {
+            gap: 16px;
+        }
         img {
-            width: 100%;
+            width: 90px;
             object-fit: cover;
             height: 100px;
             background-color: rgb(222, 220, 220);
@@ -25,6 +32,11 @@
         p:first-child {
             font-weight: 500;
             font-size: var(--font-size-20);
+
+            @include mobile-l {
+                font-size: var(--font-size-18);
+            }
+
         }
         p:nth-child(2) {
             color: var(--secoundry-black-color);
@@ -36,6 +48,10 @@
                 font-weight: 500;
                 width: 100%;
                 font-size: var(--font-size-18);
+
+                @include mobile-l {
+                    font-size: var(--font-size-16);
+                }
             }
 
             :nth-child(2) {
@@ -63,6 +79,10 @@
         display: flex;
         justify-content: center;
         padding: 16px 32px;
+
+        @include mobile-l {
+            width: 100%;
+        }
     }
 }
 

@@ -2,8 +2,7 @@ import { HeaderSection } from "../../shared/ui/HeaderSection/HeaderSection"
 import { Stack } from "../../shared/ui/Stack/Stack";
 import { Card } from "../../entities/Card/ui/Card/Card";
 import cardData, { QUANTITY_CARD_ON_PAGE } from '../../shared/libs/cardData';
-import { useSlider } from "../../entities/Slider/hooks/useSlider";
-import { slicerOfArray } from "../../entities/Slider/lib/helper";
+import { useSlider } from "../../shared/hooks/useSlider";
 import { useResize } from "../../shared/hooks/useResize";
 import { useCustomScroll } from "../../shared/hooks/useCustomScroll";
 import { BottomButtons } from "../../entities/Slider/ui/BottomButtons/ui/BottomButtons/BottomButtons";
