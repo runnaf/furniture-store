@@ -52,7 +52,11 @@
 &.extendedCategory {
     
     @include media.mobile-l {
-        height: 270px;
+        height: 230px;
+    }
+
+    @include media.mobile-s {
+        height: 250px;
     }
 
     .extended {
@@ -68,11 +72,11 @@
 
     .cardText {
         opacity: var(--opacity-08);
-        max-width: 251px;
+        max-width: 257px;
         text-wrap: wrap;
 
         @include media.mobile-l {
-            max-width: 290px;
+            max-width: 100%;
         }
     }
 }
