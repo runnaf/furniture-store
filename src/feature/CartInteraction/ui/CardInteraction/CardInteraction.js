@@ -36,8 +36,8 @@ export const CardInteraction = ({
                 value: availability.value,
                 label: availability.label
             }
-        }).unwrap();
-        alert('Товар добавлен в избранное!');
+        }).unwrap()
+        alert('Товар добавлен в избранное!')
     }
 
     return (
