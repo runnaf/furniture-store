@@ -34,34 +34,35 @@
     position: relative;
     overflow: hidden;
 
-    > img {
+    svg {
         position: absolute;
+    }
 
-        &:nth-child(1) {
-            top: 512px;
-            left: 25%;
 
-            @include mobile-xl {
-                top: 520px;
-                left: 30px;
-            }
+    svg:nth-of-type(1) {
+        top: 512px;
+        left: 25%;
+
+        @include mobile-xl {
+            top: 520px;
+            left: 30px;
         }
+    }
 
-        &:nth-child(2) {
-            bottom: 519px;
-            right: 25%;
-            rotate: 180deg;
+    svg:nth-of-type(2) {
+        bottom: 519px;
+        right: 25%;
+        rotate: 180deg;
 
-            @include mobile-xl {
-                bottom: 530px;
-                right: 30px;
-            }
+        @include mobile-xl {
+            bottom: 530px;
+            right: 30px;
         }
     }
 }
 
 @mixin decoration-element {
-    background-image: url("../../../../shared/assets/svg/points-top.svg"), url("../../../../shared/assets/svg/points.svg");
+    background-image: url("../../../../shared/assets/svg/points-top.svg"), url("../../shared//assets/svg/points.svg");
     background-repeat: no-repeat, no-repeat;
     background-position: top -5px right 44%, bottom -13px left 36%;
     background-color: var(--background-color);

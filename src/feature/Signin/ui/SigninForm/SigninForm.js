@@ -29,8 +29,10 @@ export const SigninForm = () => {
         const { email, password } = formData;
         try {
             const response = await loginUser({ email, password }).unwrap();
-            if (response?.token?.accessToken) {
-                Cookies.set('authToken', response.token.accessToken, { secure: true })
+            if (response?.token) {
+                Cookies.set(
+                'authToken', response.token.accessToken, { secure: true },
+                'refreshToken', response.token.refreshToken, { secure: true })
             }
             reset()
         } catch (err) {

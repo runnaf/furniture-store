@@ -16,7 +16,7 @@ export const DescriptionOfProduct = ({ product, handleSelectColor, currentColor 
     const stars = Number(calculateAverageStars(countStars(data)))
 
     const { sub_categories, name, inStock = true, sale_price, price, short_description, article_number, tags } = product;
-    const colors = product.color;
+    const colors = product.colors;
 
     return (
         <Stack className={styles.container} direction="column" gap="24">

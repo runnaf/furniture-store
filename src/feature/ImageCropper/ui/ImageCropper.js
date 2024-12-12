@@ -2,7 +2,6 @@ import React, { useState, useCallback } from 'react';
 import Cropper from 'react-easy-crop';
 import { getCroppedImg } from '../lib/cropImage';
 import { Upload, Save } from 'lucide-react';
-import styles from './ImageCropper.module.scss';
 import { Text } from '../../../shared/ui/Text/Text';
 import { Stack } from '../../../shared/ui/Stack/Stack';
 import { Button } from '../../../shared/ui/Button/Button';
@@ -10,7 +9,7 @@ import { Input } from '../../../shared/ui/Input/Input';
 import { FormProvider, useForm } from 'react-hook-form';
 import { data } from '../../../shared/libs/validation/errors/data';
 import { Textarea } from '../../../shared/ui/Textarea/Textarea';
-import { Checkbox } from '../../../shared/ui/Checkbox/Checkbox';
+import styles from './ImageCropper.module.scss';
 
 const ImageCropper = ({aspectRatio}) => {
     const [image, setImage] = useState(null);

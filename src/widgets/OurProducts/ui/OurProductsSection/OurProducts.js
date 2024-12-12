@@ -1,6 +1,6 @@
 import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { Button } from '../../../../shared/ui/Button/Button';
-import { Card } from '../../../../entities/Card/ui/Card';
+import { Card } from '../../../../entities/Card/ui/Card/Card';
 import { HeaderSection } from '../../../../shared/ui/HeaderSection/HeaderSection';
 import { buttons, cards } from '../../lib/data';
 import { useState } from 'react';
@@ -11,6 +11,7 @@ import { useCustomScroll } from '../../../../shared/hooks/useCustomScroll';
 import { BottomButtons } from '../../../../entities/Slider/ui/BottomButtons/ui/BottomButtons/BottomButtons';
 import { useGetAllProductsQuery } from '../../api/productApi';
 import styles from './OurProducts.module.scss';
+
 
 const QUANTITY_CARD_ON_PAGE = 1;
 const ARTICLE_PER_PAGE = 5;
@@ -108,6 +109,7 @@ export function OurProducts() {
                             sale_price={product.sale_price} 
                             timer={product.timer}
                             short_description={product.short_description}
+                            availability={product.availability}
                         />
                     ))}
                     </Stack>

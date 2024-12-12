@@ -15,12 +15,11 @@ export const FilterPrice = ({ onHandleChange, temporaryFilters }) => {
     const minPrice = watch('minPrice', temporaryFilters.price ? temporaryFilters.price[0] : 0)
     const maxPrice = watch('maxPrice', temporaryFilters.price ? temporaryFilters.price[1] : 100000)
 
-    //TODO useCallback надо обернуть, функции передаются в пропсах
-    const handleMinInputChange = (e) => {
+    const handleMinInputChange = useCallback((e) => {
         const inputValue = Math.min(100000, Math.max(0, Number(e.target.value)))
         setValue('minPrice', inputValue)
         onHandleChange('price', [inputValue, maxPrice])
-    };
+    },[onHandleChange, setValue, maxPrice]);
 
     const handleMaxInputChange = (e) => {
         const inputValue = Math.min(100000, Math.max(0, Number(e.target.value)))

@@ -11,7 +11,7 @@ export const endpoints = {
         blog: '/blog',
         shop: '/shop',
         cart: '/cart',
-        wish_list: '/wish_list',
+        wish_list: '/wish-list',
         auth: '/registration',
         login: '/login',
         logout: '/logout',
