@@ -1,9 +1,8 @@
 import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { CardInfo } from '../CardInfo/CardInfo';
-import { Timer } from '../../../Timers/ui/Timer';
 import { getStyles } from '../../../../shared/libs/getStyles';
+import { CardImage } from '../CardImage/CardImage';
 import styles from './Card.module.scss';
-import { Text } from '../../../../shared/ui/Text/Text';
 
 export const Card = ({ 
     id, color, rating, promotion,
@@ -27,22 +26,12 @@ export const Card = ({
             gap='16' 
             className={styles.mainContainer}
         >
-            <Stack 
-                className={cardContainer}
-            >
-                <img src={firstImage.url} alt={firstImage.alt} loading='lazy' width='276'/>
-
-                {promotion && (     
-                        <Text className={styles.promotion}>{promotion}% off</Text>
-                    )} 
-                <Stack 
-                    className={styles.cardTimer}
-                >            
-                    {timer && (
-                        <Timer styleMode="timerCardContainer" endTime={timer}/>
-                    )} 
-                </Stack>
-            </Stack>
+            <CardImage
+                view={view}
+                firstImage={firstImage}
+                promotion={promotion}
+                timer={timer}
+            />
 
             <CardInfo
                 id={id}
@@ -53,7 +42,6 @@ export const Card = ({
                 price={price}
                 sale_price={sale_price}
                 description={description}
-
             />
         </Stack>
     );
