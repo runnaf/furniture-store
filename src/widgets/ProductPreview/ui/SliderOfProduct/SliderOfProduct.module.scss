@@ -1,5 +1,5 @@
-@import "../../../../app/styles/mixin.scss";
-@import "../../../../app/styles/media-queries.scss";
+@use "../../../../app/styles/mixin.scss" as mixin;
+@use "../../../../app/styles/media-queries.scss" as media;
 .container {
     & > div img {
         width: 584px;
@@ -8,11 +8,12 @@
         border-radius: 24px;
         background-color: var(--grey-background-color);
 
-        @include desktop-m {
+        @include media.desktop-m {
             width: 100%;
+            height: auto;
         }
 
-        @include mobile-xl {
+        @include media.mobile-xl {
             height: 392px;
         }
     }
@@ -20,6 +21,16 @@
 
 .previewGoodContainer {
     position: relative;
+    width: 584px;
+
+    @include media.desktop-m {
+      width: 500px;
+    }
+
+    @include media.tablet-l {
+      width: 350px;
+    }
+
 
     & > div{
         position: absolute;
@@ -32,7 +43,7 @@
         margin: auto;
         justify-content: space-between;
 
-        @include mobile-xl {
+        @include media.mobile-xl {
             width: 95%;
         }
 
@@ -41,7 +52,7 @@
             height: 64px;
             border-radius: 16px;
 
-            @include mobile-xl {
+            @include media.mobile-xl {
                 width: 48px;
                 height: 48px;
             }
@@ -49,7 +60,7 @@
         }
 
         & button svg {
-            @include mobile-xl {
+            @include media.mobile-xl {
                 width: 20px;
             }
         }
@@ -75,7 +86,7 @@
         cursor: pointer;
 
         &:hover {
-            @include button-hover
+            @include mixin.button-hover
         }
 
         & img {
@@ -86,7 +97,7 @@
             background-color: var(--grey-background-color);
         }
 
-        @include mobile-xl {
+        @include media.mobile-xl {
             height: 90px;
         }
     }

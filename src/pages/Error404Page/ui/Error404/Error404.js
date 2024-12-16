@@ -1,6 +1,6 @@
-
 import { LinkCustom } from "../../../../shared/ui/LinkCustom/LinkCustom";
 import { Text } from "../../../../shared/ui/Text/Text";
+import { getRouteMain } from "../../../../app/routes/lib/helper"
 import styles from "./Error404.module.scss";
 
 export const Error404 = () => {

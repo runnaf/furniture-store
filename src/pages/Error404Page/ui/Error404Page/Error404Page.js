@@ -1,4 +1,4 @@
-import { Error404 } from "../../widgets/Error404/Error404";
+import { Error404 } from "../Error404/Error404";
 import styles from "./Error404Page.module.scss";
 
 const Error404Page = () => {

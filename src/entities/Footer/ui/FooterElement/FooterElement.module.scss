@@ -34,7 +34,29 @@
   }
 
   & a {
+    position: relative;
     padding: 10px;
+    width: fit-content;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -5px;
+      background-color: var(--white-color);
+      transition: width 0.3s ease;
+  }
+
+    &:hover {
+      box-shadow: none;
+      background-color: transparent;
+
+      &::after {
+        width: 100%;
+    }
+    }
   }
 }
 
@@ -44,9 +66,5 @@ ul.wrapper {
   & > li {
     display: flex;
     width: 100%;
-
-    & > a {
-      width: 100%;
-    }
   }
 }
