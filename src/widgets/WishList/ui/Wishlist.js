@@ -6,6 +6,7 @@ import styles from './Wishlist.module.scss'
 import { Copy } from "lucide-react"
 import { WishListMobile } from "./WishListMobile/WishListMobile"
 import { WishListTable } from "./WishListTable/WishListTable"
+import showAlert from "../../Alert/Alert"
 
 export const WishList = () => {
 
@@ -21,7 +22,7 @@ export const WishList = () => {
 
     const handleClear = async () => {
         await clearWishList();
-        alert('Избранное очищено!');
+        showAlert('Избранное очищено!');
     };
 
     const width = useResize();    
@@ -32,10 +33,11 @@ export const WishList = () => {
     const copyToClipboard = () => {
         navigator.clipboard.writeText(window.location.href)
             .then(() => {
-                alert('Ссылка скопирована в буфер обмена!');
+                showAlert('Ссылка скопирована в буфер обмена!');
             })
             .catch(err => {
-                console.error('Ошибка при копировании ссылки: ', err);
+                const errorMessage = err.message || 'Ошибка при копировании ссылки.';
+                showAlert(errorMessage);
             });
     };
 

@@ -13,6 +13,7 @@ import { data } from '../../../../shared/libs/validation/errors/data'
 import Cookies from "js-cookie";
 import { useLoginMutation } from '../../api/signinApi';
 import styles from './SigninForm.module.scss';
+import showAlert from '../../../../widgets/Alert/Alert';
 
 
 export const SigninForm = () => {
@@ -33,10 +34,12 @@ export const SigninForm = () => {
                 Cookies.set(
                 'authToken', response.token.accessToken, { secure: true },
                 'refreshToken', response.token.refreshToken, { secure: true })
+                showAlert('Вы успешно авторизовались!');
             }
             reset()
         } catch (err) {
             console.error('Ошибка авторизации:', err)
+            showAlert('Ошибка авторизации. Проверьте свои данные и попробуйте снова.');
         }
     }
 
