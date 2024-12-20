@@ -1,4 +1,4 @@
-import { useSlider } from "../../../../entities/Slider/hooks/useSlider";
+import { useSlider } from "../../../../shared/hooks/useSlider";
 import { slicerOfArray } from "../../../../entities/Slider/lib/helper";
 import { BottomButton } from "../../../../entities/Slider/ui/BottomButtons/ui/BottomButton/BottomButton";
 import { SideButtons } from "../../../../entities/Slider/ui/SideButtons/SideButtons";

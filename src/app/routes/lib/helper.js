@@ -12,4 +12,5 @@ export const getRouteProduct = (id) => `/shop/${id}`;
 export const getRouteError404 = () => '*'
 export const getRouteCart = () => '/cart';
 export const getRouteCheckout = () => '/checout';
+export const getRouteWishlist = () => '/wishlist';
 // export const getRuoteReviews = (id) => `/reviews/${id}`;

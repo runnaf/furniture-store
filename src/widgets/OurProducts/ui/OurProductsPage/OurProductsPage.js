@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Card } from "../../../../entities/Card/ui/Card"
+import { Card } from "../../../../entities/Card/ui/Card/Card"
 import { PaginationLib } from "../../../../entities/PaginationLib/PaginationLib"
 import { filtersData } from "../../../../feature/Filter/lib/filtersData"
 import { clearAllFilters, clearFilter } from "../../../../feature/Filter/model/filterSlice"
@@ -150,6 +150,7 @@ export const OurProductsPage = ({ isMobile }) => {
                             sale_price={product.sale_price} 
                             timer={product.timer}
                             short_description={product.short_description}
+                            availability={product.availability}
                         />
                     )
                     )}

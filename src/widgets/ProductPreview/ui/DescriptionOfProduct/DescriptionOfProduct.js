@@ -9,14 +9,17 @@ import { useGetReviewsByProductIdQuery } from "../../../ProductItem/api/ProductA
 import styles from "./DescriptionOfProduct.module.scss";
 import { countStars, endingOfTheWordReview, calculateAverageStars } from "../../../TabsProduct/lib/helpers";
 import { ColorButtons } from "../../../../entities/Card/ui/ColorButtons/ColorButtons";
+import { getColorTitle } from "../../../../feature/AddToCart/lib/helper";
 
 export const DescriptionOfProduct = ({ product, handleSelectColor, currentColor }) => {
+    console.log(currentColor)
     const { id } = useParams();
     const { data } = useGetReviewsByProductIdQuery(id);
     const stars = Number(calculateAverageStars(countStars(data)))
 
     const { sub_categories, name, inStock = true, sale_price, price, short_description, article_number, tags } = product;
     const colors = product.color;
+    console.log(colors)
 
     return (
         <Stack className={styles.container} direction="column" gap="24">
@@ -35,8 +38,8 @@ export const DescriptionOfProduct = ({ product, handleSelectColor, currentColor 
             </Stack>
             <Text>{short_description}</Text>
 
-            <Stack gap='16' align="alignCenter">
-                <Text>Цвет:</Text>
+            <Stack gap='16' direction="column">
+                <Text>Цвет: {getColorTitle(currentColor)}</Text>
                 <ColorButtons 
                     colors={colors} 
                     handleSelectColor={handleSelectColor}
@@ -44,7 +47,7 @@ export const DescriptionOfProduct = ({ product, handleSelectColor, currentColor 
                 />
             </Stack>
             
-            <AddToCart gap="32"/>
+            <AddToCart id={id} color={currentColor} gap="32"/>
             <Stack className={styles.tagsContainer} direction="column" gap="12">
                 <Text>Артикул: <span>{article_number}</span></Text>
                 <Text>Тэги: <span>{tags.join(', ')}</span></Text>

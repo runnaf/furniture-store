@@ -5,10 +5,13 @@ import { VisuallyHidden } from "../../../../shared/ui/VisuallyHidden/VisuallyHid
 import { ColorButtons } from "../ColorButtons/ColorButtons";
 import styles from "./ModalColor.module.scss";
 import { Button } from "../../../../shared/ui/Button/Button";
+import { getColorTitle } from "../../../../feature/AddToCart/lib/helper";
 
 //TODO - по своей сути это фича выбор цвета, я бы вынесла в фичу, и в таком случае нам не придется дублировать
 //плюс также кнопки смены приходится отдавать другому документу, что не правильно делать, а то здесь удалим и там работать не будет
 export const ModalColor = ({ id, colors, changeColorModal }) => {
+
+    console.log(id, colors, changeColorModal)
     
     const [currentColor, setCurrentColor] = useState(colors[0].value ?? '');
     
@@ -36,7 +39,7 @@ export const ModalColor = ({ id, colors, changeColorModal }) => {
                 <Text type="h3" size="s">
                     Выберите цвет товара
                 </Text>
-
+                <Text>Цвет: {getColorTitle(currentColor)}</Text>
                 <ColorButtons 
                     colors={colors} 
                     handleSelectColor={handleSelectColor}

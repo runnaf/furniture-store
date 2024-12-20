@@ -5,11 +5,13 @@ import styles from './FormGroup.module.scss'
 
 export const FormGroup = ({ field, register, errors }) => {
     return (
-        <Stack key={field.id} direction="column"
-        className={styles.formGroup_container}>
+        <Stack 
+            key={field.id}
+            direction="column"
+            className={styles.formGroup_container}
+        >
             <Stack 
                 direction="column"
-                
             >
                 {field.fields && field.fields.length ?
                 (<Stack

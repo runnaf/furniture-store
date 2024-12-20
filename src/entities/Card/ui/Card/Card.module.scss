@@ -1,0 +1,20 @@
+@use '../../../../app/styles/media-queries.scss' as media;
+
+.mainContainer {
+    border-radius: var(--border-radius-24);
+    border: var(--border-todayDeals);
+    background-color: var(--background-color);
+    padding: 12px;
+    width: auto;
+
+    @include media.tablet-m {
+        flex-direction: column;
+    }
+
+    @include media.mobile-l {
+        width: 100%;
+    }
+
+}
+
+

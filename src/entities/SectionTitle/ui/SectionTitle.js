@@ -1,6 +1,7 @@
 import { Stack } from "../../../shared/ui/Stack/Stack";
+import { Points } from "../../../shared/assets/svg/points";
+import { VisuallyHidden } from "../../../shared/ui/VisuallyHidden/VisuallyHidden";
 import styles from './SectionTitle.module.scss'
-import points from '../../../shared/assets/svg/points.svg'; //TODO - сделать компонент
 
 export  const SectionTitle = ({ children }) => {
     return(
@@ -15,8 +16,14 @@ export  const SectionTitle = ({ children }) => {
                 align='alignCenter'
                 gap='16'
             >
-                <img src={points} alt="a cluster of dots"/>
-                <img src={points} alt="a cluster of dots"/>
+                <>
+                <Points/>
+                <VisuallyHidden>Декоративный элемент</VisuallyHidden>
+                </>
+                <>
+                <Points/>
+                <VisuallyHidden>Декоративный элемент</VisuallyHidden>
+                </>
                 {children}
             </Stack>
         </Stack>

@@ -12,14 +12,12 @@ import { routes } from "../../../app/routes/lib/data";
 export const ProductItem = () => {
     const { id } = useParams();
     const { data, isLoading, error } = useGetProductByIdQuery(id);
-    
+    console.log(data)
     const navigate = useNavigate();
 
     if (error) {
         navigate('/not-found');
     }
-
-    if (isLoading) return //TODO - лоадер или скелетоны надо будет сделать, пока данные не загружены с бэкенда
     
     return (
         <Stack direction="column" gap="75">

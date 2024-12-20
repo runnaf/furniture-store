@@ -12,7 +12,7 @@ export const FooterElement = ({ data, contacts }) => {
           <ul className={styles.wrapper}>
             {element.links.map((link, index) => (
               <li key={index}>
-                <LinkCustom path={link.path}>{link.text}</LinkCustom>
+                <LinkCustom path={link.path} color="secondary" className={styles.darkLink}>{link.text}</LinkCustom>
               </li>
             ))}
           </ul>
