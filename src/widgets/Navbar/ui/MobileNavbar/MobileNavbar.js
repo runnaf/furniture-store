@@ -9,12 +9,15 @@ import { getRouteCart, getRouteCategories } from '../../../../app/routes/lib/hel
 import useOverflowHidden from '../../../../shared/hooks/useOverflowHidden';
 import { ScrollToTop } from '../../../../shared/libs/scrollToTop';
 import { LinkCustom } from '../../../../shared/ui/LinkCustom/LinkCustom';
+import { useSelector } from 'react-redux';
+import { selectTotalItems } from '../../../../feature/AddToCart/model/cartSlice';
+import { Text } from '../../../../shared/ui/Text/Text';
 
 export const MobileNavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
     const [activeSubmenu, setActiveSubmenu] = useState(null);
-
+    const totalItems = useSelector(selectTotalItems); 
     useOverflowHidden(isOpen);
 
     const toggleMenu = () => {
@@ -54,9 +57,12 @@ export const MobileNavbar = () => {
                     <button>
                         {<LikeIcon />}
                     </button>
-                    <LinkCustom color='secondary' path={getRouteCart()} onClick={ScrollToTop()}>
-                      {<CartIcon />}
-                    </LinkCustom>
+                    <Stack className={styles.cartContainer}>
+                      {totalItems > 0 && <Text className={styles.totalItems}>{totalItems}</Text>}
+                      <LinkCustom color='secondary' path={getRouteCart()} onClick={ScrollToTop}>
+                          {<CartIcon />}
+                      </LinkCustom>
+                    </Stack>
                     <button>
                         {<LoginIcon />}
                     </button>

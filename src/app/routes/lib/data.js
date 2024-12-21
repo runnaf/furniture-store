@@ -7,7 +7,7 @@ import Shop from "../../../pages/Shop/ui/Shop";
 import ProductPage from "../../../pages/ProductPage/ui/ProductPage";
 import SigninPage from "../../../pages/SigninPage/ui/SigninPage";
 import SignupPage from "../../../pages/SignupPage/ui/SignupPage";
-import Error404 from "../../../pages/Error404Page/Error404Page";
+import Error404Page from "../../../pages/Error404Page/ui/Error404Page/Error404Page";
 import CartPage from "../../../pages/CartPage/CartPage";
 import ChecoutPage from "../../../pages/ChecoutPage/ChecoutPage";
 import WishlistPage from "../../../pages/WishList/WishListPage";
@@ -102,7 +102,7 @@ export const routes = [
     },
     {
         link: getRouteError404(),
-        page: <Error404 />
+        page: <Error404Page />
     },
     { 
       title: "Корзина",

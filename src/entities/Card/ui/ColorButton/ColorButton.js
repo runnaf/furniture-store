@@ -1,6 +1,6 @@
 import { getStyles } from "../../../../shared/libs/getStyles";
 import { getColorForStyle } from "../../../../feature/AddToCart/lib/helper";
-import styles from "./ColorButton.module.scss"
+import styles from "./ColorButton.module.scss";
 
 export const ColorButton = ({ color, handleSelectColor, current }) => {
 
@@ -22,7 +22,6 @@ export const ColorButton = ({ color, handleSelectColor, current }) => {
         <li className={styles.containerButtonColor} style={{
             borderColor: current === color ? getColorForStyle(color) : 'var(--stroke-color)',
         }}>
-            {/* TODO - добавить название цветов */}
             <button 
                 value={color} 
                 id="color" 

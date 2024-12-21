@@ -5,13 +5,13 @@ import { Text } from "../../../../shared/ui/Text/Text";
 import { OrderItem } from "../OrderItem/OrderItem";
 import styles from "./Order.module.scss";
 
-export const Order = ({items, totalPrice, discount, coupon}) => {
+export const Order = ({items, totalPrice, discount, coupon=0}) => {
   const price = totalPrice - discount - coupon;
   const dataOrder = {
     количество: items,
     стоимость: `${totalPrice} руб.`,
     скидка:`-${discount} руб.`,
-    купон: `-${coupon} руб.`,
+    купон: `${coupon === 0 ? coupon : - coupon } руб.`,
     Всего: `${price} руб.`
   }
 
@@ -25,7 +25,7 @@ export const Order = ({items, totalPrice, discount, coupon}) => {
           ))
         }
       </Stack>
-      <LinkCustom path={getRouteCheckout()}>Оформить</LinkCustom>
+      <LinkCustom path={getRouteCheckout()} disabled={items===0? 'disabled' : ''}>Оформить</LinkCustom>
     </Stack>
   )
 }

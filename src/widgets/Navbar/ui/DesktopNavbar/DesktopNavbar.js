@@ -9,6 +9,9 @@ import { DropdownMenu } from '../DropdownMenu/DropdownMenu';
 import { ScrollToTop } from '../../../../shared/libs/scrollToTop';
 import { LinkCustom } from '../../../../shared/ui/LinkCustom/LinkCustom';
 import { getRouteCart } from '../../../../app/routes/lib/helper';
+import { useSelector } from 'react-redux';
+import { selectTotalItems } from '../../../../feature/AddToCart/model/cartSlice';
+import { Text } from '../../../../shared/ui/Text/Text';
 
 export const DesktopNavbar = () => {
     const [activeDropdown, setActiveDropdown] = useState(null);
@@ -18,6 +21,8 @@ export const DesktopNavbar = () => {
     useEffect(() => {
         setActiveDropdown(false); // Скрываем меню при переходе по ссылке
     }, [location]);
+
+    const totalItems = useSelector(selectTotalItems); 
 
     const handleMouseEnter = (title) => {
         if (activeDropdown !== title) {
@@ -64,9 +69,13 @@ export const DesktopNavbar = () => {
                 <button>
                     {<LikeIcon />}
                 </button>
-                <LinkCustom color='secondary' path={getRouteCart()} onClick={ScrollToTop()}>
-                    {<CartIcon />}
-                </LinkCustom>
+                <Stack className={styles.cartContainer}>
+                  {totalItems > 0 && <Text className={styles.totalItems}>{totalItems}</Text>}
+                  <LinkCustom color='secondary' path={getRouteCart()} onClick={ScrollToTop}>
+                      {<CartIcon />}
+                  </LinkCustom>
+                </Stack>
+                
                 <button>
                     {<LoginIcon />}
                 </button>

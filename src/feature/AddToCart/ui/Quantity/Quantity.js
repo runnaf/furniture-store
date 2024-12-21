@@ -1,26 +1,29 @@
-import { useState } from "react";
 import { getStyles } from "../../../../shared/libs/getStyles";
 import { Stack } from "../../../../shared/ui/Stack/Stack";
 import styles from "./Quantity.module.scss"
 
 
-export const Quantity = ({quantity, className}) => {
+export const Quantity = ({className, quantity, setQuantity, addToCart, removeToCart}) => {
     const stylesClass = getStyles(styles.containerButton, true, [className]);
 
-    const [count, setCount] = useState(quantity);
-
     const increaseCount = () =>{
-        setCount(count + 1)
+      setQuantity(quantity + 1)
+      if (addToCart) {
+        addToCart()
+      }
     }
     const decreaseCount = () => {
-        if (count !== 1) {
-            setCount(count - 1)
+        if (quantity !== 1) {
+          setQuantity(quantity - 1)
+        }
+        if (removeToCart) {
+          removeToCart()
         }
     }
     return (
         <Stack className={stylesClass} align="alignCenter" justify="justifyBetween">
-            <button type="button" onClick={decreaseCount} disabled={count === 1}></button>
-            <span>{count}</span>
+            <button type="button" onClick={decreaseCount} disabled={quantity === 1}></button>
+            <span>{quantity}</span>
             <button type="button" onClick={increaseCount}></button>
         </Stack>
     )

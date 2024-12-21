@@ -5,7 +5,7 @@ import { Text } from '../../../../../shared/ui/Text/Text';
 import { monthsAgo } from '../../../lib/helpers';
 import { slicerOfArray } from '../../../../../entities/Slider/lib/helper';
 import { QUANTITY_REVIEWS_ON_PAGE } from '../../../lib/data';
-import { Pagination } from '../../../../../entities/Pagination/Pagination';
+import { Pagination } from '../../Pagination/Pagination';
 import { useSlider } from '../../../../../shared/hooks/useSlider';
 import { Slider } from '../../../../../entities/Slider/ui/Slider/Slider';
 import { CustomSelect } from '../../../../../shared/ui/CustomSelect/CustomSelect';

@@ -9,5 +9,9 @@
 
     @include mobile-xl {
         grid-template-columns: 1fr;
+
+        & > div {
+          justify-self: center;
+        }
     }
 }
