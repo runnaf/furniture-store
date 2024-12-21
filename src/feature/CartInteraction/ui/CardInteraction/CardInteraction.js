@@ -6,6 +6,7 @@ import { useModal } from '../../../../shared/hooks/useModal';
 import { ModalColor } from '../../../../entities/Card/ui/ModalColor/ModalColor';
 import { useAddInWishListMutation } from '../../../../widgets/WishList/api/wishListApi';
 import styles from './CardInteraction.module.scss';
+import showAlert from '../../../../widgets/Alert/Alert';
 
 
 export const CardInteraction = ({ 
@@ -19,26 +20,32 @@ export const CardInteraction = ({
     const [changeColorModal, drawColorModal] = useModal();
 
     const handleAddToWishlist = async () => {
-        await addInWishList({
-            product_id: _id,
-            image: {
-                alt: image.alt,
-                url: image.url
-            },
-            title: name,
-            color: {
-                value: color[0].value,
-                label: color[0].label
-            },
-            price,
-            sale_price,
-            availability: {
-                value: availability.value,
-                label: availability.label
-            }
-        }).unwrap()
-        alert('Товар добавлен в избранное!')
-    }
+        try {
+            await addInWishList({
+                product_id: _id,
+                image: {
+                    alt: image.alt,
+                    url: image.url
+                },
+                title: name,
+                color: {
+                    value: color[0].value,
+                    label: color[0].label
+                },
+                price,
+                sale_price,
+                availability: {
+                    value: availability.value,
+                    label: availability.label
+                }
+            }).unwrap();
+            
+            showAlert('Товар добавлен в избранное!');
+        } catch (error) {
+            const errorMessage = error.message || 'Произошла ошибка при добавлении товара в избранное.';
+            showAlert(errorMessage);
+        }
+    };
 
     return (
         <Stack>

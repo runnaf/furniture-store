@@ -1,4 +1,3 @@
-@use "../../../app/styles/mixin.scss" as mixin;
 @use "../../../app/styles/media-queries.scss" as media;
 
 .container {
@@ -8,19 +7,6 @@
     gap: var(--gap-75);
     align-items: center;
     justify-content: center;
-
-    & > div:first-of-type {
-        background-color: var(--background-color);
-        width: 100%;
-
-        & > div {
-            @include mixin.section-style;
-
-            @include media.tablet-l {
-                padding: 0 30px;
-            }
-        }
-    }
     
     @include media.mobile-xl {
         gap: var(--gap-22)

@@ -9,6 +9,8 @@ export const FormAdd = ({input}) => {
 
     const {
         register,
+        trigger,
+        reset,
         formState: { errors },
     } = useFormContext()
 
@@ -26,12 +28,25 @@ export const FormAdd = ({input}) => {
                 <label>{input.label}</label>
                 <Stack direction="column">
                     {input.fields.map((field) => (
-                        <FormGroup field={field} register={register} errors={errors} />
+                        <FormGroup
+                            key={field.id}
+                            field={field} 
+                            register={register} 
+                            reset={reset}
+                            trigger={trigger} 
+                            errors={errors} 
+                        />
                     ))}
                 </Stack>
             </Stack>
         ) : (
-            <FormItem field={input} register={register} errors={errors} />
+            <FormItem 
+                field={input} 
+                register={register} 
+                reset={reset}
+                trigger={trigger} 
+                errors={errors} 
+            />
         )}
     </Stack>
     )

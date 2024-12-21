@@ -1,0 +1,22 @@
+@use '../../app/styles/mixin.scss' as mixin;
+
+.search_container {
+    @include mixin.section-style;
+
+    .form_container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        gap: var(--gap-16);
+        width: 100%;
+
+        input {
+            width: 400px;
+        }
+
+        button {
+            padding: 16px;
+        }
+    }
+}

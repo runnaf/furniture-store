@@ -1,7 +1,6 @@
 import ReactPaginate from "react-paginate"
 import { ArrowPagination } from "../../shared/assets/svg/arrowPagination"
 import { Stack } from "../../shared/ui/Stack/Stack"
-import { VisuallyHidden } from "../../shared/ui/VisuallyHidden/VisuallyHidden"
 import styles from './PaginationLib.module.scss'
 
 export const PaginationLib = ({onPageChange, forcePage, pageCount}) => {
@@ -13,8 +12,8 @@ export const PaginationLib = ({onPageChange, forcePage, pageCount}) => {
         >
             <ReactPaginate
                 containerClassName={styles.paginationContainer}
-                nextLabel={<span aria-label="Previous Page"><ArrowPagination/></span>} 
-                previousLabel={<ArrowPagination/>}
+                nextLabel={<span aria-label="Next Page"><ArrowPagination/></span>} 
+                previousLabel={<span aria-label="Previous Page"><ArrowPagination/></span>}
                 nextClassName={styles.next}
                 previousClassName={styles.previous}
                 activeClassName={styles.active}

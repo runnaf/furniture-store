@@ -1,6 +1,5 @@
 import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { CardInfo } from '../CardInfo/CardInfo';
-import { getStyles } from '../../../../shared/libs/getStyles';
 import { CardImage } from '../CardImage/CardImage';
 import styles from './Card.module.scss';
 

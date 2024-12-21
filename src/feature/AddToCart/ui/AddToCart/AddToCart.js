@@ -15,8 +15,8 @@ export const AddToCart = ({ color, data}) => {
     const { name, sale_price, price, id } = data;
     const image = data.color.find(item => item.value === color).images[0].url
     const handleAddToCart = () => {
-      dispatch(addToCart({color, quantity, name, sale_price, price, id, image}));
-    };
+        dispatch(addToCart({color, quantity, name, sale_price, price, id, image}));
+    }
 
     return (
         <Stack className={styles.wrapper} gap={32} direction="column">

@@ -11,8 +11,25 @@ import Error404Page from "../../../pages/Error404Page/ui/Error404Page/Error404Pa
 import CartPage from "../../../pages/CartPage/CartPage";
 import ChecoutPage from "../../../pages/ChecoutPage/ChecoutPage";
 import WishlistPage from "../../../pages/WishList/WishListPage";
-import { getRouteAbout, getRouteAdmin, getRouteBlog, getRouteCart, getRouteCheckout, getRouteError404, getRouteFAQ, getRouteMain, getRouteProduct, getRouteShop, getRouteSignin, getRouteSignup, getRouteWishlist } from "./helper";
-
+import AuthAdminPage from "../../../pages/AuthAdminPage/AuthAdminPage";
+import RefreshPasswordPage from "../../../pages/RefreshPasswordPage/RefreshPasswordPage";
+import RefreshPasswordUser from "../../../pages/RefreshPasswordUser/RefreshPasswordUser";
+import { getRouteAbout,
+    getRouteAdmin, 
+    getRouteAuthAdmin, 
+    getRouteBlog, 
+    getRouteCart, 
+    getRouteCheckout, 
+    getRouteError404, 
+    getRouteFAQ, 
+    getRouteMain, 
+    getRouteProduct, 
+    getRouteRefreshPasswordAdmin, 
+    getRouteRefreshPasswordUser, 
+    getRouteShop, 
+    getRouteSignin, 
+    getRouteSignup, 
+    getRouteWishlist } from "./helper";
 
 
 export const routes = [
@@ -27,6 +44,24 @@ export const routes = [
         link: getRouteAdmin(),
         isNavbar: false,
         page: <Admin/>
+    },
+    {
+        title: "Админ-авторизация",
+        link: getRouteAuthAdmin(),
+        isNavbar: false,
+        page: <AuthAdminPage/>
+    },
+    {
+        title: "Обновление пароля",
+        link: getRouteRefreshPasswordAdmin(),
+        isNavbar: false,
+        page: <RefreshPasswordPage/>
+    },
+    {
+        title: "Обновление пароля",
+        link: getRouteRefreshPasswordUser(),
+        isNavbar: false,
+        page: <RefreshPasswordUser/>
     },
     {
         title: "Магазин",
