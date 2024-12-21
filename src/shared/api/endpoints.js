@@ -12,12 +12,21 @@ export const endpoints = {
         shop: '/shop',
         cart: '/cart',
         wish_list: '/wish-list',
-        auth: '/registration',
+    },
+    user: {
+        registration: '/registration',
         login: '/login',
         logout: '/logout',
         reset_password: '/reset-password',
         refresh_password: '/refresh-password',
         refresh: '/refresh'
     },
-    user: '/user'
+    admin: {
+        registrationAdmin: '/registration-admin',
+        loginAdmin: '/login-admin',
+        logoutAdmin: '/logout-admin',
+        reset_passwordAdmin: '/reset-password-admin',
+        refresh_passwordAdmin: '/refresh-password-admin',
+        refreshAdmin: '/refresh-admin'
+    }
 }

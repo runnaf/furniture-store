@@ -8,7 +8,7 @@ import { Footer } from '../../entities/Footer/ui/Footer/Footer';
 export const AppRouter = () => {
     const location = useLocation();
 
-    const excludedRoutes = ["/login", "/registration"];
+    const excludedRoutes = ["/login", "/registration", '/admin', '/auth-admin'];
 
     const shouldShowLayout = !excludedRoutes.includes(location.pathname);
 

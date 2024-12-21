@@ -4,13 +4,20 @@ import { FormField } from "../FormField/FormField"
 import styles from './FormItem.module.scss'
 
 
-export const FormItem = ({ field, register, errors }) => {
+export const FormItem = ({ field, register, reset, trigger, errors }) => {
+
     const isLongText = field.minLength && field.minLength >= 30;
+
+    const handleSave = async (field_name) => {
+        const isValid = await trigger(field_name)
+        if (isValid) {
+            reset({ [field_name]: '' })
+        }
+    }
 
     return (
         <Stack 
             direction="column" 
-            key={field.id}
             className={styles.formItem_container}
         >
             <FormField
@@ -20,8 +27,17 @@ export const FormItem = ({ field, register, errors }) => {
                 errors={errors}
             />
             {field.isGroup && (
-                <Button>Сохранить элемент</Button>
+                <Button
+                    type='button'
+                    onClick={() => handleSave(field.name)}
+                >
+                    Сохранить элемент
+                </Button>
             )}
+
+            <ul>
+                <li></li>
+            </ul>
         </Stack>
     )
 }

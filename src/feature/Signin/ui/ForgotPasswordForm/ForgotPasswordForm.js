@@ -12,10 +12,12 @@ import { getRouteMain } from "../../../../app/routes/lib/helper";
 
 export const ForgotPasswordForm = ({ onSubmit, setIsForgotten }) => {
 
-    const { register, setValue, formState: { errors } } = useFormContext(); 
+    const { register, setValue, handleSubmit, formState: { errors } } = useFormContext(); 
 
     return (
-        <form className={styles.form} onSubmit={onSubmit}>
+        <form 
+            className={styles.form} 
+            onSubmit={handleSubmit(onSubmit)}>
             <Link to={getRouteMain()}>
                 <LogoIcon />
             </Link>
@@ -41,10 +43,16 @@ export const ForgotPasswordForm = ({ onSubmit, setIsForgotten }) => {
                     }}
                     error={errors.email}
                 />
-                <Button type="submit" className={styles.submitBtn}>Отправить</Button>
+                <Button 
+                    type="submit" 
+                    className={styles.submitBtn}
+                >
+                    Отправить
+                </Button>
 
                 <Text className={styles.account}>
-                    Помните пароль? <button 
+                    Помните пароль? 
+                    <button 
                         className={styles.signInLink}
                         onClick={() => setIsForgotten(false)}
                     >

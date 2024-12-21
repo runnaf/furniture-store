@@ -1,7 +1,8 @@
 import { SectionTitle } from "../../../entities/SectionTitle/ui/SectionTitle";
-import { NewsBlogsAdmin } from "../../../feature/NewsBlogAdmin/ui/NewsBlogsAdmin/NewsBlogsAdmin";
+import { NewsBlogsAdmin } from "../../../widgets/NewsBlogAdmin/ui/NewsBlogAdmin/NewsBlogsAdmin";
 import { Stack } from "../../../shared/ui/Stack/Stack"
-import { ProductAdmin } from "../../../widgets/ProductAdmin/ui/ProductAdmin";
+import { ProductAdmin } from "../../../widgets/ProductAdmin/ui/ProductAdmin/ProductAdmin";
+import { ReviewsAdmin } from "../../../widgets/ReviewsAdmin/ui/ReviewsAdmin";
 
 
 const Admin = () => {
@@ -15,6 +16,7 @@ const Admin = () => {
             </SectionTitle>
 
             <ProductAdmin/>
+            <ReviewsAdmin/>
             <NewsBlogsAdmin/>
         </Stack>
     )
