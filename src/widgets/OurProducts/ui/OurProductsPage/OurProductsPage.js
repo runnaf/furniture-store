@@ -5,7 +5,7 @@ import { PaginationLib } from "../../../../entities/PaginationLib/PaginationLib"
 import { filtersData } from "../../../../feature/Filter/lib/filtersData"
 import { clearAllFilters, clearFilter } from "../../../../feature/Filter/model/filterSlice"
 import { MobileFilterBar } from "../../../../feature/Filter/ui/MobileFilterBar/MobileFilterBar"
-import SortMenu from "../../../../feature/Filter/ui/SortMenu/SortMenu"
+import { SortMenu } from '../../../../feature/Filter/ui/SortMenu/SortMenu';
 import { DeleteFilter } from "../../../../shared/assets/svg/deleteFilter"
 import { Button } from "../../../../shared/ui/Button/Button"
 import { Stack } from "../../../../shared/ui/Stack/Stack"
@@ -96,7 +96,8 @@ export const OurProductsPage = ({ isMobile }) => {
                 justify='justifyBetween'
             >
                 {isMobile ? <MobileFilterBar /> : shownResults}
-                <SortMenu/>
+                <SortMenu
+                />
             </Stack>
 
             {isMobile && shownResults}

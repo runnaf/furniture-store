@@ -1,5 +1,8 @@
 export const getRouteMain = () => '/';
 export const getRouteAdmin = () => '/admin';
+export const getRouteAuthAdmin = () => '/auth-admin';
+export const getRouteRefreshPasswordAdmin = () => '/refresh-password-admin/:resetToken';
+export const getRouteRefreshPasswordUser = () => '/refresh-password/:resetToken';
 export const getRouteShop = () => '/shop';
 export const getRouteFAQ = () => '/faqs';
 export const getRouteCategories = (param) => `/shop${param ? `/${param}` : ''}`;

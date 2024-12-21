@@ -17,8 +17,7 @@ export const SignupForm = ({ onSubmit }) => {
     const [showPassword, setShowPassword] = useState(false);
     const [agreeWithTerms, setAgreeWithTerms] = useState(false); //TODO
 
-    const { register, setValue, formState: { errors } } = useFormContext();
-
+    const { register, setValue, handleSubmit, formState: { errors } } = useFormContext();
     const PasswordToggleIcon = showPassword ? <HidePasswordIcon /> : <ShowPasswordIcon />;
 
     const handleCheckboxChange = (name, checked) => {
@@ -29,7 +28,7 @@ export const SignupForm = ({ onSubmit }) => {
     return (
             <form 
                 className={styles.form} 
-                onSubmit={onSubmit}
+                onSubmit={handleSubmit(onSubmit)}
             >
                 <Link to={getRouteMain()}>
                     <LogoIcon />
@@ -59,7 +58,7 @@ export const SignupForm = ({ onSubmit }) => {
                             <Input
                                 label="Фамилия"
                                 placeholder="Введите фамилию"
-                                name="suname"
+                                name="surname"
                                 register={register}
                                 setValue={setValue}
                                 options={{
@@ -69,7 +68,7 @@ export const SignupForm = ({ onSubmit }) => {
                                         message: data.errors.validName
                                     }
                                 }}
-                                error={errors.suname}
+                                error={errors.surname}
                             />
                         </Stack>
                         <Input
@@ -103,7 +102,9 @@ export const SignupForm = ({ onSubmit }) => {
                                 }}
                                 error={errors.password}
                             />
-                            <button className={styles.password_btn}
+                            <button 
+                                type='button'
+                                className={styles.password_btn}
                                 onClick={() => setShowPassword(!showPassword)}>
                                 {PasswordToggleIcon}
                             </button>
