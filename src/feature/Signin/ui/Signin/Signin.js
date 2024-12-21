@@ -10,6 +10,7 @@ import { Stack } from "../../../../shared/ui/Stack/Stack";
 import { ForgotPassword } from '../ForgotPassword/ForgotPassword';
 import Cookies from "js-cookie";
 import { useLoginMutation } from "../../api/signinApi";
+import showAlert from "../../../../widgets/Alert/Alert";
 import styles from './Signin.module.scss';
 
 
@@ -35,6 +36,7 @@ export const Signin = () => {
             navigate(getRouteMain())
         } catch (err) {
             console.error('Ошибка авторизации:', err)
+            showAlert('Ошибка авторизации. Проверьте свои данные и попробуйте снова.');
         }
     }
 
@@ -81,4 +83,4 @@ export const Signin = () => {
             </Stack>}
         </FormProvider>
     );
-};
+}
