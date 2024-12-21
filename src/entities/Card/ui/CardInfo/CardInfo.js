@@ -21,11 +21,8 @@ export const CardInfo = ({
 }) => {
 
     const combinedText = useMemo(() => {
-
         if (!description?.paragraphs) return '';
-
         const combined = description.paragraphs.join(' ')
-
         return combined.length > 200 ? `${combined.slice(0, 200)}...` : combined;
     }, [description])
 

@@ -10,38 +10,14 @@ import { LogoIcon } from '../../../../shared/assets/svg/navbarIcons';
 import { getRouteMain } from '../../../../app/routes/lib/helper';
 import { emailRegex } from '../../../../shared/libs/validation/getValidate';
 import { data } from '../../../../shared/libs/validation/errors/data'
-import Cookies from "js-cookie";
-import { useLoginMutation } from '../../api/signinApi';
 import styles from './SigninForm.module.scss';
-import showAlert from '../../../../widgets/Alert/Alert';
 
 
-export const SigninForm = () => {
+export const SigninForm = ({onSubmit}) => {
 
     const [showPassword, setShowPassword] = useState(false);
-    const { register, handleSubmit, setValue, reset, formState: { errors } } = useFormContext();
-    const PasswordToggleIcon = showPassword ? <HidePasswordIcon /> : <ShowPasswordIcon />;
-    
-    const [loginUser, { error, isLoading }] = useLoginMutation();
-
-    console.log(error, isLoading) //todo
-
-    const onSubmit = async (formData) => {
-        const { email, password } = formData;
-        try {
-            const response = await loginUser({ email, password }).unwrap();
-            if (response?.token) {
-                Cookies.set(
-                'authToken', response.token.accessToken, { secure: true },
-                'refreshToken', response.token.refreshToken, { secure: true })
-                showAlert('Вы успешно авторизовались!');
-            }
-            reset()
-        } catch (err) {
-            console.error('Ошибка авторизации:', err)
-            showAlert('Ошибка авторизации. Проверьте свои данные и попробуйте снова.');
-        }
-    }
+    const { register, handleSubmit, setValue, formState: { errors } } = useFormContext()
+    const PasswordToggleIcon = showPassword ? <HidePasswordIcon /> : <ShowPasswordIcon />
 
     return (
         <form 

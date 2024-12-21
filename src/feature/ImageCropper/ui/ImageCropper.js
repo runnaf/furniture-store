@@ -6,23 +6,30 @@ import { Text } from '../../../shared/ui/Text/Text';
 import { Stack } from '../../../shared/ui/Stack/Stack';
 import { Button } from '../../../shared/ui/Button/Button';
 import { Input } from '../../../shared/ui/Input/Input';
-import { FormProvider, useForm } from 'react-hook-form';
 import { data } from '../../../shared/libs/validation/errors/data';
 import { Textarea } from '../../../shared/ui/Textarea/Textarea';
+import { Selected } from '../../../entities/Selected/Selected';
 import styles from './ImageCropper.module.scss';
+import { dataColor } from '../lib/data';
 
-const ImageCropper = ({aspectRatio}) => {
+export const ImageCropper = ({id, aspectRatio, product, formMethods}) => {
     const [image, setImage] = useState(null);
     const [croppedImage, setCroppedImage] = useState(null);
     const [crop, setCrop] = useState({ x: 0, y: 0 });
     const [zoom, setZoom] = useState(1);
     const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
 
-    const methods = useForm({mode: "onSubmit" })
-    const { register, handleSubmit, reset, formState: { errors } } = methods;
+    const { register, reset, trigger, formState: { errors } } = formMethods;
 
-    const onSubmit = () => {
-        reset()
+    const saveElement = async () => {
+        const isValid = await trigger('alt')
+        if (isValid) {
+            setImage(null)
+            setCroppedImage(null)
+            setCrop({ x: 0, y: 0 })
+            setZoom(1)
+            reset({ alt: '' })
+        }
     }
     
     const onCropComplete = useCallback((_, croppedAreaPixels) => {
@@ -35,26 +42,33 @@ const ImageCropper = ({aspectRatio}) => {
         const reader = new FileReader()
         reader.onload = () => {
             setImage(reader.result)
-        };
+        }
         reader.readAsDataURL(e.target.files[0])
         }
     }
-
 
     const handleSave = async () => {
         try {
         const croppedImage = await getCroppedImg(image, croppedAreaPixels);
         setCroppedImage(croppedImage)
+        
         } catch (e) {
         console.error(e)
         }
     }
 
+    const selectedOption = 'blue'
+
+    const handleSortSelect = (value, label) => {
+        console.log(value, label)
+    }
+
     return (
-        <FormProvider {...methods}>
-            <form 
-                onSubmit={handleSubmit(onSubmit)}
-            >
+        <Stack 
+            direction='column'
+            align='alignCenter'
+            gap='16'
+        >
                 <Stack
                     direction='column'
                     align='alignCenter'
@@ -64,14 +78,15 @@ const ImageCropper = ({aspectRatio}) => {
                     {!image ? (
                         <Stack className={styles.upload_container}>
                                 <Button
+                                    type="button"
                                     className={styles.upload_button}
-                                    onClick={() => document.getElementById('file-upload').click()}
+                                    onClick={() => document.getElementById(`file-upload-${id}`).click()}
                                 >
                                     <Upload size={24} />
                                     <Text size='18'>Загрузить изображение</Text>
                                 </Button>
                                 <Input
-                                    id="file-upload"
+                                    id={`file-upload-${id}`}
                                     name='file'
                                     register={register}
                                     type="file"
@@ -108,7 +123,7 @@ const ImageCropper = ({aspectRatio}) => {
                                 className={styles.zoom_slider}
                             />
                             <Button 
-                                type='submit'
+                                type="button"
                                 className={styles.save_button} 
                                 onClick={handleSave}
                             >
@@ -124,36 +139,50 @@ const ImageCropper = ({aspectRatio}) => {
                             className={styles.preview}
                         >
                             <img src={croppedImage} alt='обрезанное изображение'/>
-                            <Textarea
-                                label="Описание товара"
-                                type="text"
-                                placeholder="Введите описание товара"
-                                name="alt"
-                                register={register}
-                                options={{
-                                    required: data.required,
-                                    minLength: {
-                                        value: 30,
-                                        message: data.errors.textareaLength,
-                                    }
-                                }}
-                                error={errors.alt}
-                            />
                             <Stack
-                                gap='12'
                                 direction='column'
+                                max
+                                className={styles.discription_container}
                             >
-                                <Text>Цвет</Text>
-                                <Stack>
-                                    Выбор цвета
-                                </Stack>
+                                <Textarea
+                                    label="Описание товара"
+                                    type="text"
+                                    placeholder="Введите описание товара"
+                                    name="alt"
+                                    register={register}
+                                    options={{
+                                        required: data.required,
+                                        minLength: {
+                                            value: 30,
+                                            message: data.errors.textareaLength,
+                                        }
+                                    }}
+                                    error={errors.alt}
+                                />
+                                {product && 
+                                <Selected 
+                                    sortOptions={dataColor}
+                                    selectedOption={selectedOption}
+                                    onSortChange={handleSortSelect}
+                                />}
                             </Stack>
                         </Stack>
                     )}
                 </Stack>
-            </form>
-        </FormProvider>
+                <Button
+                    type='button'
+                    onClick={saveElement}
+                    className={styles.save_element}>
+                    Сохранить элемент
+                </Button>
+                {/* <ul className={styles.saved_elements}>
+                    {savedElements.map((item, index) => (
+                        <li key={index}>
+                            <img src={item.image} alt={`Сохранённое изображение ${index}`} />
+                            <Text>{item.description}</Text>
+                        </li>
+                    ))}
+                </ul> */}
+        </Stack>
     )
 }
-
-export default ImageCropper;
