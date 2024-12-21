@@ -24,7 +24,7 @@ export const FooterNavbar = () => {
               alt="Логотип 'furnitore-store'"
             />
           ) : (
-            <LinkCustom path="/" color="transparent">
+            <LinkCustom path={getRouteMain()} color="transparent">
               <img
                 src={Logo}
                 width="223"

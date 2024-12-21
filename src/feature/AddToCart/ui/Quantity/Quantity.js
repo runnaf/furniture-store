@@ -3,15 +3,21 @@ import { Stack } from "../../../../shared/ui/Stack/Stack";
 import styles from "./Quantity.module.scss"
 
 
-export const Quantity = ({className, quantity, setQuantity}) => {
+export const Quantity = ({className, quantity, setQuantity, addToCart, removeToCart}) => {
     const stylesClass = getStyles(styles.containerButton, true, [className]);
 
     const increaseCount = () =>{
       setQuantity(quantity + 1)
+      if (addToCart) {
+        addToCart()
+      }
     }
     const decreaseCount = () => {
         if (quantity !== 1) {
           setQuantity(quantity - 1)
+        }
+        if (removeToCart) {
+          removeToCart()
         }
     }
     return (

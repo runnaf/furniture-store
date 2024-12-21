@@ -1,4 +1,3 @@
-
 import { useNavigate, useParams } from "react-router";
 import { useGetProductByIdQuery } from "../api/ProductApi";
 import { ProductPreview } from "../../ProductPreview/ui/ProductPreview/ProductPreview";
@@ -12,12 +11,15 @@ import { routes } from "../../../app/routes/lib/data";
 export const ProductItem = () => {
     const { id } = useParams();
     const { data, isLoading, error } = useGetProductByIdQuery(id);
-    console.log(data)
     const navigate = useNavigate();
 
     if (error) {
         navigate('/not-found');
     }
+
+    if (isLoading) {
+      return <Stack>Loading...</Stack> //TODO
+  }
     
     return (
         <Stack direction="column" gap="75">

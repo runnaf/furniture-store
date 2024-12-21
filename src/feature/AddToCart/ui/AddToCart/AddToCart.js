@@ -8,14 +8,14 @@ import styles from "./AddToCart.module.scss";
 
 const INITIAL_VALUE = 1;
 
-export const AddToCart = ({ color, id}) => {
-
+export const AddToCart = ({ color, data}) => {
+    
     const dispatch = useDispatch();
     const [quantity, setQuantity] = useState(INITIAL_VALUE);
-    console.log(id, color, quantity)
-
+    const { name, sale_price, price, id } = data;
+    const image = data.color.find(item => item.value === color).images[0].url
     const handleAddToCart = () => {
-      dispatch(addToCart({id, color, quantity}));
+      dispatch(addToCart({color, quantity, name, sale_price, price, id, image}));
     };
 
     return (
