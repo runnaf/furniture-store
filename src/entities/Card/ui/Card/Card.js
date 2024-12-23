@@ -11,8 +11,6 @@ export const Card = ({
     view = 'general',// general | extended
 }) => {
 
-    console.log(id, color)
-
     const firstImage = color[0]?.images?.[2] || {};
 
     return (
