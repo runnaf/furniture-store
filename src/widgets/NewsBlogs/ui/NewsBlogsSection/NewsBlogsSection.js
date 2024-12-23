@@ -32,6 +32,8 @@ export const NewsBlogsSection = () => {
 
     const { currentSlide, handleClickSlide } = useSlider(data ? data.totalBlogs : 0);
     const blogs = slicerOfArray(data ? data.blogs : [], currentSlide, quantityCardsOnPage());
+
+    console.log(blogs)
     
     const buttonClass = getStyles(
         width <= 590 ? styles.inBlock : styles.noneBlock,
@@ -77,7 +79,7 @@ export const NewsBlogsSection = () => {
                             ref={containerRef}>
                             {blogs.map(news => (
                                 <CardBlogs 
-                                    key={news.id} 
+                                    key={news._id} 
                                     title={news.title}
                                     poster={news.poster}
                                     description={news.short_description}

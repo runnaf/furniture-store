@@ -39,7 +39,7 @@ export const NewsBlogsPage = () => {
             >
                 {data.blogs.map((news) => (
                 <CardBlogs
-                    key={news.id}
+                    key={news._id}
                     title={news.title}
                     poster={news.poster}
                     description={news.short_description}
