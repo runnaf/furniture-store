@@ -3,15 +3,15 @@ import { Text } from "../../../shared/ui/Text/Text";
 import { Stack } from "../../../shared/ui/Stack/Stack";
 import styles from "./BreadCrumbs.module.scss";
 
-// const MAIN_CRAMB = { title: "Главная", link: "/" }; //TODO - может быть так вынести?
+const MAIN_CRAMB = { title: "Главная", link: "/" }
+const SEPARATOR = " / "
 
 export const Breadcrumbs = ({
   routes,
-  separator = " / ",
   isProduct = false,
   name,
 }) => {
-  const location = useLocation();
+  const location = useLocation()
 
   const breadcrumbs = location.pathname.split("/").reduce(
     (acc, segment, index, arr) => {
@@ -22,50 +22,33 @@ export const Breadcrumbs = ({
       const route = routes.find((r) => r.link === link);
       const isLast = index === arr.length - 1;
 
+      console.log(route)
+
       acc.push({
-        title: route ? route.title : segment,
-        link: link,
-        isLast: isLast,
-      });
+          title: route?.title ? route.title : segment,
+          link: link,
+          isLast: isLast,
+      }) 
 
       return acc;
     },
-    [{ title: "Главная", link: "/" }]
-  );
+    [MAIN_CRAMB]
+  )
 
   if (isProduct) {
     if (breadcrumbs.length > 1) {
-      breadcrumbs.pop(); // Удаляем предпоследний элемент
+      breadcrumbs.pop();
     }
 
-    // Устанавливаем isLast для последнего элемента в true, если он существует
     if (breadcrumbs.length > 0) {
       breadcrumbs[breadcrumbs.length - 1].isLast = true;
     }
   }
 
   const currentRoute = breadcrumbs[breadcrumbs.length - 1];
-  const title = currentRoute.isLast ? currentRoute.title : "";
+  const title = currentRoute.isLast ? currentRoute.title : " ";
 
-  //TODO - вот еще один вариант, как будто проще и компактнее, но может быть есть подводные камни
-
-  // const pathSegments = location.pathname.split('/').filter(Boolean);
-
-  // const breadcrumbs = pathSegments.map((segment, index) => {
-  //   const link = `/${pathSegments.slice(0, index + 1).join('/')}`;
-  //   const route = routes.find((r) => r.link === link);
-
-  //   return {
-  //     title: route ? route.title : segment,
-  //     link,
-  //     isLast: index === pathSegments.length - 1,
-  //   };
-  // });
-
-  // const allBreadcrumbs = [MAIN_CRAMB, ...breadcrumbs];
-
-  // const pageTitle = isProduct ? name : allBreadcrumbs[allBreadcrumbs.length - 1]?.title;
-
+  
   return (
     <Stack
       className={styles.breadCrumbsContainer}
@@ -85,7 +68,7 @@ export const Breadcrumbs = ({
                   <Text type="p">{crumb.title}</Text>
                 </Link>
               )}
-              {index < breadcrumbs.length - 1 && separator}
+              {index < breadcrumbs.length - 1 && SEPARATOR}
             </li>
           ))}
         </ul>

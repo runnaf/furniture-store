@@ -11,6 +11,7 @@ import { useCustomScroll } from '../../../../shared/hooks/useCustomScroll';
 import { BottomButtons } from '../../../../entities/Slider/ui/BottomButtons/ui/BottomButtons/BottomButtons';
 import { useGetAllProductsQuery } from '../../api/productApi';
 import styles from './OurProducts.module.scss';
+import { CardInteraction } from '../../../../feature/CartInteraction/ui/CardInteraction/CardInteraction';
 
 
 const QUANTITY_CARD_ON_PAGE = 1;
@@ -96,21 +97,11 @@ export function OurProducts() {
                         className={styles.cardContainer}
                         ref={containerRef}
                     >
-                    {currentCards.map(product => (
-                        <Card 
-                            key={product._id} 
-                            id={product._id}  
-                            color={product.color} 
-                            rating={product.rating}
-                            promotion={product.promotion} 
-                            sub_categories={product.sub_categories} 
-                            name={product.name}
-                            price={product.price} 
-                            sale_price={product.sale_price} 
-                            timer={product.timer}
-                            short_description={product.short_description}
-                            availability={product.availability}
-                        />
+                    {currentCards.map(element => (
+                        <div key={element._id}>
+                            <Card {...element}/>
+                            <CardInteraction {...element}/>
+                        </div>
                     ))}
                     </Stack>
                     {width <= 590 && 

@@ -28,8 +28,6 @@ export function TodayDeals () {
     const { currentSlide, handleClickSlide } = useSlider(data ? data.products.lenght : 0);
     const width = useResize()
     const containerRef = useCustomScroll()
-
-    //{TODO - TodayDeals и OurProducts содержат много дублированного кода}
     
     const quantityCardsOnPage = () => {
         if (width <= 590) {

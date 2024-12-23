@@ -17,6 +17,7 @@ export const RefreshPasswordForm = ({ onSubmit }) => {
     const { register, setValue, handleSubmit, formState: { errors } } = useFormContext()
     const PasswordToggleIcon = showPassword ? <HidePasswordIcon /> : <ShowPasswordIcon />
 
+    
     return(
         <form 
             className={styles.form} 

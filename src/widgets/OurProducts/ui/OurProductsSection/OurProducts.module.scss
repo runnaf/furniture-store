@@ -1,8 +1,8 @@
-@import '../../../../app/styles/media-queries.scss';
-@import '../../../../app/styles/mixin';
+@use '../../../../app/styles/media-queries.scss' as *;
+@use '../../../../app/styles/mixin' as mixin;
 
 .container {
-    @include section-style;  
+    @include mixin.section-style;  
 
     .productContainer {
         width: 100%;
@@ -32,6 +32,36 @@
                     touch-action: pan-x;
                     scrollbar-width: none;
                     cursor: grab;
+
+                    > div {
+                        position: relative;
+                        overflow: hidden;
+                        width: auto;
+                        
+                        @include mobile-l {
+                            width: 100%;
+                        }
+            
+            
+                        > div:nth-child(1) {
+                            position: relative;
+                            > div:nth-child(1) {
+                                position: relative;
+            
+                                img {
+                                    position: relative;
+                                }
+                            }
+                        }
+                    
+                        > div:nth-child(2) {
+                            position: absolute;
+                            width: calc(100% - 24px); 
+                            height: 100%; 
+                            top: 12px;
+                            left: 12px;
+                        }
+                    }
 
                     @include mobile-l {
                         cursor: default;

@@ -1,7 +1,7 @@
 import { useResize } from "../../shared/hooks/useResize";
 import { Stack } from "../../shared/ui/Stack/Stack";
 import { SliderForAuthorization } from "../../widgets/SliderForAuthorization/ui/SliderForAuthorization";
-import { RefreshPassword } from "../../feature/RefreshPassword/RefreshPassword/RefreshPassword";
+import { RefreshPassword } from "../../feature/Signin/ui/RefreshPassword/RefreshPassword";
 import styles from './RefreshPasswordUser.module.scss';
 
 const DESKTOP_WIDTH = 1024
