@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Card } from "../../../../entities/Card/ui/Card/Card"
 import { PaginationLib } from "../../../../entities/PaginationLib/PaginationLib"
+import { CardInteraction } from "../../../../feature/CartInteraction/ui/CardInteraction/CardInteraction"
 import { filtersData } from "../../../../feature/Filter/lib/filtersData"
 import { clearAllFilters, clearFilter } from "../../../../feature/Filter/model/filterSlice"
 import { MobileFilterBar } from "../../../../feature/Filter/ui/MobileFilterBar/MobileFilterBar"
@@ -138,21 +139,8 @@ export const OurProductsPage = ({ isMobile }) => {
                     gap='32' 
                     className={styles.cardsContainer}
                 >
-                    {data?.products.map(product => (
-                        <Card 
-                            key={product._id} 
-                            id={product._id}  
-                            color={product.color} 
-                            rating={product.rating}
-                            promotion={product.promotion} 
-                            sub_categories={product.sub_categories} 
-                            name={product.name}
-                            price={product.price} 
-                            sale_price={product.sale_price} 
-                            timer={product.timer}
-                            short_description={product.short_description}
-                            availability={product.availability}
-                        />
+                    {data?.products.map(element => (
+                        <Card {...element}/>
                     )
                     )}
                 </Stack>

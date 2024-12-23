@@ -1,4 +1,4 @@
-@import '../../../../app/styles/media-queries.scss';
+@use '../../../../app/styles/media-queries.scss' as *;
 
 //box-shadow
 $box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),

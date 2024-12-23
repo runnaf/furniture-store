@@ -13,6 +13,7 @@ export const Signup = () => {
     const navigate = useNavigate()
 
     const onSubmit = async (formData) => {
+        console.log(formData)
         const { name, surname, password, email } = formData
         try {
             await authUser({ name, surname, password, email })

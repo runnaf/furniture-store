@@ -1,7 +1,7 @@
 import { FormProvider, useForm } from "react-hook-form"
 import { useNavigate, useParams } from "react-router"
-import { getRouteSignin } from "../../../app/routes/lib/helper"
-import { useRefreshPasswordMutation } from "../../Signin/api/signinApi"
+import { getRouteSignin } from "../../../../app/routes/lib/helper"
+import { useRefreshPasswordMutation } from "../../api/signinApi"
 import { RefreshPasswordForm } from "../RefreshPasswordForm/RefreshPasswordForm"
 
 
