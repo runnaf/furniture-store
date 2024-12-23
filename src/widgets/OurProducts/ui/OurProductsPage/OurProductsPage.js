@@ -140,7 +140,7 @@ export const OurProductsPage = ({ isMobile }) => {
                     className={styles.cardsContainer}
                 >
                     {data?.products.map(element => (
-                        <Card {...element}/>
+                        <Card key={element._id} {...element}/>
                     )
                     )}
                 </Stack>
