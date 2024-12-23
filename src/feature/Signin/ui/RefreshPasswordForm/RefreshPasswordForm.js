@@ -11,6 +11,7 @@ import { Stack } from "../../../../shared/ui/Stack/Stack"
 import { Text } from "../../../../shared/ui/Text/Text"
 import styles from './RefreshPasswordForm.module.scss'
 
+
 export const RefreshPasswordForm = ({ onSubmit }) => {
     const [showPassword, setShowPassword] = useState(false)
     const { register, setValue, handleSubmit, formState: { errors } } = useFormContext()
