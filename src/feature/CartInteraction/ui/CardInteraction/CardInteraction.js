@@ -69,7 +69,7 @@ export const CardInteraction = ({
                 >
                     <Button 
                         radius='circle' 
-                        ariaLabel="Добавить в избранное"
+                        aria-label="Добавить в избранное"
                         onClick={handleAddToWishlist}
                     >
                         <img src={heart} alt='heart'/>
@@ -78,7 +78,7 @@ export const CardInteraction = ({
                     <Button 
                         radius='circle' 
                         onClick={changeColorModal}
-                        ariaLabel="Добавить в корзину"
+                        aria-label="Добавить в корзину"
                     >
                         <img src={cart} alt='cart'/>
                     </Button>
