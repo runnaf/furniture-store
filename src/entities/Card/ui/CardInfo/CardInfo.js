@@ -72,7 +72,7 @@ export const CardInfo = ({
                 >
                     {sale_price &&
                         <Text>
-                            <del>{price.toLocaleString("ru-RU")}₽</del>
+                            {price.toLocaleString("ru-RU")}₽
                         </Text>
                     }
                     <Text>{price.toLocaleString("ru-RU")}₽</Text>

@@ -25,6 +25,7 @@ export const FlashSale = () => {
                 <Stack 
                     justify='justifyCenter'
                     align='alignCenter'
+                    className={styles.timer_container}
                 >
                     <>
                     <Points/>
@@ -49,7 +50,10 @@ export const FlashSale = () => {
                         </LinkCustom>
                     </Stack>
                 </Stack>
-                <Stack gap='24'>
+                <Stack 
+                    gap='24'
+                    className={styles.sale_image}
+                >
                     <Stack 
                         justify='justifyCenter'
                         align='alignCenter'
