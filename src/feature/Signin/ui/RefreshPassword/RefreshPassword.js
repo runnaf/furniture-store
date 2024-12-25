@@ -29,6 +29,8 @@ export const RefreshPassword = () => {
         <FormProvider {...methods}>
             <RefreshPasswordForm
                 onSubmit={handleSubmit(onSubmit)} 
+                isLoad={isLoading}
+                error={error}
             />
         </FormProvider>
     )

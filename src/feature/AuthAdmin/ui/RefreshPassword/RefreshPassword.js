@@ -5,6 +5,8 @@ import { data } from "../../../../shared/libs/validation/errors/data";
 import { Button } from "../../../../shared/ui/Button/Button";
 import { Input } from "../../../../shared/ui/Input/Input"
 import { Stack } from "../../../../shared/ui/Stack/Stack";
+import { Text } from "../../../../shared/ui/Text/Text";
+import { Waiting } from "../../../../shared/ui/Waiting/Waiting";
 import { useRefreshPasswordAdminMutation } from "../../api/authAdminApi";
 import styles from './RefreshPassword.module.scss'
 
@@ -38,6 +40,9 @@ export const RefreshPassword = () => {
                     direction='column'
                     gap='16'
                 >
+                    {error && <Text className={styles.error}>
+                        {error.data.message}
+                    </Text>}
                     <Input
                         name='newPassword'
                         placeholder='Введите новый пароль'
@@ -50,7 +55,7 @@ export const RefreshPassword = () => {
                     <Button
                         type='submit'
                     >
-                        Сменить пароль
+                        {isLoading ? <Waiting/> : 'Сменить пароль'}
                     </Button>
                 </Stack>
             </form>

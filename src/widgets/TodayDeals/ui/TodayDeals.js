@@ -8,34 +8,41 @@ import { slicerOfArray } from "../../../entities/Slider/lib/helper";
 import { BottomButtons } from "../../../entities/Slider/ui/BottomButtons/ui/BottomButtons/BottomButtons";
 import { useCustomScroll } from "../../../shared/hooks/useCustomScroll";
 import { LinkCustom } from "../../../shared/ui/LinkCustom/LinkCustom";
-import { getRouteShop } from "../../../app/routes/lib/helper";
+import { getRouteError404, getRouteShop } from "../../../app/routes/lib/helper";
 import { useGetAllProductsQuery } from "../../OurProducts/api/productApi";
-import styles from './TodayDeals.module.scss';
 import { CardInteraction } from "../../../feature/CartInteraction/ui/CardInteraction/CardInteraction";
-
+import { useNavigate } from "react-router";
+import styles from './TodayDeals.module.scss';
+import { Loader } from "../../../shared/ui/Loader/Loader";
 
 const QUANTITY_CARD_ON_PAGE = 1;
 const ARTICLE_PER_PAGE = 5;
 
 export function TodayDeals () {
 
+    const width = useResize()
+    const containerRef = useCustomScroll()
+    const navigate = useNavigate()
+
     const { data, error, isLoading } = useGetAllProductsQuery({
         limit: ARTICLE_PER_PAGE,
         page: 1,
         filters: {}
-    });
+    })
 
     const { currentSlide, handleClickSlide } = useSlider(data ? data.products.lenght : 0);
-    const width = useResize()
-    const containerRef = useCustomScroll()
-    
+
     const quantityCardsOnPage = () => {
         if (width <= 590) {
             return QUANTITY_CARD_ON_PAGE;
         } else return cardData.length;
     }
 
-    const currentCards = slicerOfArray(data ? data.products : [], currentSlide, quantityCardsOnPage());
+    const currentCards = slicerOfArray(data ? data.products : [], currentSlide, quantityCardsOnPage())
+
+    if(error) {
+        navigate(getRouteError404())
+    }
 
     return (
         <Stack 
@@ -55,6 +62,8 @@ export function TodayDeals () {
                     Посмотреть все
                 </LinkCustom>
             </Stack>
+
+            {isLoading ? <Loader /> :
             <Stack 
                 gap='32'
                 direction='column'
@@ -85,7 +94,7 @@ export function TodayDeals () {
                         handleClickSlide={handleClickSlide}
                     />
                 )}
-            </Stack>
+            </Stack>}
         </Stack>
     );
 };

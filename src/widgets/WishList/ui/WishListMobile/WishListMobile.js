@@ -7,7 +7,6 @@ import styles from './WishListMobile.module.scss'
 
 export const WishListMobile = ({wishlist, onDelete}) => {
 
-    console.log(wishlist)
     return(
         <Stack 
             max

@@ -7,7 +7,7 @@ export const ProductPreview = ({ data }) => {
   const [currentColor, setCurrentColor] = useState(data.color[0].value ?? '');
   const handleSelectColor = (color) => {
     setCurrentColor(color);
-};
+}
 
   return (
       <section className={styles.container}>

@@ -24,6 +24,8 @@ export const ForgotPassword = ({ setIsForgotten }) => {
             <ForgotPasswordForm 
                 onSubmit={handleSubmit(onSubmit)} 
                 setIsForgotten={setIsForgotten}
+                isLoad={isLoading}
+                error={error}
             />
         </FormProvider>
     )

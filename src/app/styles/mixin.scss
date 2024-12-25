@@ -80,3 +80,9 @@
     padding: 30px;
     background-color: var(--yellow-color);
 }
+
+@mixin error-message {
+    color: var(--red-delete-cancel-color);
+    text-align: center;
+    font-size: var(--font-size-20);
+}

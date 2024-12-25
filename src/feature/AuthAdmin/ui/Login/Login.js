@@ -12,16 +12,15 @@ import { Text } from "../../../../shared/ui/Text/Text"
 import Cookies from "js-cookie";
 import styles from './Login.module.scss'
 import { useLoginAdminMutation } from "../../api/authAdminApi"
+import { Waiting } from "../../../../shared/ui/Waiting/Waiting"
 
 export const Login = ({handleChangeState}) => {
 
     const { register, setValue, handleSubmit, reset, formState: { errors }} = useFormContext()
 
     const [loginAdmin, {error, isLoading}] = useLoginAdminMutation()
-
     const navigate = useNavigate()
 
-    console.log(error, isLoading)
 
     const onSubmit = async (formData) => {
         const { login , password } = formData;
@@ -54,6 +53,9 @@ export const Login = ({handleChangeState}) => {
             >
                 Вход
             </Text>
+            {error && <Text className={styles.error}>
+                {error.data.message}
+            </Text>}
             <Stack
                 direction='column'
                 justify='justifyCenter'
@@ -104,7 +106,7 @@ export const Login = ({handleChangeState}) => {
                     <Button 
                         type='submit'
                     >
-                        Войти
+                        {isLoading ? <Waiting/> : 'Войти'}
                     </Button>
                     <Button
                         color="transparent"

@@ -9,8 +9,9 @@ import { data } from "../../../../shared/libs/validation/errors/data";
 import { emailRegex } from "../../../../shared/libs/validation/getValidate";
 import { useFormContext } from "react-hook-form";
 import { getRouteMain } from "../../../../app/routes/lib/helper";
+import { Waiting } from "../../../../shared/ui/Waiting/Waiting";
 
-export const ForgotPasswordForm = ({ onSubmit, setIsForgotten }) => {
+export const ForgotPasswordForm = ({ onSubmit, isLoad, error, setIsForgotten }) => {
 
     const { register, setValue, handleSubmit, formState: { errors } } = useFormContext(); 
 
@@ -26,6 +27,10 @@ export const ForgotPasswordForm = ({ onSubmit, setIsForgotten }) => {
                 <Text className={styles.par}>
                     Мы отправим вам инструкции по сбросу пароля.
                 </Text>
+
+                {error && <Text className={styles.error}>
+                    {error.data.message}
+                </Text>}
 
                 <Input
                     label="Электронная почта"
@@ -47,7 +52,7 @@ export const ForgotPasswordForm = ({ onSubmit, setIsForgotten }) => {
                     type="submit" 
                     className={styles.submitBtn}
                 >
-                    Отправить
+                    {isLoad ? <Waiting/> : 'Отправить'}
                 </Button>
 
                 <Text className={styles.account}>

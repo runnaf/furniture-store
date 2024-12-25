@@ -12,6 +12,9 @@ import { BottomButtons } from '../../../../entities/Slider/ui/BottomButtons/ui/B
 import { useGetAllProductsQuery } from '../../api/productApi';
 import styles from './OurProducts.module.scss';
 import { CardInteraction } from '../../../../feature/CartInteraction/ui/CardInteraction/CardInteraction';
+import { Loader } from '../../../../shared/ui/Loader/Loader';
+import { useNavigate } from 'react-router';
+import { getRouteError404 } from '../../../../app/routes/lib/helper';
 
 
 const QUANTITY_CARD_ON_PAGE = 1;
@@ -27,7 +30,8 @@ export function OurProducts() {
 
     const [selectedFilter, setSelectedFilter] = useState('all');
     const containerRef = useCustomScroll();
-    const width = useResize();   
+    const width = useResize()   
+    const navigate = useNavigate()
 
 
     const quantityCardsOnPage = () => {
@@ -42,6 +46,10 @@ export function OurProducts() {
     const handleFilterChange = (filter) => {
         setSelectedFilter(filter);
     }
+
+    if(error) {
+        navigate(getRouteError404())
+    } 
 
     return (
         <Stack 
@@ -83,6 +91,7 @@ export function OurProducts() {
                     </Stack>
                 </Stack>
 
+                {isLoading ? <Loader/> : 
                 <Stack 
                     className={styles.cardContainerWrapper}
                     direction='column'
@@ -112,7 +121,7 @@ export function OurProducts() {
                         currentSlide={currentSlide} 
                         handleClickSlide={handleClickSlide}
                     />}
-                </Stack>
+                </Stack>}
             </Stack>
         </Stack>
     )

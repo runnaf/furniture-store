@@ -1,8 +1,8 @@
 import { Accordion } from "../../../../entities/Accordions/ui/Accordion"
 import { Stack } from "../../../../shared/ui/Stack/Stack";
-import styles from './QuestionMainPage.module.scss';
 import questionData from '../../lib/data'
-import { HeaderSection } from "../../../../shared/ui/HeaderSection/HeaderSection";
+import { HeaderSection } from "../../../../shared/ui/HeaderSection/HeaderSection"
+import styles from './QuestionMainPage.module.scss';
 
 export const QuestionMainPage = () => {
 

@@ -1,0 +1,26 @@
+.waiting {
+    width: 40px;
+    height: 40px;
+
+    circle {
+        color: var(--yellow-color);
+        animation: fade-in 1.2s infinite;
+
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i}) {
+                animation-delay: .4s * ($i - 1);
+            }
+        }
+    }
+}
+
+
+    @keyframes fade-in {
+        0%{
+            color: var(--yellow-color);
+        }
+        50%, 100% {
+            color: var(--yellow-color);
+            opacity: 0.4;
+        }
+    }
