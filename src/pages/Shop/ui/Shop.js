@@ -7,16 +7,11 @@ import { FilterBar } from "../../../feature/Filter/ui/FilterBar/FilterBar"
 import { Advantages } from "../../../entities/Advantages/ui/Advantages/Advantages"
 import { OurProductsPage } from "../../../widgets/OurProducts/ui/OurProductsPage/OurProductsPage"
 import styles from "./Shop.module.scss"
-import Cookies from "js-cookie"
 
 const Shop = () => {
 
     const width = useResize();
     const isMobile = width <= 820;
- 
-    const token = Cookies.get('authToken')
-    const token1 = Cookies.get('refreshToken')
-    console.log(token, token1)
 
     return (
         <main 

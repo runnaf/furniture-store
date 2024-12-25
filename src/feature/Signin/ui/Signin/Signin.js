@@ -55,7 +55,11 @@ export const Signin = () => {
                 className={styles.signin}
                 gap='24'
             >
-                <SigninForm onSubmit={handleSubmit(onSubmit)}/>
+                <SigninForm 
+                    onSubmit={handleSubmit(onSubmit)}
+                    isLoad={isLoading}
+                    error={error}
+                />
 
                 <Stack 
                         justify="justifyBetween" 

@@ -9,10 +9,11 @@ import { Button } from "../../../../shared/ui/Button/Button"
 import { Input } from "../../../../shared/ui/Input/Input"
 import { Stack } from "../../../../shared/ui/Stack/Stack"
 import { Text } from "../../../../shared/ui/Text/Text"
+import { Waiting } from "../../../../shared/ui/Waiting/Waiting"
 import styles from './RefreshPasswordForm.module.scss'
 
 
-export const RefreshPasswordForm = ({ onSubmit }) => {
+export const RefreshPasswordForm = ({ onSubmit, isLoad, error }) => {
     const [showPassword, setShowPassword] = useState(false)
     const { register, setValue, handleSubmit, formState: { errors } } = useFormContext()
     const PasswordToggleIcon = showPassword ? <HidePasswordIcon /> : <ShowPasswordIcon />
@@ -36,6 +37,11 @@ export const RefreshPasswordForm = ({ onSubmit }) => {
                 >
                     Обновление пароля
                 </Text>
+
+                {error && <Text className={styles.error}>
+                    {error.data.message}
+                </Text>}
+                
                 <Stack 
                     direction='column' 
                     className={styles.password}
@@ -64,7 +70,7 @@ export const RefreshPasswordForm = ({ onSubmit }) => {
                     type="submit" 
                     className={styles.submitBtn}
                 >
-                    Отправить
+                    {isLoad ? <Waiting/> : 'Отправить'}
                 </Button>
             </Stack>
         </form>

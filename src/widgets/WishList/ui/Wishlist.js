@@ -7,6 +7,7 @@ import { Copy } from "lucide-react"
 import { WishListMobile } from "./WishListMobile/WishListMobile"
 import { WishListTable } from "./WishListTable/WishListTable"
 import showAlert from "../../Alert/Alert"
+import { Loader } from "../../../shared/ui/Loader/Loader"
 
 export const WishList = () => {
 
@@ -27,7 +28,7 @@ export const WishList = () => {
 
     const width = useResize();    
 
-    if (isLoading) return <div>Loading</div>//todo
+    if (isLoading) return <Loader/>
     if (error) return <div>Error loading wish list</div>//todo
 
     const copyToClipboard = () => {

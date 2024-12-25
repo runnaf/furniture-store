@@ -5,8 +5,11 @@ import heart from '../../../../shared/assets/svg/heart.svg';
 import { useModal } from '../../../../shared/hooks/useModal';
 import { ModalColor } from '../../../../entities/Card/ui/ModalColor/ModalColor';
 import { useAddInWishListMutation } from '../../../../widgets/WishList/api/wishListApi';
-import styles from './CardInteraction.module.scss';
 import showAlert from '../../../../widgets/Alert/Alert';
+import { Waiting } from '../../../../shared/ui/Waiting/Waiting';
+import { useNavigate } from 'react-router';
+import { getRouteError404 } from '../../../../app/routes/lib/helper';
+import styles from './CardInteraction.module.scss';
 
 
 export const CardInteraction = ({ 
@@ -17,7 +20,8 @@ export const CardInteraction = ({
     const [addInWishList, { error, isLoading }] = useAddInWishListMutation();
     const image = color[0]?.images?.[2] || {};
 
-    const [changeColorModal, drawColorModal] = useModal();
+    const [changeColorModal, drawColorModal] = useModal()
+    const navigate = useNavigate()
 
     const handleAddToWishlist = async () => {
         try {
@@ -45,7 +49,11 @@ export const CardInteraction = ({
             const errorMessage = error.message || 'Произошла ошибка при добавлении товара в избранное.';
             showAlert(errorMessage);
         }
-    };
+    }
+
+    if (error) {
+        navigate(getRouteError404())
+    }
 
     return (
         <Stack>
@@ -67,13 +75,14 @@ export const CardInteraction = ({
                     gap='8' 
                     className={styles.icons}
                 >
+                    {isLoading ? <Waiting/> :
                     <Button 
                         radius='circle' 
                         aria-label="Добавить в избранное"
                         onClick={handleAddToWishlist}
                     >
                         <img src={heart} alt='heart'/>
-                    </Button>
+                    </Button>}
 
                     <Button 
                         radius='circle' 

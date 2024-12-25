@@ -11,13 +11,14 @@ import { getRouteMain } from '../../../../app/routes/lib/helper';
 import { emailRegex } from '../../../../shared/libs/validation/getValidate';
 import { data } from '../../../../shared/libs/validation/errors/data'
 import styles from './SigninForm.module.scss';
+import { Waiting } from '../../../../shared/ui/Waiting/Waiting';
 
 
-export const SigninForm = ({onSubmit}) => {
+export const SigninForm = ({onSubmit, isLoad, error}) => {
 
     const [showPassword, setShowPassword] = useState(false);
     const { register, handleSubmit, setValue, formState: { errors } } = useFormContext()
-    const PasswordToggleIcon = showPassword ? <HidePasswordIcon /> : <ShowPasswordIcon />
+    const PasswordToggleIcon = showPassword ? <HidePasswordIcon /> : <ShowPasswordIcon />;
 
     return (
         <form 
@@ -35,6 +36,10 @@ export const SigninForm = ({onSubmit}) => {
                 <Text className={styles.par}>
                     Заполните данные для доступа к вашему аккаунту.
                 </Text>
+
+                {error && <Text className={styles.error}>
+                    {error.data.message}
+                </Text>}
 
                 <Stack direction="column" gap='8'>
                     <Input
@@ -80,7 +85,7 @@ export const SigninForm = ({onSubmit}) => {
                 </Stack>
 
                 <Button type="submit" className={styles.signInBtn}>
-                    Войти
+                    {isLoad ? <Waiting/> : 'Войти'}
                 </Button>
             </Stack>
         </form>

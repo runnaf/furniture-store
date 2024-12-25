@@ -6,6 +6,7 @@ import { Button } from "../../../../shared/ui/Button/Button"
 import { Input } from "../../../../shared/ui/Input/Input"
 import { Stack } from "../../../../shared/ui/Stack/Stack"
 import { Text } from "../../../../shared/ui/Text/Text";
+import { Waiting } from "../../../../shared/ui/Waiting/Waiting";
 import { useResetPasswordAdminMutation } from "../../api/authAdminApi";
 import styles from './ForgotPassword.module.scss'
 
@@ -17,7 +18,6 @@ export const ForgotPassword = ({handleChangeState}) => {
 
     const onSubmit = async (formData) => {
         const { email } = formData
-        console.log(email)
         try {
             await reset_password({ email }).unwrap()
             setIsShow(!isShow)
@@ -37,6 +37,10 @@ export const ForgotPassword = ({handleChangeState}) => {
             >
                 Сброс пароля
             </Text>
+
+            {error && <Text className={styles.error}>
+                {error.data.message}
+            </Text>}
 
             {isShow ? 
             <Stack
@@ -84,7 +88,7 @@ export const ForgotPassword = ({handleChangeState}) => {
                     </Button>
 
                     <Button>
-                        Сбросить пароль
+                        {isLoading ? <Waiting/> : 'Сбросить пароль'}
                     </Button>
                 </Stack>
             </Stack>}

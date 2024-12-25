@@ -26,7 +26,11 @@ export const Signup = () => {
 
     return (
         <FormProvider {...methods}>
-            <SignupForm onSubmit={handleSubmit(onSubmit)}/>
+            <SignupForm 
+                onSubmit={handleSubmit(onSubmit)}
+                isLoad={isLoading}
+                error={error}
+            />
         </FormProvider>
     );
 };

@@ -22,8 +22,6 @@ export const Breadcrumbs = ({
       const route = routes.find((r) => r.link === link);
       const isLast = index === arr.length - 1;
 
-      console.log(route)
-
       acc.push({
           title: route?.title ? route.title : segment,
           link: link,

@@ -4,7 +4,7 @@ import { CardImage } from '../CardImage/CardImage';
 import styles from './Card.module.scss';
 
 export const Card = ({ 
-    id, color, rating, promotion,
+    _id, color, rating, promotion,
     sub_categories, name, 
     price, sale_price, timer,
     description,
@@ -27,7 +27,7 @@ export const Card = ({
             />
 
             <CardInfo
-                id={id}
+                id={_id}
                 view={view}
                 sub_categories={sub_categories}
                 rating={rating}

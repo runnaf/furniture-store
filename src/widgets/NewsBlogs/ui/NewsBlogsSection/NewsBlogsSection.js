@@ -11,6 +11,7 @@ import { slicerOfArray } from "../../../../entities/Slider/lib/helper";
 import { getStyles } from "../../../../shared/libs/getStyles";
 import { useGetAllNewsQuery } from "../../api/blogApi";
 import styles from './NewsBlogsSection.module.scss';
+import { Loader } from "../../../../shared/ui/Loader/Loader";
 
 const ARTICLES_PER_PAGE = 3;
 const QUANTITY_CARD_ON_PAGE = 1;
@@ -32,19 +33,12 @@ export const NewsBlogsSection = () => {
 
     const { currentSlide, handleClickSlide } = useSlider(data ? data.totalBlogs : 0);
     const blogs = slicerOfArray(data ? data.blogs : [], currentSlide, quantityCardsOnPage());
-
-    console.log(blogs)
     
     const buttonClass = getStyles(
         width <= 590 ? styles.inBlock : styles.noneBlock,
         {},
         [styles.commonButtonClass]
     )
-
-
-    if (isLoading) {
-        return <Stack>Loading...</Stack> //TODO
-    }
 
     if (isError) {
         return <Stack>Error: {isError.message}</Stack> //TODO
@@ -69,6 +63,7 @@ export const NewsBlogsSection = () => {
                             Oткрыть блог
                         </LinkCustom>
                     </Stack>
+                    {isLoading ? <Loader/> :
                     <Stack 
                         className={styles.news_container}
                         direction='column'
@@ -95,7 +90,7 @@ export const NewsBlogsSection = () => {
                                 currentSlide={currentSlide} 
                                 handleClickSlide={handleClickSlide}/>
                         </Stack>
-                    </Stack>
+                    </Stack>}
                 </Stack>
             </Stack>
         )

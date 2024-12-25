@@ -8,7 +8,7 @@ import { getColorTitle } from "../../../../feature/AddToCart/lib/helper";
 import showAlert from "../../../../widgets/Alert/Alert";
 import styles from "./ModalColor.module.scss";
 
-export const ModalColor = ({ id, colors, changeColorModal }) => {
+export const ModalColor = ({ colors, changeColorModal }) => {
     
     const [currentColor, setCurrentColor] = useState(colors[0].value ?? '');
     

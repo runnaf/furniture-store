@@ -2,13 +2,13 @@ import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Card } from "../../../../entities/Card/ui/Card/Card"
 import { PaginationLib } from "../../../../entities/PaginationLib/PaginationLib"
-import { CardInteraction } from "../../../../feature/CartInteraction/ui/CardInteraction/CardInteraction"
 import { filtersData } from "../../../../feature/Filter/lib/filtersData"
 import { clearAllFilters, clearFilter } from "../../../../feature/Filter/model/filterSlice"
 import { MobileFilterBar } from "../../../../feature/Filter/ui/MobileFilterBar/MobileFilterBar"
 import { SortMenu } from '../../../../feature/Filter/ui/SortMenu/SortMenu';
 import { DeleteFilter } from "../../../../shared/assets/svg/deleteFilter"
 import { Button } from "../../../../shared/ui/Button/Button"
+import { Loader } from "../../../../shared/ui/Loader/Loader"
 import { Stack } from "../../../../shared/ui/Stack/Stack"
 import { Text } from "../../../../shared/ui/Text/Text"
 import { useGetAllProductsQuery } from "../../api/productApi"
@@ -39,10 +39,6 @@ export const OurProductsPage = ({ isMobile }) => {
             filter: selectedFilters
         }
     })
-
-    if (isLoading) {
-        return <Stack>Loading...</Stack> //TODO
-    }
 
     if (error) {
         return <Stack>Error: {error.message}</Stack> //TODO
@@ -129,6 +125,7 @@ export const OurProductsPage = ({ isMobile }) => {
                 </Button>
             </Stack>
             )}
+            {isLoading ? <Loader/> : 
             <Stack 
                 className={styles.cardsPage}
                 direction='column'
@@ -148,7 +145,7 @@ export const OurProductsPage = ({ isMobile }) => {
                     onPageChange={handlePageChange}
                     forcePage={selectPage - 1} 
                     pageCount={data?.totalPages ?? 1} />
-            </Stack>
+            </Stack>}
         </Stack>
     )
 }
