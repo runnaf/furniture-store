@@ -1,6 +1,6 @@
 import { HeaderSection } from "../../shared/ui/HeaderSection/HeaderSection"
 import { Stack } from "../../shared/ui/Stack/Stack";
-import { Card } from "../../entities/Card/ui/Card/Card";
+// import { Card } from "../../entities/Card/ui/Card/Card";
 import cardData, { QUANTITY_CARD_ON_PAGE } from '../../shared/libs/cardData';
 import { useSlider } from "../../shared/hooks/useSlider";
 import { useResize } from "../../shared/hooks/useResize";

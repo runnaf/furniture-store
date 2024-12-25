@@ -1,4 +1,3 @@
-import { Review } from "../../../entities/Review/Review"
 import { SearchAdmin } from "../../../feature/SearchAdmin/SearchAdmin"
 import { Stack } from "../../../shared/ui/Stack/Stack"
 import { Text } from "../../../shared/ui/Text/Text"
