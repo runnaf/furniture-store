@@ -1,0 +1,21 @@
+@import "../../../../app/styles/mixin.scss";
+@import "../../../../app/styles/media-queries.scss";
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: inherit;
+
+    @include section-style;
+
+    @include tablet-l {
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 0 30px;
+        justify-content: center;
+    }
+
+    @include mobile-xl {
+        padding: 0;
+    }
+}

@@ -1,8 +1,13 @@
-@import '../../../app/styles/media-queries.scss';
+@use '../../../app/styles/media-queries.scss' as *;
 
 .signup_page {
     height: 100vh;
     padding: 10px 150px;
+
+    & > form,
+    & > div {
+      flex: 1;
+    }
 
     @include tablet-m {
         height: auto;

@@ -1,13 +1,18 @@
 import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
+import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import { SigninForm } from "../SigninForm/SigninForm";
 import { Checkbox } from "../../../../shared/ui/Checkbox/Checkbox";
 import { Text } from "../../../../shared/ui/Text/Text";
-import { getRouteSignup } from "../../../../app/routes/lib/helper";
+import { getRouteMain, getRouteSignup } from "../../../../app/routes/lib/helper";
 import { Stack } from "../../../../shared/ui/Stack/Stack";
 import { ForgotPassword } from '../ForgotPassword/ForgotPassword';
+import Cookies from "js-cookie";
+import { useLoginMutation } from "../../api/signinApi";
+import showAlert from "../../../../widgets/Alert/Alert";
 import styles from './Signin.module.scss';
+
 
 export const Signin = () => {
     const [rememberMe, setRememberMe] = useState(false); //TODO
@@ -15,10 +20,25 @@ export const Signin = () => {
 
     const methods = useForm({mode: "onSubmit"})
     const { handleSubmit, reset } = methods;
+    const [loginUser, { error, isLoading }] = useLoginMutation()
+    const navigate = useNavigate()
 
-    const onSubmit = () => {
-        reset();
-    };
+    const onSubmit = async (formData) => {
+        const { email, password } = formData;
+        try {
+            const response = await loginUser({ email, password }).unwrap()
+            if (response?.token) {
+                Cookies.set(
+                'authToken', response.token.accessToken, { secure: true },
+                'refreshToken', response.token.refreshToken, { secure: true })
+            }
+            reset()
+            navigate(getRouteMain())
+        } catch (err) {
+            console.error('Ошибка авторизации:', err)
+            showAlert('Ошибка авторизации. Проверьте свои данные и попробуйте снова.');
+        }
+    }
 
     const handleCheckboxChange = (name, checked) => {
         console.log(name);
@@ -35,7 +55,11 @@ export const Signin = () => {
                 className={styles.signin}
                 gap='24'
             >
-                <SigninForm onSubmit={handleSubmit(onSubmit)}/>
+                <SigninForm 
+                    onSubmit={handleSubmit(onSubmit)}
+                    isLoad={isLoading}
+                    error={error}
+                />
 
                 <Stack 
                         justify="justifyBetween" 
@@ -63,4 +87,4 @@ export const Signin = () => {
             </Stack>}
         </FormProvider>
     );
-};
+}

@@ -1,0 +1,14 @@
+@use "../../../app/styles/media-queries.scss" as media;
+
+.container {
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-75);
+    align-items: center;
+    justify-content: center;
+    
+    @include media.mobile-xl {
+        gap: var(--gap-22)
+    }
+}

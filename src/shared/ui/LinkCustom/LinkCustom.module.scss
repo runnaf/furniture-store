@@ -44,6 +44,14 @@ $text-black-color: var(--black-color);
         box-shadow: $box-shadow;
         background-color: $green-color-hover;
     }
+
+    &.disabled {
+      &:hover {
+        box-shadow: none;
+        background-color: $green-color;
+        cursor: initial;
+      }
+    }
 }
 
 .secondary {
@@ -66,8 +74,17 @@ $text-black-color: var(--black-color);
     }
 
     &:hover:after {
-        width: 100%;
+      width: 100%;
     }
+
+    &.disabled:hover::after {
+      width: 0;
+      
+    }
+}
+
+.transparent {
+    background-color: transparent;
 }
 
 .yellow {
@@ -76,6 +93,10 @@ $text-black-color: var(--black-color);
 
     &:hover {
         box-shadow: $box-shadow;
+    }
+
+    &.disabled:hover {
+      box-shadow: none;
     }
 }
 

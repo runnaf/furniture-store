@@ -1,14 +1,28 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import styles from './DesktopNavbar.module.scss';
 import { LogoIcon, LikeIcon, CartIcon, LoginIcon } from '../../../../shared/assets/svg/navbarIcons';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { routes } from '../../../../app/routes/lib/data';
 import { dropdownMenus } from '../../libs/data';
 import { DropdownMenu } from '../DropdownMenu/DropdownMenu';
+import { ScrollToTop } from '../../../../shared/libs/scrollToTop';
+import { LinkCustom } from '../../../../shared/ui/LinkCustom/LinkCustom';
+import { getRouteCart } from '../../../../app/routes/lib/helper';
+import { useSelector } from 'react-redux';
+import { selectTotalItems } from '../../../../feature/AddToCart/model/cartSlice';
+import { Text } from '../../../../shared/ui/Text/Text';
 
 export const DesktopNavbar = () => {
     const [activeDropdown, setActiveDropdown] = useState(null);
+    const location = useLocation(); // Получаем текущий путь
+
+  // useEffect срабатывает при изменении пути
+    useEffect(() => {
+        setActiveDropdown(false); // Скрываем меню при переходе по ссылке
+    }, [location]);
+
+    const totalItems = useSelector(selectTotalItems); 
 
     const handleMouseEnter = (title) => {
         if (activeDropdown !== title) {
@@ -24,8 +38,6 @@ export const DesktopNavbar = () => {
         switch (title) {
             case 'Магазин':
                 return <DropdownMenu menuData={dropdownMenus.shop} onClose={handleMouseLeave} />;
-            case 'Категории':
-                return <DropdownMenu menuData={dropdownMenus.categories} onClose={handleMouseLeave} />;
             default:
                 return null;
         }
@@ -44,9 +56,11 @@ export const DesktopNavbar = () => {
                     <li key={title}
                         onMouseEnter={() => handleMouseEnter(title)}
                     >
-                        <NavLink to={link} className={({ isActive }) =>
+                        <NavLink 
+                        to={link} className={({ isActive }) =>
                             `${styles.link} ${isActive ? styles.active : ''}`
-                        }>{title}</NavLink>
+                        } 
+                        onClick={ScrollToTop()}>{title}</NavLink>
                         {activeDropdown === title && getDropdownMenu(title)}
                     </li>
                 ))}
@@ -55,9 +69,13 @@ export const DesktopNavbar = () => {
                 <button>
                     {<LikeIcon />}
                 </button>
-                <button>
-                    {<CartIcon />}
-                </button>
+                <Stack className={styles.cartContainer}>
+                  {totalItems > 0 && <Text className={styles.totalItems}>{totalItems}</Text>}
+                  <LinkCustom color='secondary' path={getRouteCart()} onClick={ScrollToTop}>
+                      {<CartIcon />}
+                  </LinkCustom>
+                </Stack>
+                
                 <button>
                     {<LoginIcon />}
                 </button>

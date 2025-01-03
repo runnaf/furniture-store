@@ -8,7 +8,8 @@ export const LinkCustom = ({
     children,
     size = 'xs',
     radius = 'rounded', // rounded | circle
-    color = 'primary', // primary | secondary
+    color = 'primary', // primary | secondary | yellow | transparent
+    disabled,
     outlined,
     ...otherProps
 }) => {
@@ -22,6 +23,7 @@ export const LinkCustom = ({
         styles[size],
         styles[radius],
         styles[color],
+        styles[disabled]
     ];
 
     return (

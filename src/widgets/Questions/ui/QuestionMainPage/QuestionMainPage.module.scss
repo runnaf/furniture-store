@@ -1,0 +1,19 @@
+@import '../../../../app/styles/media-queries.scss';
+@import '../../../../app/styles/mixin.scss';
+
+.questionMainPageContainer {
+    width: 100%;
+    > div {
+        @include section-style;
+        &:nth-child(1) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            > div {
+                align-items: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@use '../../app/styles/media-queries.scss' as media;
+
+.review {
+    line-height: 1.5;
+    opacity: var(--opacity-08);
+
+    @include media.mobile-xl {
+        font-size: var(--font-size-18);
+        font-weight: 500;
+    }
+}
+
+.textName {
+    font-size: var(--font-size-24);
+    font-weight: 500;
+
+    @include media.mobile-xl {
+        font-size: var(--font-size-22);
+    }
+}
+
+.textSpeciality {
+    @include media.mobile-xl {
+        font-size: var(--font-size-18);
+        font-weight: 500;
+    }
+}

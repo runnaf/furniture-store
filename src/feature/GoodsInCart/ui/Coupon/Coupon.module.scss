@@ -1,0 +1,22 @@
+@use "../../../../app/styles/media-queries.scss" as media;
+
+.container {
+  display: flex;
+  justify-content:center;
+  align-items: flex-start;
+  gap: var(--gap-12);
+
+  & button {
+    padding: 16px 32px;
+    height: fit-content;
+  }
+
+  @include media.mobile-xl {
+    flex-direction: column;
+
+    & > div,
+    & button {
+      width: 100%;
+    }
+  }
+}

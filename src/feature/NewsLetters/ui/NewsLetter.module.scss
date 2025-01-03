@@ -75,13 +75,15 @@ $border-radius-circle: var(--border-radius-circle);
                 }
             }
 
-            > img {
+            svg  {
                 position: absolute;
                 border-radius: $border-radius-circle;
                 background-color: $green-background-color;
+                top:0 !important;
                 height: 50px;
+                width: 50px;
                 padding: 9px;
-                left: 8px;
+                left: 8px !important;
                 transform: translateY(15%);
                 z-index: 2;
             }

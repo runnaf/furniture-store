@@ -1,0 +1,83 @@
+@use '../../../../app/styles/media-queries.scss' as media;
+
+.categoryBase {
+    .categoryContainer {
+        width: 276px;
+    
+        @include media.tablet-m {
+            width: 100%;
+        }
+
+        .category {
+            color: var(--secoundry-black-color);
+            opacity: var(--opacity-06);
+        }
+        
+        .star {
+            width: 18px;
+            height: 18px;
+        }
+        .rating {
+            font-weight: 500;
+        }
+    }
+
+    .textContainer {
+        height: 100%;
+        h3 {
+            font-weight: 600;
+        }
+
+        .priceContainer {
+            p {
+                font-weight: 500;
+            }
+
+            :nth-child(2) {
+                font-weight: 500;
+                color: var(--secoundry-black-color);
+                opacity: var(--opacity-06);
+                text-decoration: line-through;
+            }
+        }
+
+        a {
+            svg {
+                fill: var(--green-color);
+                rotate: 135deg;
+            }
+        }
+    }
+
+&.extendedCategory {
+    
+    @include media.mobile-l {
+        height: 230px;
+    }
+
+    @include media.mobile-s {
+        height: 250px;
+    }
+
+    .extended {
+        height: 100%;
+    }
+
+    .textContainer {
+        gap: 16px;
+        h3 {
+            font-size: 20px;
+        }
+    }
+
+    .cardText {
+        opacity: var(--opacity-08);
+        max-width: 257px;
+        text-wrap: wrap;
+
+        @include media.mobile-l {
+            max-width: 100%;
+        }
+    }
+}
+}

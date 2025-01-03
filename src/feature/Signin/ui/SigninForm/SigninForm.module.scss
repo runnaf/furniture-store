@@ -1,4 +1,5 @@
-@import '../../../../app/styles/media-queries.scss';
+@use '../../../../app/styles/media-queries.scss' as *;
+@use '../../../../app/styles/mixin.scss' as mixin;
 
 .form {
     font-family: var(--font-family);
@@ -22,7 +23,14 @@
     color: var(--secoundry-black-color);
 }
 
+.error {
+    @include mixin.error-message;
+}
+
 .signInBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 16px;
 }
 

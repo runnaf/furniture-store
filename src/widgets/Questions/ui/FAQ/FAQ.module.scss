@@ -1,0 +1,64 @@
+@use '../../../../app/styles/media-queries.scss' as mq;
+@use '../../../../app/styles/mixin.scss' as mixin;
+
+//background-color
+$yellow-color: var(--yellow-color);
+
+//font-size 
+
+$font-size-18: var(--font-size-18);
+$font-size-24: var(--font-size-24);
+
+.faq_container {
+    gap: 24px;
+    @include mixin.section-style;
+
+    @include mq.tablet-l {
+        flex-direction: column;
+    } 
+
+    .button_container {
+        width: 100%;
+        overflow-x: scroll;
+        touch-action: pan-x;
+        scrollbar-width: none;
+        cursor: grab;
+
+        > div {
+            width: 100%;
+
+            @include mq.tablet-l {
+                align-items: flex-start;
+                flex-direction: row;
+                padding: 5px;
+                gap: 12px;
+                width: auto;
+            }
+                > button {
+                    text-align: left;
+                    font-size: $font-size-24;
+                    font-weight: 500;
+                    width: 100%;
+                    padding: 21px 24px;
+                    transition: background-color 0.4s ease;
+        
+                    @include mq.tablet-l {
+                        width: 300px;
+                        padding: 13px 24px;
+                        text-align: center;
+                    } 
+        
+                    @include mq.mobile-l {
+                        font-size: $font-size-18;
+                        width: 230px;
+                        padding: 8px 24px;
+                    } 
+        
+                    &.active {
+                        background-color: $yellow-color;
+                        transition: background-color 0.4s ease;
+                    }
+                }
+            }
+        }
+    }

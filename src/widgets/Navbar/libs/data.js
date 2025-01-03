@@ -35,54 +35,5 @@ export const dropdownMenus = {
                 { name: "Зонты", params: "umbrellas" },
             ]
         }
-    ],
-    categories: [
-        {
-            title: "Стулья",
-            subCategories: [
-                { name: "Игровое кресло", params: "gaming-chair" },
-                { name: "Офисное кресло", params: "office-chair" },
-                { name: "Кресло", params: "armchair" },
-                { name: "Клубное кресло", params: "club-chair" },
-                { name: "Складной стул", params: "folding-chair" },
-                { name: "Стул для столовой", params: "dining-chair" },
-                { name: "Барный стул", params: "bar-stool" },
-            ]
-        },
-        {
-            title: "Диваны",
-            subCategories: [
-                { name: "Ресепшн диван", params: "reception-sofa" },
-                { name: "Угловой диван", params: "sectional-sofa" },
-                { name: "Безрукавный диван", params: "armless-sofa" },
-                { name: "Изогнутый диван", params: "curved-sofa" },
-                { name: "Лаунж диван", params: "lounge-sofa" },
-                { name: "Мид-сенчури", params: "mid-century" },
-                { name: "С роликовыми подлокотниками", params: "rolled-arm" },
-            ]
-        },
-        {
-            title: "Освещение",
-            subCategories: [
-                { name: "Настольные лампы", params: "table-lights" },
-                { name: "Напольные светильники", params: "floor-lights" },
-                { name: "Потолочные светильники", params: "ceiling-lights" },
-                { name: "Настенные светильники", params: "wall-lights" },
-                { name: "Накладное освещение", params: "overhead-lighting" },
-                { name: "Задачное освещение", params: "task-lighting" },
-                { name: "Архитектурное освещение", params: "architectural-lighting" },
-            ]
-        },
-        {
-            title: "Столы",
-            subCategories: [
-                { name: "Обеденные столы", params: "dining-tables" },
-                { name: "Кофейные столики", params: "coffee-tables" },
-                { name: "Приставные столики", params: "side-tables" },
-                { name: "Консольные столики", params: "console-tables" },
-                { name: "Письменные столы", params: "desks" },
-                { name: "Уличные столы", params: "outdoor-tables" },
-            ]
-        }
     ]
 };

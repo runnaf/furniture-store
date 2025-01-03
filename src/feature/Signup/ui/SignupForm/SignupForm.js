@@ -1,4 +1,3 @@
-import styles from './SignupForm.module.scss';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { Text } from '../../../../shared/ui/Text/Text';
 import { Input } from '../../../../shared/ui/Input/Input';
@@ -12,24 +11,24 @@ import { useFormContext } from 'react-hook-form';
 import { emailRegex, textRegex, validatePassword } from '../../../../shared/libs/validation/getValidate';
 import { data } from '../../../../shared/libs/validation/errors/data';
 import { Checkbox } from '../../../../shared/ui/Checkbox/Checkbox';
+import { Waiting } from '../../../../shared/ui/Waiting/Waiting';
+import styles from './SignupForm.module.scss';
 
-export const SignupForm = ({ onSubmit }) => {
+export const SignupForm = ({ onSubmit, isLoad, error }) => {
     const [showPassword, setShowPassword] = useState(false);
     const [agreeWithTerms, setAgreeWithTerms] = useState(false); //TODO
 
-    const { register, setValue, formState: { errors } } = useFormContext();
-
+    const { register, setValue, handleSubmit, formState: { errors } } = useFormContext();
     const PasswordToggleIcon = showPassword ? <HidePasswordIcon /> : <ShowPasswordIcon />;
 
-    const handleCheckboxChange = (name, checked) => {
-        console.log(name);
+    const handleCheckboxChange = (checked) => {
         setAgreeWithTerms(checked);
     }; //TODO
 
     return (
             <form 
                 className={styles.form} 
-                onSubmit={onSubmit}
+                onSubmit={handleSubmit(onSubmit)}
             >
                 <Link to={getRouteMain()}>
                     <LogoIcon />
@@ -37,7 +36,9 @@ export const SignupForm = ({ onSubmit }) => {
 
                 <Stack direction="column" gap="32">
                     <Text type="h2" size="xl" >Регистрация</Text>
-
+                    {error && <Text className={styles.error}>
+                        {error.data.message}
+                    </Text>}
                     <Stack direction="column" gap="8">
                         <Stack gap='16' className={styles.name}>
                             <Input
@@ -59,7 +60,7 @@ export const SignupForm = ({ onSubmit }) => {
                             <Input
                                 label="Фамилия"
                                 placeholder="Введите фамилию"
-                                name="suname"
+                                name="surname"
                                 register={register}
                                 setValue={setValue}
                                 options={{
@@ -69,7 +70,7 @@ export const SignupForm = ({ onSubmit }) => {
                                         message: data.errors.validName
                                     }
                                 }}
-                                error={errors.suname}
+                                error={errors.surname}
                             />
                         </Stack>
                         <Input
@@ -103,7 +104,9 @@ export const SignupForm = ({ onSubmit }) => {
                                 }}
                                 error={errors.password}
                             />
-                            <button className={styles.password_btn}
+                            <button 
+                                type='button'
+                                className={styles.password_btn}
                                 onClick={() => setShowPassword(!showPassword)}>
                                 {PasswordToggleIcon}
                             </button>
@@ -127,7 +130,7 @@ export const SignupForm = ({ onSubmit }) => {
                         type="submit" 
                         className={styles.signUpBtn}
                     >
-                        Зарегистрироваться
+                        {isLoad ? <Waiting/> : 'Зарегистрироваться'}
                     </Button>
 
                     <Text className={styles.account}>

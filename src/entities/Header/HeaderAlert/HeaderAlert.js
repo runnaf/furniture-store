@@ -8,9 +8,7 @@ export const HeaderAlert = () => {
     const [isVisible, setIsVisible] = useState(true);
     const isAuthenticated = false; //TODO
 
-    const handleClose = () => {
-        setIsVisible(false);
-    };
+    const handleClose = () => setIsVisible(false);
 
     return (
         !isAuthenticated && isVisible && (

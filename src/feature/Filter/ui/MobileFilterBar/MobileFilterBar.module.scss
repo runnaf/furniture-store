@@ -1,0 +1,65 @@
+@import '../../../../app/styles/media-queries.scss';
+
+.filterButton {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-size-20);
+    gap: 10px;
+    font-weight: 500;
+
+    &:hover {
+        box-shadow: none;
+    }
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.popup {
+    background-color: var(--white-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    z-index: 12;
+    box-shadow: 1px 0 10px 0 var(--black-color);
+    transition: transform 0.5s ease-in-out; 
+    transform: translateX(-100%); 
+    
+    &.open {
+        transform: translateX(0);
+    }
+
+    @include mobile-xl {
+        width: 350px;
+    }
+
+    @include mobile-l {
+        width: 100%;
+    }
+
+    .popupContent {
+        max-height: 100%;
+        width: 100%; 
+        overflow-y: scroll;
+        touch-action: pan-x;
+        scrollbar-width: none;
+        padding: 0 20px 10px 20px;
+        // background: linear-gradient(0deg, rgba(72, 72, 72, 1) 0%,
+        // rgb(72 72 72 / 14%) 4%, rgba(72, 72, 72, 0) 100%);
+
+        > button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 12;
+            background-color: transparent;
+        }
+    }
+}

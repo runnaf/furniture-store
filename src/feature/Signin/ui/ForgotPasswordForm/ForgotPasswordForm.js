@@ -9,13 +9,16 @@ import { data } from "../../../../shared/libs/validation/errors/data";
 import { emailRegex } from "../../../../shared/libs/validation/getValidate";
 import { useFormContext } from "react-hook-form";
 import { getRouteMain } from "../../../../app/routes/lib/helper";
+import { Waiting } from "../../../../shared/ui/Waiting/Waiting";
 
-export const ForgotPasswordForm = ({ onSubmit, setIsForgotten }) => {
+export const ForgotPasswordForm = ({ onSubmit, isLoad, error, setIsForgotten }) => {
 
-    const { register, setValue, formState: { errors } } = useFormContext(); 
+    const { register, setValue, handleSubmit, formState: { errors } } = useFormContext(); 
 
     return (
-        <form className={styles.form} onSubmit={onSubmit}>
+        <form 
+            className={styles.form} 
+            onSubmit={handleSubmit(onSubmit)}>
             <Link to={getRouteMain()}>
                 <LogoIcon />
             </Link>
@@ -24,6 +27,10 @@ export const ForgotPasswordForm = ({ onSubmit, setIsForgotten }) => {
                 <Text className={styles.par}>
                     Мы отправим вам инструкции по сбросу пароля.
                 </Text>
+
+                {error && <Text className={styles.error}>
+                    {error.data.message}
+                </Text>}
 
                 <Input
                     label="Электронная почта"
@@ -41,10 +48,16 @@ export const ForgotPasswordForm = ({ onSubmit, setIsForgotten }) => {
                     }}
                     error={errors.email}
                 />
-                <Button type="submit" className={styles.submitBtn}>Отправить</Button>
+                <Button 
+                    type="submit" 
+                    className={styles.submitBtn}
+                >
+                    {isLoad ? <Waiting/> : 'Отправить'}
+                </Button>
 
                 <Text className={styles.account}>
-                    Помните пароль? <button 
+                    Помните пароль? 
+                    <button 
                         className={styles.signInLink}
                         onClick={() => setIsForgotten(false)}
                     >

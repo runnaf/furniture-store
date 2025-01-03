@@ -1,4 +1,4 @@
-const createApiConfig = (
+export const createApiConfig = (
     method, 
     url, 
     body,

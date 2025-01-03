@@ -5,24 +5,32 @@ import { routes } from '../../../../app/routes/lib/data';
 import { dropdownMenus } from '../../libs/data';
 import { Stack } from '../../../../shared/ui/Stack/Stack';
 import { NavLink } from 'react-router-dom';
-import { getRouteCategories } from '../../../../app/routes/lib/helper';
+import { getRouteCart, getRouteCategories } from '../../../../app/routes/lib/helper';
 import useOverflowHidden from '../../../../shared/hooks/useOverflowHidden';
+import { ScrollToTop } from '../../../../shared/libs/scrollToTop';
+import { LinkCustom } from '../../../../shared/ui/LinkCustom/LinkCustom';
+import { useSelector } from 'react-redux';
+import { selectTotalItems } from '../../../../feature/AddToCart/model/cartSlice';
+import { Text } from '../../../../shared/ui/Text/Text';
 
 export const MobileNavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
     const [activeSubmenu, setActiveSubmenu] = useState(null);
-
+    const totalItems = useSelector(selectTotalItems); 
     useOverflowHidden(isOpen);
 
     const toggleMenu = () => {
+        ScrollToTop();
         setIsOpen(!isOpen);
+        setActiveDropdown(false);
     };
 
     const closeMenu = () => {
         setIsOpen(false);
         setActiveDropdown(null);
         setActiveSubmenu(null);
+        ScrollToTop();
     };
 
     const toggleDropdown = (title) => {
@@ -32,6 +40,11 @@ export const MobileNavbar = () => {
     const toggleSubmenu = (index) => {
         setActiveSubmenu(activeSubmenu === index ? null : index);
     };
+
+    const onClickShop = (title) => {
+        closeMenu()
+        toggleDropdown(title)
+    }
 
     return (
         <nav className={styles.mobileNavbar}>
@@ -44,9 +57,12 @@ export const MobileNavbar = () => {
                     <button>
                         {<LikeIcon />}
                     </button>
-                    <button>
-                        {<CartIcon />}
-                    </button>
+                    <Stack className={styles.cartContainer}>
+                      {totalItems > 0 && <Text className={styles.totalItems}>{totalItems}</Text>}
+                      <LinkCustom color='secondary' path={getRouteCart()} onClick={ScrollToTop}>
+                          {<CartIcon />}
+                      </LinkCustom>
+                    </Stack>
                     <button>
                         {<LoginIcon />}
                     </button>
@@ -60,16 +76,21 @@ export const MobileNavbar = () => {
                     </button>
                     <LogoIcon />
                 </Stack>
-                {routes.map(({ title, link }) => {
-                    const isDropdownCategory = title === 'Магазин' || title === 'Категории';
-
+                {routes.filter(route => route.isNavbar).map(({ title, link }) => {
+                    const isDropdownCategory = title === 'Магазин' ;
                     return (
                         <li key={title} className={styles.title}>
                             {isDropdownCategory ? (
-                                <button onClick={() => toggleDropdown(title)}>
-                                    {title}
-                                    {activeDropdown === title ? <span>{<ArrowupIcon />}</span> : <span>{<ArrowdownIcon />}</span>}
-                                </button>
+                                <Stack justify="justifyBetween">
+                                    <NavLink to={link} className={({ isActive }) =>
+                                        `${styles.links} ${isActive ? styles.active : ''}`
+                                    } onClick={() => onClickShop(title)}>
+                                        {title}
+                                    
+                                    </NavLink>
+                                    <button onClick={() => toggleDropdown(title)}>{activeDropdown === title ? <ArrowupIcon /> : <ArrowdownIcon />}</button>
+                                </Stack>
+                                
                             ) : (
                                 <NavLink to={link} className={({ isActive }) =>
                                     `${styles.links} ${isActive ? styles.active : ''}`
@@ -78,7 +99,7 @@ export const MobileNavbar = () => {
 
                             {activeDropdown === title && isDropdownCategory && (
                                 <ul className={styles.titles}>
-                                    {dropdownMenus[title === 'Магазин' ? 'shop' : 'categories'].map((menu, index) => (
+                                    {dropdownMenus['shop'].map((menu, index) => (
                                         <li key={index}>
                                             <button onClick={() => toggleSubmenu(index)}>
                                                 {menu.title}

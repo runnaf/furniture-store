@@ -1,0 +1,84 @@
+@import '../../../../app/styles/media-queries';
+@import '../../../../app/styles/mixin.scss';
+
+//font-size
+$font-size-18: var(--font-size-18);
+
+
+.newsBlogsContainer {
+    width: 100%;
+
+    .newsBlogs {
+        @include section-style;
+
+        
+        .news_header {
+            width: 100%;
+
+            @include mobile-l {
+                flex-direction: column;
+                align-items: center;
+                gap: 24px;
+            }
+            
+            > div:nth-child(1) {
+                width: 400px;
+    
+                @include mobile-l {
+                    text-align: center;
+                    width: 100%;
+                }
+    
+                > div {
+                    @include mobile-l {
+                        justify-content: center;
+                    }
+                }
+            }
+    
+            > a {
+                padding: 17px 34px;
+                font-weight: 600;
+                font-size: $font-size-18;
+                align-self: end;
+    
+                @include mobile-l {
+                    width: 100%;
+                    text-align: center;
+                    align-self: center;
+                }
+            }
+        }
+    
+        .news_container {
+            width: 100%;
+            > div:nth-child(1) {
+            justify-content: flex-start;
+            gap: var(--gap-32);
+    
+            @include desktop-l {
+                width: 100%;
+                overflow-x: scroll;
+                touch-action: pan-x;
+                scrollbar-width: none;
+            }
+    
+            @include mobile-l {
+                flex-direction: column;
+                overflow: hidden;
+            }
+            }
+
+            .commonButtonClass {
+                &.inBlock {
+                    display: block;
+                }
+                &.noneBlock {
+                    display: none;
+                }
+                }
+            }
+        }
+    }
+
+

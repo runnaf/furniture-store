@@ -1,26 +1,26 @@
-@import '../../../app/styles/media-queries.scss';
-@import '../../../app/styles/mixin.scss';
+@use '../../../app/styles/media-queries.scss' as media;
+@use '../../../app/styles/mixin.scss' as mixin;
 
 .header {
     background-color: var(--green-color);
     color: var(--white-color);
 
-    @include tablet-m {
+    @include media.tablet-m {
         flex-direction: column;
     }
 
     .header_container {
-        @include section-style;
+        @include mixin.section-style;
 
         .header_content {
             padding: 16px 0;
 
-            @include tablet-m {
+            @include media.tablet-m {
                 justify-content: flex-end;
             }
 
             .phone, .discount {
-                @include tablet-m {
+                @include media.tablet-m {
                     display: none;
                 }
             }
@@ -47,7 +47,7 @@
                         width: 100%;
                     }
 
-                    @include tablet-m {
+                    @include media.tablet-m {
                         &:after {
                         content: none;
                         }

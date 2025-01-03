@@ -1,0 +1,74 @@
+@import "../../../../app/styles/media-queries.scss";
+
+.wrapper {
+    padding-bottom: 32px;
+    border-bottom: 2px solid  var(--stroke-color);
+}
+
+.containerColor {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-12);
+}
+
+.containerButton {
+    & > div:last-of-type {
+        & button {
+            height: 100%;
+            padding: 18px 30px;
+            text-align: center;
+
+            @include tablet-m {
+                width: 100%;
+            }
+        }
+
+        & > button:last-child {
+            @include tablet-m {
+                width: 58px;
+            }
+        }
+
+        & a {
+            height: 100%;
+            padding: 18px 30px;
+            text-align: center;
+
+            @include tablet-m {
+                width: 100%;
+            }
+        }
+
+        @include tablet-m {
+            justify-content: flex-start;
+        }
+
+        @include mobile-xl {
+            flex-direction: column;
+            width: 100%;
+        }        
+    }
+
+    @include tablet-m {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.favorites {
+    @include desktop-m {
+        position: absolute;
+        right: 0;
+        top:30px;
+    }
+
+    @include mobile-xl {
+        top:-15px;
+    }
+}
+
+.quantity {
+    @include mobile-xl {
+        width: 100%;
+    }
+}

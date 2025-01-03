@@ -1,0 +1,17 @@
+@import "../../../../app/styles/mixin.scss";
+@import "../../../../app//styles/media-queries.scss";
+
+.container {
+    @include section-style;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--gap-32);
+
+    @include mobile-xl {
+        grid-template-columns: 1fr;
+
+        & > div {
+          justify-self: center;
+        }
+    }
+}

@@ -1,40 +1,31 @@
 import { useState } from "react";
 import { Stack } from "../../../shared/ui/Stack/Stack";
+import { VisuallyHidden } from "../../../shared/ui/VisuallyHidden/VisuallyHidden";
 import { Text } from "../../../shared/ui/Text/Text";
 import { getStyles } from "../../../shared/libs/getStyles";
+import { Minus, Plus } from "lucide-react";
 import styles from './Accordion.module.scss';
-import less from '../../../shared/assets/svg/less.svg'
-import more from '../../../shared/assets/svg/more.svg'
-
 
 export const Accordion = ({ question, answer, isSecond, styleMode }) => {
 
     const [isOpen, setIsOpen] = useState(isSecond || false);
 
-    const handleClick = () => {
-        setIsOpen(prev => !prev)
-    }
-
-    const mode = { [styleMode]: true }
-
-    const additional = [
-        styles[styleMode]
-    ]
-
-    const baseClass = styles.accordionContainer;
+    const handleClick = () => setIsOpen(prev => !prev);
 
     const dynamicStyles = getStyles(
-        isOpen ? styles.openAnswer : styles.closedAnswer,
-        mode,
-        additional
+        styles.accordionContainer, 
+
+        {[styles.openAnswer]: isOpen,
+        [styles.closedAnswer]: !isOpen},
+        
+        [styles[styleMode]]
     )
 
-    const styleClass = `${baseClass} ${dynamicStyles}`;
-
     return(
-        <Stack direction="column" 
-        onClick={handleClick}
-        className={styleClass}
+        <Stack 
+            direction="column" 
+            onClick={handleClick}
+            className={dynamicStyles}
         >
             <Stack 
                 justify='justifyBetween'
@@ -42,11 +33,21 @@ export const Accordion = ({ question, answer, isSecond, styleMode }) => {
                 className={styles.questionContainer}
             >
                 <Text size="s">{question}</Text>
-                <img src={isOpen ? less : more} alt="more or less button"/>
+                {isOpen ? 
+                <>
+                    <Plus color="var(--yellow-color)"/>
+                    <VisuallyHidden>Показать текст</VisuallyHidden>
+                </>
+                :
+                <>
+                    <Minus color="var(--green-color)"/>
+                    <VisuallyHidden>Скрыть текст</VisuallyHidden>
+                </>
+                }
             </Stack>
             <Stack className={isOpen ? styles.visible : styles.hidden}>
                 <Text>{answer}</Text>
             </Stack>
         </Stack>
-    )
-}
+    );
+};

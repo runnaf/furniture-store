@@ -7,13 +7,14 @@ export const api = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: apiUrl,
         prepareHeaders: (headers) => {
-            const token = Cookies.get('authToken');;
+            const token = Cookies.get('authToken');
             if (token) {
                 headers.set('Authorization', `Bearer ${token}`);
             }
             return headers;
         }
     }),
-    tagTypes: ['Blog'],
+    tagTypes: ['Blog', 'Product', 'Wish_List', 'Cart', 'New_User', 'User', 'Admin'],
     endpoints: (builder) => ({}),
 });
+

@@ -1,0 +1,37 @@
+@import '../../../../app/styles/media-queries.scss';
+
+.container {   
+    color: var(--black-color);
+    width: 330px;
+
+    h2 {
+        line-height: 51px;
+    }
+
+    hr {
+        width: 100%;
+        height: 1px;
+        background-color: var(--stroke-color);
+        border: none;
+        }
+        
+    .buttonContainer{
+        position: sticky;
+        bottom: 10px;
+        z-index: 10;
+
+        @include tablet-m {
+            top:50px
+        }
+        button {
+            padding: 8px 16px;
+            width: 50%;
+
+            // &:nth-child(2) {
+            //     background-color: var(--white-color);
+            // }            
+        }
+        
+    }
+    
+}
